@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package room_agent.v1;
+
+service RoomAgentContextService {
+  // 校验用户身份和 Room 访问权限，并返回用户维度的未读上下文。
+  rpc GetRoomAgentContext(GetRoomAgentContextRequest)
+  returns (GetRoomAgentContextResponse);
+}
+
+message GetRoomAgentContextRequest{
+    // access_token 通过 gRPC metadata 传递，不放入请求消息
+  string room_id = 1;
+}
+
+message GetRoomAgentContextResponse {
+  string         user_id              = 1;
+  string         thread_id            = 2;
+  uint32         unread_message_count = 3;
+  UnreadSnapshot unread_snapshot      = 4;
+}
+
+message UnreadSnapshot {
+  repeated ChatMessage messages = 1;
+}
+
+message ChatMessage {
+  string message_id      = 1;
+  string conversation_id = 2;
+  string sender_id       = 3;
+
+  // 对应后端的 *string ClientMsgId。
+  optional string client_msg_id = 4;
+
+  int64         seq     = 5;
+  MessageType   type    = 6;
+  string        content = 7;
+  MessageStatus status  = 8;
+
+  // 单位需与后端 Message.SendTime 保持一致。
+  int64 send_time = 9;
+}
+
+enum MessageType {
+  MESSAGE_TYPE_TEXT = 0;
+}
+
+enum MessageStatus {
+  MESSAGE_STATUS_NORMAL   = 0;
+  MESSAGE_STATUS_RECALLED = 1;
+}

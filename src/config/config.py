@@ -26,6 +26,7 @@ class _Settings(BaseModel):
     agent_temperature: float = float(_env("AGENT_TEMPERATURE", "0.0"))
     agent_timeout_seconds: float = float(_env("AGENT_TIMEOUT_SECONDS", "60"))
     app_env: str = _env("APP_ENV", "development")
-
+    grpc_url: str = _env("IM_GRPC_URL", "")
+    grpc_time_out: int = int(_env("IM_GRPC_TIMEOUT_SECONDS", "5"))
 
 settings = _Settings()
