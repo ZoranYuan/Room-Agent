@@ -2,7 +2,7 @@
   "$schema": "https://langgra.ph/schema.json",
   "dependencies": ["."],
   "graphs": {
-    "summary": "./src/workflows/summary/graph.py:graph"
+    "room_agent": "./src/agent/runtime.py:agent_graph"
   },
   "env": ".env",
   "image_distro": "wolfi"

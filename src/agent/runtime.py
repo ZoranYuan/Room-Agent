@@ -1,0 +1,5 @@
+"""Agent Graph 运行时实例."""
+
+from agent.graph import build_agent_graph
+
+agent_graph = build_agent_graph()
