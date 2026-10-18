@@ -1,0 +1,6 @@
+"""HTTP 层使用的常量."""
+
+DETAIL_MISSING_AUTH_TOKEN = "用户未认证"
+DETAIL_IM_GRPC_AUTH_NOT_CONFIGURED = "IM 服务的 gRPC 身份校验尚未配置"
+DETAIL_INVALID_AUTH_TOKEN = "认证令牌无效或已过期"
+DETAIL_ROOM_ACCESS_DENIED = "无权访问该房间"
