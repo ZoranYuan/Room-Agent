@@ -44,6 +44,12 @@ class _Settings(BaseModel):
     app_env: str = _env("APP_ENV", "development")
     grpc_url: str = _env("IM_GRPC_URL", "")
     grpc_time_out: int = int(_env("IM_GRPC_TIMEOUT_SECONDS", "5"))
+    milvus_uri: str = _env("MILVUS_URI", "milvus:19530")
+    embedding_model_id: str = _env(
+        "EMBEDDING_MODEL_ID",
+        "Qwen/Qwen3-Embedding-0.6B",
+    )
+    embedding_dimension: int = int(_env("EMBEDDING_DIMENSION", "1024"))
 
     @model_validator(mode="after")
     def validate_memory_budget(self) -> "_Settings":
