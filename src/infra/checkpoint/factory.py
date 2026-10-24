@@ -5,6 +5,8 @@ from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
 
 _DEFAULT_SERDE = JsonPlusSerializer(
     allowed_msgpack_modules=[
+        ("agent.state", "AgentTask"),
+        ("domain.chat_message", "ChatMessage"),
         ("workflows.summary.state", "Reflection"),
         ("workflows.summary.state", "ReflectionReasonCode"),
         ("workflows.summary.state", "ReflectionAction"),

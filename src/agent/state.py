@@ -1,8 +1,13 @@
 """Room Agent 的运行状态定义."""
 
 from enum import Enum
+from typing import Annotated
 
+from langchain_core.messages import AnyMessage
+from langgraph.graph.message import add_messages
 from pydantic import BaseModel, Field
+
+from domain.chat_message import ChatMessage
 
 
 class AgentTask(str, Enum):
@@ -12,26 +17,11 @@ class AgentTask(str, Enum):
     CHAT = "chat"
 
 
-class UnreadMessage(BaseModel):
-    """摘要任务使用的单条未读文本消息."""
-
-    message_id: str
-    conversation_id: str
-    sender_id: str
-    seq: int
-    content: str
-    status: int
-    send_time: int
-
-
 class RoomAgentState(BaseModel):
-    """Room Agent 单次运行需要的状态."""
+    """Room Agent 图的任务输入与运行状态."""
 
+    messages: Annotated[list[AnyMessage], add_messages] = Field(default_factory=list)
     task: AgentTask
-    room_id: str
-    user_id: str
-    thread_id: str
     question: str | None = None
     unread_message_count: int = 0
-    unread_messages: list[UnreadMessage] = Field(default_factory=list)
-    last_result: str | None = None
+    unread_messages: list[ChatMessage] = Field(default_factory=list)

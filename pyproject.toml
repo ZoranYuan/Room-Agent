@@ -28,7 +28,7 @@ package-dir = { "" = "src" }
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["agent", "constants", "application", "config", "infra", "transport"]
+include = ["agent*", "constants*", "domain*", "harness*", "config*", "infra*", "transport*"]
 
 
 [tool.setuptools.package-data]

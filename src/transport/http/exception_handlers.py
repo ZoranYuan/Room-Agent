@@ -3,7 +3,7 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 
-from application.exceptions import (
+from harness.exceptions import (
     RoomAuthorizationError,
 )
 from transport.exception_maps import HTTP_EXCEPTION_MAP
@@ -15,7 +15,7 @@ async def _handle_room_authorization_error(
     _request: Request,
     error: Exception,
 ) -> JSONResponse:
-    """转换应用层认证和权限异常."""
+    """转换 Harness 认证和权限异常."""
     if not isinstance(error, RoomAuthorizationError):
         raise error
 

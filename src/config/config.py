@@ -24,6 +24,7 @@ class _Settings(BaseModel):
     agent_base_url: str = _env("AGENT_BASE_URL")
     agent_model: str = _env("AGENT_MODEL", "deepseek-chat")
     agent_temperature: float = float(_env("AGENT_TEMPERATURE", "0.0"))
+    agent_recursion_limit: int = int(_env("AGENT_RECURSION_LIMIT", "14"))
     agent_timeout_seconds: float = float(_env("AGENT_TIMEOUT_SECONDS", "60"))
     app_env: str = _env("APP_ENV", "development")
     grpc_url: str = _env("IM_GRPC_URL", "")

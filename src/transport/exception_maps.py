@@ -2,7 +2,7 @@
 
 import grpc
 
-from application.exceptions import InvalidTokenError, RoomAccessDeniedError
+from harness.exceptions import InvalidTokenError, RoomAccessDeniedError
 from constants.exception import (
     DETAIL_IM_GRPC_AUTH_NOT_CONFIGURED,
     DETAIL_INVALID_AUTH_TOKEN,
