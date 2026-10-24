@@ -4,6 +4,7 @@ from langgraph.graph import END, START, StateGraph
 
 from agent.context import AgentRuntimeContext
 from agent.nodes.chat import chat_node
+from agent.nodes.memory import prepare_memory_node
 from agent.nodes.summarize import summarize_node
 from agent.state import AgentTask, RoomAgentState
 from infra.checkpoint.factory import create_memory_checkpointer
@@ -22,16 +23,18 @@ def build_dev_agent_graph():
     graph = StateGraph(RoomAgentState, context_schema=AgentRuntimeContext)
     graph.add_node("summarize", summarize_node)
     graph.add_node("chat", chat_node)
+    graph.add_node("prepare_memory", prepare_memory_node)
 
     graph.add_conditional_edges(
         START,
         route_task,
         {
             "summarize": "summarize",
-            "chat": "chat",
+            "chat": "prepare_memory",
         },
     )
     graph.add_edge("summarize", END)
+    graph.add_edge("prepare_memory", "chat")
     graph.add_edge("chat", END)
 
     return graph.compile()
@@ -42,16 +45,18 @@ def build_agent_graph():
     graph = StateGraph(RoomAgentState, context_schema=AgentRuntimeContext)
     graph.add_node("summarize", summarize_node)
     graph.add_node("chat", chat_node)
+    graph.add_node("prepare_memory", prepare_memory_node)
 
     graph.add_conditional_edges(
         START,
         route_task,
         {
             "summarize": "summarize",
-            "chat": "chat",
+            "chat": "prepare_memory",
         },
     )
     graph.add_edge("summarize", END)
+    graph.add_edge("prepare_memory", "chat")
     graph.add_edge("chat", END)
 
     checkpointer = create_memory_checkpointer()

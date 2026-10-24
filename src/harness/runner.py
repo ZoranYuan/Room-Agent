@@ -54,6 +54,7 @@ async def stream_agent_events(
                 if not isinstance(event_type, str) or event_type not in (
                     "tool_start",
                     "tool_end",
+                    "compress",
                 ):
                     raise ValueError(f"不支持的自定义事件类型：{event_type!r}")
                 yield AgentEvent(name=event_type, data=payload)

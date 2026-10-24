@@ -12,6 +12,7 @@ from langgraph.config import get_stream_writer
 from langgraph.runtime import Runtime
 
 from agent.context import AgentRuntimeContext
+from agent.memory import build_chat_messages
 from agent.model import chat_model
 from agent.prompts.chat import CHAT_PROMPT
 from agent.state import RoomAgentState
@@ -44,7 +45,7 @@ async def chat_node(
     responses: list[AnyMessage] = []
 
     agent_input: InputAgentState = {
-        "messages": [*state.messages, user_message]
+        "messages": [*build_chat_messages(state, user_message)]
     }
 
     async for event in chat_agent.astream_events(
