@@ -1,32 +1,26 @@
 """服务入口文件."""
 
-from contextlib import asynccontextmanager
+from contextlib import AsyncExitStack, asynccontextmanager
 
 from fastapi import APIRouter, FastAPI
 
-from config.config import settings
-from transport.grpc.client import GrpcClient
+from infra.mysql.database import close_mysql
+from infra.rag.vector.vector_store import close_vector_store
+from transport.grpc.client import close_grpc_client
 from transport.http.exception_handlers import register_http_exception_handlers
 from transport.http.routers.agent import router as agent_router
 
 
+# FastAPI 启动时登记清理函数，关闭时统一执行
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    grpc_client = None
+    async with AsyncExitStack() as stack:
+        stack.push_async_callback(close_mysql)
+        stack.push_async_callback(close_grpc_client)
+        stack.push_async_callback(close_vector_store)
 
-    if settings.grpc_url:
-        grpc_client = GrpcClient(
-            server_url=settings.grpc_url,
-            timeout_seconds=settings.grpc_time_out,
-        )
-
-    app.state.grpc_client = grpc_client
-
-    try:
         yield
-    finally:
-        if grpc_client is not None:
-            await grpc_client.close()
+
 
 app = FastAPI(lifespan=lifespan)
 register_http_exception_handlers(app)
