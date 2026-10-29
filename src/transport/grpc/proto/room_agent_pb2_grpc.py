@@ -3,9 +3,9 @@
 import grpc
 import warnings
 
-from transport.grpc.proto import room_agent_pb2 as transport_dot_grpc_dot_room__agent__pb2
+from transport.grpc.proto import room_agent_pb2 as transport_dot_grpc_dot_proto_dot_room__agent__pb2
 
-GRPC_GENERATED_VERSION = '1.80.0'
+GRPC_GENERATED_VERSION = '1.81.1'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -18,14 +18,14 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + ' but the generated code in transport/grpc/room_agent_pb2_grpc.py depends on'
+        + ' but the generated code in transport/grpc/proto/room_agent_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
     )
 
 
-class RoomAgentContextServiceStub(object):
+class RoomAgentContextServiceStub:
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -34,19 +34,51 @@ class RoomAgentContextServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.GetRoomAgentContext = channel.unary_unary(
-                '/room_agent.v1.RoomAgentContextService/GetRoomAgentContext',
-                request_serializer=transport_dot_grpc_dot_room__agent__pb2.GetRoomAgentContextRequest.SerializeToString,
-                response_deserializer=transport_dot_grpc_dot_room__agent__pb2.GetRoomAgentContextResponse.FromString,
+        self.VerifyRoomAccess = channel.unary_unary(
+                '/room_agent.v1.RoomAgentContextService/VerifyRoomAccess',
+                request_serializer=transport_dot_grpc_dot_proto_dot_room__agent__pb2.VerifyRoomAccessRequest.SerializeToString,
+                response_deserializer=transport_dot_grpc_dot_proto_dot_room__agent__pb2.VerifyRoomAccessResponse.FromString,
+                _registered_method=True)
+        self.GetRoomUnreadMessages = channel.unary_stream(
+                '/room_agent.v1.RoomAgentContextService/GetRoomUnreadMessages',
+                request_serializer=transport_dot_grpc_dot_proto_dot_room__agent__pb2.GetRoomUnreadMessagesRequest.SerializeToString,
+                response_deserializer=transport_dot_grpc_dot_proto_dot_room__agent__pb2.GetRoomUnreadMessagesResponse.FromString,
+                _registered_method=True)
+        self.SyncRoomMessages = channel.unary_stream(
+                '/room_agent.v1.RoomAgentContextService/SyncRoomMessages',
+                request_serializer=transport_dot_grpc_dot_proto_dot_room__agent__pb2.SyncRoomMessagesRequest.SerializeToString,
+                response_deserializer=transport_dot_grpc_dot_proto_dot_room__agent__pb2.SyncRoomMessagesResponse.FromString,
+                _registered_method=True)
+        self.SearchRoomMessages = channel.unary_stream(
+                '/room_agent.v1.RoomAgentContextService/SearchRoomMessages',
+                request_serializer=transport_dot_grpc_dot_proto_dot_room__agent__pb2.SearchRoomMessagesRequest.SerializeToString,
+                response_deserializer=transport_dot_grpc_dot_proto_dot_room__agent__pb2.SearchRoomMessagesResponse.FromString,
                 _registered_method=True)
 
 
-class RoomAgentContextServiceServicer(object):
+class RoomAgentContextServiceServicer:
     """Missing associated documentation comment in .proto file."""
 
-    def GetRoomAgentContext(self, request, context):
-        """校验用户身份和 Room 访问权限，并返回用户维度的未读上下文。
-        """
+    def VerifyRoomAccess(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetRoomUnreadMessages(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SyncRoomMessages(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SearchRoomMessages(self, request, context):
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -54,10 +86,25 @@ class RoomAgentContextServiceServicer(object):
 
 def add_RoomAgentContextServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'GetRoomAgentContext': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetRoomAgentContext,
-                    request_deserializer=transport_dot_grpc_dot_room__agent__pb2.GetRoomAgentContextRequest.FromString,
-                    response_serializer=transport_dot_grpc_dot_room__agent__pb2.GetRoomAgentContextResponse.SerializeToString,
+            'VerifyRoomAccess': grpc.unary_unary_rpc_method_handler(
+                    servicer.VerifyRoomAccess,
+                    request_deserializer=transport_dot_grpc_dot_proto_dot_room__agent__pb2.VerifyRoomAccessRequest.FromString,
+                    response_serializer=transport_dot_grpc_dot_proto_dot_room__agent__pb2.VerifyRoomAccessResponse.SerializeToString,
+            ),
+            'GetRoomUnreadMessages': grpc.unary_stream_rpc_method_handler(
+                    servicer.GetRoomUnreadMessages,
+                    request_deserializer=transport_dot_grpc_dot_proto_dot_room__agent__pb2.GetRoomUnreadMessagesRequest.FromString,
+                    response_serializer=transport_dot_grpc_dot_proto_dot_room__agent__pb2.GetRoomUnreadMessagesResponse.SerializeToString,
+            ),
+            'SyncRoomMessages': grpc.unary_stream_rpc_method_handler(
+                    servicer.SyncRoomMessages,
+                    request_deserializer=transport_dot_grpc_dot_proto_dot_room__agent__pb2.SyncRoomMessagesRequest.FromString,
+                    response_serializer=transport_dot_grpc_dot_proto_dot_room__agent__pb2.SyncRoomMessagesResponse.SerializeToString,
+            ),
+            'SearchRoomMessages': grpc.unary_stream_rpc_method_handler(
+                    servicer.SearchRoomMessages,
+                    request_deserializer=transport_dot_grpc_dot_proto_dot_room__agent__pb2.SearchRoomMessagesRequest.FromString,
+                    response_serializer=transport_dot_grpc_dot_proto_dot_room__agent__pb2.SearchRoomMessagesResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -67,11 +114,11 @@ def add_RoomAgentContextServiceServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class RoomAgentContextService(object):
+class RoomAgentContextService:
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def GetRoomAgentContext(request,
+    def VerifyRoomAccess(request,
             target,
             options=(),
             channel_credentials=None,
@@ -84,9 +131,90 @@ class RoomAgentContextService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/room_agent.v1.RoomAgentContextService/GetRoomAgentContext',
-            transport_dot_grpc_dot_room__agent__pb2.GetRoomAgentContextRequest.SerializeToString,
-            transport_dot_grpc_dot_room__agent__pb2.GetRoomAgentContextResponse.FromString,
+            '/room_agent.v1.RoomAgentContextService/VerifyRoomAccess',
+            transport_dot_grpc_dot_proto_dot_room__agent__pb2.VerifyRoomAccessRequest.SerializeToString,
+            transport_dot_grpc_dot_proto_dot_room__agent__pb2.VerifyRoomAccessResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetRoomUnreadMessages(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/room_agent.v1.RoomAgentContextService/GetRoomUnreadMessages',
+            transport_dot_grpc_dot_proto_dot_room__agent__pb2.GetRoomUnreadMessagesRequest.SerializeToString,
+            transport_dot_grpc_dot_proto_dot_room__agent__pb2.GetRoomUnreadMessagesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SyncRoomMessages(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/room_agent.v1.RoomAgentContextService/SyncRoomMessages',
+            transport_dot_grpc_dot_proto_dot_room__agent__pb2.SyncRoomMessagesRequest.SerializeToString,
+            transport_dot_grpc_dot_proto_dot_room__agent__pb2.SyncRoomMessagesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SearchRoomMessages(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/room_agent.v1.RoomAgentContextService/SearchRoomMessages',
+            transport_dot_grpc_dot_proto_dot_room__agent__pb2.SearchRoomMessagesRequest.SerializeToString,
+            transport_dot_grpc_dot_proto_dot_room__agent__pb2.SearchRoomMessagesResponse.FromString,
             options,
             channel_credentials,
             insecure,

@@ -10,6 +10,7 @@ class ChatMessage:
     message_id: str
     conversation_id: str
     sender_id: str
+    sender_name: str
     seq: int
     content: str
     status: int

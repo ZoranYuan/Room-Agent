@@ -19,48 +19,90 @@ MESSAGE_TYPE_TEXT: MessageType
 MESSAGE_STATUS_NORMAL: MessageStatus
 MESSAGE_STATUS_RECALLED: MessageStatus
 
-class GetRoomAgentContextRequest(_message.Message):
+class VerifyRoomAccessRequest(_message.Message):
     __slots__ = ("room_id",)
     ROOM_ID_FIELD_NUMBER: _ClassVar[int]
     room_id: str
     def __init__(self, room_id: _Optional[str] = ...) -> None: ...
 
-class GetRoomAgentContextResponse(_message.Message):
-    __slots__ = ("user_id", "thread_id", "unread_message_count", "unread_snapshot")
-    USER_ID_FIELD_NUMBER: _ClassVar[int]
+class VerifyRoomAccessResponse(_message.Message):
+    __slots__ = ("thread_id",)
     THREAD_ID_FIELD_NUMBER: _ClassVar[int]
-    UNREAD_MESSAGE_COUNT_FIELD_NUMBER: _ClassVar[int]
-    UNREAD_SNAPSHOT_FIELD_NUMBER: _ClassVar[int]
-    user_id: str
     thread_id: str
-    unread_message_count: int
-    unread_snapshot: UnreadSnapshot
-    def __init__(self, user_id: _Optional[str] = ..., thread_id: _Optional[str] = ..., unread_message_count: _Optional[int] = ..., unread_snapshot: _Optional[_Union[UnreadSnapshot, _Mapping]] = ...) -> None: ...
+    def __init__(self, thread_id: _Optional[str] = ...) -> None: ...
 
-class UnreadSnapshot(_message.Message):
+class GetRoomUnreadMessagesRequest(_message.Message):
+    __slots__ = ("room_id", "limit")
+    ROOM_ID_FIELD_NUMBER: _ClassVar[int]
+    LIMIT_FIELD_NUMBER: _ClassVar[int]
+    room_id: str
+    limit: int
+    def __init__(self, room_id: _Optional[str] = ..., limit: _Optional[int] = ...) -> None: ...
+
+class GetRoomUnreadMessagesResponse(_message.Message):
+    __slots__ = ("messages",)
+    MESSAGES_FIELD_NUMBER: _ClassVar[int]
+    messages: _containers.RepeatedCompositeFieldContainer[ChatMessage]
+    def __init__(self, messages: _Optional[_Iterable[_Union[ChatMessage, _Mapping]]] = ...) -> None: ...
+
+class SyncRoomMessagesRequest(_message.Message):
+    __slots__ = ("room_id", "after_seq", "limit")
+    ROOM_ID_FIELD_NUMBER: _ClassVar[int]
+    AFTER_SEQ_FIELD_NUMBER: _ClassVar[int]
+    LIMIT_FIELD_NUMBER: _ClassVar[int]
+    room_id: str
+    after_seq: int
+    limit: int
+    def __init__(self, room_id: _Optional[str] = ..., after_seq: _Optional[int] = ..., limit: _Optional[int] = ...) -> None: ...
+
+class SyncRoomMessagesResponse(_message.Message):
+    __slots__ = ("messages",)
+    MESSAGES_FIELD_NUMBER: _ClassVar[int]
+    messages: _containers.RepeatedCompositeFieldContainer[ChatMessage]
+    def __init__(self, messages: _Optional[_Iterable[_Union[ChatMessage, _Mapping]]] = ...) -> None: ...
+
+class SearchRoomMessagesRequest(_message.Message):
+    __slots__ = ("room_id", "ranges", "limit")
+    ROOM_ID_FIELD_NUMBER: _ClassVar[int]
+    RANGES_FIELD_NUMBER: _ClassVar[int]
+    LIMIT_FIELD_NUMBER: _ClassVar[int]
+    room_id: str
+    ranges: _containers.RepeatedCompositeFieldContainer[MessageSeqRange]
+    limit: int
+    def __init__(self, room_id: _Optional[str] = ..., ranges: _Optional[_Iterable[_Union[MessageSeqRange, _Mapping]]] = ..., limit: _Optional[int] = ...) -> None: ...
+
+class MessageSeqRange(_message.Message):
+    __slots__ = ("seq_start", "seq_end")
+    SEQ_START_FIELD_NUMBER: _ClassVar[int]
+    SEQ_END_FIELD_NUMBER: _ClassVar[int]
+    seq_start: int
+    seq_end: int
+    def __init__(self, seq_start: _Optional[int] = ..., seq_end: _Optional[int] = ...) -> None: ...
+
+class SearchRoomMessagesResponse(_message.Message):
     __slots__ = ("messages",)
     MESSAGES_FIELD_NUMBER: _ClassVar[int]
     messages: _containers.RepeatedCompositeFieldContainer[ChatMessage]
     def __init__(self, messages: _Optional[_Iterable[_Union[ChatMessage, _Mapping]]] = ...) -> None: ...
 
 class ChatMessage(_message.Message):
-    __slots__ = ("message_id", "conversation_id", "sender_id", "client_msg_id", "seq", "type", "content", "status", "send_time")
+    __slots__ = ("message_id", "conversation_id", "sender_id", "seq", "type", "content", "status", "send_time", "sender_name")
     MESSAGE_ID_FIELD_NUMBER: _ClassVar[int]
     CONVERSATION_ID_FIELD_NUMBER: _ClassVar[int]
     SENDER_ID_FIELD_NUMBER: _ClassVar[int]
-    CLIENT_MSG_ID_FIELD_NUMBER: _ClassVar[int]
     SEQ_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     CONTENT_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     SEND_TIME_FIELD_NUMBER: _ClassVar[int]
+    SENDER_NAME_FIELD_NUMBER: _ClassVar[int]
     message_id: str
     conversation_id: str
     sender_id: str
-    client_msg_id: str
     seq: int
     type: MessageType
     content: str
     status: MessageStatus
     send_time: int
-    def __init__(self, message_id: _Optional[str] = ..., conversation_id: _Optional[str] = ..., sender_id: _Optional[str] = ..., client_msg_id: _Optional[str] = ..., seq: _Optional[int] = ..., type: _Optional[_Union[MessageType, str]] = ..., content: _Optional[str] = ..., status: _Optional[_Union[MessageStatus, str]] = ..., send_time: _Optional[int] = ...) -> None: ...
+    sender_name: str
+    def __init__(self, message_id: _Optional[str] = ..., conversation_id: _Optional[str] = ..., sender_id: _Optional[str] = ..., seq: _Optional[int] = ..., type: _Optional[_Union[MessageType, str]] = ..., content: _Optional[str] = ..., status: _Optional[_Union[MessageStatus, str]] = ..., send_time: _Optional[int] = ..., sender_name: _Optional[str] = ...) -> None: ...

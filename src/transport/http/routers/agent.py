@@ -4,18 +4,15 @@ import json
 from collections.abc import AsyncIterator
 from typing import Annotated
 
-from fastapi import APIRouter, Cookie, Request
+from fastapi import APIRouter, Cookie
 from fastapi.responses import StreamingResponse
+from pydantic import SecretStr
 
 from agent.context import AgentRuntimeContext
 from agent.state import AgentTask, RoomAgentState
-from domain.chat_message import ChatMessage
-from domain.room_scope import AuthorizedRoomScope
-from harness.get_room_context import get_room_context
+from domain.auth_scope import AuthScope
 from harness.runner import stream_agent_events
-from transport.grpc.client import GrpcClient
-from transport.grpc.exceptions import GrpcAuthNotConfiguredError
-from transport.grpc.proto.room_agent_pb2 import GetRoomAgentContextResponse
+from harness.grpc.verify_room_access import verify_room_access
 from transport.http.exceptions import MissingAuthTokenError
 from transport.http.schemas.agent import AgentTaskRequest, ChatTaskRequest
 
@@ -23,13 +20,6 @@ router = APIRouter(
     prefix="/rooms",
     tags=["Agent"],
 )
-
-
-def get_grpc_client(request: Request) -> GrpcClient:
-    grpc_client = request.app.state.grpc_client
-    if grpc_client is None:
-        raise GrpcAuthNotConfiguredError
-    return grpc_client
 
 
 async def _room_event_stream(
@@ -60,28 +50,12 @@ def _encode_sse(event: str, data: dict[str, object]) -> str:
 def _build_agent_state(
     *,
     request: AgentTaskRequest,
-    room_context_response: GetRoomAgentContextResponse,
 ) -> RoomAgentState:
-    """将 HTTP 任务和 IM 返回的上下文转换为 Graph 状态."""
-    unread_messages = [
-        ChatMessage(
-            message_id=message.message_id,
-            conversation_id=message.conversation_id,
-            sender_id=message.sender_id,
-            seq=message.seq,
-            content=message.content,
-            status=message.status,
-            send_time=message.send_time,
-        )
-        for message in room_context_response.unread_snapshot.messages
-    ]
-
+    """只构造本次任务输入，未读快照由摘要节点按需获取."""
     question = request.question if isinstance(request, ChatTaskRequest) else None
     return RoomAgentState(
         task=AgentTask(request.task),
         question=question,
-        unread_message_count=room_context_response.unread_message_count,
-        unread_messages=unread_messages,
     )
 
 
@@ -89,30 +63,28 @@ def _build_agent_state(
 async def run_room_agent(
     room_id: str,
     body: AgentTaskRequest,
-    request: Request,
     token: Annotated[str | None, Cookie(alias="access_token")] = None,
 ) -> StreamingResponse:
     """校验用户后执行一个 Agent 任务，并以 SSE 返回结果."""
     if not token:
         raise MissingAuthTokenError
 
-    # 通过 grpc 和后端服务进行通信，获取本次用户的上下文信息
-    room_context_response = await get_room_context(
+    auth = await verify_room_access(
         token=token,
         room_id=room_id,
-        grpc_client=get_grpc_client(request),
     )
 
     state = _build_agent_state(
         request=body,
-        room_context_response=room_context_response,
     )
-    thread_id = room_context_response.thread_id
+
+    thread_id = auth.thread_id
+
     runtime_context = AgentRuntimeContext(
-        authorized_scope=AuthorizedRoomScope(
+        auth_scope=AuthScope(
             room_id=room_id,
-            user_id=room_context_response.user_id,
-        )
+            token=SecretStr(token),
+        ),
     )
 
     return StreamingResponse(

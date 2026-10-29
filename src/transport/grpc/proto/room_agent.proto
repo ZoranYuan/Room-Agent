@@ -3,42 +3,90 @@ syntax = "proto3";
 package room_agent.v1;
 
 service RoomAgentContextService {
-  // 校验用户身份和 Room 访问权限，并返回用户维度的未读上下文。
-  rpc GetRoomAgentContext(GetRoomAgentContextRequest)
-  returns (GetRoomAgentContextResponse);
+  rpc VerifyRoomAccess(VerifyRoomAccessRequest)
+  returns (VerifyRoomAccessResponse);
+
+  rpc GetRoomUnreadMessages(GetRoomUnreadMessagesRequest)
+  returns (stream GetRoomUnreadMessagesResponse);
+
+  rpc SyncRoomMessages(SyncRoomMessagesRequest)
+  returns (stream SyncRoomMessagesResponse);
+
+  rpc SearchRoomMessages(SearchRoomMessagesRequest)
+  returns (stream SearchRoomMessagesResponse);
 }
 
-message GetRoomAgentContextRequest{
-    // access_token 通过 gRPC metadata 传递，不放入请求消息
+message VerifyRoomAccessRequest {
   string room_id = 1;
 }
 
-message GetRoomAgentContextResponse {
-  string         user_id              = 1;
-  string         thread_id            = 2;
-  uint32         unread_message_count = 3;
-  UnreadSnapshot unread_snapshot      = 4;
+message VerifyRoomAccessResponse {
+  string thread_id = 1;
 }
 
-message UnreadSnapshot {
+message GetRoomUnreadMessagesRequest {
+  string room_id = 1;
+  uint32 limit = 2;
+
+  // 原分页游标不再使用，保留字段编号和名称，避免后续误用。
+  reserved 3;
+  reserved "cursor";
+}
+
+message GetRoomUnreadMessagesResponse {
+  repeated ChatMessage messages = 1;
+
+  reserved 2;
+  reserved "next_cursor";
+}
+
+message SyncRoomMessagesRequest {
+  string room_id = 1;
+
+  // 已完成处理的位置，不包含该位置；首次从 0 开始。
+  int64 after_seq = 2;
+
+  // 每批期望返回的消息数量，由 IM 限制最大值。
+  uint32 limit = 3;
+}
+
+message SyncRoomMessagesResponse {
+  repeated ChatMessage messages = 1;
+}
+
+message SearchRoomMessagesRequest {
+  // 一个房间对应一个会话，由 IM 根据房间确定会话。
+  string room_id = 1;
+
+  // 调用方已合并重叠范围；IM 仍需校验范围合法性并限制查询规模。
+  repeated MessageSeqRange ranges = 2;
+
+  // 每批期望返回的消息数量，由 IM 限制最大值。
+  uint32 limit = 3;
+}
+
+message MessageSeqRange {
+  // 闭区间，包含起点和终点。
+  int64 seq_start = 1;
+  int64 seq_end = 2;
+}
+
+message SearchRoomMessagesResponse {
+  // 只返回当前用户可见的有效文本消息，去重后按 seq 升序排列。
+  // 不可用消息可以缺失；鉴权或查询失败通过 gRPC 状态返回。
   repeated ChatMessage messages = 1;
 }
 
 message ChatMessage {
-  string message_id      = 1;
-  string conversation_id = 2;
-  string sender_id       = 3;
-
-  // 对应后端的 *string ClientMsgId。
-  optional string client_msg_id = 4;
-
-  int64         seq     = 5;
-  MessageType   type    = 6;
-  string        content = 7;
-  MessageStatus status  = 8;
-
-  // 单位需与后端 Message.SendTime 保持一致。
-  int64 send_time = 9;
+  string        message_id      = 1;
+  string        conversation_id = 2;
+  string        sender_id       = 3;
+  int64         seq             = 5;
+  MessageType   type            = 6;
+  string        content         = 7;
+  MessageStatus status          = 8;
+  int64         send_time       = 9;
+  string        sender_name     = 10;
 }
 
 enum MessageType {

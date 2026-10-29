@@ -3,10 +3,9 @@
 
 from pydantic import BaseModel
 
-from domain.room_scope import AuthorizedRoomScope
+from domain.auth_scope import AuthScope
 
 
-# @dataclass(frozen=True)
 class AgentRuntimeContext(BaseModel):
     """一次图运行内已校验的用户身份和 Room 访问范围."""
-    authorized_scope: AuthorizedRoomScope
+    auth_scope: AuthScope
