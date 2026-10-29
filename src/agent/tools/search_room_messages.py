@@ -6,12 +6,13 @@ from langchain_core.tools import tool
 from langgraph.prebuilt import ToolRuntime
 
 from agent.context import AgentRuntimeContext
+from harness.llm.search_room_messages import search_room_messages
 
 logger = logging.getLogger(__name__)
 
 
 @tool
-def search_messages(
+async def search_messages(
     query: str, runtime: ToolRuntime[AgentRuntimeContext]
 ) -> dict[str, object]:
     """检索当前已授权房间中与用户问题相关的历史文本消息。
@@ -33,13 +34,9 @@ def search_messages(
         当前占位实现返回 not_implemented，不代表未找到相关消息。
     """
 
-    auth_scope = runtime.context.authorized_scope
+    auth_scope = runtime.context.auth_scope
 
-    logger.info("接收到的请求为 %s", query)
-    logger.info("当前用户的权限 scope 为 %s", auth_scope.model_dump_json())
-
-    return {
-        "status": "not_implemented",
-        "messages": [],
-        "message": "消息检索服务尚未接入。",
-    }
+    return await search_room_messages(
+        query=query,
+        auth_scope=auth_scope,
+    )
