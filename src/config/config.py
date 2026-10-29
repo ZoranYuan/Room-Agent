@@ -6,6 +6,10 @@ from pathlib import Path
 from dotenv import load_dotenv
 from pydantic import BaseModel, Field, model_validator
 
+from constants.exception import (
+    DETAIL_INVALID_MEMORY_BUDGET,
+)
+
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 ENV_FILE = PROJECT_ROOT / ".env"
 
@@ -42,6 +46,12 @@ class _Settings(BaseModel):
         validate_default=True,
     )
     app_env: str = _env("APP_ENV", "development")
+    server_host: str = _env("SERVER_HOST", "0.0.0.0")
+    server_port: int = int(_env("SERVER_PORT", "8000"))
+    server_keep_alive_seconds: int = int(_env("SERVER_KEEP_ALIVE_SECONDS", "5"))
+    server_shutdown_timeout_seconds: int = int(
+        _env("SERVER_SHUTDOWN_TIMEOUT_SECONDS", "30")
+    )
     grpc_url: str = _env("IM_GRPC_URL", "")
     grpc_time_out: int = int(_env("IM_GRPC_TIMEOUT_SECONDS", "5"))
     milvus_uri: str = _env("MILVUS_URI", "milvus:19530")
@@ -50,12 +60,29 @@ class _Settings(BaseModel):
         "Qwen/Qwen3-Embedding-0.6B",
     )
     embedding_dimension: int = int(_env("EMBEDDING_DIMENSION", "1024"))
+    milvus_collection: str = _env("MILVUS_COLLECTION", "message_child_chunks")
+    mysql_url: str = Field(default=_env("MYSQL_URL"), exclude=True, repr=False)
+    mysql_max_open_conns: int = int(_env("MYSQL_MAX_OPEN_CONNS", "50"))
+    mysql_max_idle_conns: int = int(_env("MYSQL_MAX_IDLE_CONNS", "50"))
+    mysql_conn_max_lifetime_seconds: int = int(_env("MYSQL_CONN_MAX_LIFETIME_SECONDS", "240"))
+    mysql_slow_threshold_milliseconds: int = int(_env("MYSQL_SLOW_THRESHOLD_MILLISECONDS", "1000"))
+    rag_parent_message_count: int = Field(
+        default=int(_env("RAG_PARENT_MESSAGE_COUNT", "50")), gt=0, le=4096, validate_default=True
+    )
+    rag_chunk_max_chars: int = Field(
+        default=int(_env("RAG_CHUNK_MAX_CHARS", "6000")), ge=512, validate_default=True
+    )
+    cluster_max_retries: int = Field(
+        default=int(_env("CLUSTER_MAX_RETRIES", "2")), ge=0, validate_default=True
+    )
+
+    snowflake_instance_id: str = "1"
 
     @model_validator(mode="after")
     def validate_memory_budget(self) -> "_Settings":
         """为近期对话和历史摘要保留足够的压缩空间."""
         if self.memory_keep_tokens + self.memory_summary_max_tokens >= self.memory_trigger_tokens:
-            raise ValueError("记忆窗口与摘要预算之和必须小于记忆压缩触发阈值")
+            raise ValueError(DETAIL_INVALID_MEMORY_BUDGET)
         return self
 
 settings = _Settings()
