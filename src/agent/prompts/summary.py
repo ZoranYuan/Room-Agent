@@ -19,6 +19,5 @@ SUMMARY_PROMPT = ChatPromptTemplate.from_messages(
                     - 优先概括主要话题；只有消息明确提及时，才列出决定、待办事项或未解决的问题。
                     - 不输出 JSON，也不使用代码块。
                 """),
-        ("human", "请根据这些消息生成摘要：\n{unread_messages}"),
     ]
 )

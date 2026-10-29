@@ -18,8 +18,7 @@ MEMORY_PROMPT = ChatPromptTemplate.from_messages(
             "优先保留重要事实，不必记录日常寒暄。",
         ),
         (
-            "human",
-            "旧摘要：\n{previous_summary}\n\n新增历史对话 JSON：\n{messages_json}",
+            "human", "旧摘要：\n{previous_summary}\n\n新增历史对话 JSON：\n{messages_json}",
         ),
     ]
 )

@@ -11,7 +11,15 @@ from agent.context import AgentRuntimeContext
 from agent.runtime import agent_graph
 from agent.state import RoomAgentState
 from config.config import settings
-
+from constants.exception import (
+    DETAIL_AGENT_RECURSION_LIMIT,
+    DETAIL_AGENT_TASK_FAILED,
+    DETAIL_CUSTOM_EVENT_NOT_DICT,
+    DETAIL_UNSUPPORTED_CUSTOM_EVENT,
+    LOG_AGENT_RECURSION_LIMIT,
+    LOG_AGENT_RUN_FAILED,
+)
+ 
 logger = logging.getLogger(__name__)
 
 
@@ -49,15 +57,22 @@ async def stream_agent_events(
 
             elif mode == "custom":
                 if not isinstance(payload, dict):
-                    raise TypeError("自定义事件数据必须是字典")
+                    raise TypeError(DETAIL_CUSTOM_EVENT_NOT_DICT)
                 event_type = payload.get("type")
                 if not isinstance(event_type, str) or event_type not in (
                     "tool_start",
                     "tool_end",
                     "compress",
                 ):
-                    raise ValueError(f"不支持的自定义事件类型：{event_type!r}")
-                yield AgentEvent(name=event_type, data=payload)
+                    raise ValueError(
+                        DETAIL_UNSUPPORTED_CUSTOM_EVENT.format(event_type=event_type)
+                    )
+                yield AgentEvent(
+                    name=event_type,
+                    data={
+                        key: value for key, value in payload.items() if key != "type"
+                    },
+                )
 
         yield AgentEvent(
             # 向前端发送一个 completed 事件，表示 LLM 的输出已经结束
@@ -66,21 +81,21 @@ async def stream_agent_events(
         )
 
     except GraphRecursionError:
-        logger.warning("Agent 达到最大执行步数")
+        logger.warning(LOG_AGENT_RECURSION_LIMIT)
         yield AgentEvent(
             name="error",
-            data={"message": "本次任务执行步骤过多，请缩小问题范围后重试。"},
+            data={"message": DETAIL_AGENT_RECURSION_LIMIT},
         )
 
     except Exception:
         logger.exception(
-            "Agent 运行失败，请联系管理员",
+            LOG_AGENT_RUN_FAILED,
             extra={
-                "room_id": context.authorized_scope.room_id,
+                "room_id": context.auth_scope.room_id,
                 "task": state.task.value,
             },
         )
         yield AgentEvent(
             name="error",
-            data={"message": "Agent 任务执行失败"},
+            data={"message": DETAIL_AGENT_TASK_FAILED},
         )

@@ -6,7 +6,7 @@ from langchain_core.messages import AnyMessage, HumanMessage
 from langchain_core.messages.utils import count_tokens_approximately
 
 from agent.state import RoomAgentState
-from config.config import settings
+
 
 def count_memory_tokens(messages: Sequence[AnyMessage]) -> int:
     """估算文本和工具调用的 Token；中文按每字符约一个 Token 计，不代表精确上限."""
@@ -28,6 +28,7 @@ def summary_messages(summary: str | None) -> list[AnyMessage]:
         )
     ]
 
+
 def split_recent_turns(
     messages: Sequence[AnyMessage], *, keep_tokens: int
 ) -> tuple[list[AnyMessage], list[AnyMessage]]:
@@ -36,7 +37,9 @@ def split_recent_turns(
     最近一轮即使超过目标预算也完整保留，避免拆开工具请求和工具结果。
     首条用户消息之前的独立助手消息归入前缀，例如房间摘要结果。
     """
-    starts = [i for i, message in enumerate(messages) if isinstance(message, HumanMessage)]
+    starts = [
+        i for i, message in enumerate(messages) if isinstance(message, HumanMessage)
+    ]
     if not starts:
         return list(messages), []
 
@@ -49,11 +52,12 @@ def split_recent_turns(
 
 
 def build_chat_messages(
-    state: RoomAgentState, user_message: HumanMessage
+    state: RoomAgentState,
+    user_message: HumanMessage,
 ) -> list[AnyMessage]:
-    """组装摘要、近期对话和当前问题；压缩失败时临时退回窗口输入."""
-    summary = summary_messages(state.conversation_summary)
-    history = list(state.messages)
-    if count_memory_tokens([*summary, *history, user_message]) >= settings.memory_trigger_tokens:
-        _, history = split_recent_turns(history, keep_tokens=settings.memory_keep_tokens)
-    return [*summary, *history, user_message]
+    """组装历史摘要、近期消息和当前问题。"""
+    return [
+        *summary_messages(state.conversation_summary),
+        *state.messages,
+        user_message,
+    ]
