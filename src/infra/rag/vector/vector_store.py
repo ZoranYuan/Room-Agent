@@ -28,6 +28,10 @@ async def get_vector_index() -> VectorStoreIndex:
                 dim=settings.embedding_dimension,
                 embedding_field="embedding",
                 similarity_metric="COSINE",
+                # 开启 BM25
+                enable_sparse=True,
+                hybrid_ranker="RRFRanker",
+                hybrid_ranker_params={"k": 60},
                 consistency_level="Strong",
                 overwrite=False,
                 upsert_mode=True,   # 同一个节点 ID 重复写入时更新
