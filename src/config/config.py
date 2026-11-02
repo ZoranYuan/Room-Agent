@@ -60,7 +60,10 @@ class _Settings(BaseModel):
         "Qwen/Qwen3-Embedding-0.6B",
     )
     embedding_dimension: int = int(_env("EMBEDDING_DIMENSION", "1024"))
-    milvus_collection: str = _env("MILVUS_COLLECTION", "message_child_chunks")
+    # BM25 需要在建表时配置稀疏向量字段，使用新集合保留旧的纯向量集合。
+    milvus_collection: str = _env(
+        "MILVUS_HYBRID_COLLECTION", "message_child_chunks_hybrid"
+    )
     mysql_url: str = Field(default=_env("MYSQL_URL"), exclude=True, repr=False)
     mysql_max_open_conns: int = int(_env("MYSQL_MAX_OPEN_CONNS", "50"))
     mysql_max_idle_conns: int = int(_env("MYSQL_MAX_IDLE_CONNS", "50"))
@@ -69,8 +72,14 @@ class _Settings(BaseModel):
     rag_parent_message_count: int = Field(
         default=int(_env("RAG_PARENT_MESSAGE_COUNT", "50")), gt=0, le=4096, validate_default=True
     )
+    rag_parent_max_chars: int = Field(
+        default=int(_env("RAG_PARENT_MAX_CHARS", "6000")), ge=1, validate_default=True
+    )
     rag_chunk_max_chars: int = Field(
-        default=int(_env("RAG_CHUNK_MAX_CHARS", "6000")), ge=512, validate_default=True
+        default=int(_env("RAG_CHUNK_MAX_CHARS", "400")), ge=1, validate_default=True
+    )
+    rag_message_max_chars: int = Field(
+        default=int(_env("RAG_MESSAGE_MAX_CHARS", "100")), ge=1, validate_default=True
     )
     cluster_max_retries: int = Field(
         default=int(_env("CLUSTER_MAX_RETRIES", "2")), ge=0, validate_default=True

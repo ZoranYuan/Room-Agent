@@ -43,8 +43,8 @@ async def get_unread_messages(
         auth_scope=auth_scope,
     )
 
-    # 同步启动失败不影响本次未读摘要。
     try:
+        # 同步当前房间的消息
         session_factory = get_session_factory()
 
         async with session_factory() as session:
