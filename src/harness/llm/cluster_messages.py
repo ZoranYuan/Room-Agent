@@ -15,13 +15,12 @@ from pydantic import BaseModel, Field, ValidationError
 from agent.model import get_cluster_model
 from agent.prompts.cluster import CLUSTER_PROMPT
 from config.config import settings
-from domain.chat_message import ChatMessage
-
 from constants.exception import (
     DETAIL_INVALID_CLUSTER_RETRIES,
     DETAIL_INVALID_MESSAGE_GROUPS,
     LOG_MESSAGE_CLUSTER_RETRY,
 )
+from domain.chat_message import ChatMessage
 
 logger = logging.getLogger(__name__)
 
@@ -34,13 +33,13 @@ class MessageGroup(BaseModel):
 
 
 class MessageGroups(BaseModel):
-    """一个父块内的完整消息分组。"""
+    """一个父块内按主题形成的消息分组，允许忽略无检索价值的消息。"""
 
-    groups: list[MessageGroup] = Field(min_length=1)
+    groups: list[MessageGroup]
 
 
 class ClusterValidationError(ValueError):
-    """模型分组没有准确覆盖输入消息。"""
+    """模型分组包含输入中不存在的消息序列号。"""
 
 
 @lru_cache(maxsize=1)
@@ -66,17 +65,11 @@ async def cluster_messages(messages: Sequence[ChatMessage]) -> MessageGroups:
         try:
             result = await chain.ainvoke(
                 {"messages": messages_json},
-                config={"tags": ["nostream"]},
             )
             groups = MessageGroups.model_validate(result)
             assigned = [seq for group in groups.groups for seq in group.seqs]
-            if (
-                len(assigned) != len(set(assigned))
-                or set(assigned) != expected
-            ):
-                raise ClusterValidationError(
-                    DETAIL_INVALID_MESSAGE_GROUPS
-                )
+            if set(assigned) - expected:
+                raise ClusterValidationError(DETAIL_INVALID_MESSAGE_GROUPS)
             return groups
         except (
             APIConnectionError,
@@ -87,14 +80,13 @@ async def cluster_messages(messages: Sequence[ChatMessage]) -> MessageGroups:
         ) as error:
             # 凭证、权限、参数等请求错误无法通过重复调用解决。
             if isinstance(error, APIStatusError) and not (
-                error.status_code in (408, 409, 429)
-                or error.status_code >= 500
+                error.status_code in (408, 409, 429) or error.status_code >= 500
             ):
                 raise
             if attempt == settings.cluster_max_retries:
                 raise
 
             logger.warning(LOG_MESSAGE_CLUSTER_RETRY, attempt + 1)
-            await asyncio.sleep(min(2 ** attempt, 8))
+            await asyncio.sleep(min(2**attempt, 8))
 
     raise AssertionError(DETAIL_INVALID_CLUSTER_RETRIES)
