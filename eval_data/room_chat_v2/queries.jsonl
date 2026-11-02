@@ -1,0 +1,108 @@
+{"qid": "v2-q-001", "room_id": "eval-room-v2", "question": "最早是谁提议去扬州的？", "answerable": true, "answer": "小周", "gold_seqs": [45], "category": "扬州周末游", "source": "manual_scenario"}
+{"qid": "v2-q-002", "room_id": "eval-room-v2", "question": "扬州为什么比赶景点的行程更合适？", "answerable": true, "answer": "想找个不用赶景点、能慢慢逛的地方", "gold_seqs": [47], "category": "扬州周末游", "source": "manual_scenario"}
+{"qid": "v2-q-003", "room_id": "eval-room-v2", "question": "最后敲定的扬州周末安排是什么？", "answerable": true, "answer": "周六出发、住老城，两天预算约八百元", "gold_seqs": [2046, 2047, 2048], "category": "扬州周末游", "source": "manual_scenario"}
+{"qid": "v2-q-004", "room_id": "eval-room-v2", "question": "去扬州的预算和住宿区域分别怎么考虑？", "answerable": true, "answer": "每人约八百元，住东关街附近", "gold_seqs": [48, 2047], "category": "扬州周末游", "source": "manual_scenario"}
+{"qid": "v2-q-005", "room_id": "eval-room-v2", "question": "谁赞成去东岙露营？", "answerable": true, "answer": "小雨", "gold_seqs": [137], "category": "海边露营", "source": "manual_scenario"}
+{"qid": "v2-q-006", "room_id": "eval-room-v2", "question": "一开始选东岙的原因是什么？", "answerable": true, "answer": "公交可到，没车的人也方便参加", "gold_seqs": [137], "category": "海边露营", "source": "manual_scenario"}
+{"qid": "v2-q-007", "room_id": "eval-room-v2", "question": "碰上降雨预报后，大家最后怎么安排？", "answerable": true, "answer": "先订可取消的民宿，周四再根据天气决定", "gold_seqs": [2136, 2137, 2139], "category": "海边露营", "source": "manual_scenario"}
+{"qid": "v2-q-008", "room_id": "eval-room-v2", "question": "露营装备一开始打算怎么解决，后来又怎么处理？", "answerable": true, "answer": "原计划租一套装备；后来决定暂时不租", "gold_seqs": [138, 139, 2139], "category": "海边露营", "source": "manual_scenario"}
+{"qid": "v2-q-009", "room_id": "eval-room-v2", "question": "火锅是谁负责张罗的？", "answerable": true, "answer": "小周", "gold_seqs": [228], "category": "家里做火锅", "source": "manual_scenario"}
+{"qid": "v2-q-010", "room_id": "eval-room-v2", "question": "为什么准备两种锅底？", "answerable": true, "answer": "照顾不能吃辣的人", "gold_seqs": [228], "category": "家里做火锅", "source": "manual_scenario"}
+{"qid": "v2-q-011", "room_id": "eval-room-v2", "question": "火锅聚餐定在几点，谁负责买肉类？", "answerable": true, "answer": "周六六点半；大伟买肉类和丸子", "gold_seqs": [230, 2230], "category": "家里做火锅", "source": "manual_scenario"}
+{"qid": "v2-q-012", "room_id": "eval-room-v2", "question": "聚餐费用怎么先收？", "answerable": true, "answer": "每人先收三十元，最后多退少补", "gold_seqs": [2229], "category": "家里做火锅", "source": "manual_scenario"}
+{"qid": "v2-q-013", "room_id": "eval-room-v2", "question": "这次版本是谁提议周三晚发布的？", "answerable": true, "answer": "阿哲", "gold_seqs": [319], "category": "版本上线排期", "source": "manual_scenario"}
+{"qid": "v2-q-014", "room_id": "eval-room-v2", "question": "为什么不能拖到月底再上线？", "answerable": true, "answer": "月底结算期间客服人手不足", "gold_seqs": [318], "category": "版本上线排期", "source": "manual_scenario"}
+{"qid": "v2-q-015", "room_id": "eval-room-v2", "question": "最终上线节奏和遗留问题怎么处理？", "answerable": true, "answer": "周一冻结、周二回归、周三晚发布；低优先级展示问题进下版", "gold_seqs": [2318, 2319, 2321], "category": "版本上线排期", "source": "manual_scenario"}
+{"qid": "v2-q-016", "room_id": "eval-room-v2", "question": "支付测试在什么时间点前要有结论，后来发现的问题影响下单吗？", "answerable": true, "answer": "周二中午前；低优先级展示问题不影响下单", "gold_seqs": [320, 2318], "category": "版本上线排期", "source": "manual_scenario"}
+{"qid": "v2-q-017", "room_id": "eval-room-v2", "question": "大家建议面试时重点讲哪个项目？", "answerable": true, "answer": "社区活动案例", "gold_seqs": [411], "category": "产品岗位面试", "source": "manual_scenario"}
+{"qid": "v2-q-018", "room_id": "eval-room-v2", "question": "为什么不建议只罗列做过的工作？", "answerable": true, "answer": "需要说明如何解决问题，而不是只列经历", "gold_seqs": [410], "category": "产品岗位面试", "source": "manual_scenario"}
+{"qid": "v2-q-019", "room_id": "eval-room-v2", "question": "模拟面试约在什么时候，材料最后保留什么？", "answerable": true, "answer": "周日晚九点；社区活动案例和两项指标", "gold_seqs": [2410, 2412], "category": "产品岗位面试", "source": "manual_scenario"}
+{"qid": "v2-q-020", "room_id": "eval-room-v2", "question": "活动案例准备了哪两个指标？", "answerable": true, "answer": "报名转化和到场率", "gold_seqs": [2409], "category": "产品岗位面试", "source": "manual_scenario"}
+{"qid": "v2-q-021", "room_id": "eval-room-v2", "question": "这次换耳机的预算上限是多少？", "answerable": true, "answer": "一千元以内", "gold_seqs": [500], "category": "降噪耳机选购", "source": "manual_scenario"}
+{"qid": "v2-q-022", "room_id": "eval-room-v2", "question": "挑耳机时大家把哪些体验放在参数前面？", "answerable": true, "answer": "降噪和长时间佩戴的舒适度", "gold_seqs": [501], "category": "降噪耳机选购", "source": "manual_scenario"}
+{"qid": "v2-q-023", "room_id": "eval-room-v2", "question": "最后下单的条件是什么？", "answerable": true, "answer": "复试听戴舒服，且价格不超过七百五", "gold_seqs": [2502, 2503], "category": "降噪耳机选购", "source": "manual_scenario"}
+{"qid": "v2-q-024", "room_id": "eval-room-v2", "question": "那款轻一些的耳机标价多少，保修多久？", "answerable": true, "answer": "标价八百六，保修一年", "gold_seqs": [2500, 2501], "category": "降噪耳机选购", "source": "manual_scenario"}
+{"qid": "v2-q-025", "room_id": "eval-room-v2", "question": "是谁联系物业安排维修的？", "answerable": true, "answer": "小周", "gold_seqs": [594], "category": "厨房水龙头维修", "source": "manual_scenario"}
+{"qid": "v2-q-026", "room_id": "eval-room-v2", "question": "维修前为什么要先问零件价格？", "answerable": true, "answer": "额外零件费用需要房东同意", "gold_seqs": [2593], "category": "厨房水龙头维修", "source": "manual_scenario"}
+{"qid": "v2-q-027", "room_id": "eval-room-v2", "question": "师傅什么时候上门，先检查哪里？", "answerable": true, "answer": "周六十点到十二点，先查软管接口", "gold_seqs": [2591, 2592], "category": "厨房水龙头维修", "source": "manual_scenario"}
+{"qid": "v2-q-028", "room_id": "eval-room-v2", "question": "这次人工费由谁承担？", "answerable": true, "answer": "房东承担", "gold_seqs": [2593], "category": "厨房水龙头维修", "source": "manual_scenario"}
+{"qid": "v2-q-029", "room_id": "eval-room-v2", "question": "谁报了十一月的五公里？", "answerable": true, "answer": "阿哲", "gold_seqs": [682], "category": "五公里跑步计划", "source": "manual_scenario"}
+{"qid": "v2-q-030", "room_id": "eval-room-v2", "question": "训练为什么不以配速为目标？", "answerable": true, "answer": "目标是安全跑完全程，不追成绩", "gold_seqs": [682], "category": "五公里跑步计划", "source": "manual_scenario"}
+{"qid": "v2-q-031", "room_id": "eval-room-v2", "question": "一周练几次，比赛前一周怎么调整？", "answerable": true, "answer": "每周三次；最后一周减量休息", "gold_seqs": [683, 2685, 682], "category": "五公里跑步计划", "source": "manual_scenario"}
+{"qid": "v2-q-032", "room_id": "eval-room-v2", "question": "第一周采用什么跑步方式？", "answerable": true, "answer": "跑两分钟、走一分钟，结合进行", "gold_seqs": [685], "category": "五公里跑步计划", "source": "manual_scenario"}
+{"qid": "v2-q-033", "room_id": "eval-room-v2", "question": "读书会最后选了哪本书？", "answerable": true, "answer": "《置身事内》", "gold_seqs": [774], "category": "读书会选书", "source": "manual_scenario"}
+{"qid": "v2-q-034", "room_id": "eval-room-v2", "question": "推荐这本书时特别想讨论什么内容？", "answerable": true, "answer": "地方财政", "gold_seqs": [774], "category": "读书会选书", "source": "manual_scenario"}
+{"qid": "v2-q-035", "room_id": "eval-room-v2", "question": "读书会安排在何时、每个人要准备什么？", "answerable": true, "answer": "周日下午三点线上；准备一个问题和一段印象深的内容", "gold_seqs": [2774, 2775, 2776], "category": "读书会选书", "source": "manual_scenario"}
+{"qid": "v2-q-036", "room_id": "eval-room-v2", "question": "大家决定先读到第几章？", "answerable": true, "answer": "前两章", "gold_seqs": [775, 2776], "category": "读书会选书", "source": "manual_scenario"}
+{"qid": "v2-q-037", "room_id": "eval-room-v2", "question": "谁最先说想去听这场演出？", "answerable": true, "answer": "小周", "gold_seqs": [864], "category": "演唱会碰面", "source": "manual_scenario"}
+{"qid": "v2-q-038", "room_id": "eval-room-v2", "question": "为什么觉得这个场地比较方便？", "answerable": true, "answer": "离地铁站近", "gold_seqs": [865], "category": "演唱会碰面", "source": "manual_scenario"}
+{"qid": "v2-q-039", "room_id": "eval-room-v2", "question": "大家约在哪里几点碰面，散场后怎么回？", "answerable": true, "answer": "七点半在二号口碰面，结束后坐地铁回去", "gold_seqs": [2864, 2867], "category": "演唱会碰面", "source": "manual_scenario"}
+{"qid": "v2-q-040", "room_id": "eval-room-v2", "question": "看演出时大家提醒不要做什么？", "answerable": true, "answer": "不要开闪光灯", "gold_seqs": [2866], "category": "演唱会碰面", "source": "manual_scenario"}
+{"qid": "v2-q-041", "room_id": "eval-room-v2", "question": "是谁答应假期去喂猫？", "answerable": true, "answer": "阿宁", "gold_seqs": [956], "category": "假期猫咪照看", "source": "manual_scenario"}
+{"qid": "v2-q-042", "room_id": "eval-room-v2", "question": "为什么不把猫一起带回老家？", "answerable": true, "answer": "乘高铁不方便带猫", "gold_seqs": [955], "category": "假期猫咪照看", "source": "manual_scenario"}
+{"qid": "v2-q-043", "room_id": "eval-room-v2", "question": "照看时间和钥匙交接最后怎么定的？", "answerable": true, "answer": "十月一日至三日每天七点去，备用钥匙交给大伟", "gold_seqs": [957, 958, 2956, 2958], "category": "假期猫咪照看", "source": "manual_scenario"}
+{"qid": "v2-q-044", "room_id": "eval-room-v2", "question": "喂食说明放在哪里？", "answerable": true, "answer": "冰箱门上", "gold_seqs": [958], "category": "假期猫咪照看", "source": "manual_scenario"}
+{"qid": "v2-q-045", "room_id": "eval-room-v2", "question": "拍摄行程是谁提出来的？", "answerable": true, "answer": "林可", "gold_seqs": [1045], "category": "湖边拍照", "source": "manual_scenario"}
+{"qid": "v2-q-046", "room_id": "eval-room-v2", "question": "为什么要在太阳出来前到湖边？", "answerable": true, "answer": "想拍晨雾，日出后效果就不同了", "gold_seqs": [1045], "category": "湖边拍照", "source": "manual_scenario"}
+{"qid": "v2-q-047", "room_id": "eval-room-v2", "question": "集合时间、地点和拍完后的安排是什么？", "answerable": true, "answer": "周日六点四十北门集合，拍完去附近吃早饭", "gold_seqs": [3045, 3048], "category": "湖边拍照", "source": "manual_scenario"}
+{"qid": "v2-q-048", "room_id": "eval-room-v2", "question": "拍鸟需要用什么镜头，谁去取？", "answerable": true, "answer": "长焦镜头，小周去相机店取", "gold_seqs": [1047, 1048], "category": "湖边拍照", "source": "manual_scenario"}
+{"qid": "v2-q-049", "room_id": "eval-room-v2", "question": "谁先报名参加河边清理？", "answerable": true, "answer": "小周", "gold_seqs": [1137], "category": "公园志愿清理", "source": "manual_scenario"}
+{"qid": "v2-q-050", "room_id": "eval-room-v2", "question": "为什么垃圾袋要按颜色分开？", "answerable": true, "answer": "方便垃圾分类，不能混装", "gold_seqs": [1138], "category": "公园志愿清理", "source": "manual_scenario"}
+{"qid": "v2-q-051", "room_id": "eval-room-v2", "question": "周六集合地点和时间是什么？", "answerable": true, "answer": "南门公告栏，八点四十", "gold_seqs": [1139, 3139], "category": "公园志愿清理", "source": "manual_scenario"}
+{"qid": "v2-q-052", "room_id": "eval-room-v2", "question": "活动结束后工具要放到哪里？", "answerable": true, "answer": "服务台", "gold_seqs": [3139], "category": "公园志愿清理", "source": "manual_scenario"}
+{"qid": "v2-q-053", "room_id": "eval-room-v2", "question": "是谁建议周六上午搬家？", "answerable": true, "answer": "大伟", "gold_seqs": [1228], "category": "搬家安排", "source": "manual_scenario"}
+{"qid": "v2-q-054", "room_id": "eval-room-v2", "question": "为什么搬家前要量书柜？", "answerable": true, "answer": "书柜太大，需要拆门才能进电梯", "gold_seqs": [1229, 1230], "category": "搬家安排", "source": "manual_scenario"}
+{"qid": "v2-q-055", "room_id": "eval-room-v2", "question": "搬家公司的到达时间和搬运顺序怎么定？", "answerable": true, "answer": "八点半到，先搬床和书柜，最后搬纸箱", "gold_seqs": [3230], "category": "搬家安排", "source": "manual_scenario"}
+{"qid": "v2-q-056", "room_id": "eval-room-v2", "question": "退电梯押金前还要做什么？", "answerable": true, "answer": "检查并拍下保护垫照片", "gold_seqs": [3229, 1227], "category": "搬家安排", "source": "manual_scenario"}
+{"qid": "v2-q-057", "room_id": "eval-room-v2", "question": "谁提出用语音练口语？", "answerable": true, "answer": "佳佳", "gold_seqs": [1319], "category": "英语口语练习", "source": "manual_scenario"}
+{"qid": "v2-q-058", "room_id": "eval-room-v2", "question": "为什么不要求一开始就纠正所有语法？", "answerable": true, "answer": "先鼓励开口表达，不想让纠错打断练习", "gold_seqs": [1319], "category": "英语口语练习", "source": "manual_scenario"}
+{"qid": "v2-q-059", "room_id": "eval-room-v2", "question": "第一次练习改到什么时候，聊什么？", "answerable": true, "answer": "周四九点，聊上次旅行", "gold_seqs": [3318, 3320], "category": "英语口语练习", "source": "manual_scenario"}
+{"qid": "v2-q-060", "room_id": "eval-room-v2", "question": "大家打算每天练多久？", "answerable": true, "answer": "十分钟", "gold_seqs": [1319, 3321], "category": "英语口语练习", "source": "manual_scenario"}
+{"qid": "v2-q-061", "room_id": "eval-room-v2", "question": "团建人均预算上限一开始定了多少？", "answerable": true, "answer": "三百元以内", "gold_seqs": [1409], "category": "团建费用分摊", "source": "manual_scenario"}
+{"qid": "v2-q-062", "room_id": "eval-room-v2", "question": "报名人数不够时的备选方案是什么？", "answerable": true, "answer": "改去咖啡馆", "gold_seqs": [1412], "category": "团建费用分摊", "source": "manual_scenario"}
+{"qid": "v2-q-063", "room_id": "eval-room-v2", "question": "包间费用和饮料费用分别怎么分？", "answerable": true, "answer": "包间费和小食平摊，饮料各自承担", "gold_seqs": [1410, 3410], "category": "团建费用分摊", "source": "manual_scenario"}
+{"qid": "v2-q-064", "room_id": "eval-room-v2", "question": "最后每个人先交多少？", "answerable": true, "answer": "二百五十元，多退少补", "gold_seqs": [3409], "category": "团建费用分摊", "source": "manual_scenario"}
+{"qid": "v2-q-065", "room_id": "eval-room-v2", "question": "谁说带《代号》去玩？", "answerable": true, "answer": "小周", "gold_seqs": [1501], "category": "桌游夜", "source": "manual_scenario"}
+{"qid": "v2-q-066", "room_id": "eval-room-v2", "question": "为什么不选特别烧脑的桌游？", "answerable": true, "answer": "大家下班后比较累，想轻松玩", "gold_seqs": [1502], "category": "桌游夜", "source": "manual_scenario"}
+{"qid": "v2-q-067", "room_id": "eval-room-v2", "question": "桌游夜最后订了什么时候、先玩哪款？", "answerable": true, "answer": "周四七点半，先玩《代号》", "gold_seqs": [3500, 3503], "category": "桌游夜", "source": "manual_scenario"}
+{"qid": "v2-q-068", "room_id": "eval-room-v2", "question": "包间最低消费是多少？", "answerable": true, "answer": "每人四十元", "gold_seqs": [3500], "category": "桌游夜", "source": "manual_scenario"}
+{"qid": "v2-q-069", "room_id": "eval-room-v2", "question": "谁推荐了图书馆附近的咖啡馆？", "answerable": true, "answer": "大伟", "gold_seqs": [1592], "category": "咖啡馆自习", "source": "manual_scenario"}
+{"qid": "v2-q-070", "room_id": "eval-room-v2", "question": "大家为什么担心咖啡馆不合适？", "answerable": true, "answer": "担心音乐太吵，想先试坐", "gold_seqs": [1593], "category": "咖啡馆自习", "source": "manual_scenario"}
+{"qid": "v2-q-071", "room_id": "eval-room-v2", "question": "最终约几点，人数最多多少？", "answerable": true, "answer": "周日下午两点，最多四个人", "gold_seqs": [3592, 3594], "category": "咖啡馆自习", "source": "manual_scenario"}
+{"qid": "v2-q-072", "room_id": "eval-room-v2", "question": "自习结束后谁还要去还书？", "answerable": true, "answer": "小雨", "gold_seqs": [3593], "category": "咖啡馆自习", "source": "manual_scenario"}
+{"qid": "v2-q-073", "room_id": "eval-room-v2", "question": "是谁提议走北岸绿道？", "answerable": true, "answer": "阿哲", "gold_seqs": [1683], "category": "河边骑行", "source": "manual_scenario"}
+{"qid": "v2-q-074", "room_id": "eval-room-v2", "question": "为什么选北岸而不是别的路线？", "answerable": true, "answer": "修路少，并且有补水点", "gold_seqs": [1683], "category": "河边骑行", "source": "manual_scenario"}
+{"qid": "v2-q-075", "room_id": "eval-room-v2", "question": "最后确认的路线长度和集合信息是什么？", "answerable": true, "answer": "北岸往返二十四公里，周日七点公园桥集合", "gold_seqs": [3682, 3685], "category": "河边骑行", "source": "manual_scenario"}
+{"qid": "v2-q-076", "room_id": "eval-room-v2", "question": "谁会带备用头盔？", "answerable": true, "answer": "佳佳", "gold_seqs": [3684], "category": "河边骑行", "source": "manual_scenario"}
+{"qid": "v2-q-077", "room_id": "eval-room-v2", "question": "大家希望生日聚餐是什么氛围？", "answerable": true, "answer": "轻松、不太正式，能方便聊天", "gold_seqs": [1773, 1774], "category": "生日聚餐", "source": "manual_scenario"}
+{"qid": "v2-q-078", "room_id": "eval-room-v2", "question": "礼物最后决定做什么？", "answerable": true, "answer": "大家一起做照片小册子", "gold_seqs": [1775], "category": "生日聚餐", "source": "manual_scenario"}
+{"qid": "v2-q-079", "room_id": "eval-room-v2", "question": "聚餐订在何时，谁负责拿蛋糕？", "answerable": true, "answer": "周六六点；阿哲取蛋糕", "gold_seqs": [3774, 3775], "category": "生日聚餐", "source": "manual_scenario"}
+{"qid": "v2-q-080", "room_id": "eval-room-v2", "question": "餐厅需要提前告知什么饮食信息？", "answerable": true, "answer": "有人不吃花生", "gold_seqs": [1775, 3776], "category": "生日聚餐", "source": "manual_scenario"}
+{"qid": "v2-q-081", "room_id": "eval-room-v2", "question": "谁提议用共享表格记公共开销？", "answerable": true, "answer": "小雨", "gold_seqs": [1865], "category": "家庭记账", "source": "manual_scenario"}
+{"qid": "v2-q-082", "room_id": "eval-room-v2", "question": "个人咖啡要不要算进公共支出？", "answerable": true, "answer": "不算", "gold_seqs": [3864, 3865], "category": "家庭记账", "source": "manual_scenario"}
+{"qid": "v2-q-083", "room_id": "eval-room-v2", "question": "大家准备在什么时候核账？", "answerable": true, "answer": "每周日晚上，月底再对票据", "gold_seqs": [1867, 3867], "category": "家庭记账", "source": "manual_scenario"}
+{"qid": "v2-q-084", "room_id": "eval-room-v2", "question": "月底出现差额时怎么处理？", "answerable": true, "answer": "先核对小票，不直接平均摊", "gold_seqs": [3866, 3867], "category": "家庭记账", "source": "manual_scenario"}
+{"qid": "v2-q-085", "room_id": "eval-room-v2", "question": "是谁最先建议先升级内存而不是换整机？", "answerable": true, "answer": "大伟", "gold_seqs": [1956], "category": "旧电脑升级", "source": "manual_scenario"}
+{"qid": "v2-q-086", "room_id": "eval-room-v2", "question": "电池出现什么情况后大家建议暂停充电？", "answerable": true, "answer": "电池有鼓包", "gold_seqs": [1958, 3955], "category": "旧电脑升级", "source": "manual_scenario"}
+{"qid": "v2-q-087", "room_id": "eval-room-v2", "question": "最后决定按什么金额门槛判断是否换新？", "answerable": true, "answer": "维修总价不超过一千二就继续用", "gold_seqs": [3957, 3958], "category": "旧电脑升级", "source": "manual_scenario"}
+{"qid": "v2-q-088", "room_id": "eval-room-v2", "question": "售后约在什么时候检测？", "answerable": true, "answer": "周六", "gold_seqs": [3956], "category": "旧电脑升级", "source": "manual_scenario"}
+{"qid": "v2-q-089", "room_id": "eval-room-v2", "question": "扬州那家民宿的具体门牌号是多少？", "answerable": false, "answer": null, "gold_seqs": [], "category": "unanswerable", "source": "manual_unanswerable"}
+{"qid": "v2-q-090", "room_id": "eval-room-v2", "question": "东岙营地当天的潮汐时间群里提过吗？", "answerable": false, "answer": null, "gold_seqs": [], "category": "unanswerable", "source": "manual_unanswerable"}
+{"qid": "v2-q-091", "room_id": "eval-room-v2", "question": "火锅买的丸子一共花了多少钱？", "answerable": false, "answer": null, "gold_seqs": [], "category": "unanswerable", "source": "manual_unanswerable"}
+{"qid": "v2-q-092", "room_id": "eval-room-v2", "question": "版本发布后当天的活跃用户数是多少？", "answerable": false, "answer": null, "gold_seqs": [], "category": "unanswerable", "source": "manual_unanswerable"}
+{"qid": "v2-q-093", "room_id": "eval-room-v2", "question": "那场产品面试的面试官叫什么名字？", "answerable": false, "answer": null, "gold_seqs": [], "category": "unanswerable", "source": "manual_unanswerable"}
+{"qid": "v2-q-094", "room_id": "eval-room-v2", "question": "最后买的耳机具体是哪一个品牌和型号？", "answerable": false, "answer": null, "gold_seqs": [], "category": "unanswerable", "source": "manual_unanswerable"}
+{"qid": "v2-q-095", "room_id": "eval-room-v2", "question": "水龙头换下来的旧阀芯是什么规格？", "answerable": false, "answer": null, "gold_seqs": [], "category": "unanswerable", "source": "manual_unanswerable"}
+{"qid": "v2-q-096", "room_id": "eval-room-v2", "question": "五公里比赛的官方报名编号是多少？", "answerable": false, "answer": null, "gold_seqs": [], "category": "unanswerable", "source": "manual_unanswerable"}
+{"qid": "v2-q-097", "room_id": "eval-room-v2", "question": "读书会每个人最后读了多少页？", "answerable": false, "answer": null, "gold_seqs": [], "category": "unanswerable", "source": "manual_unanswerable"}
+{"qid": "v2-q-098", "room_id": "eval-room-v2", "question": "演出乐队的主唱真实姓名是什么？", "answerable": false, "answer": null, "gold_seqs": [], "category": "unanswerable", "source": "manual_unanswerable"}
+{"qid": "v2-q-099", "room_id": "eval-room-v2", "question": "猫粮的品牌和每顿克数具体是多少？", "answerable": false, "answer": null, "gold_seqs": [], "category": "unanswerable", "source": "manual_unanswerable"}
+{"qid": "v2-q-100", "room_id": "eval-room-v2", "question": "北湖当天拍到的鸟是什么学名？", "answerable": false, "answer": null, "gold_seqs": [], "category": "unanswerable", "source": "manual_unanswerable"}
+{"qid": "v2-q-101", "room_id": "eval-room-v2", "question": "志愿活动总共清理了多少公斤垃圾？", "answerable": false, "answer": null, "gold_seqs": [], "category": "unanswerable", "source": "manual_unanswerable"}
+{"qid": "v2-q-102", "room_id": "eval-room-v2", "question": "搬家公司的车牌号是多少？", "answerable": false, "answer": null, "gold_seqs": [], "category": "unanswerable", "source": "manual_unanswerable"}
+{"qid": "v2-q-103", "room_id": "eval-room-v2", "question": "英语共享文档一共有多少条短语？", "answerable": false, "answer": null, "gold_seqs": [], "category": "unanswerable", "source": "manual_unanswerable"}
+{"qid": "v2-q-104", "room_id": "eval-room-v2", "question": "桌游店当天实际消费总额是多少？", "answerable": false, "answer": null, "gold_seqs": [], "category": "unanswerable", "source": "manual_unanswerable"}
+{"qid": "v2-q-105", "room_id": "eval-room-v2", "question": "咖啡馆那天点的饮料具体叫什么？", "answerable": false, "answer": null, "gold_seqs": [], "category": "unanswerable", "source": "manual_unanswerable"}
+{"qid": "v2-q-106", "room_id": "eval-room-v2", "question": "骑行结束后大家的平均心率是多少？", "answerable": false, "answer": null, "gold_seqs": [], "category": "unanswerable", "source": "manual_unanswerable"}
+{"qid": "v2-q-107", "room_id": "eval-room-v2", "question": "照片小册子最后印了多少本？", "answerable": false, "answer": null, "gold_seqs": [], "category": "unanswerable", "source": "manual_unanswerable"}
+{"qid": "v2-q-108", "room_id": "eval-room-v2", "question": "电脑换电池的售后工单号是多少？", "answerable": false, "answer": null, "gold_seqs": [], "category": "unanswerable", "source": "manual_unanswerable"}
