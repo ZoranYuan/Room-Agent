@@ -1,6 +1,9 @@
 """执行未读消息摘要 Agent。"""
 
+from typing import Any
+
 from langchain.agents import create_agent
+from langchain.agents.middleware import ToolCallLimitMiddleware
 from langchain_core.messages import AnyMessage, HumanMessage
 from langchain_core.runnables import RunnableConfig
 
@@ -10,11 +13,25 @@ from agent.prompts.summary import SUMMARY_PROMPT
 from agent.tools.get_unread_messages import get_unread_messages
 from harness.llm.agent_execution import run_agent
 
+
+class SummaryToolCallLimitMiddleware(
+    ToolCallLimitMiddleware[Any, AgentRuntimeContext]
+):
+    """兼容 Room Agent 运行时上下文的摘要工具调用限额中间件。"""
+
+
 summary_agent = create_agent(
     model=summary_model,
     tools=[get_unread_messages],
     system_prompt=SUMMARY_PROMPT.format_messages()[0].text,
     context_schema=AgentRuntimeContext,
+    middleware=[
+        SummaryToolCallLimitMiddleware(
+            tool_name="get_unread_messages",
+            run_limit=1,
+            exit_behavior="continue",
+        )
+    ],
     checkpointer=False,
 )
 
