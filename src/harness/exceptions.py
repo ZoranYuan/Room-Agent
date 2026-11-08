@@ -5,6 +5,10 @@ class BusinessError(Exception):
     """业务异常基类."""
 
 
+class ModelExecutionError(BusinessError):
+    """模型请求失败或重试耗尽，当前 Agent 任务应中断."""
+
+
 class RoomAuthorizationError(BusinessError):
     """Room Agent 身份认证和访问校验异常基类."""
 

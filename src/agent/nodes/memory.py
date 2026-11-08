@@ -18,7 +18,7 @@ from config.config import settings
 from constants.exception import (
     LOG_MEMORY_COMPRESSION_FAILED,
 )
-from harness.llm.memory import summarize_memory
+from harness.llm.summarize_memory import summarize_memory
 
 logger = logging.getLogger(__name__)
 

@@ -46,7 +46,7 @@ _current_run_cache: ContextVar[_RunToolCache | None] = ContextVar(
 
 
 @asynccontextmanager
-async def tool_result_cache_scope() -> AsyncGenerator[None]:
+async def tool_result_cache_scope() -> AsyncGenerator[None, None]:
     """为一次 Agent 运行创建独立缓存，并在运行结束后清理."""
     token = _current_run_cache.set(_RunToolCache())
 
@@ -110,6 +110,7 @@ class ToolResultCacheMiddleware(AgentMiddleware[Any, AgentRuntimeContext, Any]):
                     }
                 )
 
+            # 缓存工具调用
             result = await handler(request)
 
             if isinstance(result, ToolMessage) and result.status == "success":

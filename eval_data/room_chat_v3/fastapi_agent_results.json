@@ -1,0 +1,4672 @@
+{
+  "evaluation_summary": {
+    "status": "partial",
+    "scope": "FastAPI HTTP + SSE + LangGraph + production hybrid retriever/reranker; local adapters only for auth and IM message source",
+    "dataset": {
+      "messages": 3000,
+      "child_chunks": 685,
+      "questions": 83,
+      "categories": {
+        "single": 30,
+        "multi": 30,
+        "temporal": 8,
+        "no_answer": 15
+      }
+    },
+    "requests": {
+      "completed": 30,
+      "failed": 53,
+      "completion_rate": 0.3614,
+      "errors": {
+        "Agent 任务执行失败": 25,
+        "模型暂时不可用，请稍后重试。": 28
+      },
+      "verified_api_failure_after_run": {
+        "http_status": 402,
+        "reason": "Insufficient Balance"
+      }
+    },
+    "single_evidence": {
+      "questions": 30,
+      "search_executed": 30,
+      "recall_at_1": 0.9667,
+      "recall_at_3": 1.0,
+      "mrr_at_3": 0.9833
+    },
+    "multi_evidence": {
+      "questions": 30,
+      "questions_with_search": 26,
+      "questions_with_two_searches": 25,
+      "first_search_top3": {
+        "evidence_hits": 33,
+        "evidence_total": 90,
+        "evidence_recall": 0.3667,
+        "complete_questions": 3,
+        "complete_rate": 0.1
+      },
+      "union_of_search_top3_results": {
+        "evidence_hits": 42,
+        "evidence_total": 90,
+        "evidence_recall": 0.4667,
+        "complete_questions": 3,
+        "complete_rate": 0.1
+      }
+    },
+    "temporal": {
+      "questions": 8,
+      "search_executed": 0,
+      "time_hint_accuracy": "not measurable; model calls failed before tool execution"
+    },
+    "no_answer": {
+      "questions": 15,
+      "completed_responses": 0,
+      "abstention_rate": "not measurable; model calls failed before answer generation"
+    },
+    "answer_text_heuristic": {
+      "completed_answerable_questions": 30,
+      "matched_reference_clauses": 33,
+      "reference_clauses_in_completed_answers": 42,
+      "match_rate_on_completed_answers": 0.7857,
+      "all_dataset_reference_clauses": 128,
+      "this_is_lexical_matching_not_semantic_judgment": true
+    },
+    "tool_usage": {
+      "search_calls": 88,
+      "sync_calls": 26,
+      "tool_limit_reached_outputs": 32,
+      "search_queries_per_multi_question": 1.7
+    },
+    "latency_ms": {
+      "completed_request_mean": 3268.438,
+      "completed_request_p95": 6402.444,
+      "first_token_mean": 3267.243,
+      "first_token_p95": 6401.595,
+      "retrieval_calls": 88,
+      "retrieval_mean_including_cold_load": 158.268,
+      "retrieval_p95_including_cold_load": 148.067,
+      "warm_retrieval_mean": 128.688,
+      "warm_retrieval_p95": 147.827
+    },
+    "settings": {
+      "embedding_model": "Qwen/Qwen3-Embedding-0.6B",
+      "reranker_model": "Qwen/Qwen3-Reranker-0.6B",
+      "candidate_top_k": 10,
+      "rerank_input_top_n": 5,
+      "final_top_n": 3,
+      "rrf_k": 60,
+      "eval_agent_recursion_limit": 32,
+      "project_default_agent_recursion_limit": 14
+    }
+  },
+  "records": [
+    {
+      "qid": "single_001",
+      "category": "single_block:葬送的芙莉莲",
+      "question": "群里推荐补哪部节奏比较舒服的番？",
+      "answerable": true,
+      "reference_answer": "《葬送的芙莉莲》",
+      "answer_text": "群里最贴合“节奏舒服”这个要求的推荐是《葬送的芙莉莲》——郑晓安说它“旅行感和人物对白都很耐看”，后来何知夏也投票说想看它的旅行和日常。\n\n另外几部也被提到节奏偏舒缓、适合放松看：\n- 《轻音少女》：朱亦辰说“很舒服，轻音部练习不多，大家聊天和吃点心的戏很多”，适合吃饭时放着看\n- 《虫师》：陈亦辰说“节奏安静，每一集像一个带点奇幻色彩的民间故事”，适合一集一个故事慢慢看\n- 《侧耳倾听》：王晓安推荐，讲成长和喜欢做的事，氛围温柔，适合慢慢看\n- 《紫罗兰永恒花园》：冯知夏推荐，画面细腻、情绪克制（不过偏催泪）\n\n如果只挑一部补，我会选《葬送的芙莉莲》；想更轻松无压力就选《轻音少女》或《虫师》。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "群里推荐补哪部节奏比较舒服的番？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-001",
+            "eval-v3-child-0002-001",
+            "eval-v3-child-0002-005"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 2731.747
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0001-001",
+        "eval-v3-child-0002-001",
+        "eval-v3-child-0002-005"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0001-001"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 6401.595,
+      "total_ms": 6402.444,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_002",
+      "category": "single_block:迷宫饭",
+      "question": "哪部作品把迷宫冒险和料理结合起来？",
+      "answerable": true,
+      "reference_answer": "《迷宫饭》",
+      "answer_text": "是《迷宫饭》。房间里吴亦辰提到过“《迷宫饭》把迷宫冒险和料理放在一起，这个设定挺有意思”；后来曹星野也补充说“《迷宫饭》动画我觉得料理部分还原得挺有趣”。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "哪部作品把迷宫冒险和料理结合起来？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-002",
+            "eval-v3-child-0003-016",
+            "eval-v3-child-0003-008"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0003"
+          ],
+          "retrieval_ms": 154.881
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0001-002",
+        "eval-v3-child-0003-016",
+        "eval-v3-child-0003-008"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0001-002"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 2350.041,
+      "total_ms": 2350.914,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_003",
+      "category": "single_block:间谍过家家",
+      "question": "群里觉得哪部动画适合和家人一起看？",
+      "answerable": true,
+      "reference_answer": "《间谍过家家》",
+      "answer_text": "群里针对“适合和家人一起看”这个问题，最直接的一条推荐是**《间谍过家家》**：许亦辰说想找一部能和家里人一起看的动画后，张亦辰推荐了它，理由是“日常喜剧多，气氛也轻松”，许晓安还回说“那我周末开给他们看”。\n\n另外还有两条相关但场景略有不同的推荐：\n- **《名侦探柯南：贝克街的亡灵》**：朱知夏想找“节奏快、适合大家一起看的动画电影”，曹亦辰推荐了这部，说推理和虚拟世界设定都挺抓人。\n- **《侧耳倾听》**：秦亦辰想找“不太吵、看完心情会变好的动画电影”，王晓安推荐了它，说讲成长和喜欢做的事，氛围很温柔——适合家人一起看，但当时没明确说是家庭观影。\n\n如果只挑一部，群里明确以“和家人一起看”为由推荐的是《间谍过家家》。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "群里推荐过哪部动画适合和家人一起看？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-003",
+            "eval-v3-child-0002-012",
+            "eval-v3-child-0002-002"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 135.34
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0001-003",
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0002-002"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0001-003"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 3134.082,
+      "total_ms": 3134.714,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_004",
+      "category": "single_block:排球少年",
+      "question": "有人重看《排球少年》时最喜欢哪类情节？",
+      "answerable": true,
+      "reference_answer": "队友磨合并练出配合的成长情节",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "有人重看《排球少年》时最喜欢哪类情节？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-004",
+            "eval-v3-child-0042-007",
+            "eval-v3-child-0001-014"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0042"
+          ],
+          "retrieval_ms": 163.538
+        },
+        {
+          "query": "重看《排球少年》时最喜欢的情节是哪一类",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-004",
+            "eval-v3-child-0001-014",
+            "eval-v3-child-0001-010"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001"
+          ],
+          "retrieval_ms": 127.317
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0001-004",
+        "eval-v3-child-0042-007",
+        "eval-v3-child-0001-014",
+        "eval-v3-child-0001-010"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0001-004"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 3841.132,
+      "total_ms": 4059.111,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_005",
+      "category": "single_block:灌篮高手",
+      "question": "哪部老动画的片头让群友想起学生时代？",
+      "answerable": true,
+      "reference_answer": "《灌篮高手》",
+      "answer_text": "是《灌篮高手》。\n\n群里秦星野先感慨“老动画的片头曲真的很容易让人想起学生时代”，沈晓安接着回应说：“《灌篮高手》的片头一响，我就会想到放学后守着电视看的时候。”朱嘉宁也附和“突然有画面了”。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "哪部老动画的片头让群友想起学生时代？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-005",
+            "eval-v3-child-0004-008",
+            "eval-v3-child-0001-007"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0004"
+          ],
+          "retrieval_ms": 124.555
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0001-005",
+        "eval-v3-child-0004-008",
+        "eval-v3-child-0001-007"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0001-005"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 2366.491,
+      "total_ms": 2367.382,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_006",
+      "category": "single_block:新世纪福音战士",
+      "question": "哪部老作品被推荐用来一起讨论人物和结局？",
+      "answerable": true,
+      "reference_answer": "《新世纪福音战士》",
+      "answer_text": "是《新世纪福音战士》。沈嘉宁说想找一部“看完还能聊很久的老作品”，王知夏随后推荐了《新世纪福音战士》，理由是“人物和结局都很适合看完再讨论”；许亦辰也附和说这部确实有好多不同解读。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "推荐哪部老作品一起讨论人物和结局？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-006",
+            "eval-v3-child-0002-003",
+            "eval-v3-child-0001-017"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 130.865
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0002-003",
+        "eval-v3-child-0001-017"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0001-006"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 1873.086,
+      "total_ms": 1873.887,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_007",
+      "category": "single_block:药屋少女的呢喃",
+      "question": "哪部作品的猫猫被夸观察力强、很有个性？",
+      "answerable": true,
+      "reference_answer": "《药屋少女的呢喃》",
+      "answer_text": "是《药屋少女的呢喃》。蒋星野在房间里提到：“《药屋少女的呢喃》的猫猫很鲜活，观察力强，说话也有自己的风格。”随后许知夏也接了一句“她拆谜题时特别有意思”。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "哪部作品的猫猫被夸观察力强、很有个性？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-007",
+            "eval-v3-child-0001-006",
+            "eval-v3-child-0002-005"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 137.672
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0001-007",
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0002-005"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0001-007"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 2589.463,
+      "total_ms": 2590.174,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_008",
+      "category": "single_block:星际牛仔",
+      "question": "哪部旧番因为爵士和蓝调风格的配乐被提到？",
+      "answerable": true,
+      "reference_answer": "《星际牛仔》",
+      "answer_text": "是《星际牛仔》（Cowboy Bebop）。\n\n- 杨晓安在有人问“想找一部音乐和画面都很有辨识度的旧番”时推荐了它，说“《星际牛仔》的配乐很突出，爵士和蓝调的感觉一下就出来了”。\n- 后来张晓安也提到想分享《星际牛仔》的原声，“爵士那几首很耐听”。\n\n两条消息都指向同一部作品，说法一致。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "哪部旧番因为爵士和蓝调风格的配乐被提到？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-008",
+            "eval-v3-child-0003-006",
+            "eval-v3-child-0003-012"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0003"
+          ],
+          "retrieval_ms": 125.088
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0001-008",
+        "eval-v3-child-0003-006",
+        "eval-v3-child-0003-012"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0001-008"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 2344.645,
+      "total_ms": 2345.704,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_009",
+      "category": "single_block:侧耳倾听",
+      "question": "群里推荐的温柔成长向动画电影是哪部？",
+      "answerable": true,
+      "reference_answer": "《侧耳倾听》",
+      "answer_text": "是《侧耳倾听》。王晓安在群里推荐时说它“讲成长和喜欢做的事，氛围很温柔”，正好对应“温柔成长向”这个需求（当时秦亦辰说周末想看一部不太吵、看完心情会变好的动画电影）。蒋知夏也附和说“这个适合慢慢看”。\n\n另外群里还提到过其他动画电影，比如许晓安提的《千与千寻》、杨星野想重看的《魔女宅急便》，但明确以“成长＋温柔”为推荐理由的是《侧耳倾听》。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "群里推荐的温柔成长向动画电影是哪部？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-009",
+            "eval-v3-child-0003-002",
+            "eval-v3-child-0004-011"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0004"
+          ],
+          "retrieval_ms": 123.14
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0001-009",
+        "eval-v3-child-0003-002",
+        "eval-v3-child-0004-011"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0001-009"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 2641.3,
+      "total_ms": 2642.383,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_010",
+      "category": "single_block:海贼王",
+      "question": "哪部长篇动画被形容为伙伴一路出海冒险？",
+      "answerable": true,
+      "reference_answer": "《海贼王》",
+      "answer_text": "是《海贼王》。周嘉宁在聊天里说：“《海贼王》最吸引我的就是伙伴一起出海、每一站都有新故事。”之后王知夏也接了一句“世界观确实越铺越大”。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "哪部长篇动画被形容为伙伴一路出海冒险？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-010",
+            "eval-v3-child-0002-007",
+            "eval-v3-child-0001-015"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 123.776
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0001-010",
+        "eval-v3-child-0002-007",
+        "eval-v3-child-0001-015"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0001-010"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 1756.059,
+      "total_ms": 1756.738,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_011",
+      "category": "single_block:名侦探柯南",
+      "question": "群友觉得哪部作品适合边看边推理案件？",
+      "answerable": true,
+      "reference_answer": "《名侦探柯南》",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages",
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "群友觉得哪部作品适合边看边推理案件？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-011",
+            "eval-v3-child-0002-012",
+            "eval-v3-child-0001-006"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 121.951
+        },
+        {
+          "query": "群友推荐适合边看边推理案件、暂停猜凶手的作品",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-011",
+            "eval-v3-child-0042-001",
+            "eval-v3-child-0002-012"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 123.926
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0001-011",
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0042-001"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0001-011"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 3842.009,
+      "total_ms": 3861.91,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_012",
+      "category": "single_block:蓝色时期",
+      "question": "哪部作品被推荐为关于创作练习和自我表达？",
+      "answerable": true,
+      "reference_answer": "《蓝色时期》",
+      "answer_text": "是《蓝色时期》。施亦辰问“有没有讲创作、又不只是讲天赋的作品”后，吕晓安推荐了《蓝色时期》，说它“更多是在讲练习、选择和怎么找到自己的表达”（约 2025-09-01 时段，消息 seq 34–35）。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "哪部作品被推荐为关于创作练习和自我表达？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-012",
+            "eval-v3-child-0002-003",
+            "eval-v3-child-0001-006"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 121.373
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0001-012",
+        "eval-v3-child-0002-003",
+        "eval-v3-child-0001-006"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0001-012"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 2217.686,
+      "total_ms": 2218.742,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_013",
+      "category": "single_block:电锯人",
+      "question": "哪部动画被说镜头语言很有电影感？",
+      "answerable": true,
+      "reference_answer": "《电锯人》",
+      "answer_text": "是《电锯人》。陈晓安在聊到动画改编的镜头语言时说：“《电锯人》的镜头处理挺像电影，氛围和停顿都很有辨识度。”（消息 seq 38）随后吴亦辰还补充说记得它的片尾曲每集都不一样。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "哪部动画被说镜头语言很有电影感？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-013",
+            "eval-v3-child-0001-015",
+            "eval-v3-child-0003-002"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0003"
+          ],
+          "retrieval_ms": 125.571
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0001-013",
+        "eval-v3-child-0001-015",
+        "eval-v3-child-0003-002"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0001-013"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 2691.173,
+      "total_ms": 2691.824,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_014",
+      "category": "single_block:火影忍者",
+      "question": "群里提到《火影忍者》的哪段比赛？",
+      "answerable": true,
+      "reference_answer": "中忍考试",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "群里提到的《火影忍者》比赛是哪一段？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-014",
+            "eval-v3-child-0033-001",
+            "eval-v3-child-0003-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0033",
+            "eval-v3-parent-0003"
+          ],
+          "retrieval_ms": 124.422
+        },
+        {
+          "query": "《火影忍者》里提到的比赛是哪一段？中忍考试",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-014",
+            "eval-v3-child-0003-001",
+            "eval-v3-child-0041-016"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0041"
+          ],
+          "retrieval_ms": 126.276
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0001-014",
+        "eval-v3-child-0033-001",
+        "eval-v3-child-0003-001",
+        "eval-v3-child-0041-016"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0001-014"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 4366.502,
+      "total_ms": 4396.754,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_015",
+      "category": "single_block:JOJO的奇妙冒险",
+      "question": "哪部动画因姿势和色彩夸张而被推荐？",
+      "answerable": true,
+      "reference_answer": "《JOJO的奇妙冒险》",
+      "answer_text": "是《JOJO的奇妙冒险》。沈星野在房间里推荐时说它“夸张的姿势和色彩一眼就认得出来”，当时是周嘉宁提到朋友想看画风特别一点的动画。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "哪部动画因姿势和色彩夸张而被推荐？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-015",
+            "eval-v3-child-0002-012",
+            "eval-v3-child-0002-005"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 130.368
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0001-015",
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0002-005"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0001-015"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 2037.39,
+      "total_ms": 2038.044,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_016",
+      "category": "single_block:灵能百分百",
+      "question": "哪部动画被推荐为重点在自我成长和人际关系？",
+      "answerable": true,
+      "reference_answer": "《灵能百分百》",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "哪部动画被推荐为重点在自我成长和人际关系？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-016",
+            "eval-v3-child-0001-009",
+            "eval-v3-child-0001-007"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001"
+          ],
+          "retrieval_ms": 125.965
+        },
+        {
+          "query": "推荐一部重点在自我成长和人际关系的动画",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-016",
+            "eval-v3-child-0001-009",
+            "eval-v3-child-0001-015"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001"
+          ],
+          "retrieval_ms": 122.061
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0001-016",
+        "eval-v3-child-0001-009",
+        "eval-v3-child-0001-007",
+        "eval-v3-child-0001-015"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0001-016"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 3997.757,
+      "total_ms": 4083.976,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_017",
+      "category": "single_block:文豪野犬",
+      "question": "哪部作品被推荐为异能群像题材？",
+      "answerable": true,
+      "reference_answer": "《文豪野犬》",
+      "answer_text": "是《文豪野犬》。郑亦辰说想找“异能设定、又有群像角色”的作品，杨星野推荐了《文豪野犬》，理由是角色阵营多、异能和人物特点绑得比较紧。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "哪部作品被推荐为异能群像题材？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-017",
+            "eval-v3-child-0002-007",
+            "eval-v3-child-0001-006"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 129.501
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0001-017",
+        "eval-v3-child-0002-007",
+        "eval-v3-child-0001-006"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0001-017"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 2005.451,
+      "total_ms": 2006.147,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_018",
+      "category": "single_block:孤独摇滚！",
+      "question": "哪部音乐番因为社恐主角的反差被推荐？",
+      "answerable": true,
+      "reference_answer": "《孤独摇滚！》",
+      "answer_text": "是《孤独摇滚！》。施晓安在房间里推荐过它，说“挺好笑的，社恐主角上台前后的反差特别明显”（消息序号 53）。当时吕晓安正好说想看点音乐题材的轻松番，孔星野也补充说看过片段、节奏很快。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "哪部音乐番因为社恐主角的反差被推荐？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0002-001",
+            "eval-v3-child-0001-008",
+            "eval-v3-child-0001-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0001"
+          ],
+          "retrieval_ms": 124.479
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0002-001",
+        "eval-v3-child-0001-008",
+        "eval-v3-child-0001-001"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0002-001"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 2442.263,
+      "total_ms": 2443.068,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_019",
+      "category": "single_block:轻音少女",
+      "question": "哪部日常动画被说有很多社团聊天和吃点心的片段？",
+      "answerable": true,
+      "reference_answer": "《轻音少女》",
+      "answer_text": "是《轻音少女》。朱亦辰在房间里提到：“《轻音少女》就很舒服，轻音部练习不多，大家聊天和吃点心的戏很多。”（消息 seq 56，发送时间约 2025-09-01 21:55）当时何亦辰正想找一部适合吃饭时放着看的日常动画。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "哪部日常动画被说有很多社团聊天和吃点心的片段？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0002-002",
+            "eval-v3-child-0004-013",
+            "eval-v3-child-0042-013"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0004",
+            "eval-v3-parent-0042"
+          ],
+          "retrieval_ms": 122.242
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0002-002",
+        "eval-v3-child-0004-013",
+        "eval-v3-child-0042-013"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0002-002"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 2265.604,
+      "total_ms": 2266.359,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_020",
+      "category": "single_block:紫罗兰永恒花园",
+      "question": "哪部作品因信件和细腻情感线被推荐？",
+      "answerable": true,
+      "reference_answer": "《紫罗兰永恒花园》",
+      "answer_text": "是《紫罗兰永恒花园》。冯知夏在房间里推荐时说：“《紫罗兰永恒花园》可以，信件和人物情感那条线很细腻。”当时韩晓安提出想看画面细腻、情绪克制的作品，这条推荐正好对应。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "哪部作品因信件和细腻情感线被推荐？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0002-003",
+            "eval-v3-child-0001-006",
+            "eval-v3-child-0001-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0001"
+          ],
+          "retrieval_ms": 119.648
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0002-003",
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0001-001"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0002-003"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 2336.7,
+      "total_ms": 2337.375,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_021",
+      "category": "single_block:进击的巨人",
+      "question": "哪部动画被形容为每集结尾都留下很多悬念？",
+      "answerable": true,
+      "reference_answer": "《进击的巨人》",
+      "answer_text": "是《进击的巨人》。\n\n许嘉宁在聊天里说：“《进击的巨人》就是这种，一集结束总会冒出更多问题。”这句话是在张知夏提到“以前追番时最怕每集结尾留悬念”之后接的，周亦辰还补了一句“所以很容易接着点下一集”。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "哪部动画被形容为每集结尾都留下很多悬念？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0002-004",
+            "eval-v3-child-0002-006",
+            "eval-v3-child-0001-007"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0001"
+          ],
+          "retrieval_ms": 136.568
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0002-004",
+        "eval-v3-child-0002-006",
+        "eval-v3-child-0001-007"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0002-004"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 2547.079,
+      "total_ms": 2547.793,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_022",
+      "category": "single_block:钢之炼金术师FA",
+      "question": "哪部作品被推荐为主线完整、伏笔能回收？",
+      "answerable": true,
+      "reference_answer": "《钢之炼金术师FA》",
+      "answer_text": "是《钢之炼金术师FA》。许嘉宁在房间里推荐时说它“主线完整，前面不少细节后面都能对上”，正好对应“主线完整、伏笔能回收”这个需求（当时是曹晓安在问有没有伏笔收得比较完整的长篇动画）。\n\n另外，如果偏好短篇，蒋知夏还推荐过《奇巧计程车》，说前面看似不相关的对话后面会慢慢连起来。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "哪部作品被推荐为主线完整、伏笔能回收？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0002-004",
+            "eval-v3-child-0002-006",
+            "eval-v3-child-0001-006"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0001"
+          ],
+          "retrieval_ms": 132.985
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0002-004",
+        "eval-v3-child-0002-006",
+        "eval-v3-child-0001-006"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0002-004"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 2330.656,
+      "total_ms": 2331.513,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_023",
+      "category": "single_block:虫师",
+      "question": "哪部动画被推荐为节奏安静、单集故事独立？",
+      "answerable": true,
+      "reference_answer": "《虫师》",
+      "answer_text": "是《虫师》。陈亦辰在聊天里推荐说它“很适合，节奏安静，每一集像一个带点奇幻色彩的民间故事”，正好对应节奏安静、单集故事独立的需求（当时是杨晓安说今晚不想看打斗、想看一集一集独立的小故事）。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "哪部动画被推荐为节奏安静、单集故事独立？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0002-005",
+            "eval-v3-child-0001-001",
+            "eval-v3-child-0002-012"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0001"
+          ],
+          "retrieval_ms": 138.803
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0002-005",
+        "eval-v3-child-0001-001",
+        "eval-v3-child-0002-012"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0002-005"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 2020.009,
+      "total_ms": 2020.743,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_024",
+      "category": "single_block:奇巧计程车",
+      "question": "哪部短篇动画被说前后对话线索会串起来？",
+      "answerable": true,
+      "reference_answer": "《奇巧计程车》",
+      "answer_text": "是《奇巧计程车》（Odd Taxi）。\n\n依据：许嘉宁在房间里提到“有人想看一部线索能互相串起来的短篇动画”，蒋知夏随后推荐了《奇巧计程车》，说“前面看似不相关的对话后面会慢慢连起来”。何知夏还接了一句“那我得认真听台词”。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "哪部短篇动画被说前后对话线索会串起来？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0002-006",
+            "eval-v3-child-0001-011",
+            "eval-v3-child-0002-004"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0001"
+          ],
+          "retrieval_ms": 130.986
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0002-006",
+        "eval-v3-child-0001-011",
+        "eval-v3-child-0002-004"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0002-006"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 3018.034,
+      "total_ms": 3018.631,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_025",
+      "category": "single_block:黄金神威",
+      "question": "哪部作品被提到兼有冒险、饮食和地方文化？",
+      "answerable": true,
+      "reference_answer": "《黄金神威》",
+      "answer_text": "是《黄金神威》。吴晓安在聊天里推荐说：“《黄金神威》吧，冒险线之外还有很多饮食和地方文化细节。”（消息 seq 74，发送时间约 2025-09-02 01:48，Asia/Shanghai）\n\n另外，吴亦辰也提到《迷宫饭》把迷宫冒险和料理放在一起（seq 5），不过“地方文化”这一点是《黄金神威》被明确提到的。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "哪部作品被提到兼有冒险、饮食和地方文化？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0002-007",
+            "eval-v3-child-0001-002",
+            "eval-v3-child-0001-010"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0001"
+          ],
+          "retrieval_ms": 125.779
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0002-007",
+        "eval-v3-child-0001-002",
+        "eval-v3-child-0001-010"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0002-007"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 2581.358,
+      "total_ms": 2581.953,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_026",
+      "category": "single_block:乐队的夏天",
+      "question": "群里推荐回看哪个乐队节目？",
+      "answerable": true,
+      "reference_answer": "《乐队的夏天》",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).群里推荐回看的是《乐队的夏天》。\n\n- 沈星野（2025-09-01 22:22 左右）说：“我会翻《乐队的夏天》，不同乐队的编曲风格差异特别明显。”这是针对吴亦辰“最近想回顾一下中文乐队现场”的推荐。\n- 后来沈星野（2025-09-02 10:31 左右）又提到：“我想回看《乐队的夏天》里那场改编舞台。”\n- 曹知夏也附和说记得里面有几首歌后来循环了很久。\n\n所以如果只想挑一段看，可以按沈星野说的，找那场改编舞台回看。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages",
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "群里推荐回看哪个乐队节目？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0003-009",
+            "eval-v3-child-0002-008",
+            "eval-v3-child-0041-013"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0041"
+          ],
+          "retrieval_ms": 120.03
+        },
+        {
+          "query": "推荐回看的乐队节目是《乐队的夏天》吗？谁推荐的、推荐理由是什么？",
+          "time_hint": {
+            "mode": "latest",
+            "start_at": null,
+            "end_at": null
+          },
+          "child_ids": [
+            "eval-v3-child-0002-008",
+            "eval-v3-child-0003-009",
+            "eval-v3-child-0001-015"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0001"
+          ],
+          "retrieval_ms": 140.689
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0003-009",
+        "eval-v3-child-0002-008",
+        "eval-v3-child-0041-013",
+        "eval-v3-child-0001-015"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0002-008"
+        ]
+      ],
+      "target_hit_ranks": [
+        2
+      ],
+      "first_token_ms": 5179.601,
+      "total_ms": 5182.697,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_027",
+      "category": "single_block:喜剧之王",
+      "question": "哪部周星驰电影被形容为笑中带着小人物的辛酸？",
+      "answerable": true,
+      "reference_answer": "《喜剧之王》",
+      "answer_text": "是《喜剧之王》。房间里冯晓安提到过：“周星驰的《喜剧之王》吧，很多笑点背后其实是小人物想被认可。”（约 2025-09-02 02:13，消息 seq 80）",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "哪部周星驰电影被形容为笑中带着小人物的辛酸？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0002-009",
+            "eval-v3-child-0001-009",
+            "eval-v3-child-0004-011"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0004"
+          ],
+          "retrieval_ms": 123.407
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0002-009",
+        "eval-v3-child-0001-009",
+        "eval-v3-child-0004-011"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0002-009"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 2302.992,
+      "total_ms": 2304.295,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_028",
+      "category": "single_block:塞尔达传说：旷野之息",
+      "question": "哪款游戏被推荐为可以自由探索、常有意外发现？",
+      "answerable": true,
+      "reference_answer": "《塞尔达传说：旷野之息》",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "哪款游戏被推荐为可以自由探索、常有意外发现？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0002-010",
+            "eval-v3-child-0044-006",
+            "eval-v3-child-0021-020"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0044",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 122.388
+        },
+        {
+          "query": "推荐一款能随便探索、不催任务、经常走着走着发现新东西的游戏",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0002-010",
+            "eval-v3-child-0038-005",
+            "eval-v3-child-0052-003"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0038",
+            "eval-v3-parent-0052"
+          ],
+          "retrieval_ms": 137.119
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0002-010",
+        "eval-v3-child-0044-006",
+        "eval-v3-child-0021-020",
+        "eval-v3-child-0038-005",
+        "eval-v3-child-0052-003"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0002-010"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 4740.005,
+      "total_ms": 4758.846,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_029",
+      "category": "single_block:坂本龙一",
+      "question": "群里推荐了哪位音乐人的作品来安静听？",
+      "answerable": true,
+      "reference_answer": "坂本龙一",
+      "answer_text": "是**坂本龙一**。张亦辰说最近在整理电影原声，想找一张适合安静听的专辑，林晓安推荐了坂本龙一的作品，理由是“钢琴和留白都很克制”（约 2025-09-02 凌晨，消息序号 85–86）。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "群里推荐了哪位音乐人的作品来安静听？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0002-011",
+            "eval-v3-child-0042-009",
+            "eval-v3-child-0002-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0042"
+          ],
+          "retrieval_ms": 123.017
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0002-011",
+        "eval-v3-child-0042-009",
+        "eval-v3-child-0002-001"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0002-011"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 1879.946,
+      "total_ms": 1880.585,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_030",
+      "category": "single_block:名侦探柯南剧场版",
+      "question": "推荐一起重看的柯南剧场版是哪一部？",
+      "answerable": true,
+      "reference_answer": "《名侦探柯南：贝克街的亡灵》",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "推荐一起重看的柯南剧场版是哪一部？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0002-012",
+            "eval-v3-child-0004-008",
+            "eval-v3-child-0001-011"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0004",
+            "eval-v3-parent-0001"
+          ],
+          "retrieval_ms": 148.067
+        },
+        {
+          "query": "大家推荐一起重看的柯南剧场版是哪一部？",
+          "time_hint": {
+            "mode": "latest",
+            "start_at": null,
+            "end_at": null
+          },
+          "child_ids": [
+            "eval-v3-child-0002-012",
+            "eval-v3-child-0004-008",
+            "eval-v3-child-0001-011"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0004",
+            "eval-v3-parent-0001"
+          ],
+          "retrieval_ms": 142.912
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0004-008",
+        "eval-v3-child-0001-011"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0002-012"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 4378.884,
+      "total_ms": 4397.661,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_001",
+      "category": "multi_block:3:周末补番",
+      "question": "大家选了哪部番、几点开始、准备看几集？",
+      "answerable": true,
+      "reference_answer": "《葬送的芙莉莲》；周六晚八点；两集",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).我查了房间里的相关消息，但没能凑齐一个完整确定的答案，目前查到的情况是：\n\n- **看几集**：有两条说法，互相矛盾——\n  - 蒋星野说“先看两集，看到十点就收”（seq 2010）\n  - 林星野说“第一晚只看三集，后面再决定要不要继续”（seq 2070）\n- **几点开始**：没有找到明确对应“一起看番”的开始时间；房间里有不少其他活动的安排（比如周二晚八点发视频链接、周三晚八点看最新一集、周四晚九点进语音频道等），但无法确认哪条属于这次看番。\n- **选了哪部番**：只看到零散的投票发言，例如何知夏投《葬送的芙莉莲》（seq 99）、孔亦辰选《强风吹拂》（seq 159），但没有检索到明确的最终结果。\n\n所以目前查到的内容不足以确认“哪部番 + 几点开始 + 看几集”。如果你记得大致时间（比如是哪天聊的）或参与的人，我可以再帮你缩小范围查一次。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "大家选了哪部番、几点开始看、准备看几集？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0041-005",
+            "eval-v3-child-0042-007",
+            "eval-v3-child-0021-023"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 131.179
+        },
+        {
+          "query": "大家投票选了哪部番？几点开始一起看？准备看几集？",
+          "time_hint": {
+            "mode": "latest",
+            "start_at": null,
+            "end_at": null
+          },
+          "child_ids": [
+            "eval-v3-child-0042-007",
+            "eval-v3-child-0002-016",
+            "eval-v3-child-0004-004"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0004"
+          ],
+          "retrieval_ms": 165.571
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0041-005",
+        "eval-v3-child-0042-007",
+        "eval-v3-child-0021-023",
+        "eval-v3-child-0002-016",
+        "eval-v3-child-0004-004"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0002-016"
+        ],
+        [
+          "eval-v3-child-0020-008"
+        ],
+        [
+          "eval-v3-child-0041-005"
+        ]
+      ],
+      "target_hit_ranks": [
+        4,
+        null,
+        1
+      ],
+      "first_token_ms": 6026.41,
+      "total_ms": 6028.599,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_002",
+      "category": "multi_block:3:老番重温",
+      "question": "重看的作品、集合时间和观看范围是什么？",
+      "answerable": true,
+      "reference_answer": "《灌篮高手》；周日下午三点；全国大赛相关剧集",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "重看的作品、集合时间和观看范围是什么？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-013",
+            "eval-v3-child-0021-025",
+            "eval-v3-child-0001-006"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0001"
+          ],
+          "retrieval_ms": 117.469
+        },
+        {
+          "query": "重看的作品是哪部，集合时间和观看范围怎么安排？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-025",
+            "eval-v3-child-0001-006",
+            "eval-v3-child-0021-013"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0001"
+          ],
+          "retrieval_ms": 118.072
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0021-025",
+        "eval-v3-child-0001-006"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-001"
+        ],
+        [
+          "eval-v3-child-0020-008"
+        ],
+        [
+          "eval-v3-child-0041-005"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        null,
+        null
+      ],
+      "first_token_ms": 3093.815,
+      "total_ms": 3123.756,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_003",
+      "category": "multi_block:3:电影夜",
+      "question": "电影夜看哪部、几点开始、中途怎么安排？",
+      "answerable": true,
+      "reference_answer": "《千与千寻》；周五晚九点；中途暂停十分钟",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "电影夜看哪部电影、几点开始、中途怎么安排？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0041-006",
+            "eval-v3-child-0003-002"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0003"
+          ],
+          "retrieval_ms": 122.013
+        },
+        {
+          "query": "电影夜最终定下看哪部电影？开始时间和中途暂停安排是什么？",
+          "time_hint": {
+            "mode": "latest",
+            "start_at": null,
+            "end_at": null
+          },
+          "child_ids": [
+            "eval-v3-child-0041-006",
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0003-002"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0003"
+          ],
+          "retrieval_ms": 140.511
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0041-006",
+        "eval-v3-child-0003-002"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-002"
+        ],
+        [
+          "eval-v3-child-0020-009"
+        ],
+        [
+          "eval-v3-child-0041-005"
+        ]
+      ],
+      "target_hit_ranks": [
+        3,
+        1,
+        null
+      ],
+      "first_token_ms": 4897.944,
+      "total_ms": 4912.321,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_004",
+      "category": "multi_block:3:乐队现场",
+      "question": "最想听的乐队、哪天几点碰面、散场后怎么走？",
+      "answerable": true,
+      "reference_answer": "草东没有派对；周日下午四点东门；结束后坐地铁回去",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "大家最想听的乐队是哪个？哪天几点碰面？散场后怎么走？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0042-004",
+            "eval-v3-child-0003-003",
+            "eval-v3-child-0020-010"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0020"
+          ],
+          "retrieval_ms": 122.27
+        },
+        {
+          "query": "音乐节最想听的乐队、碰面时间地点、散场后怎么走",
+          "time_hint": {
+            "mode": "latest",
+            "start_at": null,
+            "end_at": null
+          },
+          "child_ids": [
+            "eval-v3-child-0003-003",
+            "eval-v3-child-0042-004",
+            "eval-v3-child-0002-008"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 147.827
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0042-004",
+        "eval-v3-child-0003-003",
+        "eval-v3-child-0020-010",
+        "eval-v3-child-0002-008"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-003"
+        ],
+        [
+          "eval-v3-child-0020-009"
+        ],
+        [
+          "eval-v3-child-0041-006"
+        ]
+      ],
+      "target_hit_ranks": [
+        2,
+        null,
+        null
+      ],
+      "first_token_ms": 5607.532,
+      "total_ms": 5623.959,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_005",
+      "category": "multi_block:3:桌游聚会",
+      "question": "桌游选哪款、几点去、第一局怎么安排？",
+      "answerable": true,
+      "reference_answer": "《璀璨宝石》；周六下午两点；第一局不计分熟悉规则",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).根据房间里的聊天记录，桌游聚会相关的安排是这几条：\n\n**选哪款**\n- 蒋嘉宁（seq 111）说：“我带《璀璨宝石》，规则不复杂，新手也能玩。”——目前记录里唯一明确要带的桌游就是《璀璨宝石》。\n\n**几点去**\n- 吴亦辰（seq 994）说：“周六两点去店里，先坐靠窗那桌。”——时间地点是周六下午两点，先占靠窗那桌。\n- 另外蒋晓安（seq 997）提过“周三下班后在地铁站旁咖啡馆见”，但没说明是桌游局还是别的活动，可能不是同一场，建议再确认一下。\n\n**第一局怎么安排**\n- 吕晓安（seq 2022）说：“第一局不计分，大家熟悉规则再正式玩。”\n- 周嘉宁（seq 2034）说：“每局换一次队长，免得一个人一直指挥。”（这条更像联机游戏的规则，不确定是否也适用于桌游局。）\n\n所以可以概括为：周六下午两点到店、坐靠窗那桌，先玩《璀璨宝石》，第一局不计分只用来熟悉规则。周三咖啡馆那条和“每局换队长”那条归属不太明确，需要的话我可以再帮你确认。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "桌游活动选哪款桌游、几点去、第一局怎么安排？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-010",
+            "eval-v3-child-0041-008",
+            "eval-v3-child-0003-004"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0003"
+          ],
+          "retrieval_ms": 120.573
+        },
+        {
+          "query": "桌游聚会具体玩哪款桌游、几点集合、第一局怎么安排",
+          "time_hint": {
+            "mode": "latest",
+            "start_at": null,
+            "end_at": null
+          },
+          "child_ids": [
+            "eval-v3-child-0041-008",
+            "eval-v3-child-0003-004",
+            "eval-v3-child-0020-010"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0020"
+          ],
+          "retrieval_ms": 136.283
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-010",
+        "eval-v3-child-0041-008",
+        "eval-v3-child-0003-004"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-004"
+        ],
+        [
+          "eval-v3-child-0020-010"
+        ],
+        [
+          "eval-v3-child-0041-008"
+        ]
+      ],
+      "target_hit_ranks": [
+        3,
+        1,
+        2
+      ],
+      "first_token_ms": 5699.531,
+      "total_ms": 5702.066,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_006",
+      "category": "multi_block:3:漫画交换",
+      "question": "交换时带哪部漫画、在哪里见、怎么开始？",
+      "answerable": true,
+      "reference_answer": "《蓝色时期》；地铁站旁咖啡馆；先聊五分钟读后感",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "交换时带哪部漫画、在哪里见、怎么开始？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0003-005",
+            "eval-v3-child-0020-011",
+            "eval-v3-child-0041-009"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0041"
+          ],
+          "retrieval_ms": 121.935
+        },
+        {
+          "query": "漫画交换带哪本漫画、在哪里见面、怎么开始交换流程",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-011",
+            "eval-v3-child-0041-009",
+            "eval-v3-child-0003-005"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0003"
+          ],
+          "retrieval_ms": 119.858
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0003-005",
+        "eval-v3-child-0020-011",
+        "eval-v3-child-0041-009"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-005"
+        ],
+        [
+          "eval-v3-child-0020-011"
+        ],
+        [
+          "eval-v3-child-0041-009"
+        ]
+      ],
+      "target_hit_ranks": [
+        1,
+        2,
+        3
+      ],
+      "first_token_ms": 5093.622,
+      "total_ms": 5112.578,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_007",
+      "category": "multi_block:3:动画配乐",
+      "question": "分享什么原声、几点开房、先听几首？",
+      "answerable": true,
+      "reference_answer": "《星际牛仔》原声；周日晚七点；前三首",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "分享什么原声、几点开房、先听几首",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0003-006",
+            "eval-v3-child-0002-011",
+            "eval-v3-child-0042-009"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0042"
+          ],
+          "retrieval_ms": 124.316
+        },
+        {
+          "query": "分享原声 几点开房 先听几首 音乐分享安排",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0003-006",
+            "eval-v3-child-0042-009",
+            "eval-v3-child-0038-008"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0038"
+          ],
+          "retrieval_ms": 128.374
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0003-006",
+        "eval-v3-child-0002-011",
+        "eval-v3-child-0042-009",
+        "eval-v3-child-0038-008"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-006"
+        ],
+        [
+          "eval-v3-child-0020-011"
+        ],
+        [
+          "eval-v3-child-0041-010"
+        ]
+      ],
+      "target_hit_ranks": [
+        1,
+        null,
+        null
+      ],
+      "first_token_ms": 5212.642,
+      "total_ms": 5228.581,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_008",
+      "category": "multi_block:3:影展报名",
+      "question": "报名了哪部电影、几点场、散场后在哪等？",
+      "answerable": true,
+      "reference_answer": "《机器人之梦》；周六下午一点半；一楼长椅等十分钟",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "报名了哪部电影、几点场、散场后在哪等？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0041-011",
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0041-006"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0020"
+          ],
+          "retrieval_ms": 121.49
+        },
+        {
+          "query": "影展报名的是哪部电影，几点的场次？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0003-007",
+            "eval-v3-child-0041-011",
+            "eval-v3-child-0021-003"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 121.594
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0041-011",
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0041-006",
+        "eval-v3-child-0003-007",
+        "eval-v3-child-0021-003"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-007"
+        ],
+        [
+          "eval-v3-child-0021-001"
+        ],
+        [
+          "eval-v3-child-0041-011"
+        ]
+      ],
+      "target_hit_ranks": [
+        4,
+        null,
+        1
+      ],
+      "first_token_ms": 3489.845,
+      "total_ms": 3507.755,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_009",
+      "category": "multi_block:3:游戏联机",
+      "question": "联机玩什么、几点进频道、队伍怎么轮换？",
+      "answerable": true,
+      "reference_answer": "《胡闹厨房2》；周四晚九点；每局轮换队长",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "联机玩什么游戏、几点进频道、队伍怎么轮换",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-004",
+            "eval-v3-child-0041-012",
+            "eval-v3-child-0003-008"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0003"
+          ],
+          "retrieval_ms": 123.88
+        },
+        {
+          "query": "联机游戏《胡闹厨房2》几点进语音频道、队伍轮换和队长安排",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-004",
+            "eval-v3-child-0003-008",
+            "eval-v3-child-0041-012"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0041"
+          ],
+          "retrieval_ms": 125.853
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0021-004",
+        "eval-v3-child-0041-012",
+        "eval-v3-child-0003-008"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-008"
+        ],
+        [
+          "eval-v3-child-0021-004"
+        ],
+        [
+          "eval-v3-child-0041-012"
+        ]
+      ],
+      "target_hit_ranks": [
+        3,
+        1,
+        2
+      ],
+      "first_token_ms": 3731.102,
+      "total_ms": 3842.243,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_010",
+      "category": "multi_block:3:综艺回看",
+      "question": "回看哪个节目、什么时候看、看完做什么？",
+      "answerable": true,
+      "reference_answer": "《乐队的夏天》；周二晚八点；各选一首喜欢的歌",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "回看哪个节目、什么时候看、看完做什么？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-013",
+            "eval-v3-child-0021-015",
+            "eval-v3-child-0041-013"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0041"
+          ],
+          "retrieval_ms": 123.212
+        },
+        {
+          "query": "综艺回看：看哪个节目、什么时候看、看完之后做什么？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0041-013",
+            "eval-v3-child-0003-009",
+            "eval-v3-child-0021-015"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 121.625
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0021-015",
+        "eval-v3-child-0041-013",
+        "eval-v3-child-0003-009"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-009"
+        ],
+        [
+          "eval-v3-child-0021-005"
+        ],
+        [
+          "eval-v3-child-0041-013"
+        ]
+      ],
+      "target_hit_ranks": [
+        4,
+        null,
+        3
+      ],
+      "first_token_ms": 4512.74,
+      "total_ms": 4546.302,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_011",
+      "category": "multi_block:3:国漫讨论",
+      "question": "补了哪部作品、几点讨论、按什么顺序聊？",
+      "answerable": true,
+      "reference_answer": "《罗小黑战记》；周日下午两点；先电影版再动画剧集",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "补了哪部作品、几点讨论、按什么顺序聊？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0003-014",
+            "eval-v3-child-0001-006",
+            "eval-v3-child-0059-009"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0059"
+          ],
+          "retrieval_ms": 122.319
+        },
+        {
+          "query": "补番讨论几点开始、按什么顺序聊，先聊哪部作品",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0041-005",
+            "eval-v3-child-0020-008",
+            "eval-v3-child-0003-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0003"
+          ],
+          "retrieval_ms": 131.342
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0003-014",
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0059-009",
+        "eval-v3-child-0041-005",
+        "eval-v3-child-0020-008",
+        "eval-v3-child-0003-001"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-010"
+        ],
+        [
+          "eval-v3-child-0021-007"
+        ],
+        [
+          "eval-v3-child-0041-014"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        null,
+        null
+      ],
+      "first_token_ms": 4223.225,
+      "total_ms": 4257.257,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_012",
+      "category": "multi_block:3:科幻电影",
+      "question": "推荐哪部电影、几点在哪里看、饮料怎么选？",
+      "answerable": true,
+      "reference_answer": "《流浪地球2》；周五晚七点半小周家；点无糖饮料",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).我查了房间里的历史消息，目前能确认的相关信息如下，但**没有找到一条明确的“最终定下看哪部电影”的结论**：\n\n**电影推荐（都是成员各自的提议，不是最终决定）**\n- 吴晓安：想重看《灌篮高手》，觉得比赛部分现在看还是很燃\n- 许晓安：动画电影选《千与千寻》，大家比较熟\n- 韩晓安：推荐《流浪地球2》，设定细节适合暂停讨论\n- 杨星野：想重看《魔女宅急便》，画面很放松\n- 沈星野：报了《机器人之梦》，想看完聊友情主题\n\n**时间与地点（几条说法互相不一致，需要你们确认）**\n- 孔嘉宁：影厅选周六下午一点半那场\n- 林知夏：周六晚七点去社区影厅，票由他先订\n- 周星野：票买周日场，下午四点在东门碰头\n- 吕亦辰：周六晚上八点开投影\n- 曹知夏：周五晚上九点在他家投影，地址私聊发\n\n**饮料**\n- 何亦辰：大家带自己的杯子，饮料统一点无糖的\n\n所以：饮料这条比较明确（自带杯子、统一无糖）；但电影、时间、地点在记录里存在多个版本，我无法判断哪个是最终方案。你能告诉我指的是哪一场（比如“周六影厅那场”还是“周日场”），或者提供更具体的时间范围吗？我再帮你核对。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "大家推荐看哪部电影、几点在哪里看、饮料怎么选？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0041-015",
+            "eval-v3-child-0021-001",
+            "eval-v3-child-0020-009"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0020"
+          ],
+          "retrieval_ms": 124.106
+        },
+        {
+          "query": "电影夜推荐看哪部电影？几点、在哪里看？饮料怎么选？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0041-015",
+            "eval-v3-child-0003-002"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0003"
+          ],
+          "retrieval_ms": 122.098
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0041-015",
+        "eval-v3-child-0021-001",
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0003-002"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-011"
+        ],
+        [
+          "eval-v3-child-0021-008"
+        ],
+        [
+          "eval-v3-child-0041-015"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        null,
+        1
+      ],
+      "first_token_ms": 6629.932,
+      "total_ms": 6632.051,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_013",
+      "category": "multi_block:3:声优作品",
+      "question": "一起听哪部作品的配乐、几点、每人分享什么？",
+      "answerable": true,
+      "reference_answer": "《紫罗兰永恒花园》配乐；周日上午十点；分享配乐对应的信件",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "一起听哪部作品的配乐、几点开始、每人分享什么",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0041-016",
+            "eval-v3-child-0041-010",
+            "eval-v3-child-0003-012"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0003"
+          ],
+          "retrieval_ms": 122.713
+        },
+        {
+          "query": "一起听配乐活动定在几点开始，每人分享什么内容",
+          "time_hint": {
+            "mode": "latest",
+            "start_at": null,
+            "end_at": null
+          },
+          "child_ids": [
+            "eval-v3-child-0022-001",
+            "eval-v3-child-0041-010",
+            "eval-v3-child-0003-006"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0003"
+          ],
+          "retrieval_ms": 143.736
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0041-016",
+        "eval-v3-child-0041-010",
+        "eval-v3-child-0003-012",
+        "eval-v3-child-0022-001",
+        "eval-v3-child-0003-006"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-012"
+        ],
+        [
+          "eval-v3-child-0021-010"
+        ],
+        [
+          "eval-v3-child-0041-016"
+        ]
+      ],
+      "target_hit_ranks": [
+        3,
+        null,
+        1
+      ],
+      "first_token_ms": 4661.588,
+      "total_ms": 4688.813,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_014",
+      "category": "multi_block:3:复古动画",
+      "question": "重看哪部电影、什么时候看、选什么字幕？",
+      "answerable": true,
+      "reference_answer": "《魔女宅急便》；周六下午两点；普通话字幕版",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "大家讨论重看哪部电影、什么时候看、选什么字幕？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0042-008",
+            "eval-v3-child-0013-004",
+            "eval-v3-child-0041-017"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0013",
+            "eval-v3-parent-0041"
+          ],
+          "retrieval_ms": 125.139
+        },
+        {
+          "query": "重看旧剧/电影 具体看哪部、几点开始看、字幕版本怎么定",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0004-005",
+            "eval-v3-child-0042-008",
+            "eval-v3-child-0021-025"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0004",
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 119.997
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0042-008",
+        "eval-v3-child-0013-004",
+        "eval-v3-child-0041-017",
+        "eval-v3-child-0004-005",
+        "eval-v3-child-0021-025"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-013"
+        ],
+        [
+          "eval-v3-child-0021-011"
+        ],
+        [
+          "eval-v3-child-0041-017"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        null,
+        3
+      ],
+      "first_token_ms": 4140.902,
+      "total_ms": 4162.085,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_015",
+      "category": "multi_block:3:推理剧",
+      "question": "补哪部剧、每天几点看几集、讨论时有什么约定？",
+      "answerable": true,
+      "reference_answer": "《非自然死亡》；每晚九点一集；不提前搜结局先猜",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "大家决定补哪部剧、每天几点看几集、讨论时有什么约定？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0041-005",
+            "eval-v3-child-0020-008",
+            "eval-v3-child-0042-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0042"
+          ],
+          "retrieval_ms": 130.82
+        },
+        {
+          "query": "补剧 每天几点看几集 讨论约定 不剧透 字幕版本",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-013",
+            "eval-v3-child-0013-004",
+            "eval-v3-child-0041-005"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0013",
+            "eval-v3-parent-0041"
+          ],
+          "retrieval_ms": 128.252
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0041-005",
+        "eval-v3-child-0020-008",
+        "eval-v3-child-0042-001",
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0013-004"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-014"
+        ],
+        [
+          "eval-v3-child-0021-013"
+        ],
+        [
+          "eval-v3-child-0042-001"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        4,
+        3
+      ],
+      "first_token_ms": 5033.243,
+      "total_ms": 5048.904,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_016",
+      "category": "multi_block:3:声优见面会",
+      "question": "看谁的访谈、几点看、看多久？",
+      "answerable": true,
+      "reference_answer": "花泽香菜访谈；周六下午三点；前半小时",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).我查了房间里的历史消息，只找到一条和“访谈”直接相关的记录：\n\n- 张嘉宁（u089）在 2025-09-02 20:08 左右提到：“有人转了花泽香菜的访谈，我觉得她聊配音准备很认真。”\n\n但关于**几点看、看多久**，我没有检索到明确的安排。房间里其他时间安排（比如周六下午两点同步播放、周一到周五晚上九点每天一集、周六下午三点看回放等）都没有明确对应到“花泽香菜访谈”这件事，我不敢直接套用。\n\n如果你能补充一下是哪次讨论（比如大概哪一天、谁提的），我可以再帮你定位具体的时间和时长安排。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "看谁的访谈、几点看、看多久？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-013",
+            "eval-v3-child-0021-023",
+            "eval-v3-child-0001-009"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0001"
+          ],
+          "retrieval_ms": 119.911
+        },
+        {
+          "query": "访谈 看谁的访谈 几点看 看多久 时长安排",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0042-002",
+            "eval-v3-child-0003-015",
+            "eval-v3-child-0003-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0003"
+          ],
+          "retrieval_ms": 134.692
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0021-023",
+        "eval-v3-child-0001-009",
+        "eval-v3-child-0042-002",
+        "eval-v3-child-0003-015",
+        "eval-v3-child-0003-001"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-015"
+        ],
+        [
+          "eval-v3-child-0021-015"
+        ],
+        [
+          "eval-v3-child-0042-001"
+        ]
+      ],
+      "target_hit_ranks": [
+        5,
+        null,
+        null
+      ],
+      "first_token_ms": 4443.389,
+      "total_ms": 4445.852,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_017",
+      "category": "multi_block:3:漫画改编",
+      "question": "看哪部作品、几点看、看完留多久讨论？",
+      "answerable": true,
+      "reference_answer": "《迷宫饭》；周三晚八点；讨论十五分钟",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "大家决定看哪部作品、几点开始看、看完留多久讨论？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0023-002",
+            "eval-v3-child-0001-006",
+            "eval-v3-child-0021-023"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0023",
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 139.918
+        },
+        {
+          "query": "一起看片的具体安排：看哪部作品、几点开始看、看完留多久讨论",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-001",
+            "eval-v3-child-0001-006",
+            "eval-v3-child-0021-023"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0001"
+          ],
+          "retrieval_ms": 119.636
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0023-002",
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0021-023",
+        "eval-v3-child-0021-001"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-016"
+        ],
+        [
+          "eval-v3-child-0021-017"
+        ],
+        [
+          "eval-v3-child-0042-002"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        null,
+        null
+      ],
+      "first_token_ms": 4248.968,
+      "total_ms": 4320.132,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_018",
+      "category": "multi_block:3:游戏原声",
+      "question": "想找哪款游戏的原声、什么时候去、预算多少？",
+      "answerable": true,
+      "reference_answer": "《女神异闻录5》原声；周五下班后；两百元以内",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "想找哪款游戏的原声、什么时候去、预算多少？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-020",
+            "eval-v3-child-0042-004",
+            "eval-v3-child-0001-008"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0001"
+          ],
+          "retrieval_ms": 125.705
+        },
+        {
+          "query": "游戏原声 想找哪款游戏的原声 什么时候去唱片店 预算多少",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0003-017",
+            "eval-v3-child-0004-001",
+            "eval-v3-child-0021-020"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0004",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 121.336
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0021-020",
+        "eval-v3-child-0042-004",
+        "eval-v3-child-0001-008",
+        "eval-v3-child-0003-017",
+        "eval-v3-child-0004-001"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-017"
+        ],
+        [
+          "eval-v3-child-0021-019"
+        ],
+        [
+          "eval-v3-child-0042-003"
+        ]
+      ],
+      "target_hit_ranks": [
+        4,
+        null,
+        null
+      ],
+      "first_token_ms": 5502.916,
+      "total_ms": 5536.239,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_019",
+      "category": "multi_block:3:经典电影",
+      "question": "选了哪部电影、几点在哪里看、散场后怎么安排？",
+      "answerable": true,
+      "reference_answer": "《天堂电影院》；周六晚七点社区影厅；散场后各自回家",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).我查了房间里的历史消息，目前只能确认部分信息，而且几处说法互相矛盾，没法给出一个确定的安排：\n\n**时间/地点（说法不一致）**\n- 孔嘉宁：「影厅选周六下午一点半那场。」\n- 林知夏：「周六晚七点去社区影厅，票我先订。」\n- 朱晓安：「周五晚上七点半到小周家看。」\n- 曹知夏：「周五晚上九点我家投影，地址私聊发。」\n- 另外还有「周六下午两点线上同步播放」「周六下午三点看回放」等线上安排。\n\n**散场后（说法不一致）**\n- 杨亦辰：「散场后在一楼长椅等十分钟再去吃饭。」\n- 蒋亦辰：「结束后不赶场，直接坐地铁回去。」\n- 郑晓安：「散场后不安排聚餐，大家赶末班车。」\n\n**电影片名**：检索到的消息里没有明确说最终选了哪部电影，只看到「关于电影选择」「关于经典电影」「关于科幻电影」这类记录性发言，没有结论。\n\n所以目前无法确认「哪部电影 + 几点在哪看 + 散场怎么安排」这套完整方案。你能补充一下是哪次观影（比如是社区影厅那场还是线上那场），或者告诉我大概的讨论时间，我再帮你精确定位？",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "大家选了哪部电影，几点在哪里看，散场后怎么安排？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-001",
+            "eval-v3-child-0041-011",
+            "eval-v3-child-0042-004"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0042"
+          ],
+          "retrieval_ms": 121.059
+        },
+        {
+          "query": "电影最终选的是哪一部？散场后怎么安排？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-027",
+            "eval-v3-child-0041-011",
+            "eval-v3-child-0042-004"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0042"
+          ],
+          "retrieval_ms": 121.524
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0021-001",
+        "eval-v3-child-0041-011",
+        "eval-v3-child-0042-004",
+        "eval-v3-child-0021-027"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0004-002"
+        ],
+        [
+          "eval-v3-child-0021-001"
+        ],
+        [
+          "eval-v3-child-0042-004"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        1,
+        3
+      ],
+      "first_token_ms": 5594.981,
+      "total_ms": 5597.141,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_020",
+      "category": "multi_block:3:配音练习",
+      "question": "用什么作品练配音、何时练、每人录多久？",
+      "answerable": true,
+      "reference_answer": "《千与千寻》；周四晚八点；每人一分钟",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "大家讨论用什么作品练配音、什么时候练、每人录多久？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-022",
+            "eval-v3-child-0041-016",
+            "eval-v3-child-0004-003"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0004"
+          ],
+          "retrieval_ms": 137.805
+        },
+        {
+          "query": "配音练习用哪部作品练，什么时候练，每人录多久？",
+          "time_hint": {
+            "mode": "latest",
+            "start_at": null,
+            "end_at": null
+          },
+          "child_ids": [
+            "eval-v3-child-0021-022",
+            "eval-v3-child-0004-003",
+            "eval-v3-child-0042-006"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0004",
+            "eval-v3-parent-0042"
+          ],
+          "retrieval_ms": 145.093
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0021-022",
+        "eval-v3-child-0041-016",
+        "eval-v3-child-0004-003",
+        "eval-v3-child-0042-006"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0004-003"
+        ],
+        [
+          "eval-v3-child-0021-022"
+        ],
+        [
+          "eval-v3-child-0042-005"
+        ]
+      ],
+      "target_hit_ranks": [
+        3,
+        1,
+        null
+      ],
+      "first_token_ms": 4230.519,
+      "total_ms": 4343.218,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_021",
+      "category": "multi_block:3:动画投票",
+      "question": "选了哪部动画、几点开始、第一晚看几集？",
+      "answerable": true,
+      "reference_answer": "《强风吹拂》；周日晚七点半；三集",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).我查了房间里的相关消息，目前只能确认一部分，还有一处对不上：\n\n**第一晚看几集：说法有冲突**\n- 蒋星野：「先看两集，看到十点就收。」（seq 2010）\n- 林星野：「第一晚只看三集，后面再决定要不要继续。」（seq 2070）\n\n这两条互相矛盾，我没法判断哪个是最终决定，需要你们确认一下。\n\n**选了哪部动画：没有找到明确的最终定论**\n聊天里出现过多部候选，比如吴晓安想重看《灌篮高手》（seq 102，后续秦晓安提到「只看全国大赛那几集」seq 2013）、孔亦辰选《强风吹拂》（seq 159）、曹星野提到《迷宫饭》（seq 147）等，但没有看到一条明确宣布「就定这部」的消息。如果你们已经定过，可以告诉我大概时间或关键词，我再查。\n\n**几点开始：没有查到**\n检索到的消息里没有关于补番开始时间的明确约定（只有「看到十点就收」这类结束时间的说法）。\n\n要不要我按某个时间段再检索一次？",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "大家选了哪部动画、几点开始、第一晚看几集？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0042-007",
+            "eval-v3-child-0003-002",
+            "eval-v3-child-0004-004"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0004"
+          ],
+          "retrieval_ms": 121.999
+        },
+        {
+          "query": "补番最终选定的动画是哪部，几点开始看，第一晚看几集？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0041-005",
+            "eval-v3-child-0042-006",
+            "eval-v3-child-0042-007"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0042"
+          ],
+          "retrieval_ms": 134.654
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0042-007",
+        "eval-v3-child-0003-002",
+        "eval-v3-child-0004-004",
+        "eval-v3-child-0041-005",
+        "eval-v3-child-0042-006"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0004-004"
+        ],
+        [
+          "eval-v3-child-0021-023"
+        ],
+        [
+          "eval-v3-child-0042-006"
+        ]
+      ],
+      "target_hit_ranks": [
+        3,
+        null,
+        5
+      ],
+      "first_token_ms": 6310.337,
+      "total_ms": 6313.307,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_022",
+      "category": "multi_block:3:旧剧重看",
+      "question": "重看的剧、开始时间和先看哪段？",
+      "answerable": true,
+      "reference_answer": "《甄嬛传》；周六下午两点；华妃出场部分",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "重看的剧是什么，开始时间，先看哪一段",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0042-007",
+            "eval-v3-child-0004-005",
+            "eval-v3-child-0021-025"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0004",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 121.496
+        },
+        {
+          "query": "重看《甄嬛传》的时间安排，先看华妃出场那几集",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0042-007",
+            "eval-v3-child-0004-005",
+            "eval-v3-child-0041-005"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0004",
+            "eval-v3-parent-0041"
+          ],
+          "retrieval_ms": 129.732
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0042-007",
+        "eval-v3-child-0004-005",
+        "eval-v3-child-0021-025",
+        "eval-v3-child-0041-005"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0004-005"
+        ],
+        [
+          "eval-v3-child-0021-011"
+        ],
+        [
+          "eval-v3-child-0042-007"
+        ]
+      ],
+      "target_hit_ranks": [
+        2,
+        null,
+        1
+      ],
+      "first_token_ms": 4396.136,
+      "total_ms": 4407.731,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_023",
+      "category": "multi_block:3:电影选择",
+      "question": "选了哪部电影、几点看、字幕用哪个版本？",
+      "answerable": true,
+      "reference_answer": "《银翼杀手2049》；周五晚九点；简体中文字幕版",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "大家选了哪部电影、几点看、字幕用哪个版本？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0042-008",
+            "eval-v3-child-0041-017",
+            "eval-v3-child-0042-011"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0041"
+          ],
+          "retrieval_ms": 124.761
+        },
+        {
+          "query": "电影夜最终定了哪部电影、几点开始看？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0021-001",
+            "eval-v3-child-0041-006"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0041"
+          ],
+          "retrieval_ms": 120.287
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0042-008",
+        "eval-v3-child-0041-017",
+        "eval-v3-child-0042-011",
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0021-001",
+        "eval-v3-child-0041-006"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0004-006"
+        ],
+        [
+          "eval-v3-child-0021-026"
+        ],
+        [
+          "eval-v3-child-0042-008"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        null,
+        1
+      ],
+      "first_token_ms": 3847.118,
+      "total_ms": 3859.736,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_024",
+      "category": "multi_block:3:音乐分享",
+      "question": "分享谁的哪种专辑、什么时候发、放在哪个平台？",
+      "answerable": true,
+      "reference_answer": "陈粒现场专辑；周日下午；网易云歌单",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "分享谁的哪种专辑、什么时候发、放在哪个平台？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0004-007",
+            "eval-v3-child-0022-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0004"
+          ],
+          "retrieval_ms": 138.18
+        },
+        {
+          "query": "分享专辑 谁分享什么类型的专辑 什么时候发布 放在哪个平台",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0004-007",
+            "eval-v3-child-0044-005",
+            "eval-v3-child-0022-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0004",
+            "eval-v3-parent-0044",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 130.864
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0004-007",
+        "eval-v3-child-0022-001",
+        "eval-v3-child-0044-005"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0004-007"
+        ],
+        [
+          "eval-v3-child-0022-001"
+        ],
+        [
+          "eval-v3-child-0042-009"
+        ]
+      ],
+      "target_hit_ranks": [
+        2,
+        3,
+        null
+      ],
+      "first_token_ms": 4398.646,
+      "total_ms": 4432.473,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_025",
+      "category": "multi_block:3:经典动画",
+      "question": "重看哪部作品、几点放映、选什么音轨版本？",
+      "answerable": true,
+      "reference_answer": "《攻壳机动队》剧场版；周三晚八点；日文原声中文字幕版",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "重看哪部作品、几点放映、选什么音轨版本？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0004-005",
+            "eval-v3-child-0021-025",
+            "eval-v3-child-0042-007"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0004",
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0042"
+          ],
+          "retrieval_ms": 124.525
+        },
+        {
+          "query": "重看《攻壳机动队》剧场版，几点放映，选日文原声中文字幕还是配音版？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0042-009",
+            "eval-v3-child-0004-008",
+            "eval-v3-child-0041-017"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0004",
+            "eval-v3-parent-0041"
+          ],
+          "retrieval_ms": 131.574
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0004-005",
+        "eval-v3-child-0021-025",
+        "eval-v3-child-0042-007",
+        "eval-v3-child-0042-009",
+        "eval-v3-child-0004-008",
+        "eval-v3-child-0041-017"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0004-008"
+        ],
+        [
+          "eval-v3-child-0022-002"
+        ],
+        [
+          "eval-v3-child-0042-009"
+        ]
+      ],
+      "target_hit_ranks": [
+        5,
+        null,
+        4
+      ],
+      "first_token_ms": 4261.938,
+      "total_ms": 4277.345,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_026",
+      "category": "multi_block:3:舞台剧",
+      "question": "想看哪部舞台剧、哪天的场次、倾向什么座位？",
+      "answerable": true,
+      "reference_answer": "《暗恋桃花源》；周日场；中间偏后座位",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_calls": [
+        {
+          "query": "大家想看哪部舞台剧、哪天的场次、倾向什么座位？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0042-010",
+            "eval-v3-child-0003-009",
+            "eval-v3-child-0022-003"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 119.988
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0042-010",
+        "eval-v3-child-0003-009",
+        "eval-v3-child-0022-003"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0004-009"
+        ],
+        [
+          "eval-v3-child-0022-003"
+        ],
+        [
+          "eval-v3-child-0042-010"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        3,
+        1
+      ],
+      "first_token_ms": null,
+      "total_ms": 1960.653,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_027",
+      "category": "multi_block:3:音乐剧",
+      "question": "想看哪部音乐剧、什么时候发链接、先看哪部分？",
+      "answerable": true,
+      "reference_answer": "《摇滚莫扎特》；周二晚上；先看前半场",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [
+        [
+          "eval-v3-child-0004-010"
+        ],
+        [
+          "eval-v3-child-0022-005"
+        ],
+        [
+          "eval-v3-child-0042-011"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        null,
+        null
+      ],
+      "first_token_ms": null,
+      "total_ms": 435.831,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_028",
+      "category": "multi_block:3:动画电影",
+      "question": "看哪部动画电影、几点开始、字幕和结束安排是什么？",
+      "answerable": true,
+      "reference_answer": "《红辣椒》；周六下午四点；简体中文字幕，片尾后结束",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [
+        [
+          "eval-v3-child-0004-011"
+        ],
+        [
+          "eval-v3-child-0022-007"
+        ],
+        [
+          "eval-v3-child-0042-011"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        null,
+        null
+      ],
+      "first_token_ms": null,
+      "total_ms": 406.357,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_029",
+      "category": "multi_block:3:游戏聚会",
+      "question": "玩什么游戏、几点开始、攻略怎么处理？",
+      "answerable": true,
+      "reference_answer": "《双人成行》；周五晚八点；从第一章开始且不看攻略",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [
+        [
+          "eval-v3-child-0004-012"
+        ],
+        [
+          "eval-v3-child-0022-009"
+        ],
+        [
+          "eval-v3-child-0042-012"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        null,
+        null
+      ],
+      "first_token_ms": null,
+      "total_ms": 400.544,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_030",
+      "category": "multi_block:3:动画配音",
+      "question": "分享哪部作品的配音片段、几点发、截哪段？",
+      "answerable": true,
+      "reference_answer": "《大鱼海棠》；周日晚七点；椿第一次见到鲲的片段",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [
+        [
+          "eval-v3-child-0004-013"
+        ],
+        [
+          "eval-v3-child-0022-010"
+        ],
+        [
+          "eval-v3-child-0042-013"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        null,
+        null
+      ],
+      "first_token_ms": null,
+      "total_ms": 414.044,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "temporal_001",
+      "category": "temporal:range:沪深300",
+      "question": "2025年9月12日群里讨论沪深300时的判断是什么？",
+      "answerable": true,
+      "reference_answer": "成交量放大但指数未站稳，先观察、不急着加仓。",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [
+        [
+          "eval-v3-child-0020-006"
+        ]
+      ],
+      "target_hit_ranks": [
+        null
+      ],
+      "first_token_ms": null,
+      "total_ms": 410.434,
+      "time_hint_exact": false
+    },
+    {
+      "qid": "temporal_002",
+      "category": "temporal:latest:沪深300",
+      "question": "最近一次群里讨论沪深300时，大家的判断是什么？",
+      "answerable": true,
+      "reference_answer": "指数站回关键区间但短期涨幅不小，仍不建议追高。",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [
+        [
+          "eval-v3-child-0041-001"
+        ]
+      ],
+      "target_hit_ranks": [
+        null
+      ],
+      "first_token_ms": null,
+      "total_ms": 401.51,
+      "time_hint_exact": false
+    },
+    {
+      "qid": "temporal_003",
+      "category": "temporal:range:宁德时代",
+      "question": "2025年9月12日群里讨论宁德时代时的判断是什么？",
+      "answerable": true,
+      "reference_answer": "观察订单兑现和季报，不把短线反弹当趋势。",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [
+        [
+          "eval-v3-child-0020-006"
+        ]
+      ],
+      "target_hit_ranks": [
+        null
+      ],
+      "first_token_ms": null,
+      "total_ms": 436.179,
+      "time_hint_exact": false
+    },
+    {
+      "qid": "temporal_004",
+      "category": "temporal:latest:宁德时代",
+      "question": "最近一次群里讨论宁德时代时，大家的判断是什么？",
+      "answerable": true,
+      "reference_answer": "继续关注海外订单与毛利率，暂时不追涨。",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [
+        [
+          "eval-v3-child-0041-002"
+        ]
+      ],
+      "target_hit_ranks": [
+        null
+      ],
+      "first_token_ms": null,
+      "total_ms": 473.229,
+      "time_hint_exact": false
+    },
+    {
+      "qid": "temporal_005",
+      "category": "temporal:range:贵州茅台",
+      "question": "2025年9月12日群里讨论贵州茅台时的判断是什么？",
+      "answerable": true,
+      "reference_answer": "渠道库存变化不明朗，等后续数据再讨论。",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [
+        [
+          "eval-v3-child-0020-007"
+        ]
+      ],
+      "target_hit_ranks": [
+        null
+      ],
+      "first_token_ms": null,
+      "total_ms": 453.431,
+      "time_hint_exact": false
+    },
+    {
+      "qid": "temporal_006",
+      "category": "temporal:latest:贵州茅台",
+      "question": "最近一次群里讨论贵州茅台时，大家的判断是什么？",
+      "answerable": true,
+      "reference_answer": "继续观察渠道库存和财报，不因短期波动下结论。",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [
+        [
+          "eval-v3-child-0041-003"
+        ]
+      ],
+      "target_hit_ranks": [
+        null
+      ],
+      "first_token_ms": null,
+      "total_ms": 427.063,
+      "time_hint_exact": false
+    },
+    {
+      "qid": "temporal_007",
+      "category": "temporal:range:黄金ETF",
+      "question": "2025年9月12日群里讨论黄金ETF时的判断是什么？",
+      "answerable": true,
+      "reference_answer": "利率预期变化较大，先观察回撤、不急着追涨。",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [
+        [
+          "eval-v3-child-0020-007"
+        ]
+      ],
+      "target_hit_ranks": [
+        null
+      ],
+      "first_token_ms": null,
+      "total_ms": 435.463,
+      "time_hint_exact": false
+    },
+    {
+      "qid": "temporal_008",
+      "category": "temporal:latest:黄金ETF",
+      "question": "最近一次群里讨论黄金ETF时，大家的判断是什么？",
+      "answerable": true,
+      "reference_answer": "继续观察利率和回撤情况。",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [
+        [
+          "eval-v3-child-0041-004"
+        ]
+      ],
+      "target_hit_ranks": [
+        null
+      ],
+      "first_token_ms": null,
+      "total_ms": 427.445,
+      "time_hint_exact": false
+    },
+    {
+      "qid": "noanswer_001",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《来自深渊》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": null,
+      "total_ms": 408.499,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_002",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《昭和元禄落语心中》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": null,
+      "total_ms": 395.48,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_003",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《比宇宙更远的地方》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": null,
+      "total_ms": 423.243,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_004",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《夏目友人帐》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": null,
+      "total_ms": 409.663,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_005",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《白箱》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": null,
+      "total_ms": 735.294,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_006",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《少女终末旅行》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": null,
+      "total_ms": 428.842,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_007",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《异度侵入》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": null,
+      "total_ms": 452.107,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_008",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《四叠半神话大系》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": null,
+      "total_ms": 420.987,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_009",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《花开伊吕波》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": null,
+      "total_ms": 562.34,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_010",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《冰菓》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": null,
+      "total_ms": 465.412,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_011",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《日常》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": null,
+      "total_ms": 471.156,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_012",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《昭和元禄落语心中》剧场版，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": null,
+      "total_ms": 468.048,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_013",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《平家物语》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": null,
+      "total_ms": 438.214,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_014",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《乒乓》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": null,
+      "total_ms": 398.676,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_015",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《妄想代理人》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "",
+      "http_status": 200,
+      "error": "模型暂时不可用，请稍后重试。",
+      "events": [
+        "connected",
+        "error"
+      ],
+      "tool_names": [],
+      "search_calls": [],
+      "unique_reranked_child_ids": [],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": null,
+      "total_ms": 418.128,
+      "time_hint_exact": null
+    }
+  ]
+}

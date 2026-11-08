@@ -1,6 +1,5 @@
 """执行未读消息摘要 Agent。"""
 
-from typing import Any
 
 from langchain.agents import create_agent
 from langchain.agents.middleware import ToolCallLimitMiddleware
@@ -12,26 +11,31 @@ from agent.model import summary_model
 from agent.prompts.summary import SUMMARY_PROMPT
 from agent.tools.get_unread_messages import get_unread_messages
 from harness.llm.agent_execution import run_agent
+from harness.middleware.model_retry import AgentRetryMiddleware
+from harness.middleware.tool_result_cache import ToolResultCacheMiddleware
 
-
-class SummaryToolCallLimitMiddleware(
-    ToolCallLimitMiddleware[Any, AgentRuntimeContext]
-):
-    """兼容 Room Agent 运行时上下文的摘要工具调用限额中间件。"""
-
+middleware = [
+    ToolCallLimitMiddleware(run_limit=3, exit_behavior="end"),
+    ToolCallLimitMiddleware(
+        tool_name="search_messages",
+        run_limit=2,
+        exit_behavior="continue",
+    ),
+    ToolCallLimitMiddleware(
+        tool_name="sync_room_messages",
+        run_limit=1,
+        exit_behavior="continue",
+    ),
+    AgentRetryMiddleware(),
+    ToolResultCacheMiddleware(),
+]
 
 summary_agent = create_agent(
     model=summary_model,
     tools=[get_unread_messages],
     system_prompt=SUMMARY_PROMPT.format_messages()[0].text,
     context_schema=AgentRuntimeContext,
-    middleware=[
-        SummaryToolCallLimitMiddleware(
-            tool_name="get_unread_messages",
-            run_limit=1,
-            exit_behavior="continue",
-        )
-    ],
+    middleware=middleware,
     checkpointer=False,
 )
 
@@ -42,9 +46,11 @@ async def run_summary(
     config: RunnableConfig | None = None,
 ) -> list[AnyMessage]:
     """查询本次已授权范围内的未读消息并生成摘要。"""
-    return await run_agent(
+    response =  await run_agent(
         summary_agent,
         messages=[HumanMessage(content="请先调用 get_unread_messages 获取当前房间未读消息，再生成摘要。")],
         context=context,
         config=config,
     )
+    
+    return response.messages

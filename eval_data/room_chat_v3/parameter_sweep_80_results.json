@@ -1,0 +1,2360 @@
+{
+  "dataset": "room_chat_v3_parameter_queries_80",
+  "questions": 80,
+  "unique_target_children": 80,
+  "child_chunks": 685,
+  "question_composition": {
+    "existing_single": 29,
+    "split_subquery": 51
+  },
+  "models": {
+    "embedding": "Qwen/Qwen3-Embedding-0.6B",
+    "reranker": "Qwen/Qwen3-Reranker-0.6B",
+    "chat_llm_called": false,
+    "cluster_llm_called": false
+  },
+  "fixed_rrf_k": 60,
+  "k_grid": [
+    5,
+    10,
+    20,
+    30
+  ],
+  "l_grid": [
+    5,
+    10,
+    20,
+    30,
+    40,
+    60
+  ],
+  "n_grid": [
+    1,
+    3,
+    5
+  ],
+  "indexing_ms": 16852.1,
+  "latency_ms": {
+    "query_embedding": {
+      "mean": 52.82,
+      "p95": 59.81,
+      "samples": 80
+    },
+    "hybrid_search": {
+      "mean": 8.4,
+      "p95": 10.51,
+      "samples": 320
+    },
+    "rerank_max_candidate_union": {
+      "mean": 751.9,
+      "p95": 869.53,
+      "samples": 80
+    }
+  },
+  "configs": {
+    "K5_L5": {
+      "candidate_recall_at_L": {
+        "all": {
+          "questions": 80,
+          "hits": 70,
+          "recall": 0.875,
+          "mrr": 0.7677,
+          "mean_returned_children": 5,
+          "mean_context_chars": 371.2,
+          "mean_unique_parent_chunks": 3.61,
+          "mean_parent_messages": 180.6,
+          "mean_parent_source_chars": 11957.3
+        },
+        "existing_single": {
+          "questions": 29,
+          "hits": 29,
+          "recall": 1.0,
+          "mrr": 0.9253,
+          "mean_returned_children": 5,
+          "mean_context_chars": 432.8,
+          "mean_unique_parent_chunks": 2.93,
+          "mean_parent_messages": 146.6,
+          "mean_parent_source_chars": 9593.3
+        },
+        "split_subquery": {
+          "questions": 51,
+          "hits": 41,
+          "recall": 0.8039,
+          "mrr": 0.6781,
+          "mean_returned_children": 5,
+          "mean_context_chars": 336.2,
+          "mean_unique_parent_chunks": 4,
+          "mean_parent_messages": 200,
+          "mean_parent_source_chars": 13301.6
+        }
+      },
+      "reranked": {
+        "1": {
+          "all": {
+            "questions": 80,
+            "hits": 65,
+            "recall": 0.8125,
+            "mrr": 0.8125,
+            "mean_returned_children": 1,
+            "mean_context_chars": 73.8,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3267.0
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 28,
+            "recall": 0.9655,
+            "mrr": 0.9655,
+            "mean_returned_children": 1,
+            "mean_context_chars": 91.4,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3229.2
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 37,
+            "recall": 0.7255,
+            "mrr": 0.7255,
+            "mean_returned_children": 1,
+            "mean_context_chars": 63.7,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3288.4
+          }
+        },
+        "3": {
+          "all": {
+            "questions": 80,
+            "hits": 69,
+            "recall": 0.8625,
+            "mrr": 0.8375,
+            "mean_returned_children": 3,
+            "mean_context_chars": 226.6,
+            "mean_unique_parent_chunks": 2.41,
+            "mean_parent_messages": 120.6,
+            "mean_parent_source_chars": 7945.1
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 3,
+            "mean_context_chars": 269.7,
+            "mean_unique_parent_chunks": 2.14,
+            "mean_parent_messages": 106.9,
+            "mean_parent_source_chars": 6963.2
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 40,
+            "recall": 0.7843,
+            "mrr": 0.7549,
+            "mean_returned_children": 3,
+            "mean_context_chars": 202.1,
+            "mean_unique_parent_chunks": 2.57,
+            "mean_parent_messages": 128.4,
+            "mean_parent_source_chars": 8503.4
+          }
+        },
+        "5": {
+          "all": {
+            "questions": 80,
+            "hits": 70,
+            "recall": 0.875,
+            "mrr": 0.8406,
+            "mean_returned_children": 5,
+            "mean_context_chars": 371.2,
+            "mean_unique_parent_chunks": 3.61,
+            "mean_parent_messages": 180.6,
+            "mean_parent_source_chars": 11957.3
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 5,
+            "mean_context_chars": 432.8,
+            "mean_unique_parent_chunks": 2.93,
+            "mean_parent_messages": 146.6,
+            "mean_parent_source_chars": 9593.3
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 41,
+            "recall": 0.8039,
+            "mrr": 0.7598,
+            "mean_returned_children": 5,
+            "mean_context_chars": 336.2,
+            "mean_unique_parent_chunks": 4,
+            "mean_parent_messages": 200,
+            "mean_parent_source_chars": 13301.6
+          }
+        }
+      }
+    },
+    "K5_L10": {
+      "candidate_recall_at_L": {
+        "all": {
+          "questions": 80,
+          "hits": 72,
+          "recall": 0.9,
+          "mrr": 0.7716,
+          "mean_returned_children": 8.2,
+          "mean_context_chars": 622.4,
+          "mean_unique_parent_chunks": 5.42,
+          "mean_parent_messages": 271.2,
+          "mean_parent_source_chars": 18081.2
+        },
+        "existing_single": {
+          "questions": 29,
+          "hits": 29,
+          "recall": 1.0,
+          "mrr": 0.9253,
+          "mean_returned_children": 7.93,
+          "mean_context_chars": 677.2,
+          "mean_unique_parent_chunks": 4.28,
+          "mean_parent_messages": 213.8,
+          "mean_parent_source_chars": 14062.8
+        },
+        "split_subquery": {
+          "questions": 51,
+          "hits": 43,
+          "recall": 0.8431,
+          "mrr": 0.6842,
+          "mean_returned_children": 8.35,
+          "mean_context_chars": 591.2,
+          "mean_unique_parent_chunks": 6.08,
+          "mean_parent_messages": 303.9,
+          "mean_parent_source_chars": 20366.1
+        }
+      },
+      "reranked": {
+        "1": {
+          "all": {
+            "questions": 80,
+            "hits": 64,
+            "recall": 0.8,
+            "mrr": 0.8,
+            "mean_returned_children": 1,
+            "mean_context_chars": 74.0,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3264.4
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 28,
+            "recall": 0.9655,
+            "mrr": 0.9655,
+            "mean_returned_children": 1,
+            "mean_context_chars": 91.4,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3229.2
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 36,
+            "recall": 0.7059,
+            "mrr": 0.7059,
+            "mean_returned_children": 1,
+            "mean_context_chars": 64.1,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3284.3
+          }
+        },
+        "3": {
+          "all": {
+            "questions": 80,
+            "hits": 70,
+            "recall": 0.875,
+            "mrr": 0.8354,
+            "mean_returned_children": 3,
+            "mean_context_chars": 226.5,
+            "mean_unique_parent_chunks": 2.4,
+            "mean_parent_messages": 120,
+            "mean_parent_source_chars": 7901.0
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 3,
+            "mean_context_chars": 267.0,
+            "mean_unique_parent_chunks": 2.24,
+            "mean_parent_messages": 112.1,
+            "mean_parent_source_chars": 7300.9
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 41,
+            "recall": 0.8039,
+            "mrr": 0.7516,
+            "mean_returned_children": 3,
+            "mean_context_chars": 203.5,
+            "mean_unique_parent_chunks": 2.49,
+            "mean_parent_messages": 124.5,
+            "mean_parent_source_chars": 8242.3
+          }
+        },
+        "5": {
+          "all": {
+            "questions": 80,
+            "hits": 72,
+            "recall": 0.9,
+            "mrr": 0.8417,
+            "mean_returned_children": 5,
+            "mean_context_chars": 377.2,
+            "mean_unique_parent_chunks": 3.54,
+            "mean_parent_messages": 176.9,
+            "mean_parent_source_chars": 11712.9
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 5,
+            "mean_context_chars": 440.3,
+            "mean_unique_parent_chunks": 2.93,
+            "mean_parent_messages": 146.6,
+            "mean_parent_source_chars": 9576.8
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 43,
+            "recall": 0.8431,
+            "mrr": 0.7614,
+            "mean_returned_children": 5,
+            "mean_context_chars": 341.3,
+            "mean_unique_parent_chunks": 3.88,
+            "mean_parent_messages": 194.1,
+            "mean_parent_source_chars": 12927.5
+          }
+        }
+      }
+    },
+    "K10_L5": {
+      "candidate_recall_at_L": {
+        "all": {
+          "questions": 80,
+          "hits": 71,
+          "recall": 0.8875,
+          "mrr": 0.7723,
+          "mean_returned_children": 5,
+          "mean_context_chars": 368.9,
+          "mean_unique_parent_chunks": 3.67,
+          "mean_parent_messages": 183.8,
+          "mean_parent_source_chars": 12165.4
+        },
+        "existing_single": {
+          "questions": 29,
+          "hits": 29,
+          "recall": 1.0,
+          "mrr": 0.9253,
+          "mean_returned_children": 5,
+          "mean_context_chars": 429.2,
+          "mean_unique_parent_chunks": 2.93,
+          "mean_parent_messages": 146.6,
+          "mean_parent_source_chars": 9588.8
+        },
+        "split_subquery": {
+          "questions": 51,
+          "hits": 42,
+          "recall": 0.8235,
+          "mrr": 0.6853,
+          "mean_returned_children": 5,
+          "mean_context_chars": 334.6,
+          "mean_unique_parent_chunks": 4.1,
+          "mean_parent_messages": 204.9,
+          "mean_parent_source_chars": 13630.5
+        }
+      },
+      "reranked": {
+        "1": {
+          "all": {
+            "questions": 80,
+            "hits": 65,
+            "recall": 0.8125,
+            "mrr": 0.8125,
+            "mean_returned_children": 1,
+            "mean_context_chars": 73.3,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3266.5
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 28,
+            "recall": 0.9655,
+            "mrr": 0.9655,
+            "mean_returned_children": 1,
+            "mean_context_chars": 91.4,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3229.2
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 37,
+            "recall": 0.7255,
+            "mrr": 0.7255,
+            "mean_returned_children": 1,
+            "mean_context_chars": 63.1,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3287.7
+          }
+        },
+        "3": {
+          "all": {
+            "questions": 80,
+            "hits": 70,
+            "recall": 0.875,
+            "mrr": 0.8417,
+            "mean_returned_children": 3,
+            "mean_context_chars": 223.1,
+            "mean_unique_parent_chunks": 2.44,
+            "mean_parent_messages": 121.9,
+            "mean_parent_source_chars": 8027.8
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 3,
+            "mean_context_chars": 265.7,
+            "mean_unique_parent_chunks": 2.21,
+            "mean_parent_messages": 110.3,
+            "mean_parent_source_chars": 7176.6
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 41,
+            "recall": 0.8039,
+            "mrr": 0.7614,
+            "mean_returned_children": 3,
+            "mean_context_chars": 198.8,
+            "mean_unique_parent_chunks": 2.57,
+            "mean_parent_messages": 128.4,
+            "mean_parent_source_chars": 8511.7
+          }
+        },
+        "5": {
+          "all": {
+            "questions": 80,
+            "hits": 71,
+            "recall": 0.8875,
+            "mrr": 0.8448,
+            "mean_returned_children": 5,
+            "mean_context_chars": 368.9,
+            "mean_unique_parent_chunks": 3.67,
+            "mean_parent_messages": 183.8,
+            "mean_parent_source_chars": 12165.4
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 5,
+            "mean_context_chars": 429.2,
+            "mean_unique_parent_chunks": 2.93,
+            "mean_parent_messages": 146.6,
+            "mean_parent_source_chars": 9588.8
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 42,
+            "recall": 0.8235,
+            "mrr": 0.7663,
+            "mean_returned_children": 5,
+            "mean_context_chars": 334.6,
+            "mean_unique_parent_chunks": 4.1,
+            "mean_parent_messages": 204.9,
+            "mean_parent_source_chars": 13630.5
+          }
+        }
+      }
+    },
+    "K10_L10": {
+      "candidate_recall_at_L": {
+        "all": {
+          "questions": 80,
+          "hits": 74,
+          "recall": 0.925,
+          "mrr": 0.7775,
+          "mean_returned_children": 10,
+          "mean_context_chars": 765.8,
+          "mean_unique_parent_chunks": 6.1,
+          "mean_parent_messages": 305,
+          "mean_parent_source_chars": 20349.0
+        },
+        "existing_single": {
+          "questions": 29,
+          "hits": 29,
+          "recall": 1.0,
+          "mrr": 0.9253,
+          "mean_returned_children": 10,
+          "mean_context_chars": 860.9,
+          "mean_unique_parent_chunks": 4.79,
+          "mean_parent_messages": 239.7,
+          "mean_parent_source_chars": 15786.2
+        },
+        "split_subquery": {
+          "questions": 51,
+          "hits": 45,
+          "recall": 0.8824,
+          "mrr": 0.6935,
+          "mean_returned_children": 10,
+          "mean_context_chars": 711.8,
+          "mean_unique_parent_chunks": 6.84,
+          "mean_parent_messages": 342.2,
+          "mean_parent_source_chars": 22943.5
+        }
+      },
+      "reranked": {
+        "1": {
+          "all": {
+            "questions": 80,
+            "hits": 64,
+            "recall": 0.8,
+            "mrr": 0.8,
+            "mean_returned_children": 1,
+            "mean_context_chars": 73.7,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3263.8
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 28,
+            "recall": 0.9655,
+            "mrr": 0.9655,
+            "mean_returned_children": 1,
+            "mean_context_chars": 91.4,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3229.2
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 36,
+            "recall": 0.7059,
+            "mrr": 0.7059,
+            "mean_returned_children": 1,
+            "mean_context_chars": 63.7,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3283.5
+          }
+        },
+        "3": {
+          "all": {
+            "questions": 80,
+            "hits": 70,
+            "recall": 0.875,
+            "mrr": 0.8354,
+            "mean_returned_children": 3,
+            "mean_context_chars": 224.6,
+            "mean_unique_parent_chunks": 2.4,
+            "mean_parent_messages": 120,
+            "mean_parent_source_chars": 7906.6
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 3,
+            "mean_context_chars": 265.7,
+            "mean_unique_parent_chunks": 2.28,
+            "mean_parent_messages": 113.8,
+            "mean_parent_source_chars": 7418.1
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 41,
+            "recall": 0.8039,
+            "mrr": 0.7516,
+            "mean_returned_children": 3,
+            "mean_context_chars": 201.2,
+            "mean_unique_parent_chunks": 2.47,
+            "mean_parent_messages": 123.5,
+            "mean_parent_source_chars": 8184.4
+          }
+        },
+        "5": {
+          "all": {
+            "questions": 80,
+            "hits": 72,
+            "recall": 0.9,
+            "mrr": 0.841,
+            "mean_returned_children": 5,
+            "mean_context_chars": 378.1,
+            "mean_unique_parent_chunks": 3.56,
+            "mean_parent_messages": 178.1,
+            "mean_parent_source_chars": 11796.6
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 5,
+            "mean_context_chars": 440.0,
+            "mean_unique_parent_chunks": 3,
+            "mean_parent_messages": 150,
+            "mean_parent_source_chars": 9805.0
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 43,
+            "recall": 0.8431,
+            "mrr": 0.7605,
+            "mean_returned_children": 5,
+            "mean_context_chars": 342.9,
+            "mean_unique_parent_chunks": 3.88,
+            "mean_parent_messages": 194.1,
+            "mean_parent_source_chars": 12929.1
+          }
+        }
+      }
+    },
+    "K10_L20": {
+      "candidate_recall_at_L": {
+        "all": {
+          "questions": 80,
+          "hits": 75,
+          "recall": 0.9375,
+          "mrr": 0.7784,
+          "mean_returned_children": 16.68,
+          "mean_context_chars": 1308.7,
+          "mean_unique_parent_chunks": 9.44,
+          "mean_parent_messages": 471.9,
+          "mean_parent_source_chars": 31727.0
+        },
+        "existing_single": {
+          "questions": 29,
+          "hits": 29,
+          "recall": 1.0,
+          "mrr": 0.9253,
+          "mean_returned_children": 16.34,
+          "mean_context_chars": 1376.0,
+          "mean_unique_parent_chunks": 7,
+          "mean_parent_messages": 350,
+          "mean_parent_source_chars": 23195.5
+        },
+        "split_subquery": {
+          "questions": 51,
+          "hits": 46,
+          "recall": 0.902,
+          "mrr": 0.6948,
+          "mean_returned_children": 16.86,
+          "mean_context_chars": 1270.4,
+          "mean_unique_parent_chunks": 10.82,
+          "mean_parent_messages": 541.2,
+          "mean_parent_source_chars": 36578.3
+        }
+      },
+      "reranked": {
+        "1": {
+          "all": {
+            "questions": 80,
+            "hits": 64,
+            "recall": 0.8,
+            "mrr": 0.8,
+            "mean_returned_children": 1,
+            "mean_context_chars": 73.5,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3262.0
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 28,
+            "recall": 0.9655,
+            "mrr": 0.9655,
+            "mean_returned_children": 1,
+            "mean_context_chars": 91.4,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3229.2
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 36,
+            "recall": 0.7059,
+            "mrr": 0.7059,
+            "mean_returned_children": 1,
+            "mean_context_chars": 63.3,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3280.6
+          }
+        },
+        "3": {
+          "all": {
+            "questions": 80,
+            "hits": 71,
+            "recall": 0.8875,
+            "mrr": 0.8375,
+            "mean_returned_children": 3,
+            "mean_context_chars": 224,
+            "mean_unique_parent_chunks": 2.36,
+            "mean_parent_messages": 118.1,
+            "mean_parent_source_chars": 7785.7
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 3,
+            "mean_context_chars": 267.2,
+            "mean_unique_parent_chunks": 2.14,
+            "mean_parent_messages": 106.9,
+            "mean_parent_source_chars": 6967.2
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 42,
+            "recall": 0.8235,
+            "mrr": 0.7549,
+            "mean_returned_children": 3,
+            "mean_context_chars": 199.5,
+            "mean_unique_parent_chunks": 2.49,
+            "mean_parent_messages": 124.5,
+            "mean_parent_source_chars": 8251.1
+          }
+        },
+        "5": {
+          "all": {
+            "questions": 80,
+            "hits": 73,
+            "recall": 0.9125,
+            "mrr": 0.8431,
+            "mean_returned_children": 5,
+            "mean_context_chars": 376.2,
+            "mean_unique_parent_chunks": 3.49,
+            "mean_parent_messages": 174.4,
+            "mean_parent_source_chars": 11543.7
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 5,
+            "mean_context_chars": 436.6,
+            "mean_unique_parent_chunks": 2.97,
+            "mean_parent_messages": 148.3,
+            "mean_parent_source_chars": 9694.0
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 44,
+            "recall": 0.8627,
+            "mrr": 0.7637,
+            "mean_returned_children": 5,
+            "mean_context_chars": 341.9,
+            "mean_unique_parent_chunks": 3.78,
+            "mean_parent_messages": 189.2,
+            "mean_parent_source_chars": 12595.4
+          }
+        }
+      }
+    },
+    "K20_L5": {
+      "candidate_recall_at_L": {
+        "all": {
+          "questions": 80,
+          "hits": 69,
+          "recall": 0.8625,
+          "mrr": 0.755,
+          "mean_returned_children": 5,
+          "mean_context_chars": 362.3,
+          "mean_unique_parent_chunks": 3.74,
+          "mean_parent_messages": 186.9,
+          "mean_parent_source_chars": 12369.0
+        },
+        "existing_single": {
+          "questions": 29,
+          "hits": 29,
+          "recall": 1.0,
+          "mrr": 0.9253,
+          "mean_returned_children": 5,
+          "mean_context_chars": 414.9,
+          "mean_unique_parent_chunks": 3.21,
+          "mean_parent_messages": 160.3,
+          "mean_parent_source_chars": 10473.3
+        },
+        "split_subquery": {
+          "questions": 51,
+          "hits": 40,
+          "recall": 0.7843,
+          "mrr": 0.6582,
+          "mean_returned_children": 5,
+          "mean_context_chars": 332.3,
+          "mean_unique_parent_chunks": 4.04,
+          "mean_parent_messages": 202.0,
+          "mean_parent_source_chars": 13447.0
+        }
+      },
+      "reranked": {
+        "1": {
+          "all": {
+            "questions": 80,
+            "hits": 63,
+            "recall": 0.7875,
+            "mrr": 0.7875,
+            "mean_returned_children": 1,
+            "mean_context_chars": 73.1,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3264.8
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 28,
+            "recall": 0.9655,
+            "mrr": 0.9655,
+            "mean_returned_children": 1,
+            "mean_context_chars": 91.4,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3229.2
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 35,
+            "recall": 0.6863,
+            "mrr": 0.6863,
+            "mean_returned_children": 1,
+            "mean_context_chars": 62.7,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3285.0
+          }
+        },
+        "3": {
+          "all": {
+            "questions": 80,
+            "hits": 68,
+            "recall": 0.85,
+            "mrr": 0.8167,
+            "mean_returned_children": 3,
+            "mean_context_chars": 223.7,
+            "mean_unique_parent_chunks": 2.45,
+            "mean_parent_messages": 122.5,
+            "mean_parent_source_chars": 8081.4
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 3,
+            "mean_context_chars": 263.8,
+            "mean_unique_parent_chunks": 2.21,
+            "mean_parent_messages": 110.3,
+            "mean_parent_source_chars": 7183.4
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 39,
+            "recall": 0.7647,
+            "mrr": 0.7222,
+            "mean_returned_children": 3,
+            "mean_context_chars": 201.0,
+            "mean_unique_parent_chunks": 2.59,
+            "mean_parent_messages": 129.4,
+            "mean_parent_source_chars": 8592.0
+          }
+        },
+        "5": {
+          "all": {
+            "questions": 80,
+            "hits": 69,
+            "recall": 0.8625,
+            "mrr": 0.8192,
+            "mean_returned_children": 5,
+            "mean_context_chars": 362.3,
+            "mean_unique_parent_chunks": 3.74,
+            "mean_parent_messages": 186.9,
+            "mean_parent_source_chars": 12369.0
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 5,
+            "mean_context_chars": 414.9,
+            "mean_unique_parent_chunks": 3.21,
+            "mean_parent_messages": 160.3,
+            "mean_parent_source_chars": 10473.3
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 40,
+            "recall": 0.7843,
+            "mrr": 0.7261,
+            "mean_returned_children": 5,
+            "mean_context_chars": 332.3,
+            "mean_unique_parent_chunks": 4.04,
+            "mean_parent_messages": 202.0,
+            "mean_parent_source_chars": 13447.0
+          }
+        }
+      }
+    },
+    "K20_L10": {
+      "candidate_recall_at_L": {
+        "all": {
+          "questions": 80,
+          "hits": 74,
+          "recall": 0.925,
+          "mrr": 0.7628,
+          "mean_returned_children": 10,
+          "mean_context_chars": 755.8,
+          "mean_unique_parent_chunks": 6.19,
+          "mean_parent_messages": 309.4,
+          "mean_parent_source_chars": 20636.7
+        },
+        "existing_single": {
+          "questions": 29,
+          "hits": 29,
+          "recall": 1.0,
+          "mrr": 0.9253,
+          "mean_returned_children": 10,
+          "mean_context_chars": 832.5,
+          "mean_unique_parent_chunks": 5,
+          "mean_parent_messages": 250,
+          "mean_parent_source_chars": 16452.2
+        },
+        "split_subquery": {
+          "questions": 51,
+          "hits": 45,
+          "recall": 0.8824,
+          "mrr": 0.6705,
+          "mean_returned_children": 10,
+          "mean_context_chars": 712.1,
+          "mean_unique_parent_chunks": 6.86,
+          "mean_parent_messages": 343.1,
+          "mean_parent_source_chars": 23016.1
+        }
+      },
+      "reranked": {
+        "1": {
+          "all": {
+            "questions": 80,
+            "hits": 64,
+            "recall": 0.8,
+            "mrr": 0.8,
+            "mean_returned_children": 1,
+            "mean_context_chars": 73.5,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3262.0
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 28,
+            "recall": 0.9655,
+            "mrr": 0.9655,
+            "mean_returned_children": 1,
+            "mean_context_chars": 91.4,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3229.2
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 36,
+            "recall": 0.7059,
+            "mrr": 0.7059,
+            "mean_returned_children": 1,
+            "mean_context_chars": 63.3,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3280.6
+          }
+        },
+        "3": {
+          "all": {
+            "questions": 80,
+            "hits": 70,
+            "recall": 0.875,
+            "mrr": 0.8333,
+            "mean_returned_children": 3,
+            "mean_context_chars": 224.2,
+            "mean_unique_parent_chunks": 2.4,
+            "mean_parent_messages": 120,
+            "mean_parent_source_chars": 7904
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 3,
+            "mean_context_chars": 260.2,
+            "mean_unique_parent_chunks": 2.24,
+            "mean_parent_messages": 112.1,
+            "mean_parent_source_chars": 7303.2
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 41,
+            "recall": 0.8039,
+            "mrr": 0.7484,
+            "mean_returned_children": 3,
+            "mean_context_chars": 203.7,
+            "mean_unique_parent_chunks": 2.49,
+            "mean_parent_messages": 124.5,
+            "mean_parent_source_chars": 8245.6
+          }
+        },
+        "5": {
+          "all": {
+            "questions": 80,
+            "hits": 72,
+            "recall": 0.9,
+            "mrr": 0.839,
+            "mean_returned_children": 5,
+            "mean_context_chars": 376.8,
+            "mean_unique_parent_chunks": 3.55,
+            "mean_parent_messages": 177.5,
+            "mean_parent_source_chars": 11755.6
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 5,
+            "mean_context_chars": 434.3,
+            "mean_unique_parent_chunks": 3,
+            "mean_parent_messages": 150,
+            "mean_parent_source_chars": 9804.3
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 43,
+            "recall": 0.8431,
+            "mrr": 0.7572,
+            "mean_returned_children": 5,
+            "mean_context_chars": 344.1,
+            "mean_unique_parent_chunks": 3.86,
+            "mean_parent_messages": 193.1,
+            "mean_parent_source_chars": 12865.1
+          }
+        }
+      }
+    },
+    "K20_L20": {
+      "candidate_recall_at_L": {
+        "all": {
+          "questions": 80,
+          "hits": 75,
+          "recall": 0.9375,
+          "mrr": 0.7637,
+          "mean_returned_children": 20,
+          "mean_context_chars": 1580.2,
+          "mean_unique_parent_chunks": 11,
+          "mean_parent_messages": 550,
+          "mean_parent_source_chars": 37056.3
+        },
+        "existing_single": {
+          "questions": 29,
+          "hits": 29,
+          "recall": 1.0,
+          "mrr": 0.9253,
+          "mean_returned_children": 20,
+          "mean_context_chars": 1660.9,
+          "mean_unique_parent_chunks": 8.31,
+          "mean_parent_messages": 415.5,
+          "mean_parent_source_chars": 27598.4
+        },
+        "split_subquery": {
+          "questions": 51,
+          "hits": 46,
+          "recall": 0.902,
+          "mrr": 0.6718,
+          "mean_returned_children": 20,
+          "mean_context_chars": 1534.4,
+          "mean_unique_parent_chunks": 12.53,
+          "mean_parent_messages": 626.5,
+          "mean_parent_source_chars": 42434.3
+        }
+      },
+      "reranked": {
+        "1": {
+          "all": {
+            "questions": 80,
+            "hits": 64,
+            "recall": 0.8,
+            "mrr": 0.8,
+            "mean_returned_children": 1,
+            "mean_context_chars": 73.5,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3262.0
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 28,
+            "recall": 0.9655,
+            "mrr": 0.9655,
+            "mean_returned_children": 1,
+            "mean_context_chars": 91.4,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3229.2
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 36,
+            "recall": 0.7059,
+            "mrr": 0.7059,
+            "mean_returned_children": 1,
+            "mean_context_chars": 63.3,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3280.6
+          }
+        },
+        "3": {
+          "all": {
+            "questions": 80,
+            "hits": 71,
+            "recall": 0.8875,
+            "mrr": 0.8375,
+            "mean_returned_children": 3,
+            "mean_context_chars": 225.0,
+            "mean_unique_parent_chunks": 2.36,
+            "mean_parent_messages": 118.1,
+            "mean_parent_source_chars": 7782.2
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 3,
+            "mean_context_chars": 266.7,
+            "mean_unique_parent_chunks": 2.17,
+            "mean_parent_messages": 108.6,
+            "mean_parent_source_chars": 7077.5
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 42,
+            "recall": 0.8235,
+            "mrr": 0.7549,
+            "mean_returned_children": 3,
+            "mean_context_chars": 201.2,
+            "mean_unique_parent_chunks": 2.47,
+            "mean_parent_messages": 123.5,
+            "mean_parent_source_chars": 8182.9
+          }
+        },
+        "5": {
+          "all": {
+            "questions": 80,
+            "hits": 73,
+            "recall": 0.9125,
+            "mrr": 0.8425,
+            "mean_returned_children": 5,
+            "mean_context_chars": 377.4,
+            "mean_unique_parent_chunks": 3.46,
+            "mean_parent_messages": 173.1,
+            "mean_parent_source_chars": 11457.5
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 5,
+            "mean_context_chars": 435.9,
+            "mean_unique_parent_chunks": 2.93,
+            "mean_parent_messages": 146.6,
+            "mean_parent_source_chars": 9577.6
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 44,
+            "recall": 0.8627,
+            "mrr": 0.7627,
+            "mean_returned_children": 5,
+            "mean_context_chars": 344.1,
+            "mean_unique_parent_chunks": 3.76,
+            "mean_parent_messages": 188.2,
+            "mean_parent_source_chars": 12526.5
+          }
+        }
+      }
+    },
+    "K20_L30": {
+      "candidate_recall_at_L": {
+        "all": {
+          "questions": 80,
+          "hits": 76,
+          "recall": 0.95,
+          "mrr": 0.7642,
+          "mean_returned_children": 29.44,
+          "mean_context_chars": 2364.4,
+          "mean_unique_parent_chunks": 15.54,
+          "mean_parent_messages": 776.9,
+          "mean_parent_source_chars": 52623.0
+        },
+        "existing_single": {
+          "questions": 29,
+          "hits": 29,
+          "recall": 1.0,
+          "mrr": 0.9253,
+          "mean_returned_children": 29.59,
+          "mean_context_chars": 2418.6,
+          "mean_unique_parent_chunks": 11.83,
+          "mean_parent_messages": 591.4,
+          "mean_parent_source_chars": 39627.2
+        },
+        "split_subquery": {
+          "questions": 51,
+          "hits": 47,
+          "recall": 0.9216,
+          "mrr": 0.6726,
+          "mean_returned_children": 29.35,
+          "mean_context_chars": 2333.6,
+          "mean_unique_parent_chunks": 17.65,
+          "mean_parent_messages": 882.4,
+          "mean_parent_source_chars": 60012.7
+        }
+      },
+      "reranked": {
+        "1": {
+          "all": {
+            "questions": 80,
+            "hits": 64,
+            "recall": 0.8,
+            "mrr": 0.8,
+            "mean_returned_children": 1,
+            "mean_context_chars": 73.5,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3262.0
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 28,
+            "recall": 0.9655,
+            "mrr": 0.9655,
+            "mean_returned_children": 1,
+            "mean_context_chars": 91.4,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3229.2
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 36,
+            "recall": 0.7059,
+            "mrr": 0.7059,
+            "mean_returned_children": 1,
+            "mean_context_chars": 63.3,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3280.6
+          }
+        },
+        "3": {
+          "all": {
+            "questions": 80,
+            "hits": 71,
+            "recall": 0.8875,
+            "mrr": 0.8396,
+            "mean_returned_children": 3,
+            "mean_context_chars": 224.3,
+            "mean_unique_parent_chunks": 2.34,
+            "mean_parent_messages": 116.9,
+            "mean_parent_source_chars": 7696.9
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 3,
+            "mean_context_chars": 263.7,
+            "mean_unique_parent_chunks": 2.21,
+            "mean_parent_messages": 110.3,
+            "mean_parent_source_chars": 7188.6
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 42,
+            "recall": 0.8235,
+            "mrr": 0.7582,
+            "mean_returned_children": 3,
+            "mean_context_chars": 201.9,
+            "mean_unique_parent_chunks": 2.41,
+            "mean_parent_messages": 120.6,
+            "mean_parent_source_chars": 7985.9
+          }
+        },
+        "5": {
+          "all": {
+            "questions": 80,
+            "hits": 73,
+            "recall": 0.9125,
+            "mrr": 0.8452,
+            "mean_returned_children": 5,
+            "mean_context_chars": 379.2,
+            "mean_unique_parent_chunks": 3.41,
+            "mean_parent_messages": 170.6,
+            "mean_parent_source_chars": 11292.1
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 5,
+            "mean_context_chars": 436.2,
+            "mean_unique_parent_chunks": 2.93,
+            "mean_parent_messages": 146.6,
+            "mean_parent_source_chars": 9575.3
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 44,
+            "recall": 0.8627,
+            "mrr": 0.767,
+            "mean_returned_children": 5,
+            "mean_context_chars": 346.8,
+            "mean_unique_parent_chunks": 3.69,
+            "mean_parent_messages": 184.3,
+            "mean_parent_source_chars": 12268.3
+          }
+        }
+      }
+    },
+    "K20_L40": {
+      "candidate_recall_at_L": {
+        "all": {
+          "questions": 80,
+          "hits": 76,
+          "recall": 0.95,
+          "mrr": 0.7642,
+          "mean_returned_children": 32.91,
+          "mean_context_chars": 2674.6,
+          "mean_unique_parent_chunks": 17.45,
+          "mean_parent_messages": 872.5,
+          "mean_parent_source_chars": 59224.7
+        },
+        "existing_single": {
+          "questions": 29,
+          "hits": 29,
+          "recall": 1.0,
+          "mrr": 0.9253,
+          "mean_returned_children": 31.97,
+          "mean_context_chars": 2629.4,
+          "mean_unique_parent_chunks": 13.1,
+          "mean_parent_messages": 655.2,
+          "mean_parent_source_chars": 44030.3
+        },
+        "split_subquery": {
+          "questions": 51,
+          "hits": 47,
+          "recall": 0.9216,
+          "mrr": 0.6726,
+          "mean_returned_children": 33.45,
+          "mean_context_chars": 2700.4,
+          "mean_unique_parent_chunks": 19.92,
+          "mean_parent_messages": 996.1,
+          "mean_parent_source_chars": 67864.6
+        }
+      },
+      "reranked": {
+        "1": {
+          "all": {
+            "questions": 80,
+            "hits": 64,
+            "recall": 0.8,
+            "mrr": 0.8,
+            "mean_returned_children": 1,
+            "mean_context_chars": 73.5,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3262.0
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 28,
+            "recall": 0.9655,
+            "mrr": 0.9655,
+            "mean_returned_children": 1,
+            "mean_context_chars": 91.4,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3229.2
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 36,
+            "recall": 0.7059,
+            "mrr": 0.7059,
+            "mean_returned_children": 1,
+            "mean_context_chars": 63.3,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3280.6
+          }
+        },
+        "3": {
+          "all": {
+            "questions": 80,
+            "hits": 70,
+            "recall": 0.875,
+            "mrr": 0.8354,
+            "mean_returned_children": 3,
+            "mean_context_chars": 223.1,
+            "mean_unique_parent_chunks": 2.33,
+            "mean_parent_messages": 116.2,
+            "mean_parent_source_chars": 7657.5
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 3,
+            "mean_context_chars": 263.6,
+            "mean_unique_parent_chunks": 2.21,
+            "mean_parent_messages": 110.3,
+            "mean_parent_source_chars": 7192.4
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 41,
+            "recall": 0.8039,
+            "mrr": 0.7516,
+            "mean_returned_children": 3,
+            "mean_context_chars": 200.0,
+            "mean_unique_parent_chunks": 2.39,
+            "mean_parent_messages": 119.6,
+            "mean_parent_source_chars": 7922.0
+          }
+        },
+        "5": {
+          "all": {
+            "questions": 80,
+            "hits": 73,
+            "recall": 0.9125,
+            "mrr": 0.8442,
+            "mean_returned_children": 5,
+            "mean_context_chars": 380.5,
+            "mean_unique_parent_chunks": 3.41,
+            "mean_parent_messages": 170.6,
+            "mean_parent_source_chars": 11299.4
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 5,
+            "mean_context_chars": 434.8,
+            "mean_unique_parent_chunks": 2.86,
+            "mean_parent_messages": 143.1,
+            "mean_parent_source_chars": 9351.8
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 44,
+            "recall": 0.8627,
+            "mrr": 0.7654,
+            "mean_returned_children": 5,
+            "mean_context_chars": 349.6,
+            "mean_unique_parent_chunks": 3.73,
+            "mean_parent_messages": 186.3,
+            "mean_parent_source_chars": 12406.8
+          }
+        }
+      }
+    },
+    "K30_L5": {
+      "candidate_recall_at_L": {
+        "all": {
+          "questions": 80,
+          "hits": 70,
+          "recall": 0.875,
+          "mrr": 0.7592,
+          "mean_returned_children": 5,
+          "mean_context_chars": 364.4,
+          "mean_unique_parent_chunks": 3.74,
+          "mean_parent_messages": 186.9,
+          "mean_parent_source_chars": 12367.2
+        },
+        "existing_single": {
+          "questions": 29,
+          "hits": 29,
+          "recall": 1.0,
+          "mrr": 0.9253,
+          "mean_returned_children": 5,
+          "mean_context_chars": 414.9,
+          "mean_unique_parent_chunks": 3.24,
+          "mean_parent_messages": 162.1,
+          "mean_parent_source_chars": 10588.0
+        },
+        "split_subquery": {
+          "questions": 51,
+          "hits": 41,
+          "recall": 0.8039,
+          "mrr": 0.6647,
+          "mean_returned_children": 5,
+          "mean_context_chars": 335.7,
+          "mean_unique_parent_chunks": 4.02,
+          "mean_parent_messages": 201.0,
+          "mean_parent_source_chars": 13378.8
+        }
+      },
+      "reranked": {
+        "1": {
+          "all": {
+            "questions": 80,
+            "hits": 63,
+            "recall": 0.7875,
+            "mrr": 0.7875,
+            "mean_returned_children": 1,
+            "mean_context_chars": 72.9,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3266.7
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 28,
+            "recall": 0.9655,
+            "mrr": 0.9655,
+            "mean_returned_children": 1,
+            "mean_context_chars": 91.4,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3229.2
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 35,
+            "recall": 0.6863,
+            "mrr": 0.6863,
+            "mean_returned_children": 1,
+            "mean_context_chars": 62.4,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3288.1
+          }
+        },
+        "3": {
+          "all": {
+            "questions": 80,
+            "hits": 69,
+            "recall": 0.8625,
+            "mrr": 0.8208,
+            "mean_returned_children": 3,
+            "mean_context_chars": 222.8,
+            "mean_unique_parent_chunks": 2.48,
+            "mean_parent_messages": 123.8,
+            "mean_parent_source_chars": 8159.6
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 3,
+            "mean_context_chars": 263.7,
+            "mean_unique_parent_chunks": 2.28,
+            "mean_parent_messages": 113.8,
+            "mean_parent_source_chars": 7412.5
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 40,
+            "recall": 0.7843,
+            "mrr": 0.7288,
+            "mean_returned_children": 3,
+            "mean_context_chars": 199.6,
+            "mean_unique_parent_chunks": 2.59,
+            "mean_parent_messages": 129.4,
+            "mean_parent_source_chars": 8584.3
+          }
+        },
+        "5": {
+          "all": {
+            "questions": 80,
+            "hits": 70,
+            "recall": 0.875,
+            "mrr": 0.8233,
+            "mean_returned_children": 5,
+            "mean_context_chars": 364.4,
+            "mean_unique_parent_chunks": 3.74,
+            "mean_parent_messages": 186.9,
+            "mean_parent_source_chars": 12367.2
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 5,
+            "mean_context_chars": 414.9,
+            "mean_unique_parent_chunks": 3.24,
+            "mean_parent_messages": 162.1,
+            "mean_parent_source_chars": 10588.0
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 41,
+            "recall": 0.8039,
+            "mrr": 0.7327,
+            "mean_returned_children": 5,
+            "mean_context_chars": 335.7,
+            "mean_unique_parent_chunks": 4.02,
+            "mean_parent_messages": 201.0,
+            "mean_parent_source_chars": 13378.8
+          }
+        }
+      }
+    },
+    "K30_L10": {
+      "candidate_recall_at_L": {
+        "all": {
+          "questions": 80,
+          "hits": 74,
+          "recall": 0.925,
+          "mrr": 0.7655,
+          "mean_returned_children": 10,
+          "mean_context_chars": 759.9,
+          "mean_unique_parent_chunks": 6.14,
+          "mean_parent_messages": 306.9,
+          "mean_parent_source_chars": 20481.3
+        },
+        "existing_single": {
+          "questions": 29,
+          "hits": 29,
+          "recall": 1.0,
+          "mrr": 0.9253,
+          "mean_returned_children": 10,
+          "mean_context_chars": 833.3,
+          "mean_unique_parent_chunks": 4.93,
+          "mean_parent_messages": 246.6,
+          "mean_parent_source_chars": 16204.4
+        },
+        "split_subquery": {
+          "questions": 51,
+          "hits": 45,
+          "recall": 0.8824,
+          "mrr": 0.6746,
+          "mean_returned_children": 10,
+          "mean_context_chars": 718.2,
+          "mean_unique_parent_chunks": 6.82,
+          "mean_parent_messages": 341.2,
+          "mean_parent_source_chars": 22913.3
+        }
+      },
+      "reranked": {
+        "1": {
+          "all": {
+            "questions": 80,
+            "hits": 64,
+            "recall": 0.8,
+            "mrr": 0.8,
+            "mean_returned_children": 1,
+            "mean_context_chars": 73.5,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3262.0
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 28,
+            "recall": 0.9655,
+            "mrr": 0.9655,
+            "mean_returned_children": 1,
+            "mean_context_chars": 91.4,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3229.2
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 36,
+            "recall": 0.7059,
+            "mrr": 0.7059,
+            "mean_returned_children": 1,
+            "mean_context_chars": 63.3,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3280.6
+          }
+        },
+        "3": {
+          "all": {
+            "questions": 80,
+            "hits": 69,
+            "recall": 0.8625,
+            "mrr": 0.8313,
+            "mean_returned_children": 3,
+            "mean_context_chars": 224.2,
+            "mean_unique_parent_chunks": 2.4,
+            "mean_parent_messages": 120,
+            "mean_parent_source_chars": 7908.6
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 3,
+            "mean_context_chars": 264.1,
+            "mean_unique_parent_chunks": 2.31,
+            "mean_parent_messages": 115.5,
+            "mean_parent_source_chars": 7531.6
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 40,
+            "recall": 0.7843,
+            "mrr": 0.7451,
+            "mean_returned_children": 3,
+            "mean_context_chars": 201.6,
+            "mean_unique_parent_chunks": 2.45,
+            "mean_parent_messages": 122.5,
+            "mean_parent_source_chars": 8122.9
+          }
+        },
+        "5": {
+          "all": {
+            "questions": 80,
+            "hits": 72,
+            "recall": 0.9,
+            "mrr": 0.84,
+            "mean_returned_children": 5,
+            "mean_context_chars": 376.2,
+            "mean_unique_parent_chunks": 3.52,
+            "mean_parent_messages": 176.2,
+            "mean_parent_source_chars": 11669.0
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 5,
+            "mean_context_chars": 433.6,
+            "mean_unique_parent_chunks": 3.07,
+            "mean_parent_messages": 153.4,
+            "mean_parent_source_chars": 10026.8
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 43,
+            "recall": 0.8431,
+            "mrr": 0.7588,
+            "mean_returned_children": 5,
+            "mean_context_chars": 343.5,
+            "mean_unique_parent_chunks": 3.78,
+            "mean_parent_messages": 189.2,
+            "mean_parent_source_chars": 12602.8
+          }
+        }
+      }
+    },
+    "K30_L20": {
+      "candidate_recall_at_L": {
+        "all": {
+          "questions": 80,
+          "hits": 75,
+          "recall": 0.9375,
+          "mrr": 0.7662,
+          "mean_returned_children": 20,
+          "mean_context_chars": 1574.1,
+          "mean_unique_parent_chunks": 10.96,
+          "mean_parent_messages": 548.1,
+          "mean_parent_source_chars": 36918.8
+        },
+        "existing_single": {
+          "questions": 29,
+          "hits": 29,
+          "recall": 1.0,
+          "mrr": 0.9253,
+          "mean_returned_children": 20,
+          "mean_context_chars": 1649.6,
+          "mean_unique_parent_chunks": 8.45,
+          "mean_parent_messages": 422.4,
+          "mean_parent_source_chars": 28053.2
+        },
+        "split_subquery": {
+          "questions": 51,
+          "hits": 46,
+          "recall": 0.902,
+          "mrr": 0.6758,
+          "mean_returned_children": 20,
+          "mean_context_chars": 1531.3,
+          "mean_unique_parent_chunks": 12.39,
+          "mean_parent_messages": 619.6,
+          "mean_parent_source_chars": 41960
+        }
+      },
+      "reranked": {
+        "1": {
+          "all": {
+            "questions": 80,
+            "hits": 64,
+            "recall": 0.8,
+            "mrr": 0.8,
+            "mean_returned_children": 1,
+            "mean_context_chars": 73.5,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3262.0
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 28,
+            "recall": 0.9655,
+            "mrr": 0.9655,
+            "mean_returned_children": 1,
+            "mean_context_chars": 91.4,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3229.2
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 36,
+            "recall": 0.7059,
+            "mrr": 0.7059,
+            "mean_returned_children": 1,
+            "mean_context_chars": 63.3,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3280.6
+          }
+        },
+        "3": {
+          "all": {
+            "questions": 80,
+            "hits": 70,
+            "recall": 0.875,
+            "mrr": 0.8333,
+            "mean_returned_children": 3,
+            "mean_context_chars": 223.6,
+            "mean_unique_parent_chunks": 2.36,
+            "mean_parent_messages": 118.1,
+            "mean_parent_source_chars": 7783.6
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 3,
+            "mean_context_chars": 262.9,
+            "mean_unique_parent_chunks": 2.17,
+            "mean_parent_messages": 108.6,
+            "mean_parent_source_chars": 7072.9
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 41,
+            "recall": 0.8039,
+            "mrr": 0.7484,
+            "mean_returned_children": 3,
+            "mean_context_chars": 201.2,
+            "mean_unique_parent_chunks": 2.47,
+            "mean_parent_messages": 123.5,
+            "mean_parent_source_chars": 8187.6
+          }
+        },
+        "5": {
+          "all": {
+            "questions": 80,
+            "hits": 73,
+            "recall": 0.9125,
+            "mrr": 0.8415,
+            "mean_returned_children": 5,
+            "mean_context_chars": 377.3,
+            "mean_unique_parent_chunks": 3.49,
+            "mean_parent_messages": 174.4,
+            "mean_parent_source_chars": 11541.5
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 5,
+            "mean_context_chars": 433.1,
+            "mean_unique_parent_chunks": 3,
+            "mean_parent_messages": 150,
+            "mean_parent_source_chars": 9801.7
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 44,
+            "recall": 0.8627,
+            "mrr": 0.7611,
+            "mean_returned_children": 5,
+            "mean_context_chars": 345.6,
+            "mean_unique_parent_chunks": 3.76,
+            "mean_parent_messages": 188.2,
+            "mean_parent_source_chars": 12530.9
+          }
+        }
+      }
+    },
+    "K30_L30": {
+      "candidate_recall_at_L": {
+        "all": {
+          "questions": 80,
+          "hits": 76,
+          "recall": 0.95,
+          "mrr": 0.7668,
+          "mean_returned_children": 30,
+          "mean_context_chars": 2411.6,
+          "mean_unique_parent_chunks": 15.68,
+          "mean_parent_messages": 783.8,
+          "mean_parent_source_chars": 53101.2
+        },
+        "existing_single": {
+          "questions": 29,
+          "hits": 29,
+          "recall": 1.0,
+          "mrr": 0.9253,
+          "mean_returned_children": 30,
+          "mean_context_chars": 2459.3,
+          "mean_unique_parent_chunks": 11.76,
+          "mean_parent_messages": 587.9,
+          "mean_parent_source_chars": 39393.4
+        },
+        "split_subquery": {
+          "questions": 51,
+          "hits": 47,
+          "recall": 0.9216,
+          "mrr": 0.6766,
+          "mean_returned_children": 30,
+          "mean_context_chars": 2384.5,
+          "mean_unique_parent_chunks": 17.9,
+          "mean_parent_messages": 895.1,
+          "mean_parent_source_chars": 60895.7
+        }
+      },
+      "reranked": {
+        "1": {
+          "all": {
+            "questions": 80,
+            "hits": 64,
+            "recall": 0.8,
+            "mrr": 0.8,
+            "mean_returned_children": 1,
+            "mean_context_chars": 73.5,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3262.0
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 28,
+            "recall": 0.9655,
+            "mrr": 0.9655,
+            "mean_returned_children": 1,
+            "mean_context_chars": 91.4,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3229.2
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 36,
+            "recall": 0.7059,
+            "mrr": 0.7059,
+            "mean_returned_children": 1,
+            "mean_context_chars": 63.3,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3280.6
+          }
+        },
+        "3": {
+          "all": {
+            "questions": 80,
+            "hits": 71,
+            "recall": 0.8875,
+            "mrr": 0.8396,
+            "mean_returned_children": 3,
+            "mean_context_chars": 224.6,
+            "mean_unique_parent_chunks": 2.34,
+            "mean_parent_messages": 116.9,
+            "mean_parent_source_chars": 7696.8
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 3,
+            "mean_context_chars": 263.7,
+            "mean_unique_parent_chunks": 2.21,
+            "mean_parent_messages": 110.3,
+            "mean_parent_source_chars": 7188.6
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 42,
+            "recall": 0.8235,
+            "mrr": 0.7582,
+            "mean_returned_children": 3,
+            "mean_context_chars": 202.4,
+            "mean_unique_parent_chunks": 2.41,
+            "mean_parent_messages": 120.6,
+            "mean_parent_source_chars": 7985.8
+          }
+        },
+        "5": {
+          "all": {
+            "questions": 80,
+            "hits": 73,
+            "recall": 0.9125,
+            "mrr": 0.8452,
+            "mean_returned_children": 5,
+            "mean_context_chars": 379.2,
+            "mean_unique_parent_chunks": 3.41,
+            "mean_parent_messages": 170.6,
+            "mean_parent_source_chars": 11294.4
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 5,
+            "mean_context_chars": 437.6,
+            "mean_unique_parent_chunks": 2.93,
+            "mean_parent_messages": 146.6,
+            "mean_parent_source_chars": 9575.3
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 44,
+            "recall": 0.8627,
+            "mrr": 0.767,
+            "mean_returned_children": 5,
+            "mean_context_chars": 346.0,
+            "mean_unique_parent_chunks": 3.69,
+            "mean_parent_messages": 184.3,
+            "mean_parent_source_chars": 12271.9
+          }
+        }
+      }
+    },
+    "K30_L40": {
+      "candidate_recall_at_L": {
+        "all": {
+          "questions": 80,
+          "hits": 76,
+          "recall": 0.95,
+          "mrr": 0.7668,
+          "mean_returned_children": 39.71,
+          "mean_context_chars": 3247.3,
+          "mean_unique_parent_chunks": 20.19,
+          "mean_parent_messages": 1009.4,
+          "mean_parent_source_chars": 68645.6
+        },
+        "existing_single": {
+          "questions": 29,
+          "hits": 29,
+          "recall": 1.0,
+          "mrr": 0.9253,
+          "mean_returned_children": 39.83,
+          "mean_context_chars": 3277.1,
+          "mean_unique_parent_chunks": 15.21,
+          "mean_parent_messages": 760.3,
+          "mean_parent_source_chars": 51266.8
+        },
+        "split_subquery": {
+          "questions": 51,
+          "hits": 47,
+          "recall": 0.9216,
+          "mrr": 0.6766,
+          "mean_returned_children": 39.65,
+          "mean_context_chars": 3230.4,
+          "mean_unique_parent_chunks": 23.02,
+          "mean_parent_messages": 1151.0,
+          "mean_parent_source_chars": 78527.6
+        }
+      },
+      "reranked": {
+        "1": {
+          "all": {
+            "questions": 80,
+            "hits": 64,
+            "recall": 0.8,
+            "mrr": 0.8,
+            "mean_returned_children": 1,
+            "mean_context_chars": 73.5,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3262.0
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 28,
+            "recall": 0.9655,
+            "mrr": 0.9655,
+            "mean_returned_children": 1,
+            "mean_context_chars": 91.4,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3229.2
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 36,
+            "recall": 0.7059,
+            "mrr": 0.7059,
+            "mean_returned_children": 1,
+            "mean_context_chars": 63.3,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3280.6
+          }
+        },
+        "3": {
+          "all": {
+            "questions": 80,
+            "hits": 70,
+            "recall": 0.875,
+            "mrr": 0.8354,
+            "mean_returned_children": 3,
+            "mean_context_chars": 223.2,
+            "mean_unique_parent_chunks": 2.29,
+            "mean_parent_messages": 114.4,
+            "mean_parent_source_chars": 7533.6
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 3,
+            "mean_context_chars": 264.5,
+            "mean_unique_parent_chunks": 2.17,
+            "mean_parent_messages": 108.6,
+            "mean_parent_source_chars": 7078.0
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 41,
+            "recall": 0.8039,
+            "mrr": 0.7516,
+            "mean_returned_children": 3,
+            "mean_context_chars": 199.8,
+            "mean_unique_parent_chunks": 2.35,
+            "mean_parent_messages": 117.6,
+            "mean_parent_source_chars": 7792.7
+          }
+        },
+        "5": {
+          "all": {
+            "questions": 80,
+            "hits": 73,
+            "recall": 0.9125,
+            "mrr": 0.8442,
+            "mean_returned_children": 5,
+            "mean_context_chars": 381.5,
+            "mean_unique_parent_chunks": 3.41,
+            "mean_parent_messages": 170.6,
+            "mean_parent_source_chars": 11298.8
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 5,
+            "mean_context_chars": 436.6,
+            "mean_unique_parent_chunks": 2.9,
+            "mean_parent_messages": 144.8,
+            "mean_parent_source_chars": 9461
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 44,
+            "recall": 0.8627,
+            "mrr": 0.7654,
+            "mean_returned_children": 5,
+            "mean_context_chars": 350.1,
+            "mean_unique_parent_chunks": 3.71,
+            "mean_parent_messages": 185.3,
+            "mean_parent_source_chars": 12343.8
+          }
+        }
+      }
+    },
+    "K30_L60": {
+      "candidate_recall_at_L": {
+        "all": {
+          "questions": 80,
+          "hits": 77,
+          "recall": 0.9625,
+          "mrr": 0.7671,
+          "mean_returned_children": 48.94,
+          "mean_context_chars": 4047.6,
+          "mean_unique_parent_chunks": 24.43,
+          "mean_parent_messages": 1221.2,
+          "mean_parent_source_chars": 83253.8
+        },
+        "existing_single": {
+          "questions": 29,
+          "hits": 29,
+          "recall": 1.0,
+          "mrr": 0.9253,
+          "mean_returned_children": 47.34,
+          "mean_context_chars": 3913.4,
+          "mean_unique_parent_chunks": 18.1,
+          "mean_parent_messages": 905.2,
+          "mean_parent_source_chars": 61254.4
+        },
+        "split_subquery": {
+          "questions": 51,
+          "hits": 48,
+          "recall": 0.9412,
+          "mrr": 0.6771,
+          "mean_returned_children": 49.84,
+          "mean_context_chars": 4123.9,
+          "mean_unique_parent_chunks": 28.02,
+          "mean_parent_messages": 1401.0,
+          "mean_parent_source_chars": 95763.3
+        }
+      },
+      "reranked": {
+        "1": {
+          "all": {
+            "questions": 80,
+            "hits": 65,
+            "recall": 0.8125,
+            "mrr": 0.8125,
+            "mean_returned_children": 1,
+            "mean_context_chars": 73.4,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3262.3
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 28,
+            "recall": 0.9655,
+            "mrr": 0.9655,
+            "mean_returned_children": 1,
+            "mean_context_chars": 91.4,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3229.2
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 37,
+            "recall": 0.7255,
+            "mrr": 0.7255,
+            "mean_returned_children": 1,
+            "mean_context_chars": 63.2,
+            "mean_unique_parent_chunks": 1,
+            "mean_parent_messages": 50,
+            "mean_parent_source_chars": 3281.1
+          }
+        },
+        "3": {
+          "all": {
+            "questions": 80,
+            "hits": 71,
+            "recall": 0.8875,
+            "mrr": 0.8479,
+            "mean_returned_children": 3,
+            "mean_context_chars": 224.1,
+            "mean_unique_parent_chunks": 2.29,
+            "mean_parent_messages": 114.4,
+            "mean_parent_source_chars": 7533.8
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 3,
+            "mean_context_chars": 264.5,
+            "mean_unique_parent_chunks": 2.17,
+            "mean_parent_messages": 108.6,
+            "mean_parent_source_chars": 7078.0
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 42,
+            "recall": 0.8235,
+            "mrr": 0.7712,
+            "mean_returned_children": 3,
+            "mean_context_chars": 201.2,
+            "mean_unique_parent_chunks": 2.35,
+            "mean_parent_messages": 117.6,
+            "mean_parent_source_chars": 7792.9
+          }
+        },
+        "5": {
+          "all": {
+            "questions": 80,
+            "hits": 74,
+            "recall": 0.925,
+            "mrr": 0.8567,
+            "mean_returned_children": 5,
+            "mean_context_chars": 382.9,
+            "mean_unique_parent_chunks": 3.42,
+            "mean_parent_messages": 171.2,
+            "mean_parent_source_chars": 11341.9
+          },
+          "existing_single": {
+            "questions": 29,
+            "hits": 29,
+            "recall": 1.0,
+            "mrr": 0.9828,
+            "mean_returned_children": 5,
+            "mean_context_chars": 435.9,
+            "mean_unique_parent_chunks": 2.9,
+            "mean_parent_messages": 144.8,
+            "mean_parent_source_chars": 9458.9
+          },
+          "split_subquery": {
+            "questions": 51,
+            "hits": 45,
+            "recall": 0.8824,
+            "mrr": 0.785,
+            "mean_returned_children": 5,
+            "mean_context_chars": 352.8,
+            "mean_unique_parent_chunks": 3.73,
+            "mean_parent_messages": 186.3,
+            "mean_parent_source_chars": 12412.6
+          }
+        }
+      }
+    }
+  }
+}

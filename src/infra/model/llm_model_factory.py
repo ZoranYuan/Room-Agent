@@ -5,6 +5,8 @@ from typing import Any, Mapping
 from langchain_openai import ChatOpenAI
 from pydantic import SecretStr
 
+from config.config import settings
+
 
 def create_llm_model(
     *,
@@ -12,9 +14,9 @@ def create_llm_model(
     model_base_url: str,
     model_api_key: str,
     timeout_seconds: float,
-    temperature = 0.5,
-    max_retries: int = 2,
-    extra_body: Mapping[str, Any] | None = None
+    temperature=0.5,
+    max_retries: int | None = None,
+    extra_body: Mapping[str, Any] | None = None,
 ) -> ChatOpenAI:
     """创建模型入口，当业务层需要创建模型时，可以直接调用."""
     return ChatOpenAI(
@@ -23,6 +25,8 @@ def create_llm_model(
         base_url=model_base_url,
         timeout=timeout_seconds,
         temperature=temperature,
-        max_retries=max_retries,
+        max_retries=(
+            settings.llm_max_retries if max_retries is None else max_retries
+        ),
         extra_body=extra_body,
     )

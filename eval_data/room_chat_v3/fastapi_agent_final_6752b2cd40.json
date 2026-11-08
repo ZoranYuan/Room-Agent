@@ -1,0 +1,2278 @@
+{
+  "dataset": "room_chat_v3",
+  "corpus_messages": 3000,
+  "child_chunks": 685,
+  "question_count": 37,
+  "successful_requests": 37,
+  "failed_requests": 0,
+  "request_errors": {},
+  "single_evidence": {
+    "questions": 2,
+    "search_executed": 2,
+    "recall_at_1": 1.0,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  "multi_evidence": {
+    "questions": 15,
+    "evidence_total": 45,
+    "evidence_recall_at_final_3_per_query": 0.4667,
+    "complete_evidence_rate": 0.2,
+    "questions_with_search": 15,
+    "queries_per_question": 1.2,
+    "questions_using_two_queries": 3
+  },
+  "temporal": {
+    "questions": 5,
+    "search_executed": 5,
+    "time_hint_exact": 5,
+    "time_hint_questions": 5
+  },
+  "no_answer": {
+    "questions": 15,
+    "completed_responses": 15,
+    "refusal_pattern_hits": 15,
+    "refusal_pattern_rate_on_completed": 1.0
+  },
+  "answerable_reference_phrase_match": {
+    "reference_clauses_hit": 21,
+    "reference_clauses_total": 52,
+    "reference_clause_match_rate": 0.4038,
+    "all_reference_clauses_matched": 5,
+    "all_reference_clause_rate": 0.2273,
+    "completed_answerable_questions": 22,
+    "all_dataset_reference_clauses": 52,
+    "matched_clause_lower_bound_over_full_set": 0.4038
+  },
+  "tool_calls": {
+    "search_total": 37,
+    "search_mean_per_question": 1,
+    "search_query_total": 40,
+    "sync_total": 35,
+    "tool_limit_reached_outputs": 0
+  },
+  "latency_ms": {
+    "end_to_end_mean": 5378.511,
+    "end_to_end_p95": 7510.23,
+    "first_token_mean": 5377.639,
+    "first_token_p95": 7509.384,
+    "first_token_p99": 8881.281,
+    "retrieval_calls": 40,
+    "retrieval_and_rerank_mean": 147.42,
+    "retrieval_and_rerank_p95": 180.963,
+    "retrieval_and_rerank_p99": 183.629,
+    "warm_retrieval_and_rerank_mean": 147.42,
+    "warm_retrieval_and_rerank_p95": 180.963
+  },
+  "settings": {
+    "collection": "eval_room_chat_v3_6752b2cd40",
+    "embedding_model": "Qwen/Qwen3-Embedding-0.6B",
+    "reranker_model": "Qwen/Qwen3-Reranker-0.6B",
+    "retrieval_final_top_n": 3,
+    "rerank_input_top_n": 5,
+    "candidate_top_k": 10,
+    "rrf_k": 60,
+    "agent_recursion_limit": 24
+  },
+  "records": [
+    {
+      "qid": "single_011",
+      "category": "single_block:名侦探柯南",
+      "question": "群友觉得哪部作品适合边看边推理案件？",
+      "answerable": true,
+      "reference_answer": "《名侦探柯南》",
+      "answer_text": "根据房间里的聊天记录，最贴合“边看边推理案件”的是《名侦探柯南》：\n\n- 王星野说：“《名侦探柯南》最有意思的还是线索藏得细，揭晓前可以自己推一遍。”\n- 秦知夏接话：“我现在看也会暂停猜凶手。”\n- 曹知夏也提到“小时候总猜不到案件最后是谁做的”。\n\n另外还有几部被提到“适合边看边讨论/推理”的作品：\n- 《名侦探柯南：贝克街的亡灵》——曹亦辰推荐，说“推理和虚拟世界设定都挺抓人”，适合假期大家一起看。\n- 《奇巧计程车》——蒋知夏推荐，说“前面看似不相关的对话后面会慢慢连起来”，适合认真听台词、串线索。\n- 《非自然死亡》——许星野说“每集案件都能聊几句”。\n- 《药屋少女的呢喃》——蒋星野提到猫猫“观察力强”“拆谜题时特别有意思”，也带推理趣味。\n\n如果只想选一部边看边猜，群里的共识基本是《名侦探柯南》。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "群友推荐哪部作品适合边看边推理案件",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-011",
+            "eval-v3-child-0002-012",
+            "eval-v3-child-0003-014"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0003"
+          ],
+          "retrieval_ms": 143.494
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0001-011",
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0003-014"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0001-011"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 4648.247,
+      "total_ms": 4649.42,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_030",
+      "category": "single_block:名侦探柯南剧场版",
+      "question": "推荐一起重看的柯南剧场版是哪一部？",
+      "answerable": true,
+      "reference_answer": "《名侦探柯南：贝克街的亡灵》",
+      "answer_text": "房间里提到的是《名侦探柯南：贝克街的亡灵》——曹亦辰推荐说“推理和虚拟世界设定都挺抓人”，吕嘉宁回应“我小时候看过，想再补一次”。不过这条讨论的语境是“假期想挑一部节奏快、适合大家一起看的动画电影”，并没有明确说成“一起重看”的约定；如果你指的是别的重看安排，可以再给我一点关键词或时间范围，我再帮你查。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "大家推荐一起重看的柯南剧场版是哪一部",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0002-012",
+            "eval-v3-child-0004-008",
+            "eval-v3-child-0001-011"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0004",
+            "eval-v3-parent-0001"
+          ],
+          "retrieval_ms": 146.855
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0004-008",
+        "eval-v3-child-0001-011"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0002-012"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 4718.284,
+      "total_ms": 4719.326,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_001",
+      "category": "multi_block:3:周末补番",
+      "question": "大家选了哪部番、几点开始、准备看几集？",
+      "answerable": true,
+      "reference_answer": "《葬送的芙莉莲》；周六晚八点；两集",
+      "answer_text": "我查了房间里的相关消息，只能拼出部分信息，而且彼此对不上，没法给出确定结论：\n\n- **看几集**：蒋星野说“先看两集，看到十点就收”；秦晓安说“我们只看全国大赛那几集，不从头补”。这两条口径不一致（一个按集数、一个按内容范围），看不出最终采纳哪个。\n- **几点开始**：没有找到明确对应“看番”的开始时间。房间里有多条时间安排，但主题混杂，比如“周二晚八点我发视频链接，大家线上看”“周六下午两点开着看”“周一到周五每天看一集，晚上九点发起”等，无法确认哪条是这次看番的安排。\n- **看哪部番**：没有找到明确点名选定作品的发言，只有“全国大赛”这一线索，不足以确定具体是哪部番。\n\n如果你能补充一下是哪次看番（比如哪一天、谁发起的），我可以再帮你定位具体消息。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "大家决定看哪部番、几点开始看、准备看几集",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0041-005",
+            "eval-v3-child-0021-013",
+            "eval-v3-child-0021-023"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 136.444
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0041-005",
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0021-023"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0002-016"
+        ],
+        [
+          "eval-v3-child-0020-008"
+        ],
+        [
+          "eval-v3-child-0041-005"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        null,
+        1
+      ],
+      "first_token_ms": 5339.195,
+      "total_ms": 5340.939,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_002",
+      "category": "multi_block:3:老番重温",
+      "question": "重看的作品、集合时间和观看范围是什么？",
+      "answerable": true,
+      "reference_answer": "《灌篮高手》；周日下午三点；全国大赛相关剧集",
+      "answer_text": "我在房间记录里没找到明确说明“重看哪部作品、集合时间、观看范围”的完整安排，目前查到的内容不足以回答。\n\n相关线索只有这些：\n- 郑亦辰（9月1日）提到“最近又有人开始重看运动番了”，随后大家聊到《排球少年》《灌篮高手》，但没有确定具体重看哪一部。\n- 何亦辰（9月12日）说“关于旧剧重看我先把这点记下来”，但没有给出作品名、集合时间或观看范围。\n- 另外有几条时间安排，但都没标明对应哪部重看作品，例如：许亦辰说“周一到周五每天看一集，晚上九点发起”（9月12日）、许亦辰说“周六下午两点开着看”（9月12日）、曹知夏说“周五晚上九点我家投影”（9月12日）。\n\n如果你能补充作品名或大致时间，我可以再帮你定位具体那条消息。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "重看的作品、集合时间和观看范围是什么？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-013",
+            "eval-v3-child-0021-025",
+            "eval-v3-child-0001-006"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0001"
+          ],
+          "retrieval_ms": 143.023
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0021-025",
+        "eval-v3-child-0001-006"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-001"
+        ],
+        [
+          "eval-v3-child-0020-008"
+        ],
+        [
+          "eval-v3-child-0041-005"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        null,
+        null
+      ],
+      "first_token_ms": 5074.05,
+      "total_ms": 5074.839,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_003",
+      "category": "multi_block:3:电影夜",
+      "question": "电影夜看哪部、几点开始、中途怎么安排？",
+      "answerable": true,
+      "reference_answer": "《千与千寻》；周五晚九点；中途暂停十分钟",
+      "answer_text": "我查了房间里的相关消息，但**没有找到关于“电影夜”的明确结论**，目前只能看到一些零散、彼此不一致的说法：\n\n**关于看哪部**\n- 吴晓安（9/2）说想重看《灌篮高手》，比赛部分很燃；\n- 许晓安（9/2）说动画电影选《千与千寻》，大家比较熟；\n- 韩晓安（9/2）推荐《流浪地球2》，说设定细节适合暂停讨论；\n- 杨星野（9/2）说想重看《魔女宅急便》。\n这些看起来都是各自推荐，没有看到最终定下哪一部。\n\n**关于开始时间**\n- 吕亦辰（9/12）说“周六晚上八点开投影吧”；\n- 何亦辰（9/12）说“周五九点线上开播，链接我提前发”。\n两条时间不同，也没有说明哪条是电影夜的最终安排，无法确定。\n\n**关于中途安排**\n- 朱星野（9/23）说“看到一半可以暂停十分钟，方便大家拿吃的”；\n- 蒋亦辰（9/23）说“结束后不赶场，直接坐地铁回去”。\n这两条像是电影夜的流程建议，但同样没有看到确认。\n\n另外，同一时期还有“周日下午三点客厅集合”“周日场下午四点东门碰头”等其他活动的安排，容易和电影夜混在一起。\n\n所以目前证据不足，无法给出确定的片名、开始时间和中途安排。如果你能补充一下是哪天/哪场电影夜，或者提供关键词，我可以再帮你查一次。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "电影夜看哪部电影、几点开始、中途怎么安排",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0041-006",
+            "eval-v3-child-0003-002"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0003"
+          ],
+          "retrieval_ms": 138.677
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0041-006",
+        "eval-v3-child-0003-002"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-002"
+        ],
+        [
+          "eval-v3-child-0020-009"
+        ],
+        [
+          "eval-v3-child-0041-005"
+        ]
+      ],
+      "target_hit_ranks": [
+        3,
+        1,
+        null
+      ],
+      "first_token_ms": 5532.861,
+      "total_ms": 5535.32,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_006",
+      "category": "multi_block:3:漫画交换",
+      "question": "交换时带哪部漫画、在哪里见、怎么开始？",
+      "answerable": true,
+      "reference_answer": "《蓝色时期》；地铁站旁咖啡馆；先聊五分钟读后感",
+      "answer_text": "根据房间里的聊天记录，漫画交换的安排大致是：\n\n- **带哪部漫画**：曹晓安（u096）说想带《蓝色时期》去交换，最近刚读完一卷（seq 114）。另外秦星野（u065）提到“每人带一本就行”（seq 2025），所以是每人带一本。\n- **在哪里见**：蒋晓安（u036）说“周三下班后在地铁站旁咖啡馆见”（seq 997），这条紧挨着“漫画交换”的记账消息（seq 999），看起来就是漫画交换的碰头地点。\n- **怎么开始**：秦星野（u065）说“交换前先聊五分钟读后感”（seq 2025）。\n\n需要说明的是：这几条消息里没有明确把“地点”和“漫画交换”绑在一起的原话，地点是我按相邻消息推断的；如果你要确认，可以再问一下蒋晓安或秦星野。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "交换时带哪部漫画、在哪里见、怎么开始？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0003-005",
+            "eval-v3-child-0020-011",
+            "eval-v3-child-0041-009"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0041"
+          ],
+          "retrieval_ms": 165.076
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0003-005",
+        "eval-v3-child-0020-011",
+        "eval-v3-child-0041-009"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-005"
+        ],
+        [
+          "eval-v3-child-0020-011"
+        ],
+        [
+          "eval-v3-child-0041-009"
+        ]
+      ],
+      "target_hit_ranks": [
+        1,
+        2,
+        3
+      ],
+      "first_token_ms": 5917.94,
+      "total_ms": 5918.702,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_007",
+      "category": "multi_block:3:动画配乐",
+      "question": "分享什么原声、几点开房、先听几首？",
+      "answerable": true,
+      "reference_answer": "《星际牛仔》原声；周日晚七点；前三首",
+      "answer_text": "我在房间历史里没找到能对应“分享什么原声、几点开房、先听几首”这三项的具体安排，目前查到的内容不足，不敢替你猜。\n\n检索到的相关线索只有零散的听歌/原声话题，例如：\n- 张晓安（seq 117）说想分享《星际牛仔》的原声，觉得爵士那几首很耐听；\n- 林晓安（seq 150）说最近在循环《女神异闻录5》的原声；\n- 冯嘉宁（seq 135）想听《紫罗兰永恒花园》的配乐；\n- 王晓安（seq 1018）提过“周日早上十点在共享歌单里一起听”。\n\n但“开房”的时间点（如 seq 1006 的“周四晚上九点进语音频道，我建房间”）是游戏联机相关，和“先听几首”的曲目顺序没有明确对应关系，所以无法确认这就是你说的那场安排。\n\n方便的话，请补充一下是哪次活动（比如哪天的听歌会），或者提供关键词，我再帮你查。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "分享原声、几点开房、先听几首的安排",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0003-006",
+            "eval-v3-child-0021-020",
+            "eval-v3-child-0044-005"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0044"
+          ],
+          "retrieval_ms": 158.741
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0003-006",
+        "eval-v3-child-0021-020",
+        "eval-v3-child-0044-005"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-006"
+        ],
+        [
+          "eval-v3-child-0020-011"
+        ],
+        [
+          "eval-v3-child-0041-010"
+        ]
+      ],
+      "target_hit_ranks": [
+        1,
+        null,
+        null
+      ],
+      "first_token_ms": 5319.128,
+      "total_ms": 5319.859,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_008",
+      "category": "multi_block:3:影展报名",
+      "question": "报名了哪部电影、几点场、散场后在哪等？",
+      "answerable": true,
+      "reference_answer": "《机器人之梦》；周六下午一点半；一楼长椅等十分钟",
+      "answer_text": "我查了房间里的历史消息，目前能确认的只有这些零散信息，还拼不出完整答案：\n\n- 影展相关：孔嘉宁（u094）说“影厅选周六下午一点半那场”（seq 1003）；另有人提到“票买周日场，下午四点在东门碰头”（周星野，seq 991），但这条没说明是不是影展。\n- 散场后安排：杨亦辰（u053）说“散场后在一楼长椅等十分钟再去吃饭”（seq 2031）；蒋亦辰（u038）说“结束后不赶场，直接坐地铁回去”（seq 2019）。\n\n关于“报名的是哪部电影”，检索到的消息里没有明确提到片名，所以无法确认。另外，周六下午一点半和周日场这两条时间信息可能指不同活动，存在冲突，建议你在群里再确认一下具体是哪一场、哪部片子。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "报名了哪部电影、几点场、散场后在哪里集合等",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0041-011",
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0021-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 151.43
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0041-011",
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0021-001"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-007"
+        ],
+        [
+          "eval-v3-child-0021-001"
+        ],
+        [
+          "eval-v3-child-0041-011"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        3,
+        1
+      ],
+      "first_token_ms": 5211.73,
+      "total_ms": 5212.544,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_009",
+      "category": "multi_block:3:游戏联机",
+      "question": "联机玩什么、几点进频道、队伍怎么轮换？",
+      "answerable": true,
+      "reference_answer": "《胡闹厨房2》；周四晚九点；每局轮换队长",
+      "answer_text": "我在房间历史里查到的相关消息如下（时间均为消息发送时间）：\n\n**玩什么**\n- 朱晓安（9/2 约 15:32）：\"这周联机玩《胡闹厨房2》吧，合作起来比较热闹。\"\n\n**几点进频道**\n- 陈星野（9/12 约 04:18）：\"周四晚上九点进语音频道，我建房间。\"\n- 另有沈知夏（9/12 约 18:28）提到\"周五晚上八点开机，手柄我来带\"，但这条更像线下游戏聚会，不确定是否指同一次联机。\n\n**队伍轮换**\n- 周嘉宁（9/5 约 01:32）：\"每局换一次队长，免得一个人一直指挥。\"\n- 相关的一条：郑亦辰（9/5 约 02:12）\"下次碰到组队副本，要不就等人齐再开？\"——属于组队副本的讨论，不是轮换规则。\n\n需要说明的是：这几条消息分散在不同时间，我没有找到把它们明确串成\"同一次联机安排\"的确认消息，所以\"周四晚九点进频道\"是否就是《胡闹厨房2》那场、\"每局换队长\"是否适用于这次联机，目前证据不足。如果你能提供大概日期，我可以再帮你核对。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "联机玩什么游戏、几点进频道",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-004",
+            "eval-v3-child-0003-008",
+            "eval-v3-child-0022-009"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 133.286
+        },
+        {
+          "query": "队伍怎么轮换",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0041-012",
+            "eval-v3-child-0047-002",
+            "eval-v3-child-0008-004"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0047",
+            "eval-v3-parent-0008"
+          ],
+          "retrieval_ms": 136.382
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0021-004",
+        "eval-v3-child-0003-008",
+        "eval-v3-child-0022-009",
+        "eval-v3-child-0041-012",
+        "eval-v3-child-0047-002",
+        "eval-v3-child-0008-004"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-008"
+        ],
+        [
+          "eval-v3-child-0021-004"
+        ],
+        [
+          "eval-v3-child-0041-012"
+        ]
+      ],
+      "target_hit_ranks": [
+        2,
+        1,
+        4
+      ],
+      "first_token_ms": 6095.341,
+      "total_ms": 6096.083,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_014",
+      "category": "multi_block:3:复古动画",
+      "question": "重看哪部电影、什么时候看、选什么字幕？",
+      "answerable": true,
+      "reference_answer": "《魔女宅急便》；周六下午两点；普通话字幕版",
+      "answer_text": "我查了房间里的相关记录，但没能拼出完整答案，只能确认部分内容：\n\n**字幕方面**（有明确说法，但没写明对应哪部片）\n- 沈嘉宁：字幕选简体中文字幕版，免得大家对不上台词（seq 2076）\n- 郑晓安：这次用日文原声中文字幕版，别开配音版（seq 2082）\n- 许星野：字幕用简体中文，片尾曲放完再结束语音（seq 2091）\n\n**重看候选**（只是提名，没看到最终定档）\n- 何嘉宁投《天堂电影院》，想在大屏上看一次（seq 153）\n- 孔知夏想重看《甄嬛传》，说台词现在听还是很有味道（seq 162）\n- 陈晓安认为《攻壳机动队》剧场版值得重看（seq 171）\n- 沈亦辰想看《银翼杀手2049》（seq 165）\n\n**时间方面**：只看到零散安排，比如《甄嬛传》\"先看华妃出场那几集，不从第一集开始\"（孔亦辰，seq 2073）、\"第一晚只看三集，后面再决定要不要继续\"（林星野，seq 2070），但没有明确说定在哪天、几点。\n\n也就是说，\"重看哪部、什么时候看、选什么字幕\"这三项里，字幕有具体约定，片名还停留在提名阶段，时间没有确定结论。你能告诉我具体是哪部片（比如《甄嬛传》还是某部电影）吗？我可以再按片名帮你查一次。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "大家讨论重看哪部电影、什么时候看、选什么字幕",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0042-008",
+            "eval-v3-child-0013-004",
+            "eval-v3-child-0004-006"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0013",
+            "eval-v3-parent-0004"
+          ],
+          "retrieval_ms": 131.75
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0042-008",
+        "eval-v3-child-0013-004",
+        "eval-v3-child-0004-006"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-013"
+        ],
+        [
+          "eval-v3-child-0021-011"
+        ],
+        [
+          "eval-v3-child-0041-017"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        null,
+        null
+      ],
+      "first_token_ms": 5997.202,
+      "total_ms": 5997.955,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_017",
+      "category": "multi_block:3:漫画改编",
+      "question": "看哪部作品、几点看、看完留多久讨论？",
+      "answerable": true,
+      "reference_answer": "《迷宫饭》；周三晚八点；讨论十五分钟",
+      "answer_text": "我在房间记录里没找到能同时回答这三点的明确约定，目前查到的内容不足：\n\n- **看哪部作品**：没有找到最终定下的片名。房间里多是零散推荐（如《葬送的芙莉莲》《迷宫饭》《间谍过家家》《新世纪福音战士》等），但没有一条明确说“就定这部”。\n- **几点看**：有几条时间安排，但看不出对应哪部作品，例如“周二晚八点我发视频链接，大家线上看”（冯亦辰）、“周六下午两点开着看”（许亦辰）、“周五晚上七点半到小周家看”（朱晓安）、“周六晚七点去社区影厅，票我先订”（林知夏）等，彼此不一致，无法确定哪条是最终方案。\n- **看完留多久讨论**：没有检索到任何关于讨论时长的消息。\n\n如果你能补充一下是哪部作品、或大概哪天的安排，我可以再帮你定位具体那条消息。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "大家决定看哪部作品、几点开始看、看完后留多久讨论",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-006",
+            "eval-v3-child-0021-023",
+            "eval-v3-child-0013-004"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0013"
+          ],
+          "retrieval_ms": 180.963
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0021-023",
+        "eval-v3-child-0013-004"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-016"
+        ],
+        [
+          "eval-v3-child-0021-017"
+        ],
+        [
+          "eval-v3-child-0042-002"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        null,
+        null
+      ],
+      "first_token_ms": 6281.621,
+      "total_ms": 6282.405,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_018",
+      "category": "multi_block:3:游戏原声",
+      "question": "想找哪款游戏的原声、什么时候去、预算多少？",
+      "answerable": true,
+      "reference_answer": "《女神异闻录5》原声；周五下班后；两百元以内",
+      "answer_text": "我查了房间里的历史消息，但没能把这三项完整对上，目前证据不足：\n\n- **哪款游戏的原声**：只看到林晓安（u001）提到“最近循环《女神异闻录5》的原声，城市感很强”，但这条没有和“去唱片店”的安排明确挂钩，不能确定就是大家要去找的那款。\n- **什么时候去**：有一条“周五下班后去唱片店试听”（张知夏，u087），但同样没有明确说明是为哪款游戏原声。\n- **预算**：有一条“预算最多两百，先听二手盘有没有划痕”（陈晓安，u006），但没写明是唱片还是别的活动。\n\n也就是说，这三条信息分散在不同发言里，缺少把它们串起来的上下文。你能补充一下具体是哪款游戏、或者大概的时间范围吗？我再帮你精确核对。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "想找哪款游戏的原声、什么时候去、预算多少",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-020",
+            "eval-v3-child-0003-017",
+            "eval-v3-child-0042-004"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0042"
+          ],
+          "retrieval_ms": 138.832
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0021-020",
+        "eval-v3-child-0003-017",
+        "eval-v3-child-0042-004"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-017"
+        ],
+        [
+          "eval-v3-child-0021-019"
+        ],
+        [
+          "eval-v3-child-0042-003"
+        ]
+      ],
+      "target_hit_ranks": [
+        2,
+        null,
+        null
+      ],
+      "first_token_ms": 4775.902,
+      "total_ms": 4776.628,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_019",
+      "category": "multi_block:3:经典电影",
+      "question": "选了哪部电影、几点在哪里看、散场后怎么安排？",
+      "answerable": true,
+      "reference_answer": "《天堂电影院》；周六晚七点社区影厅；散场后各自回家",
+      "answer_text": "我查了房间里的相关消息，但**没能确认“最终选了哪部电影”**，而且关于时间和散场安排的说法互相矛盾，需要你们确认一下：\n\n**电影候选（只是提名，没有看到定论）**\n- 何嘉宁：投《天堂电影院》，想在大屏上看一次\n- 孔亦辰：选《强风吹拂》\n- 沈亦辰：想看《银翼杀手2049》\n- 陈晓安：《攻壳机动队》剧场版值得重看\n- 许知夏：想看《红辣椒》\n- 朱晓安：《千与千寻》用来练配音\n- 孔知夏：想重看《甄嬛传》（剧集，不是电影）\n\n**时间/地点（多条并存，互相冲突）**\n- 吕亦辰：周六晚上八点开投影\n- 孔嘉宁：影厅选周六下午一点半那场\n- 林知夏：周六晚七点去社区影厅，票我先订\n- 周星野：票买周日场，下午四点在东门碰头\n- 朱晓安：周五晚上七点半到小周家看\n- 曹知夏：周五晚上九点我家投影，地址私聊发\n- 周亦辰：周日下午三点在客厅集合\n\n**散场后（也有两种说法）**\n- 杨亦辰：散场后在一楼长椅等十分钟再去吃饭\n- 郑晓安：散场后不安排聚餐，大家赶末班车\n- 蒋亦辰：结束后不赶场，直接坐地铁回去\n\n也就是说，目前只能看到一堆候选和不同人的提议，没有一条明确的“就这么定了”。你能告诉我大概是哪一次聚会（比如是影厅那场还是家里投影那场），或者再给个关键词，我再帮你缩小范围确认吗？",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "大家决定看哪部电影、几点在哪里看",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-001",
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0004-002"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0004"
+          ],
+          "retrieval_ms": 148.063
+        },
+        {
+          "query": "电影散场后怎么安排",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0041-011",
+            "eval-v3-child-0042-004",
+            "eval-v3-child-0041-006"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0042"
+          ],
+          "retrieval_ms": 128.464
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0021-001",
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0004-002",
+        "eval-v3-child-0041-011",
+        "eval-v3-child-0042-004",
+        "eval-v3-child-0041-006"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0004-002"
+        ],
+        [
+          "eval-v3-child-0021-001"
+        ],
+        [
+          "eval-v3-child-0042-004"
+        ]
+      ],
+      "target_hit_ranks": [
+        3,
+        1,
+        5
+      ],
+      "first_token_ms": 7509.384,
+      "total_ms": 7510.23,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_021",
+      "category": "multi_block:3:动画投票",
+      "question": "选了哪部动画、几点开始、第一晚看几集？",
+      "answerable": true,
+      "reference_answer": "《强风吹拂》；周日晚七点半；三集",
+      "answer_text": "我查了房间里的相关消息，只能确认一部分：\n\n- **第一晚看几集**：林星野（u005）说过“第一晚只看三集，后面再决定要不要继续”（消息 seq 2070）。\n- **选了哪部动画**：目前查到的消息里没有明确的最终定档结论。相关的候选发言有：吴晓安想重看《灌篮高手》（seq 102）、许晓安选《千与千寻》（seq 105）、孔亦辰选《强风吹拂》（seq 159）、曹星野提到《迷宫饭》（seq 147）等，但都只是各自推荐，没有看到“最终选它”的确认。\n- **几点开始**：检索结果里没有找到明确的开始时间。\n\n如果你记得是哪次讨论（比如“周末补番”那轮），可以告诉我更具体的时间或关键词，我再帮你查一遍。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "大家选了哪部动画一起看，几点开始，第一晚看几集？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0042-007",
+            "eval-v3-child-0003-002",
+            "eval-v3-child-0004-004"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0004"
+          ],
+          "retrieval_ms": 136.954
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0042-007",
+        "eval-v3-child-0003-002",
+        "eval-v3-child-0004-004"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0004-004"
+        ],
+        [
+          "eval-v3-child-0021-023"
+        ],
+        [
+          "eval-v3-child-0042-006"
+        ]
+      ],
+      "target_hit_ranks": [
+        3,
+        null,
+        null
+      ],
+      "first_token_ms": 5889.568,
+      "total_ms": 5890.296,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_023",
+      "category": "multi_block:3:电影选择",
+      "question": "选了哪部电影、几点看、字幕用哪个版本？",
+      "answerable": true,
+      "reference_answer": "《银翼杀手2049》；周五晚九点；简体中文字幕版",
+      "answer_text": "我查了房间里的历史消息，目前只能确认字幕相关的部分，电影和开场时间还没找到明确结论：\n\n**字幕版本**：房间里出现过两种说法，彼此有冲突——\n- 杨知夏说“字幕用普通话版，避免版本不同对不上”（约 9/23）\n- 沈嘉宁说“字幕选简体中文字幕版，免得大家对不上台词”（约 9/23）\n- 郑晓安说“这次用日文原声中文字幕版，别开配音版”（约 9/23）\n- 许星野说“字幕用简体中文，片尾曲放完再结束语音”（约 9/23）\n\n其中“普通话版/配音版”和“日文原声中文字幕版”是相互矛盾的，需要大家再确认一次。\n\n**电影和几点看**：检索到的消息里没有明确的“最终选定哪部电影”和“几点开始”的记录，只有一些零散的观影安排（比如“先看两集，看到十点就收”“看到一半可以暂停十分钟”），无法确定是这次电影夜的最终决定。\n\n如果你能补充一下是哪次电影夜（日期或发起人），我可以再帮你查得更准。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "大家最后选了哪部电影、几点看、字幕用哪个版本？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0042-008",
+            "eval-v3-child-0041-017",
+            "eval-v3-child-0042-011"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0041"
+          ],
+          "retrieval_ms": 138.369
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0042-008",
+        "eval-v3-child-0041-017",
+        "eval-v3-child-0042-011"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0004-006"
+        ],
+        [
+          "eval-v3-child-0021-026"
+        ],
+        [
+          "eval-v3-child-0042-008"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        null,
+        1
+      ],
+      "first_token_ms": 5254.704,
+      "total_ms": 5255.548,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_024",
+      "category": "multi_block:3:音乐分享",
+      "question": "分享谁的哪种专辑、什么时候发、放在哪个平台？",
+      "answerable": true,
+      "reference_answer": "陈粒现场专辑；周日下午；网易云歌单",
+      "answer_text": "我在房间历史里没找到能完整回答“分享谁的哪种专辑、什么时候发、放在哪个平台”的记录。\n\n目前检索到的相关消息只有零散几条：\n- 韩星野（u050）提到“最近听陈粒的现场专辑，编曲比录音室版本更松弛”（seq 168）；\n- 曹知夏（u097）说“我会放到网易云歌单里，设成群里都能听”（seq 2079）；\n- 周星野（u015）说“周二晚上我把正版平台链接发出来”（seq 1060）。\n\n但这些消息并没有明确对应到同一次“分享专辑”的安排，无法确认是谁的哪种专辑、具体发布时间和平台。你能补充一下歌手名、专辑类型或大致时间吗？我可以再帮你查。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "谁要发专辑、什么类型的专辑、什么时候发布、在哪个平台发布",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0042-005",
+            "eval-v3-child-0004-007"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0004"
+          ],
+          "retrieval_ms": 170.477
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0042-005",
+        "eval-v3-child-0004-007"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0004-007"
+        ],
+        [
+          "eval-v3-child-0022-001"
+        ],
+        [
+          "eval-v3-child-0042-009"
+        ]
+      ],
+      "target_hit_ranks": [
+        3,
+        null,
+        null
+      ],
+      "first_token_ms": 4555.705,
+      "total_ms": 4556.504,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_029",
+      "category": "multi_block:3:游戏聚会",
+      "question": "玩什么游戏、几点开始、攻略怎么处理？",
+      "answerable": true,
+      "reference_answer": "《双人成行》；周五晚八点；从第一章开始且不看攻略",
+      "answer_text": "我查了房间里的历史消息，能确认的只有下面这些，而且它们分散在不同话题里，没法拼成一套完整的“游戏安排”：\n\n**游戏玩什么**\n- 朱晓安（9/2 左右）提议：“这周联机玩《胡闹厨房2》吧，合作起来比较热闹。”\n- 蒋嘉宁提到桌游聚会会带《璀璨宝石》，“规则不复杂，新手也能玩”。\n\n**几点开始**\n- 陈星野：“周四晚上九点进语音频道，我建房间。”（紧跟着的是“游戏联机”话题）\n- 沈知夏：“周五晚上八点开机，手柄我来带。”（对应“游戏聚会”话题）\n\n**攻略怎么处理**\n- 郑晓安：“先从第一章开始，暂时不看攻略。”（对应“游戏聚会”话题）\n- 另外在推理剧讨论里，王亦辰提过“讨论时不提前搜结局，先各自猜一次”，但那是看剧的规则，不是游戏攻略。\n\n也就是说：房间记录里没有一条明确把“玩哪款游戏 + 几点开始 + 攻略怎么处理”定在一起的最终结论，周四九点、周五八点这两个时间分别属于不同话题，不能确定哪个是这次游戏的。如果你能告诉我指的是哪一次（比如“这周联机”还是“周五聚会”），我可以再帮你核对。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "大家打算玩什么游戏、几点开始",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0022-009",
+            "eval-v3-child-0021-004",
+            "eval-v3-child-0003-008"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0003"
+          ],
+          "retrieval_ms": 124.025
+        },
+        {
+          "query": "游戏攻略怎么处理、谁负责整理攻略",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0042-012",
+            "eval-v3-child-0008-004",
+            "eval-v3-child-0047-002"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0008",
+            "eval-v3-parent-0047"
+          ],
+          "retrieval_ms": 132.643
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0022-009",
+        "eval-v3-child-0021-004",
+        "eval-v3-child-0003-008",
+        "eval-v3-child-0042-012",
+        "eval-v3-child-0008-004",
+        "eval-v3-child-0047-002"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0004-012"
+        ],
+        [
+          "eval-v3-child-0022-009"
+        ],
+        [
+          "eval-v3-child-0042-012"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        1,
+        4
+      ],
+      "first_token_ms": 6155.268,
+      "total_ms": 6156.242,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "temporal_002",
+      "category": "temporal:latest:沪深300",
+      "question": "最近一次群里讨论沪深300时，大家的判断是什么？",
+      "answerable": true,
+      "reference_answer": "指数站回关键区间但短期涨幅不小，仍不建议追高。",
+      "answer_text": "最近一次关于沪深300的讨论，出现在王星野的一条消息里（约 2025-09-22 晚间，消息序号 2002）：大意是“指数站回关键区间，但短期涨幅不小，还是不建议追高”。随后冯亦辰回复“先把这条记下来，等有新信息再接着讨论”。\n\n更早一次（朱亦辰，消息序号 974）的说法是：成交量放大但指数还没站稳，先观察几天、不急着加仓；再早（秦亦辰，序号 91）提到指数回到 3800 点附近，接下来先看成交量和估值、不急着追高。\n\n需要说明的是：这些消息都是转述“有人说/有人觉得”，没有点名具体是谁的判断；群里也多次强调“这只是群里的观察，不当作确定的涨跌结论”。所以整体倾向是偏谨慎、观察为主，而非明确看多或看空。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "最近一次群里讨论沪深300时，大家的判断是什么？",
+          "time_hint": {
+            "mode": "latest",
+            "start_at": null,
+            "end_at": null
+          },
+          "child_ids": [
+            "eval-v3-child-0020-006",
+            "eval-v3-child-0002-013",
+            "eval-v3-child-0041-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0041"
+          ],
+          "retrieval_ms": 166.386
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-013",
+        "eval-v3-child-0041-001"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0041-001"
+        ]
+      ],
+      "target_hit_ranks": [
+        3
+      ],
+      "first_token_ms": 6195.447,
+      "total_ms": 6196.131,
+      "time_hint_exact": true
+    },
+    {
+      "qid": "temporal_004",
+      "category": "temporal:latest:宁德时代",
+      "question": "最近一次群里讨论宁德时代时，大家的判断是什么？",
+      "answerable": true,
+      "reference_answer": "继续关注海外订单与毛利率，暂时不追涨。",
+      "answer_text": "我查到的最接近“最近一次”的宁德时代讨论是郑晓安（u021）发的那条（消息序号 2004，时间约为 2025-09-22 晚间）：\n\n> “最近聊到宁德时代时，有人觉得海外订单和毛利率仍是观察重点，暂时不追涨。”\n\n随后张嘉宁（u089）回复“先把这条记下来，等有新信息再接着讨论。”\n\n更早还有两次相关讨论：\n- 何亦辰（u073）：“聊到宁德时代时，有人建议先看财报里的毛利率和订单，不按单日股价涨跌做决定。”\n- 孔嘉宁（u094）：“聊到宁德时代时，有人提到订单还要观察兑现情况，先看季报，不把短线反弹当成趋势。”\n\n综合来看，群里的判断偏谨慎：重点观察海外订单兑现和毛利率，以季报/财报数据为依据，不把短线反弹当趋势，暂不追涨。另外曹星野（u100）当时也提醒过“这只是群里的观察，不当作确定的涨跌结论”。\n\n需要说明：这几条都是转述式的“有人说”，没有点名具体是谁提出的判断；如果你要的是某位具体成员的观点，可以告诉我名字，我再帮你查。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "最近一次群里讨论宁德时代时，大家的判断是什么？",
+          "time_hint": {
+            "mode": "latest",
+            "start_at": null,
+            "end_at": null
+          },
+          "child_ids": [
+            "eval-v3-child-0020-006",
+            "eval-v3-child-0041-002",
+            "eval-v3-child-0002-014"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 161.114
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0041-002",
+        "eval-v3-child-0002-014"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0041-002"
+        ]
+      ],
+      "target_hit_ranks": [
+        2
+      ],
+      "first_token_ms": 6168.533,
+      "total_ms": 6169.25,
+      "time_hint_exact": true
+    },
+    {
+      "qid": "temporal_006",
+      "category": "temporal:latest:贵州茅台",
+      "question": "最近一次群里讨论贵州茅台时，大家的判断是什么？",
+      "answerable": true,
+      "reference_answer": "继续观察渠道库存和财报，不因短期波动下结论。",
+      "answer_text": "根据检索到的房间记录，最近一次提到贵州茅台是张晓安（u086）在 2025-09-22 21:24 左右发的一条（seq 2006）：\n\n> “最近聊到贵州茅台时，有人说渠道库存和财报仍要继续观察，不因一两天波动下结论。”\n\n紧接着吕晓安（u076）回复“先把这条记下来，等有新信息再接着讨论。”（seq 2007）\n\n所以群里最近的判断是：**继续跟踪渠道库存和财报数据，不根据一两天的股价波动下结论**，属于观察、暂不下定论的谨慎态度。更早一次（韩星野，seq 95）的说法也一致——先关注渠道库存和财报，不用短期价格变化猜长期价值；吕知夏当时还补充“这只是群里的观察，不当作确定的涨跌结论”。\n\n需要说明的是，这些消息都是转述式的“有人说”，没有点名具体是谁提出的观点。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "最近一次群里讨论贵州茅台时，大家的判断是什么？",
+          "time_hint": {
+            "mode": "latest",
+            "start_at": null,
+            "end_at": null
+          },
+          "child_ids": [
+            "eval-v3-child-0041-003",
+            "eval-v3-child-0002-014",
+            "eval-v3-child-0020-007"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0020"
+          ],
+          "retrieval_ms": 163.202
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0041-003",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0020-007"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0041-003"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 5504.71,
+      "total_ms": 5505.423,
+      "time_hint_exact": true
+    },
+    {
+      "qid": "temporal_007",
+      "category": "temporal:range:黄金ETF",
+      "question": "2025年9月12日群里讨论黄金ETF时的判断是什么？",
+      "answerable": true,
+      "reference_answer": "利率预期变化较大，先观察回撤、不急着追涨。",
+      "answer_text": "我在房间记录里没有找到 2025 年 9 月 12 日当天关于黄金ETF的讨论。检索到的相关消息时间戳都不在 9 月 12 日，例如：\n\n- 许星野（seq 97）：“聊到黄金ETF时，有人说要同时看金价和利率变化，不把短期上涨当成确定趋势。”\n- 孔星野（seq 980）：“聊到黄金ETF时，有人提到利率预期变化较大，先观察回撤，不急着追涨。”\n- 朱星野（seq 2008）：“最近聊到黄金ETF时，有人认为金价波动还在，继续观察利率和回撤情况。”\n\n这几条的共同判断是：同时关注金价与利率变化、留意回撤，不把短期上涨当作确定趋势、不追涨；且发言者都强调这只是群里的观察，不当作确定的涨跌结论。\n\n如果你要的是其中某一条（比如“最近一次”提到黄金ETF的那条），告诉我具体时间或发言人，我再帮你定位。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "2025年9月12日群里讨论黄金ETF时的判断是什么？",
+          "time_hint": {
+            "mode": "range",
+            "start_at": "2025-09-12T00:00:00+08:00",
+            "end_at": "2025-09-12T23:59:59+08:00"
+          },
+          "child_ids": [
+            "eval-v3-child-0002-015",
+            "eval-v3-child-0041-004",
+            "eval-v3-child-0020-007"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0020"
+          ],
+          "retrieval_ms": 181.338
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0002-015",
+        "eval-v3-child-0041-004",
+        "eval-v3-child-0020-007"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0020-007"
+        ]
+      ],
+      "target_hit_ranks": [
+        3
+      ],
+      "first_token_ms": 5546.167,
+      "total_ms": 5547.063,
+      "time_hint_exact": true
+    },
+    {
+      "qid": "temporal_008",
+      "category": "temporal:latest:黄金ETF",
+      "question": "最近一次群里讨论黄金ETF时，大家的判断是什么？",
+      "answerable": true,
+      "reference_answer": "继续观察利率和回撤情况。",
+      "answer_text": "我查到的最近一次关于黄金ETF的讨论是朱星野在 2025-09-23 早上（消息 seq 2008）转述的群里观点：**有人认为金价波动还在，建议继续观察利率和回撤情况**，随后吴晓安表示“先把这条记下来，等有新信息再接着讨论”（seq 2009）。\n\n更早一次（许星野，seq 97）的说法类似：**要同时看金价和利率变化，不把短期上涨当成确定趋势**；孔星野（seq 980）也提到**利率预期变化较大，先观察回撤，不急着追涨**。\n\n所以群里对黄金ETF的判断偏向谨慎观望：关注金价、利率预期和回撤，不把短期上涨视为确定趋势。需要说明的是，这些是群友转述的观察，群里也明确表示“不当作确定的涨跌结论”。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "最近一次群里讨论黄金ETF时大家的判断是什么？",
+          "time_hint": {
+            "mode": "latest",
+            "start_at": null,
+            "end_at": null
+          },
+          "child_ids": [
+            "eval-v3-child-0002-015",
+            "eval-v3-child-0041-004",
+            "eval-v3-child-0020-007"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0020"
+          ],
+          "retrieval_ms": 159.7
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0002-015",
+        "eval-v3-child-0041-004",
+        "eval-v3-child-0020-007"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0041-004"
+        ]
+      ],
+      "target_hit_ranks": [
+        2
+      ],
+      "first_token_ms": 8881.281,
+      "total_ms": 8882.014,
+      "time_hint_exact": true
+    },
+    {
+      "qid": "noanswer_001",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《来自深渊》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "抱歉，我在房间历史里没检索到关于《来自深渊》的明确讨论——搜到的都是下班路线、字幕、快递、股票等话题，以及一些其他活动的安排（比如“周六晚上八点开投影”“周五九点线上开播”等），但都没有和《来自深渊》对应上，无法确认具体日期和开播平台。\n\n能再给我一点线索吗？比如是谁提的、大概是什么时候聊的，或者提到过的平台名（B站/Netflix 等），我再帮你查。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《来自深渊》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0022-007"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 131.316
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0022-007"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 4516.939,
+      "total_ms": 4518.25,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_002",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《昭和元禄落语心中》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "抱歉，目前查到的房间消息里没有关于《昭和元禄落语心中》的明确结论——既没找到“哪天一起看”的最终决定，也没找到具体开播平台。\n\n检索到的消息多是各种零散的观影/追番时间提议（例如周六下午两点、周日晚七点半、周三晚八点等），但都没有提到这部作品，也没有指明平台。所以无法确认哪条是针对它的安排。\n\n如果你记得大致时间（比如是哪一周讨论的）或发言人，可以告诉我，我再帮你精确定位。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《昭和元禄落语心中》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0022-002",
+            "eval-v3-child-0021-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 163.769
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0022-002",
+        "eval-v3-child-0021-001"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 4649.869,
+      "total_ms": 4650.603,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_003",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《比宇宙更远的地方》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "抱歉，我按“《比宇宙更远的地方》一起看的时间/平台”检索了房间历史，但没有找到直接提到这部番的消息，也没有找到明确对应它的“哪天看、在哪个平台开播”的决定。\n\n检索到的相关消息只是一些零散的看片/开播安排，例如：\n- 吕亦辰：“周六晚上八点开投影吧。”（seq 982）\n- 何亦辰：“周五九点线上开播，链接我提前发。”（seq 988）\n- 周星野：“周二晚上我把正版平台链接发出来。”（seq 1060）\n\n这些消息都没有点名《比宇宙更远的地方》，无法确认哪条是这部番的最终安排。如果你记得是谁提的、大概哪天聊的，或提到过哪个平台（如 B 站、Netflix 等），告诉我，我可以再帮你缩小范围查。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《比宇宙更远的地方》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0021-011",
+            "eval-v3-child-0022-005"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 133.429
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0021-011",
+        "eval-v3-child-0022-005"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 5054.854,
+      "total_ms": 5055.558,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_004",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《夏目友人帐》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "抱歉，我查了房间历史消息，没有找到明确提到《夏目友人帐》的讨论，所以无法确认群里最后定的观看日期和开播平台。\n\n检索到的相关消息大多是其他活动的时间安排（比如周六晚八点开投影、周五九点线上开播、周三晚八点一起看最新一集等），但都没有点名《夏目友人帐》，不能当作答案。\n\n方便的话，可以补充一下大致时间范围或当时是谁提的，我再帮你查一次。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《夏目友人帐》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0021-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 141.656
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0021-001"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 4960.221,
+      "total_ms": 4960.879,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_005",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《白箱》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "抱歉，我查了房间历史消息，没有找到关于《白箱》的具体安排——没有提到一起看《白箱》的日期，也没有提到在哪个平台开播。\n\n检索到的相关消息里只有一些泛泛的看番/放映时间约定（比如“周六晚上八点开投影”“周五九点线上开播，链接我提前发”等），但都没有明确指向《白箱》，我不能把它们当成《白箱》的决定。\n\n如果你记得大概是谁提的、或者大概是什么时候聊的，可以告诉我，我再帮你缩小范围查一下。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《白箱》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0021-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 133.777
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0021-001"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 4482.254,
+      "total_ms": 4483.324,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_006",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《少女终末旅行》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "抱歉，我查了房间里的历史消息，没有找到任何提到《少女终末旅行》的讨论，因此无法确认群里最后定的观看日期和开播平台。\n\n检索到的消息里只有一些泛泛的观影/追番时间安排（例如“周六下午两点开着看”“周三晚上八点一起看最新一集”等），但都没有说明是哪部作品，也没有提到具体平台，不能当作《少女终末旅行》的决定。\n\n如果你记得大致时间或发言人，可以告诉我，我再帮你缩小范围查一次。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《少女终末旅行》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-001",
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0021-023"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 132.441
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0021-001",
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0021-023"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 4298.32,
+      "total_ms": 4299.02,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_007",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《异度侵入》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "抱歉，我检索了房间历史消息，但没有找到明确提到《异度侵入》的讨论，因此无法确认群里最后定的是哪天一起看、在哪个平台开播。\n\n检索结果里只有一些泛泛的“一起看/同步播放”安排（例如周六下午两点线上同步播放、周五九点线上开播等），但没有一条能对应到《异度侵入》，我不能据此猜测。\n\n你可以补充一下大概的讨论时间或参与的人，我再帮你查一次。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《异度侵入》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0021-011",
+            "eval-v3-child-0022-005"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 135.451
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0021-011",
+        "eval-v3-child-0022-005"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 4617.021,
+      "total_ms": 4617.826,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_008",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《四叠半神话大系》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "抱歉，我检索了房间历史消息，但没有找到任何提到《四叠半神话大系》的讨论，因此无法确认群里最后定的观看日期和开播平台。\n\n检索到的相关消息都是其他活动的安排（比如“周六晚上八点开投影”“周五九点线上开播，链接我提前发”等），没有明确对应这部番，我不能据此推断。\n\n如果你记得大概是谁提的、或者大概是什么时候聊的，可以告诉我，我再帮你查一次。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《四叠半神话大系》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0021-011",
+            "eval-v3-child-0022-005"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 135.255
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0021-011",
+        "eval-v3-child-0022-005"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 4607.498,
+      "total_ms": 4608.112,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_009",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《花开伊吕波》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "抱歉，我按“《花开伊吕波》一起看的时间/平台”检索了房间历史，但没有找到直接提到这部番的消息，所以目前无法确认群里最后定的日期和开播平台。\n\n检索到的相关片段只有一些泛泛的“补番/老番重温”类安排，例如：\n- 吕亦辰：“周六晚上八点开投影吧。”（seq 982）\n- 何亦辰：“周五九点线上开播，链接我提前发。”（seq 988）\n- 周星野：“周二晚上我把正版平台链接发出来。”（seq 1060）\n\n这些消息都没有点名《花开伊吕波》，不能当作最终决定。如果你记得是谁提的、大概哪几天聊的，或提到过哪个平台（B站/爱奇艺等），告诉我我再帮你查。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《花开伊吕波》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0021-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 141.575
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0021-001"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 5062.629,
+      "total_ms": 5063.3,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_010",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《冰菓》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "抱歉，我查了房间里的历史消息，没有找到明确提到《冰菓》的讨论，因此无法确认“最后决定哪天一起看”和“在哪个平台开播”。\n\n检索到的相关消息里只有一些没有点明片名的看番安排，例如：\n- 吕亦辰：“周六晚上八点开投影吧。”（seq 982）\n- 何亦辰：“周五九点线上开播，链接我提前发。”（seq 988）\n- 冯嘉宁：“周日晚上七点半开始同步看。”（seq 1042）\n- 许亦辰：“那我们周六下午两点开着看。”（seq 1045）\n\n这些都没有说明是《冰菓》，也没有提到具体平台，所以不能当作结论。如果你记得是谁提的、大概哪几天聊的，或者提到过某个平台名，我可以再帮你缩小范围查一下。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《冰菓》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0021-011",
+            "eval-v3-child-0022-005"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 141.642
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0021-011",
+        "eval-v3-child-0022-005"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 4899.405,
+      "total_ms": 4900.026,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_011",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《日常》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "抱歉，目前查到的房间消息里没有明确提到《日常》这部番的观看安排，也没有找到对应的开播平台。\n\n检索到的相关消息大多是其他活动的安排（比如“周六晚上八点开投影”“周五九点线上开播，链接我提前发”“周一到周五每天看一集，晚上九点发起”等），但都没有说明是针对《日常》的，无法据此确定答案。\n\n如果你记得大致时间（比如哪一周、谁提的），或者提到过的平台名称，可以告诉我，我再帮你查一次。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《日常》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0025-004",
+            "eval-v3-child-0021-023"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0025",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 134.563
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0025-004",
+        "eval-v3-child-0021-023"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 4613.147,
+      "total_ms": 4613.985,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_012",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《昭和元禄落语心中》剧场版，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "抱歉，我在房间历史里没有检索到关于《昭和元禄落语心中》剧场版的讨论，因此无法确认群里最后定的观看日期和开播平台。\n\n检索到的相关消息只是一些零散的观影/补番安排，例如：\n- 吕亦辰：「周六晚上八点开投影吧。」\n- 何亦辰：「周五九点线上开播，链接我提前发。」\n- 周星野：「周二晚上我把正版平台链接发出来。」\n\n但这些都没有提到《昭和元禄落语心中》，不能当作该片的安排。如果你记得大致时间（比如是哪一周讨论的）或发言人，我可以再帮你查一次。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《昭和元禄落语心中》剧场版，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0021-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 172.302
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0021-001"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 5637.566,
+      "total_ms": 5638.277,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_013",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《平家物语》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "抱歉，我查了房间历史消息，没有找到关于《平家物语》的讨论——既没有“哪天一起看”的决定，也没有提到开播平台。检索到的消息多是下班路线、字幕、快递、股票等话题，以及一批与具体作品无关的“周六下午两点”“周五晚上九点”之类的安排，无法确认哪条对应《平家物语》。\n\n如果你记得大概是谁提的、或者大致时间（比如哪一周），可以告诉我，我再帮你查一次。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《平家物语》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0021-001",
+            "eval-v3-child-0022-005"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 183.629
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0021-001",
+        "eval-v3-child-0022-005"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 5482.012,
+      "total_ms": 5482.746,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_014",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《乒乓》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "抱歉，我检索了房间历史，但没有找到明确提到《乒乓》的讨论，所以没法确认“最后决定哪天一起看”和“在哪个平台开播”。\n\n检索到的相关消息里只有一些没有点明作品名的观影/追番安排，例如：\n- 吕亦辰（seq 982）：“周六晚上八点开投影吧。”\n- 何亦辰（seq 988）：“周五九点线上开播，链接我提前发。”\n- 冯亦辰（seq 1009）：“周二晚八点我发视频链接，大家线上看。”\n- 周星野（seq 1060）：“周二晚上我把正版平台链接发出来。”\n\n这些消息都没有提到《乒乓》，也没有说明具体平台，无法据此判断哪条是《乒乓》的安排。如果你记得大致时间或发言人，可以告诉我，我再帮你缩小范围查。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《乒乓》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0021-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 150.117
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0021-001"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 4996.848,
+      "total_ms": 4997.583,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_015",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《妄想代理人》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "抱歉，我在房间历史里没有检索到关于《妄想代理人》的讨论，因此无法确认群里最后定的观看日期和开播平台。\n\n检索到的相关消息里只有一些其他活动的安排（比如“周五九点线上开播，链接我提前发”“周三晚上八点线上放映”等），但都没有提到《妄想代理人》，不能当作它的安排。你可以补充一下大致时间或发言人，我再帮你查。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《妄想代理人》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0022-007"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 150.174
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0022-007"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 4521.8,
+      "total_ms": 4522.71,
+      "time_hint_exact": null
+    }
+  ]
+}

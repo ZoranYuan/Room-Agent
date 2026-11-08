@@ -1,0 +1,77 @@
+{
+  "records": [
+    {
+      "qid": "single_011",
+      "category": "single_block:名侦探柯南",
+      "question": "群友觉得哪部作品适合边看边推理案件？",
+      "answerable": true,
+      "reference_answer": "《名侦探柯南》",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "群友觉得哪部作品适合边看边推理案件",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-011",
+            "eval-v3-child-0002-012",
+            "eval-v3-child-0003-014"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0003"
+          ],
+          "retrieval_ms": 183.58
+        },
+        {
+          "query": "适合边看边推理、暂停猜凶手的作品推荐",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-011",
+            "eval-v3-child-0042-001",
+            "eval-v3-child-0002-012"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 140.339
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0001-011",
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0003-014",
+        "eval-v3-child-0042-001"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0001-011"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 5141.491,
+      "total_ms": 5282.524,
+      "time_hint_exact": null
+    }
+  ]
+}

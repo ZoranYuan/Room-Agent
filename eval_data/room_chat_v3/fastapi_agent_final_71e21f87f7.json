@@ -1,0 +1,132 @@
+{
+  "dataset": "room_chat_v3",
+  "corpus_messages": 3000,
+  "child_chunks": 685,
+  "question_count": 1,
+  "successful_requests": 1,
+  "failed_requests": 0,
+  "request_errors": {},
+  "single_evidence": {
+    "questions": 1,
+    "search_executed": 1,
+    "recall_at_1": 1.0,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  "multi_evidence": {
+    "questions": 0,
+    "evidence_total": 0,
+    "evidence_recall_at_final_3_per_query": null,
+    "complete_evidence_rate": null,
+    "questions_with_search": 0,
+    "queries_per_question": null,
+    "questions_using_two_queries": 0
+  },
+  "temporal": {
+    "questions": 0,
+    "search_executed": 0,
+    "time_hint_exact": 0,
+    "time_hint_questions": 0
+  },
+  "no_answer": {
+    "questions": 0,
+    "completed_responses": 0,
+    "refusal_pattern_hits": 0,
+    "refusal_pattern_rate_on_completed": null
+  },
+  "answerable_reference_phrase_match": {
+    "reference_clauses_hit": 1,
+    "reference_clauses_total": 1,
+    "reference_clause_match_rate": 1.0,
+    "all_reference_clauses_matched": 1,
+    "all_reference_clause_rate": 1.0,
+    "completed_answerable_questions": 1,
+    "all_dataset_reference_clauses": 1,
+    "matched_clause_lower_bound_over_full_set": 1.0
+  },
+  "tool_calls": {
+    "search_total": 1,
+    "search_mean_per_question": 1,
+    "search_query_total": 1,
+    "sync_total": 0,
+    "tool_limit_reached_outputs": 0
+  },
+  "latency_ms": {
+    "end_to_end_mean": 59715.931,
+    "end_to_end_p95": 59715.931,
+    "first_token_mean": 59715.077,
+    "first_token_p95": 59715.077,
+    "first_token_p99": 59715.077,
+    "retrieval_calls": 1,
+    "retrieval_and_rerank_mean": 56271.957,
+    "retrieval_and_rerank_p95": 56271.957,
+    "retrieval_and_rerank_p99": 56271.957,
+    "warm_retrieval_and_rerank_mean": null,
+    "warm_retrieval_and_rerank_p95": null
+  },
+  "settings": {
+    "collection": "eval_room_chat_v3_71e21f87f7",
+    "embedding_model": "Qwen/Qwen3-Embedding-0.6B",
+    "reranker_model": "Qwen/Qwen3-Reranker-0.6B",
+    "retrieval_final_top_n": 3,
+    "rerank_input_top_n": 5,
+    "candidate_top_k": 10,
+    "rrf_k": 60,
+    "agent_recursion_limit": 14
+  },
+  "records": [
+    {
+      "qid": "single_001",
+      "category": "single_block:葬送的芙莉莲",
+      "question": "群里推荐补哪部节奏比较舒服的番？",
+      "answerable": true,
+      "reference_answer": "《葬送的芙莉莲》",
+      "answer_text": "群里关于“节奏舒服”的推荐主要有这几部：\n\n- **《葬送的芙莉莲》**：郑晓安推荐，理由是“旅行感和人物对白都很耐看”；后来何知夏也说想补它的旅行和日常（郑星野也存进了片单）。\n- **《轻音少女》**：朱亦辰推荐，说轻音部练习不多，大家聊天和吃点心的戏很多，秦嘉宁评价“听起来完全不赶剧情”，适合吃饭时放着看。\n- **《虫师》**：陈亦辰推荐，节奏安静，每集像一个带点奇幻色彩的民间故事，适合一集一集独立看。\n- **《侧耳倾听》**（动画电影）：王晓安推荐，讲成长和喜欢做的事，氛围温柔，蒋知夏说“适合慢慢看”。\n\n如果只挑一部番剧补，最贴合“节奏舒服”的是《葬送的芙莉莲》和《轻音少女》；想要安静、单集独立的话选《虫师》。另外提醒一下，《孤独摇滚！》虽然也被推荐过，但孔星野提到“节奏很快”，可能不太符合你的需求。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages"
+      ],
+      "search_tool_calls": 1,
+      "search_calls": [
+        {
+          "query": "群里推荐补哪部节奏比较舒服的番？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-001",
+            "eval-v3-child-0002-001",
+            "eval-v3-child-0002-005"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 56271.957
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0001-001",
+        "eval-v3-child-0002-001",
+        "eval-v3-child-0002-005"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0001-001"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 59715.077,
+      "total_ms": 59715.931,
+      "time_hint_exact": null
+    }
+  ]
+}

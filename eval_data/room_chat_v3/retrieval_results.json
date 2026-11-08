@@ -1,0 +1,2999 @@
+{
+  "dataset": "room_chat_v3",
+  "message_count": 3000,
+  "question_count": 83,
+  "answerable_count": 68,
+  "unanswerable_count": 15,
+  "child_chunk_count": 685,
+  "mapped_evidence_group_count": 128,
+  "settings": {
+    "embedding_model": "Qwen/Qwen3-Embedding-0.6B",
+    "reranker_model": "Qwen/Qwen3-Reranker-0.6B",
+    "candidate_top_k": 10,
+    "rerank_input_top_n": 5,
+    "final_top_n": 3,
+    "rrf_k": 60,
+    "temporal_rank_weight": 0.25,
+    "bm25_analyzer": "chinese"
+  },
+  "metrics": {
+    "single_evidence": {
+      "rrf": {
+        "questions": 30,
+        "recall_at_1": 0.8667,
+        "mrr_at_3": 0.9278,
+        "hits_at_1": 26
+      },
+      "rrf_qwen_rerank": {
+        "questions": 30,
+        "recall_at_1": 0.9333,
+        "mrr_at_3": 0.9667,
+        "hits_at_1": 28
+      },
+      "all_single_including_temporal_production": {
+        "questions": 38,
+        "recall_at_1": 0.7632,
+        "mrr_at_3": 0.864,
+        "hits_at_1": 29
+      }
+    },
+    "multi_evidence": {
+      "rrf": {
+        "questions": 30,
+        "evidence_hits_at_3": 40,
+        "evidence_total": 90,
+        "evidence_recall_at_3": 0.4444,
+        "complete_evidence_at_3": 0.1667,
+        "first_hit_mrr_at_3": 0.5944,
+        "per_evidence_mrr_at_3": 0.2667
+      },
+      "rrf_qwen_rerank": {
+        "questions": 30,
+        "evidence_hits_at_3": 37,
+        "evidence_total": 90,
+        "evidence_recall_at_3": 0.4111,
+        "complete_evidence_at_3": 0.1333,
+        "first_hit_mrr_at_3": 0.6444,
+        "per_evidence_mrr_at_3": 0.2833
+      },
+      "rrf_candidate_pool": {
+        "questions": 30,
+        "evidence_hits_at_10": 59,
+        "evidence_total": 90,
+        "evidence_recall_at_10": 0.6556,
+        "complete_evidence_at_10": 0.3667,
+        "first_hit_mrr_at_10": 0.6167,
+        "per_evidence_mrr_at_10": 0.3046
+      }
+    },
+    "temporal": {
+      "questions": 8,
+      "time_hint_exact_accuracy": 1.0,
+      "time_hint_exact_count": 8,
+      "subsets": {
+        "range": {
+          "before_reranker": {
+            "rrf_top5": {
+              "questions": 4,
+              "recall_at_1": 0.0,
+              "mrr_at_3": 0.375,
+              "hits_at_1": 0
+            },
+            "oracle_time_top5": {
+              "questions": 4,
+              "recall_at_1": 0.25,
+              "mrr_at_3": 0.625,
+              "hits_at_1": 1
+            },
+            "llm_time_top5": {
+              "questions": 4,
+              "recall_at_1": 0.5,
+              "mrr_at_3": 0.75,
+              "hits_at_1": 2
+            }
+          },
+          "after_reranker": {
+            "no_time": {
+              "questions": 4,
+              "recall_at_1": 0.25,
+              "mrr_at_3": 0.5417,
+              "hits_at_1": 1
+            },
+            "oracle_time": {
+              "questions": 4,
+              "recall_at_1": 0.25,
+              "mrr_at_3": 0.5417,
+              "hits_at_1": 1
+            },
+            "llm_time": {
+              "questions": 4,
+              "recall_at_1": 0.25,
+              "mrr_at_3": 0.5417,
+              "hits_at_1": 1
+            }
+          }
+        },
+        "latest": {
+          "before_reranker": {
+            "rrf_top5": {
+              "questions": 4,
+              "recall_at_1": 0.5,
+              "mrr_at_3": 0.7083,
+              "hits_at_1": 2
+            },
+            "oracle_time_top5": {
+              "questions": 4,
+              "recall_at_1": 0.75,
+              "mrr_at_3": 0.875,
+              "hits_at_1": 3
+            },
+            "llm_time_top5": {
+              "questions": 4,
+              "recall_at_1": 0.75,
+              "mrr_at_3": 0.8333,
+              "hits_at_1": 3
+            }
+          },
+          "after_reranker": {
+            "no_time": {
+              "questions": 4,
+              "recall_at_1": 0.0,
+              "mrr_at_3": 0.4167,
+              "hits_at_1": 0
+            },
+            "oracle_time": {
+              "questions": 4,
+              "recall_at_1": 0.0,
+              "mrr_at_3": 0.4167,
+              "hits_at_1": 0
+            },
+            "llm_time": {
+              "questions": 4,
+              "recall_at_1": 0.0,
+              "mrr_at_3": 0.4167,
+              "hits_at_1": 0
+            }
+          }
+        }
+      }
+    }
+  },
+  "queries": [
+    {
+      "qid": "single_001",
+      "category": "single_block:葬送的芙莉莲",
+      "question": "群里推荐补哪部节奏比较舒服的番？",
+      "target_groups": [
+        [
+          "eval-v3-child-0001-001"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0001-001",
+        "eval-v3-child-0002-001",
+        "eval-v3-child-0002-007",
+        "eval-v3-child-0002-005",
+        "eval-v3-child-0001-007",
+        "eval-v3-child-0001-015",
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0041-005",
+        "eval-v3-child-0001-002",
+        "eval-v3-child-0002-002"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0001-001",
+        "eval-v3-child-0002-001",
+        "eval-v3-child-0002-005"
+      ],
+      "production_ids": [
+        "eval-v3-child-0001-001",
+        "eval-v3-child-0002-001",
+        "eval-v3-child-0002-005"
+      ]
+    },
+    {
+      "qid": "single_002",
+      "category": "single_block:迷宫饭",
+      "question": "哪部作品把迷宫冒险和料理结合起来？",
+      "target_groups": [
+        [
+          "eval-v3-child-0001-002"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0001-002",
+        "eval-v3-child-0003-016",
+        "eval-v3-child-0001-015",
+        "eval-v3-child-0003-008",
+        "eval-v3-child-0001-017",
+        "eval-v3-child-0002-010",
+        "eval-v3-child-0001-012",
+        "eval-v3-child-0047-006",
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0002-006"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0001-002",
+        "eval-v3-child-0003-016",
+        "eval-v3-child-0003-008"
+      ],
+      "production_ids": [
+        "eval-v3-child-0001-002",
+        "eval-v3-child-0003-016",
+        "eval-v3-child-0003-008"
+      ]
+    },
+    {
+      "qid": "single_003",
+      "category": "single_block:间谍过家家",
+      "question": "群里觉得哪部动画适合和家人一起看？",
+      "target_groups": [
+        [
+          "eval-v3-child-0001-003"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0001-003",
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0002-002",
+        "eval-v3-child-0001-009",
+        "eval-v3-child-0001-015",
+        "eval-v3-child-0004-004",
+        "eval-v3-child-0001-010",
+        "eval-v3-child-0003-013",
+        "eval-v3-child-0001-007",
+        "eval-v3-child-0002-005"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0001-003",
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0002-002"
+      ],
+      "production_ids": [
+        "eval-v3-child-0001-003",
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0002-002"
+      ]
+    },
+    {
+      "qid": "single_004",
+      "category": "single_block:排球少年",
+      "question": "有人重看《排球少年》时最喜欢哪类情节？",
+      "target_groups": [
+        [
+          "eval-v3-child-0001-004"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0001-004",
+        "eval-v3-child-0001-014",
+        "eval-v3-child-0042-007",
+        "eval-v3-child-0001-010",
+        "eval-v3-child-0019-002",
+        "eval-v3-child-0004-008",
+        "eval-v3-child-0004-005",
+        "eval-v3-child-0021-025",
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0041-010"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0001-004",
+        "eval-v3-child-0042-007",
+        "eval-v3-child-0001-014"
+      ],
+      "production_ids": [
+        "eval-v3-child-0001-004",
+        "eval-v3-child-0042-007",
+        "eval-v3-child-0001-014"
+      ]
+    },
+    {
+      "qid": "single_005",
+      "category": "single_block:灌篮高手",
+      "question": "哪部老动画的片头让群友想起学生时代？",
+      "target_groups": [
+        [
+          "eval-v3-child-0001-005"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0001-005",
+        "eval-v3-child-0004-008",
+        "eval-v3-child-0042-007",
+        "eval-v3-child-0001-007",
+        "eval-v3-child-0004-013",
+        "eval-v3-child-0021-012",
+        "eval-v3-child-0041-002",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-006",
+        "eval-v3-child-0002-014"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0001-005",
+        "eval-v3-child-0004-008",
+        "eval-v3-child-0001-007"
+      ],
+      "production_ids": [
+        "eval-v3-child-0001-005",
+        "eval-v3-child-0004-008",
+        "eval-v3-child-0001-007"
+      ]
+    },
+    {
+      "qid": "single_006",
+      "category": "single_block:新世纪福音战士",
+      "question": "哪部老作品被推荐用来一起讨论人物和结局？",
+      "target_groups": [
+        [
+          "eval-v3-child-0001-006"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0041-016",
+        "eval-v3-child-0001-017",
+        "eval-v3-child-0002-004",
+        "eval-v3-child-0002-003",
+        "eval-v3-child-0042-007",
+        "eval-v3-child-0002-009",
+        "eval-v3-child-0042-001",
+        "eval-v3-child-0001-001",
+        "eval-v3-child-0004-005"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0002-003",
+        "eval-v3-child-0002-004"
+      ],
+      "production_ids": [
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0002-003",
+        "eval-v3-child-0002-004"
+      ]
+    },
+    {
+      "qid": "single_007",
+      "category": "single_block:药屋少女的呢喃",
+      "question": "哪部作品的猫猫被夸观察力强、很有个性？",
+      "target_groups": [
+        [
+          "eval-v3-child-0001-007"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0001-007",
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0002-005",
+        "eval-v3-child-0004-004",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0001-017",
+        "eval-v3-child-0042-007",
+        "eval-v3-child-0001-011",
+        "eval-v3-child-0002-003",
+        "eval-v3-child-0001-015"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0001-007",
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0004-004"
+      ],
+      "production_ids": [
+        "eval-v3-child-0001-007",
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0004-004"
+      ]
+    },
+    {
+      "qid": "single_008",
+      "category": "single_block:星际牛仔",
+      "question": "哪部旧番因为爵士和蓝调风格的配乐被提到？",
+      "target_groups": [
+        [
+          "eval-v3-child-0001-008"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0001-008",
+        "eval-v3-child-0003-006",
+        "eval-v3-child-0003-012",
+        "eval-v3-child-0041-010",
+        "eval-v3-child-0001-005",
+        "eval-v3-child-0001-007",
+        "eval-v3-child-0004-013",
+        "eval-v3-child-0002-007",
+        "eval-v3-child-0016-004",
+        "eval-v3-child-0001-001"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0001-008",
+        "eval-v3-child-0003-006",
+        "eval-v3-child-0003-012"
+      ],
+      "production_ids": [
+        "eval-v3-child-0001-008",
+        "eval-v3-child-0003-006",
+        "eval-v3-child-0003-012"
+      ]
+    },
+    {
+      "qid": "single_009",
+      "category": "single_block:侧耳倾听",
+      "question": "群里推荐的温柔成长向动画电影是哪部？",
+      "target_groups": [
+        [
+          "eval-v3-child-0001-009"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0001-009",
+        "eval-v3-child-0003-002",
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0004-011",
+        "eval-v3-child-0022-008",
+        "eval-v3-child-0003-011",
+        "eval-v3-child-0004-004",
+        "eval-v3-child-0001-015",
+        "eval-v3-child-0042-012",
+        "eval-v3-child-0001-007"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0001-009",
+        "eval-v3-child-0003-002",
+        "eval-v3-child-0004-011"
+      ],
+      "production_ids": [
+        "eval-v3-child-0001-009",
+        "eval-v3-child-0003-002",
+        "eval-v3-child-0004-011"
+      ]
+    },
+    {
+      "qid": "single_010",
+      "category": "single_block:海贼王",
+      "question": "哪部长篇动画被形容为伙伴一路出海冒险？",
+      "target_groups": [
+        [
+          "eval-v3-child-0001-010"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0001-010",
+        "eval-v3-child-0001-015",
+        "eval-v3-child-0004-008",
+        "eval-v3-child-0002-007",
+        "eval-v3-child-0002-006",
+        "eval-v3-child-0041-016",
+        "eval-v3-child-0001-002",
+        "eval-v3-child-0002-004",
+        "eval-v3-child-0002-005",
+        "eval-v3-child-0002-009"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0001-010",
+        "eval-v3-child-0002-007",
+        "eval-v3-child-0001-015"
+      ],
+      "production_ids": [
+        "eval-v3-child-0001-010",
+        "eval-v3-child-0002-007",
+        "eval-v3-child-0001-015"
+      ]
+    },
+    {
+      "qid": "single_011",
+      "category": "single_block:名侦探柯南",
+      "question": "群友觉得哪部作品适合边看边推理案件？",
+      "target_groups": [
+        [
+          "eval-v3-child-0001-011"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0001-011",
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0003-014",
+        "eval-v3-child-0021-014",
+        "eval-v3-child-0002-011",
+        "eval-v3-child-0042-001",
+        "eval-v3-child-0001-007",
+        "eval-v3-child-0002-003",
+        "eval-v3-child-0002-006"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0001-011",
+        "eval-v3-child-0001-006"
+      ],
+      "production_ids": [
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0001-011",
+        "eval-v3-child-0001-006"
+      ]
+    },
+    {
+      "qid": "single_012",
+      "category": "single_block:蓝色时期",
+      "question": "哪部作品被推荐为关于创作练习和自我表达？",
+      "target_groups": [
+        [
+          "eval-v3-child-0001-012"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0001-012",
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0002-003",
+        "eval-v3-child-0001-017",
+        "eval-v3-child-0004-003",
+        "eval-v3-child-0002-002",
+        "eval-v3-child-0041-016",
+        "eval-v3-child-0002-011",
+        "eval-v3-child-0021-022",
+        "eval-v3-child-0002-006"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0001-012",
+        "eval-v3-child-0002-003",
+        "eval-v3-child-0001-006"
+      ],
+      "production_ids": [
+        "eval-v3-child-0001-012",
+        "eval-v3-child-0002-003",
+        "eval-v3-child-0001-006"
+      ]
+    },
+    {
+      "qid": "single_013",
+      "category": "single_block:电锯人",
+      "question": "哪部动画被说镜头语言很有电影感？",
+      "target_groups": [
+        [
+          "eval-v3-child-0001-013"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0001-013",
+        "eval-v3-child-0004-011",
+        "eval-v3-child-0003-002",
+        "eval-v3-child-0022-008",
+        "eval-v3-child-0001-015",
+        "eval-v3-child-0001-009",
+        "eval-v3-child-0001-007",
+        "eval-v3-child-0042-013",
+        "eval-v3-child-0002-009",
+        "eval-v3-child-0004-008"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0001-013",
+        "eval-v3-child-0001-015",
+        "eval-v3-child-0003-002"
+      ],
+      "production_ids": [
+        "eval-v3-child-0001-013",
+        "eval-v3-child-0001-015",
+        "eval-v3-child-0003-002"
+      ]
+    },
+    {
+      "qid": "single_014",
+      "category": "single_block:火影忍者",
+      "question": "群里提到《火影忍者》的哪段比赛？",
+      "target_groups": [
+        [
+          "eval-v3-child-0001-014"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0001-014",
+        "eval-v3-child-0003-001",
+        "eval-v3-child-0041-010",
+        "eval-v3-child-0041-016",
+        "eval-v3-child-0022-009",
+        "eval-v3-child-0060-011",
+        "eval-v3-child-0001-004",
+        "eval-v3-child-0040-001",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0022-010"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0001-014",
+        "eval-v3-child-0041-010",
+        "eval-v3-child-0003-001"
+      ],
+      "production_ids": [
+        "eval-v3-child-0001-014",
+        "eval-v3-child-0041-010",
+        "eval-v3-child-0003-001"
+      ]
+    },
+    {
+      "qid": "single_015",
+      "category": "single_block:JOJO的奇妙冒险",
+      "question": "哪部动画因姿势和色彩夸张而被推荐？",
+      "target_groups": [
+        [
+          "eval-v3-child-0001-015"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0001-015",
+        "eval-v3-child-0002-005",
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0001-010",
+        "eval-v3-child-0001-012",
+        "eval-v3-child-0004-004",
+        "eval-v3-child-0001-007",
+        "eval-v3-child-0004-011",
+        "eval-v3-child-0001-003",
+        "eval-v3-child-0042-007"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0001-015",
+        "eval-v3-child-0002-005",
+        "eval-v3-child-0002-012"
+      ],
+      "production_ids": [
+        "eval-v3-child-0001-015",
+        "eval-v3-child-0002-005",
+        "eval-v3-child-0002-012"
+      ]
+    },
+    {
+      "qid": "single_016",
+      "category": "single_block:灵能百分百",
+      "question": "哪部动画被推荐为重点在自我成长和人际关系？",
+      "target_groups": [
+        [
+          "eval-v3-child-0001-016"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0001-016",
+        "eval-v3-child-0001-015",
+        "eval-v3-child-0001-003",
+        "eval-v3-child-0001-009",
+        "eval-v3-child-0001-007",
+        "eval-v3-child-0002-002",
+        "eval-v3-child-0001-010",
+        "eval-v3-child-0002-006",
+        "eval-v3-child-0004-004",
+        "eval-v3-child-0002-005"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0001-016",
+        "eval-v3-child-0001-009",
+        "eval-v3-child-0001-015"
+      ],
+      "production_ids": [
+        "eval-v3-child-0001-016",
+        "eval-v3-child-0001-009",
+        "eval-v3-child-0001-015"
+      ]
+    },
+    {
+      "qid": "single_017",
+      "category": "single_block:文豪野犬",
+      "question": "哪部作品被推荐为异能群像题材？",
+      "target_groups": [
+        [
+          "eval-v3-child-0001-017"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0001-017",
+        "eval-v3-child-0002-003",
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0001-002",
+        "eval-v3-child-0002-007",
+        "eval-v3-child-0001-012",
+        "eval-v3-child-0002-001",
+        "eval-v3-child-0001-015",
+        "eval-v3-child-0002-005",
+        "eval-v3-child-0002-009"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0001-017",
+        "eval-v3-child-0002-007",
+        "eval-v3-child-0001-006"
+      ],
+      "production_ids": [
+        "eval-v3-child-0001-017",
+        "eval-v3-child-0002-007",
+        "eval-v3-child-0001-006"
+      ]
+    },
+    {
+      "qid": "single_018",
+      "category": "single_block:孤独摇滚！",
+      "question": "哪部音乐番因为社恐主角的反差被推荐？",
+      "target_groups": [
+        [
+          "eval-v3-child-0002-001"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0002-001",
+        "eval-v3-child-0001-001",
+        "eval-v3-child-0001-007",
+        "eval-v3-child-0002-007",
+        "eval-v3-child-0001-008",
+        "eval-v3-child-0041-016",
+        "eval-v3-child-0001-016",
+        "eval-v3-child-0001-015",
+        "eval-v3-child-0002-009",
+        "eval-v3-child-0001-002"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0002-001",
+        "eval-v3-child-0001-008",
+        "eval-v3-child-0001-001"
+      ],
+      "production_ids": [
+        "eval-v3-child-0002-001",
+        "eval-v3-child-0001-008",
+        "eval-v3-child-0001-001"
+      ]
+    },
+    {
+      "qid": "single_019",
+      "category": "single_block:轻音少女",
+      "question": "哪部日常动画被说有很多社团聊天和吃点心的片段？",
+      "target_groups": [
+        [
+          "eval-v3-child-0002-002"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0002-002",
+        "eval-v3-child-0001-015",
+        "eval-v3-child-0042-013",
+        "eval-v3-child-0002-006",
+        "eval-v3-child-0004-013",
+        "eval-v3-child-0001-007",
+        "eval-v3-child-0002-005",
+        "eval-v3-child-0001-003",
+        "eval-v3-child-0042-012",
+        "eval-v3-child-0001-010"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0002-002",
+        "eval-v3-child-0042-013",
+        "eval-v3-child-0004-013"
+      ],
+      "production_ids": [
+        "eval-v3-child-0002-002",
+        "eval-v3-child-0042-013",
+        "eval-v3-child-0004-013"
+      ]
+    },
+    {
+      "qid": "single_020",
+      "category": "single_block:紫罗兰永恒花园",
+      "question": "哪部作品因信件和细腻情感线被推荐？",
+      "target_groups": [
+        [
+          "eval-v3-child-0002-003"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0002-003",
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0002-007",
+        "eval-v3-child-0001-001",
+        "eval-v3-child-0001-017",
+        "eval-v3-child-0001-012",
+        "eval-v3-child-0041-016",
+        "eval-v3-child-0002-011",
+        "eval-v3-child-0002-016",
+        "eval-v3-child-0002-006"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0002-003",
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0001-001"
+      ],
+      "production_ids": [
+        "eval-v3-child-0002-003",
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0001-001"
+      ]
+    },
+    {
+      "qid": "single_021",
+      "category": "single_block:进击的巨人",
+      "question": "哪部动画被形容为每集结尾都留下很多悬念？",
+      "target_groups": [
+        [
+          "eval-v3-child-0002-004"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0002-004",
+        "eval-v3-child-0001-010",
+        "eval-v3-child-0001-007",
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0002-006",
+        "eval-v3-child-0002-005",
+        "eval-v3-child-0002-009",
+        "eval-v3-child-0001-011",
+        "eval-v3-child-0003-002",
+        "eval-v3-child-0001-015"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0002-004",
+        "eval-v3-child-0002-006",
+        "eval-v3-child-0001-007"
+      ],
+      "production_ids": [
+        "eval-v3-child-0002-004",
+        "eval-v3-child-0002-006",
+        "eval-v3-child-0001-007"
+      ]
+    },
+    {
+      "qid": "single_022",
+      "category": "single_block:钢之炼金术师FA",
+      "question": "哪部作品被推荐为主线完整、伏笔能回收？",
+      "target_groups": [
+        [
+          "eval-v3-child-0002-004"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0002-004",
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0002-003",
+        "eval-v3-child-0002-006",
+        "eval-v3-child-0001-017",
+        "eval-v3-child-0039-005",
+        "eval-v3-child-0001-001",
+        "eval-v3-child-0001-012",
+        "eval-v3-child-0002-007",
+        "eval-v3-child-0002-009"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0002-004",
+        "eval-v3-child-0002-006",
+        "eval-v3-child-0002-003"
+      ],
+      "production_ids": [
+        "eval-v3-child-0002-004",
+        "eval-v3-child-0002-006",
+        "eval-v3-child-0002-003"
+      ]
+    },
+    {
+      "qid": "single_023",
+      "category": "single_block:虫师",
+      "question": "哪部动画被推荐为节奏安静、单集故事独立？",
+      "target_groups": [
+        [
+          "eval-v3-child-0002-005"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0002-005",
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0001-001",
+        "eval-v3-child-0001-015",
+        "eval-v3-child-0001-010",
+        "eval-v3-child-0001-007",
+        "eval-v3-child-0002-006",
+        "eval-v3-child-0002-001",
+        "eval-v3-child-0002-004",
+        "eval-v3-child-0002-009"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0002-005",
+        "eval-v3-child-0001-001",
+        "eval-v3-child-0002-012"
+      ],
+      "production_ids": [
+        "eval-v3-child-0002-005",
+        "eval-v3-child-0001-001",
+        "eval-v3-child-0002-012"
+      ]
+    },
+    {
+      "qid": "single_024",
+      "category": "single_block:奇巧计程车",
+      "question": "哪部短篇动画被说前后对话线索会串起来？",
+      "target_groups": [
+        [
+          "eval-v3-child-0002-006"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0002-006",
+        "eval-v3-child-0001-011",
+        "eval-v3-child-0001-010",
+        "eval-v3-child-0002-004",
+        "eval-v3-child-0002-002",
+        "eval-v3-child-0042-013",
+        "eval-v3-child-0002-005",
+        "eval-v3-child-0004-004",
+        "eval-v3-child-0001-007",
+        "eval-v3-child-0002-001"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0002-006",
+        "eval-v3-child-0002-004",
+        "eval-v3-child-0001-011"
+      ],
+      "production_ids": [
+        "eval-v3-child-0002-006",
+        "eval-v3-child-0002-004",
+        "eval-v3-child-0001-011"
+      ]
+    },
+    {
+      "qid": "single_025",
+      "category": "single_block:黄金神威",
+      "question": "哪部作品被提到兼有冒险、饮食和地方文化？",
+      "target_groups": [
+        [
+          "eval-v3-child-0002-007"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0001-002",
+        "eval-v3-child-0002-007",
+        "eval-v3-child-0001-010",
+        "eval-v3-child-0001-017",
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0001-015",
+        "eval-v3-child-0002-010",
+        "eval-v3-child-0003-016",
+        "eval-v3-child-0001-012",
+        "eval-v3-child-0002-002"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0002-007",
+        "eval-v3-child-0001-002",
+        "eval-v3-child-0001-010"
+      ],
+      "production_ids": [
+        "eval-v3-child-0002-007",
+        "eval-v3-child-0001-002",
+        "eval-v3-child-0001-010"
+      ]
+    },
+    {
+      "qid": "single_026",
+      "category": "single_block:乐队的夏天",
+      "question": "群里推荐回看哪个乐队节目？",
+      "target_groups": [
+        [
+          "eval-v3-child-0002-008"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0003-009",
+        "eval-v3-child-0002-008",
+        "eval-v3-child-0041-013",
+        "eval-v3-child-0003-003",
+        "eval-v3-child-0020-010",
+        "eval-v3-child-0021-006",
+        "eval-v3-child-0031-002",
+        "eval-v3-child-0041-007",
+        "eval-v3-child-0027-010",
+        "eval-v3-child-0018-010"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0003-009",
+        "eval-v3-child-0002-008",
+        "eval-v3-child-0041-013"
+      ],
+      "production_ids": [
+        "eval-v3-child-0003-009",
+        "eval-v3-child-0002-008",
+        "eval-v3-child-0041-013"
+      ]
+    },
+    {
+      "qid": "single_027",
+      "category": "single_block:喜剧之王",
+      "question": "哪部周星驰电影被形容为笑中带着小人物的辛酸？",
+      "target_groups": [
+        [
+          "eval-v3-child-0002-009"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0002-009",
+        "eval-v3-child-0001-009",
+        "eval-v3-child-0004-011",
+        "eval-v3-child-0041-015",
+        "eval-v3-child-0001-007",
+        "eval-v3-child-0001-001",
+        "eval-v3-child-0021-021",
+        "eval-v3-child-0001-017",
+        "eval-v3-child-0003-002",
+        "eval-v3-child-0001-013"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0002-009",
+        "eval-v3-child-0004-011",
+        "eval-v3-child-0001-009"
+      ],
+      "production_ids": [
+        "eval-v3-child-0002-009",
+        "eval-v3-child-0004-011",
+        "eval-v3-child-0001-009"
+      ]
+    },
+    {
+      "qid": "single_028",
+      "category": "single_block:塞尔达传说：旷野之息",
+      "question": "哪款游戏被推荐为可以自由探索、常有意外发现？",
+      "target_groups": [
+        [
+          "eval-v3-child-0002-010"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0002-010",
+        "eval-v3-child-0021-020",
+        "eval-v3-child-0002-009",
+        "eval-v3-child-0044-006",
+        "eval-v3-child-0016-011",
+        "eval-v3-child-0038-005",
+        "eval-v3-child-0060-001",
+        "eval-v3-child-0001-002",
+        "eval-v3-child-0025-005",
+        "eval-v3-child-0008-010"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0002-010",
+        "eval-v3-child-0044-006",
+        "eval-v3-child-0021-020"
+      ],
+      "production_ids": [
+        "eval-v3-child-0002-010",
+        "eval-v3-child-0044-006",
+        "eval-v3-child-0021-020"
+      ]
+    },
+    {
+      "qid": "single_029",
+      "category": "single_block:坂本龙一",
+      "question": "群里推荐了哪位音乐人的作品来安静听？",
+      "target_groups": [
+        [
+          "eval-v3-child-0002-011"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0002-011",
+        "eval-v3-child-0041-016",
+        "eval-v3-child-0042-009",
+        "eval-v3-child-0002-001",
+        "eval-v3-child-0044-005",
+        "eval-v3-child-0001-008",
+        "eval-v3-child-0038-008",
+        "eval-v3-child-0001-017",
+        "eval-v3-child-0016-004",
+        "eval-v3-child-0022-001"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0002-011",
+        "eval-v3-child-0042-009",
+        "eval-v3-child-0002-001"
+      ],
+      "production_ids": [
+        "eval-v3-child-0002-011",
+        "eval-v3-child-0042-009",
+        "eval-v3-child-0002-001"
+      ]
+    },
+    {
+      "qid": "single_030",
+      "category": "single_block:名侦探柯南剧场版",
+      "question": "推荐一起重看的柯南剧场版是哪一部？",
+      "target_groups": [
+        [
+          "eval-v3-child-0002-012"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0004-008",
+        "eval-v3-child-0001-011",
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0002-009",
+        "eval-v3-child-0001-003",
+        "eval-v3-child-0002-004",
+        "eval-v3-child-0001-001",
+        "eval-v3-child-0042-001",
+        "eval-v3-child-0001-017"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0004-008",
+        "eval-v3-child-0001-011"
+      ],
+      "production_ids": [
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0004-008",
+        "eval-v3-child-0001-011"
+      ]
+    },
+    {
+      "qid": "multi_001",
+      "category": "multi_block:3:周末补番",
+      "question": "大家选了哪部番、几点开始、准备看几集？",
+      "target_groups": [
+        [
+          "eval-v3-child-0002-016"
+        ],
+        [
+          "eval-v3-child-0020-008"
+        ],
+        [
+          "eval-v3-child-0041-005"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0042-007",
+        "eval-v3-child-0002-017",
+        "eval-v3-child-0041-005",
+        "eval-v3-child-0001-004",
+        "eval-v3-child-0021-023",
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0003-002",
+        "eval-v3-child-0004-004",
+        "eval-v3-child-0032-007",
+        "eval-v3-child-0002-007"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0041-005",
+        "eval-v3-child-0042-007",
+        "eval-v3-child-0021-023"
+      ],
+      "production_ids": [
+        "eval-v3-child-0041-005",
+        "eval-v3-child-0042-007",
+        "eval-v3-child-0021-023"
+      ]
+    },
+    {
+      "qid": "multi_002",
+      "category": "multi_block:3:老番重温",
+      "question": "重看的作品、集合时间和观看范围是什么？",
+      "target_groups": [
+        [
+          "eval-v3-child-0003-001"
+        ],
+        [
+          "eval-v3-child-0020-008"
+        ],
+        [
+          "eval-v3-child-0041-005"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0021-025",
+        "eval-v3-child-0001-017",
+        "eval-v3-child-0021-023",
+        "eval-v3-child-0001-012",
+        "eval-v3-child-0042-007",
+        "eval-v3-child-0021-015",
+        "eval-v3-child-0003-013",
+        "eval-v3-child-0042-001"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0021-025",
+        "eval-v3-child-0001-006"
+      ],
+      "production_ids": [
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0021-025",
+        "eval-v3-child-0001-006"
+      ]
+    },
+    {
+      "qid": "multi_003",
+      "category": "multi_block:3:电影夜",
+      "question": "电影夜看哪部、几点开始、中途怎么安排？",
+      "target_groups": [
+        [
+          "eval-v3-child-0003-002"
+        ],
+        [
+          "eval-v3-child-0020-009"
+        ],
+        [
+          "eval-v3-child-0041-005"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0041-006",
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0042-012",
+        "eval-v3-child-0003-002",
+        "eval-v3-child-0022-008",
+        "eval-v3-child-0021-001",
+        "eval-v3-child-0021-027",
+        "eval-v3-child-0021-023",
+        "eval-v3-child-0021-009",
+        "eval-v3-child-0021-026"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0041-006",
+        "eval-v3-child-0003-002"
+      ],
+      "production_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0041-006",
+        "eval-v3-child-0003-002"
+      ]
+    },
+    {
+      "qid": "multi_004",
+      "category": "multi_block:3:乐队现场",
+      "question": "最想听的乐队、哪天几点碰面、散场后怎么走？",
+      "target_groups": [
+        [
+          "eval-v3-child-0003-003"
+        ],
+        [
+          "eval-v3-child-0020-009"
+        ],
+        [
+          "eval-v3-child-0041-006"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0042-004",
+        "eval-v3-child-0003-003",
+        "eval-v3-child-0002-008",
+        "eval-v3-child-0020-010",
+        "eval-v3-child-0041-011",
+        "eval-v3-child-0022-001",
+        "eval-v3-child-0003-009",
+        "eval-v3-child-0044-005",
+        "eval-v3-child-0041-007",
+        "eval-v3-child-0019-010"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0042-004",
+        "eval-v3-child-0020-010",
+        "eval-v3-child-0041-011"
+      ],
+      "production_ids": [
+        "eval-v3-child-0042-004",
+        "eval-v3-child-0020-010",
+        "eval-v3-child-0041-011"
+      ]
+    },
+    {
+      "qid": "multi_005",
+      "category": "multi_block:3:桌游聚会",
+      "question": "桌游选哪款、几点去、第一局怎么安排？",
+      "target_groups": [
+        [
+          "eval-v3-child-0003-004"
+        ],
+        [
+          "eval-v3-child-0020-010"
+        ],
+        [
+          "eval-v3-child-0041-008"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0041-008",
+        "eval-v3-child-0020-010",
+        "eval-v3-child-0003-004",
+        "eval-v3-child-0059-002",
+        "eval-v3-child-0054-004",
+        "eval-v3-child-0022-009",
+        "eval-v3-child-0039-003",
+        "eval-v3-child-0042-006",
+        "eval-v3-child-0008-006",
+        "eval-v3-child-0042-012"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0020-010",
+        "eval-v3-child-0041-008",
+        "eval-v3-child-0003-004"
+      ],
+      "production_ids": [
+        "eval-v3-child-0020-010",
+        "eval-v3-child-0041-008",
+        "eval-v3-child-0003-004"
+      ]
+    },
+    {
+      "qid": "multi_006",
+      "category": "multi_block:3:漫画交换",
+      "question": "交换时带哪部漫画、在哪里见、怎么开始？",
+      "target_groups": [
+        [
+          "eval-v3-child-0003-005"
+        ],
+        [
+          "eval-v3-child-0020-011"
+        ],
+        [
+          "eval-v3-child-0041-009"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0041-009",
+        "eval-v3-child-0020-011",
+        "eval-v3-child-0003-005",
+        "eval-v3-child-0021-018",
+        "eval-v3-child-0042-002",
+        "eval-v3-child-0055-004",
+        "eval-v3-child-0041-016",
+        "eval-v3-child-0002-006",
+        "eval-v3-child-0016-005",
+        "eval-v3-child-0001-007"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0003-005",
+        "eval-v3-child-0041-009",
+        "eval-v3-child-0020-011"
+      ],
+      "production_ids": [
+        "eval-v3-child-0003-005",
+        "eval-v3-child-0041-009",
+        "eval-v3-child-0020-011"
+      ]
+    },
+    {
+      "qid": "multi_007",
+      "category": "multi_block:3:动画配乐",
+      "question": "分享什么原声、几点开房、先听几首？",
+      "target_groups": [
+        [
+          "eval-v3-child-0003-006"
+        ],
+        [
+          "eval-v3-child-0020-011"
+        ],
+        [
+          "eval-v3-child-0041-010"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0042-009",
+        "eval-v3-child-0021-020",
+        "eval-v3-child-0003-006",
+        "eval-v3-child-0002-011",
+        "eval-v3-child-0044-005",
+        "eval-v3-child-0059-004",
+        "eval-v3-child-0036-003",
+        "eval-v3-child-0004-001",
+        "eval-v3-child-0027-007",
+        "eval-v3-child-0003-017"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0003-006",
+        "eval-v3-child-0044-005",
+        "eval-v3-child-0042-009"
+      ],
+      "production_ids": [
+        "eval-v3-child-0003-006",
+        "eval-v3-child-0044-005",
+        "eval-v3-child-0042-009"
+      ]
+    },
+    {
+      "qid": "multi_008",
+      "category": "multi_block:3:影展报名",
+      "question": "报名了哪部电影、几点场、散场后在哪等？",
+      "target_groups": [
+        [
+          "eval-v3-child-0003-007"
+        ],
+        [
+          "eval-v3-child-0021-001"
+        ],
+        [
+          "eval-v3-child-0041-011"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0041-011",
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0041-006",
+        "eval-v3-child-0042-004",
+        "eval-v3-child-0022-003",
+        "eval-v3-child-0021-001",
+        "eval-v3-child-0003-011",
+        "eval-v3-child-0022-002",
+        "eval-v3-child-0021-003",
+        "eval-v3-child-0003-007"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0041-011",
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0041-006"
+      ],
+      "production_ids": [
+        "eval-v3-child-0041-011",
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0041-006"
+      ]
+    },
+    {
+      "qid": "multi_009",
+      "category": "multi_block:3:游戏联机",
+      "question": "联机玩什么、几点进频道、队伍怎么轮换？",
+      "target_groups": [
+        [
+          "eval-v3-child-0003-008"
+        ],
+        [
+          "eval-v3-child-0021-004"
+        ],
+        [
+          "eval-v3-child-0041-012"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0021-004",
+        "eval-v3-child-0041-012",
+        "eval-v3-child-0003-008",
+        "eval-v3-child-0044-006",
+        "eval-v3-child-0006-006",
+        "eval-v3-child-0041-008",
+        "eval-v3-child-0003-004",
+        "eval-v3-child-0015-007",
+        "eval-v3-child-0004-012",
+        "eval-v3-child-0047-002"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0021-004",
+        "eval-v3-child-0041-012",
+        "eval-v3-child-0003-008"
+      ],
+      "production_ids": [
+        "eval-v3-child-0021-004",
+        "eval-v3-child-0041-012",
+        "eval-v3-child-0003-008"
+      ]
+    },
+    {
+      "qid": "multi_010",
+      "category": "multi_block:3:综艺回看",
+      "question": "回看哪个节目、什么时候看、看完做什么？",
+      "target_groups": [
+        [
+          "eval-v3-child-0003-009"
+        ],
+        [
+          "eval-v3-child-0021-005"
+        ],
+        [
+          "eval-v3-child-0041-013"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0041-013",
+        "eval-v3-child-0021-015",
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0060-007",
+        "eval-v3-child-0018-008",
+        "eval-v3-child-0021-023",
+        "eval-v3-child-0003-009",
+        "eval-v3-child-0042-001",
+        "eval-v3-child-0040-008",
+        "eval-v3-child-0021-006"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0041-013",
+        "eval-v3-child-0021-015"
+      ],
+      "production_ids": [
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0041-013",
+        "eval-v3-child-0021-015"
+      ]
+    },
+    {
+      "qid": "multi_011",
+      "category": "multi_block:3:国漫讨论",
+      "question": "补了哪部作品、几点讨论、按什么顺序聊？",
+      "target_groups": [
+        [
+          "eval-v3-child-0003-010"
+        ],
+        [
+          "eval-v3-child-0021-007"
+        ],
+        [
+          "eval-v3-child-0041-014"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0041-016",
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0020-008",
+        "eval-v3-child-0003-014",
+        "eval-v3-child-0059-009",
+        "eval-v3-child-0003-010",
+        "eval-v3-child-0041-005",
+        "eval-v3-child-0030-010",
+        "eval-v3-child-0039-005",
+        "eval-v3-child-0013-004"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0003-014",
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0059-009"
+      ],
+      "production_ids": [
+        "eval-v3-child-0003-014",
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0059-009"
+      ]
+    },
+    {
+      "qid": "multi_012",
+      "category": "multi_block:3:科幻电影",
+      "question": "推荐哪部电影、几点在哪里看、饮料怎么选？",
+      "target_groups": [
+        [
+          "eval-v3-child-0003-011"
+        ],
+        [
+          "eval-v3-child-0021-008"
+        ],
+        [
+          "eval-v3-child-0041-015"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0041-015",
+        "eval-v3-child-0004-002",
+        "eval-v3-child-0021-001",
+        "eval-v3-child-0001-009",
+        "eval-v3-child-0049-009",
+        "eval-v3-child-0003-002",
+        "eval-v3-child-0004-006",
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0042-008",
+        "eval-v3-child-0003-011"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0041-015",
+        "eval-v3-child-0021-001",
+        "eval-v3-child-0004-002"
+      ],
+      "production_ids": [
+        "eval-v3-child-0041-015",
+        "eval-v3-child-0021-001",
+        "eval-v3-child-0004-002"
+      ]
+    },
+    {
+      "qid": "multi_013",
+      "category": "multi_block:3:声优作品",
+      "question": "一起听哪部作品的配乐、几点、每人分享什么？",
+      "target_groups": [
+        [
+          "eval-v3-child-0003-012"
+        ],
+        [
+          "eval-v3-child-0021-010"
+        ],
+        [
+          "eval-v3-child-0041-016"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0003-012",
+        "eval-v3-child-0041-010",
+        "eval-v3-child-0041-016",
+        "eval-v3-child-0021-002",
+        "eval-v3-child-0002-011",
+        "eval-v3-child-0003-006",
+        "eval-v3-child-0042-009",
+        "eval-v3-child-0044-005",
+        "eval-v3-child-0049-007",
+        "eval-v3-child-0018-010"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0041-016",
+        "eval-v3-child-0041-010",
+        "eval-v3-child-0003-012"
+      ],
+      "production_ids": [
+        "eval-v3-child-0041-016",
+        "eval-v3-child-0041-010",
+        "eval-v3-child-0003-012"
+      ]
+    },
+    {
+      "qid": "multi_014",
+      "category": "multi_block:3:复古动画",
+      "question": "重看哪部电影、什么时候看、选什么字幕？",
+      "target_groups": [
+        [
+          "eval-v3-child-0003-013"
+        ],
+        [
+          "eval-v3-child-0021-011"
+        ],
+        [
+          "eval-v3-child-0041-017"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0042-008",
+        "eval-v3-child-0003-002",
+        "eval-v3-child-0041-017",
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0049-005",
+        "eval-v3-child-0013-004",
+        "eval-v3-child-0040-008",
+        "eval-v3-child-0004-006",
+        "eval-v3-child-0060-007",
+        "eval-v3-child-0004-004"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0042-008",
+        "eval-v3-child-0049-005",
+        "eval-v3-child-0041-017"
+      ],
+      "production_ids": [
+        "eval-v3-child-0042-008",
+        "eval-v3-child-0049-005",
+        "eval-v3-child-0041-017"
+      ]
+    },
+    {
+      "qid": "multi_015",
+      "category": "multi_block:3:推理剧",
+      "question": "补哪部剧、每天几点看几集、讨论时有什么约定？",
+      "target_groups": [
+        [
+          "eval-v3-child-0003-014"
+        ],
+        [
+          "eval-v3-child-0021-013"
+        ],
+        [
+          "eval-v3-child-0042-001"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0041-005",
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0007-010",
+        "eval-v3-child-0042-001",
+        "eval-v3-child-0003-014",
+        "eval-v3-child-0020-008",
+        "eval-v3-child-0013-004",
+        "eval-v3-child-0021-014",
+        "eval-v3-child-0021-023",
+        "eval-v3-child-0003-010"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0041-005",
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0003-014"
+      ],
+      "production_ids": [
+        "eval-v3-child-0041-005",
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0003-014"
+      ]
+    },
+    {
+      "qid": "multi_016",
+      "category": "multi_block:3:声优见面会",
+      "question": "看谁的访谈、几点看、看多久？",
+      "target_groups": [
+        [
+          "eval-v3-child-0003-015"
+        ],
+        [
+          "eval-v3-child-0021-015"
+        ],
+        [
+          "eval-v3-child-0042-001"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0021-023",
+        "eval-v3-child-0003-015",
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0001-011",
+        "eval-v3-child-0001-009",
+        "eval-v3-child-0001-003",
+        "eval-v3-child-0042-002",
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0022-007",
+        "eval-v3-child-0002-017"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0021-023",
+        "eval-v3-child-0001-009"
+      ],
+      "production_ids": [
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0021-023",
+        "eval-v3-child-0001-009"
+      ]
+    },
+    {
+      "qid": "multi_017",
+      "category": "multi_block:3:漫画改编",
+      "question": "看哪部作品、几点看、看完留多久讨论？",
+      "target_groups": [
+        [
+          "eval-v3-child-0003-016"
+        ],
+        [
+          "eval-v3-child-0021-017"
+        ],
+        [
+          "eval-v3-child-0042-002"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0021-023",
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0002-003",
+        "eval-v3-child-0013-004",
+        "eval-v3-child-0021-008",
+        "eval-v3-child-0023-002",
+        "eval-v3-child-0041-016",
+        "eval-v3-child-0001-009",
+        "eval-v3-child-0032-007"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0013-004"
+      ],
+      "production_ids": [
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0013-004"
+      ]
+    },
+    {
+      "qid": "multi_018",
+      "category": "multi_block:3:游戏原声",
+      "question": "想找哪款游戏的原声、什么时候去、预算多少？",
+      "target_groups": [
+        [
+          "eval-v3-child-0003-017"
+        ],
+        [
+          "eval-v3-child-0021-019"
+        ],
+        [
+          "eval-v3-child-0042-003"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0042-004",
+        "eval-v3-child-0003-017",
+        "eval-v3-child-0042-003",
+        "eval-v3-child-0021-020",
+        "eval-v3-child-0001-008",
+        "eval-v3-child-0004-001",
+        "eval-v3-child-0042-009",
+        "eval-v3-child-0043-010",
+        "eval-v3-child-0034-008",
+        "eval-v3-child-0002-011"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0021-020",
+        "eval-v3-child-0042-004",
+        "eval-v3-child-0001-008"
+      ],
+      "production_ids": [
+        "eval-v3-child-0021-020",
+        "eval-v3-child-0042-004",
+        "eval-v3-child-0001-008"
+      ]
+    },
+    {
+      "qid": "multi_019",
+      "category": "multi_block:3:经典电影",
+      "question": "选了哪部电影、几点在哪里看、散场后怎么安排？",
+      "target_groups": [
+        [
+          "eval-v3-child-0004-002"
+        ],
+        [
+          "eval-v3-child-0021-001"
+        ],
+        [
+          "eval-v3-child-0042-004"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0041-011",
+        "eval-v3-child-0042-004",
+        "eval-v3-child-0041-006",
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0021-027",
+        "eval-v3-child-0021-001",
+        "eval-v3-child-0003-002",
+        "eval-v3-child-0023-002",
+        "eval-v3-child-0042-008",
+        "eval-v3-child-0021-015"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0042-004",
+        "eval-v3-child-0041-011"
+      ],
+      "production_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0042-004",
+        "eval-v3-child-0041-011"
+      ]
+    },
+    {
+      "qid": "multi_020",
+      "category": "multi_block:3:配音练习",
+      "question": "用什么作品练配音、何时练、每人录多久？",
+      "target_groups": [
+        [
+          "eval-v3-child-0004-003"
+        ],
+        [
+          "eval-v3-child-0021-022"
+        ],
+        [
+          "eval-v3-child-0042-005"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0004-003",
+        "eval-v3-child-0021-022",
+        "eval-v3-child-0022-011",
+        "eval-v3-child-0001-004",
+        "eval-v3-child-0042-006",
+        "eval-v3-child-0060-007",
+        "eval-v3-child-0018-008",
+        "eval-v3-child-0041-016",
+        "eval-v3-child-0004-013",
+        "eval-v3-child-0042-013"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0021-022",
+        "eval-v3-child-0004-003",
+        "eval-v3-child-0042-006"
+      ],
+      "production_ids": [
+        "eval-v3-child-0021-022",
+        "eval-v3-child-0004-003",
+        "eval-v3-child-0042-006"
+      ]
+    },
+    {
+      "qid": "multi_021",
+      "category": "multi_block:3:动画投票",
+      "question": "选了哪部动画、几点开始、第一晚看几集？",
+      "target_groups": [
+        [
+          "eval-v3-child-0004-004"
+        ],
+        [
+          "eval-v3-child-0021-023"
+        ],
+        [
+          "eval-v3-child-0042-006"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0002-017",
+        "eval-v3-child-0042-007",
+        "eval-v3-child-0002-005",
+        "eval-v3-child-0004-004",
+        "eval-v3-child-0042-013",
+        "eval-v3-child-0003-002",
+        "eval-v3-child-0042-006",
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0042-012",
+        "eval-v3-child-0021-023"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0042-007",
+        "eval-v3-child-0002-005",
+        "eval-v3-child-0002-017"
+      ],
+      "production_ids": [
+        "eval-v3-child-0042-007",
+        "eval-v3-child-0002-005",
+        "eval-v3-child-0002-017"
+      ]
+    },
+    {
+      "qid": "multi_022",
+      "category": "multi_block:3:旧剧重看",
+      "question": "重看的剧、开始时间和先看哪段？",
+      "target_groups": [
+        [
+          "eval-v3-child-0004-005"
+        ],
+        [
+          "eval-v3-child-0021-011"
+        ],
+        [
+          "eval-v3-child-0042-007"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0021-025",
+        "eval-v3-child-0042-007",
+        "eval-v3-child-0002-017",
+        "eval-v3-child-0042-001",
+        "eval-v3-child-0021-014",
+        "eval-v3-child-0003-013",
+        "eval-v3-child-0021-023",
+        "eval-v3-child-0001-004",
+        "eval-v3-child-0040-003",
+        "eval-v3-child-0004-005"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0042-007",
+        "eval-v3-child-0002-017",
+        "eval-v3-child-0042-001"
+      ],
+      "production_ids": [
+        "eval-v3-child-0042-007",
+        "eval-v3-child-0002-017",
+        "eval-v3-child-0042-001"
+      ]
+    },
+    {
+      "qid": "multi_023",
+      "category": "multi_block:3:电影选择",
+      "question": "选了哪部电影、几点看、字幕用哪个版本？",
+      "target_groups": [
+        [
+          "eval-v3-child-0004-006"
+        ],
+        [
+          "eval-v3-child-0021-026"
+        ],
+        [
+          "eval-v3-child-0042-008"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0041-017",
+        "eval-v3-child-0042-008",
+        "eval-v3-child-0049-005",
+        "eval-v3-child-0013-004",
+        "eval-v3-child-0042-011",
+        "eval-v3-child-0003-002",
+        "eval-v3-child-0004-004",
+        "eval-v3-child-0021-001",
+        "eval-v3-child-0004-003",
+        "eval-v3-child-0016-008"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0042-008",
+        "eval-v3-child-0041-017",
+        "eval-v3-child-0042-011"
+      ],
+      "production_ids": [
+        "eval-v3-child-0042-008",
+        "eval-v3-child-0041-017",
+        "eval-v3-child-0042-011"
+      ]
+    },
+    {
+      "qid": "multi_024",
+      "category": "multi_block:3:音乐分享",
+      "question": "分享谁的哪种专辑、什么时候发、放在哪个平台？",
+      "target_groups": [
+        [
+          "eval-v3-child-0004-007"
+        ],
+        [
+          "eval-v3-child-0022-001"
+        ],
+        [
+          "eval-v3-child-0042-009"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0004-007",
+        "eval-v3-child-0044-005",
+        "eval-v3-child-0022-001",
+        "eval-v3-child-0001-011",
+        "eval-v3-child-0042-009",
+        "eval-v3-child-0002-011",
+        "eval-v3-child-0019-009",
+        "eval-v3-child-0031-002",
+        "eval-v3-child-0043-010"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0004-007",
+        "eval-v3-child-0044-005"
+      ],
+      "production_ids": [
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0004-007",
+        "eval-v3-child-0044-005"
+      ]
+    },
+    {
+      "qid": "multi_025",
+      "category": "multi_block:3:经典动画",
+      "question": "重看哪部作品、几点放映、选什么音轨版本？",
+      "target_groups": [
+        [
+          "eval-v3-child-0004-008"
+        ],
+        [
+          "eval-v3-child-0022-002"
+        ],
+        [
+          "eval-v3-child-0042-009"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0021-025",
+        "eval-v3-child-0042-007",
+        "eval-v3-child-0022-002",
+        "eval-v3-child-0042-009",
+        "eval-v3-child-0004-005",
+        "eval-v3-child-0018-010",
+        "eval-v3-child-0017-002",
+        "eval-v3-child-0004-004",
+        "eval-v3-child-0046-009",
+        "eval-v3-child-0041-017"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0042-009",
+        "eval-v3-child-0021-025",
+        "eval-v3-child-0042-007"
+      ],
+      "production_ids": [
+        "eval-v3-child-0042-009",
+        "eval-v3-child-0021-025",
+        "eval-v3-child-0042-007"
+      ]
+    },
+    {
+      "qid": "multi_026",
+      "category": "multi_block:3:舞台剧",
+      "question": "想看哪部舞台剧、哪天的场次、倾向什么座位？",
+      "target_groups": [
+        [
+          "eval-v3-child-0004-009"
+        ],
+        [
+          "eval-v3-child-0022-003"
+        ],
+        [
+          "eval-v3-child-0042-010"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0042-010",
+        "eval-v3-child-0004-009",
+        "eval-v3-child-0022-004",
+        "eval-v3-child-0022-003",
+        "eval-v3-child-0003-009",
+        "eval-v3-child-0021-001",
+        "eval-v3-child-0001-007",
+        "eval-v3-child-0042-011",
+        "eval-v3-child-0022-006",
+        "eval-v3-child-0060-007"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0042-010",
+        "eval-v3-child-0004-009",
+        "eval-v3-child-0003-009"
+      ],
+      "production_ids": [
+        "eval-v3-child-0042-010",
+        "eval-v3-child-0004-009",
+        "eval-v3-child-0003-009"
+      ]
+    },
+    {
+      "qid": "multi_027",
+      "category": "multi_block:3:音乐剧",
+      "question": "想看哪部音乐剧、什么时候发链接、先看哪部分？",
+      "target_groups": [
+        [
+          "eval-v3-child-0004-010"
+        ],
+        [
+          "eval-v3-child-0022-005"
+        ],
+        [
+          "eval-v3-child-0042-011"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0042-011",
+        "eval-v3-child-0022-006",
+        "eval-v3-child-0004-010",
+        "eval-v3-child-0022-010",
+        "eval-v3-child-0022-001",
+        "eval-v3-child-0021-005",
+        "eval-v3-child-0022-004",
+        "eval-v3-child-0004-009",
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0041-016"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0042-011",
+        "eval-v3-child-0022-001",
+        "eval-v3-child-0004-010"
+      ],
+      "production_ids": [
+        "eval-v3-child-0042-011",
+        "eval-v3-child-0022-001",
+        "eval-v3-child-0004-010"
+      ]
+    },
+    {
+      "qid": "multi_028",
+      "category": "multi_block:3:动画电影",
+      "question": "看哪部动画电影、几点开始、字幕和结束安排是什么？",
+      "target_groups": [
+        [
+          "eval-v3-child-0004-011"
+        ],
+        [
+          "eval-v3-child-0022-007"
+        ],
+        [
+          "eval-v3-child-0042-011"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0022-008",
+        "eval-v3-child-0042-012",
+        "eval-v3-child-0003-002",
+        "eval-v3-child-0004-011",
+        "eval-v3-child-0042-013",
+        "eval-v3-child-0001-009",
+        "eval-v3-child-0022-011",
+        "eval-v3-child-0054-003",
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0041-014"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0022-008",
+        "eval-v3-child-0042-012",
+        "eval-v3-child-0003-002"
+      ],
+      "production_ids": [
+        "eval-v3-child-0022-008",
+        "eval-v3-child-0042-012",
+        "eval-v3-child-0003-002"
+      ]
+    },
+    {
+      "qid": "multi_029",
+      "category": "multi_block:3:游戏聚会",
+      "question": "玩什么游戏、几点开始、攻略怎么处理？",
+      "target_groups": [
+        [
+          "eval-v3-child-0004-012"
+        ],
+        [
+          "eval-v3-child-0022-009"
+        ],
+        [
+          "eval-v3-child-0042-012"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0042-012",
+        "eval-v3-child-0022-009",
+        "eval-v3-child-0004-012",
+        "eval-v3-child-0021-004",
+        "eval-v3-child-0003-008",
+        "eval-v3-child-0044-006",
+        "eval-v3-child-0002-010",
+        "eval-v3-child-0030-006",
+        "eval-v3-child-0025-004",
+        "eval-v3-child-0041-008"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0042-012",
+        "eval-v3-child-0022-009",
+        "eval-v3-child-0021-004"
+      ],
+      "production_ids": [
+        "eval-v3-child-0042-012",
+        "eval-v3-child-0022-009",
+        "eval-v3-child-0021-004"
+      ]
+    },
+    {
+      "qid": "multi_030",
+      "category": "multi_block:3:动画配音",
+      "question": "分享哪部作品的配音片段、几点发、截哪段？",
+      "target_groups": [
+        [
+          "eval-v3-child-0004-013"
+        ],
+        [
+          "eval-v3-child-0022-010"
+        ],
+        [
+          "eval-v3-child-0042-013"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0004-013",
+        "eval-v3-child-0042-013",
+        "eval-v3-child-0022-010",
+        "eval-v3-child-0042-009",
+        "eval-v3-child-0004-003",
+        "eval-v3-child-0022-011",
+        "eval-v3-child-0041-016",
+        "eval-v3-child-0001-017",
+        "eval-v3-child-0021-022",
+        "eval-v3-child-0001-012"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0022-010",
+        "eval-v3-child-0042-013",
+        "eval-v3-child-0004-013"
+      ],
+      "production_ids": [
+        "eval-v3-child-0022-010",
+        "eval-v3-child-0042-013",
+        "eval-v3-child-0004-013"
+      ]
+    },
+    {
+      "qid": "temporal_001",
+      "category": "temporal:range:沪深300",
+      "question": "2025年9月12日群里讨论沪深300时的判断是什么？",
+      "target_groups": [
+        [
+          "eval-v3-child-0020-006"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0002-013",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0041-001",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0030-010",
+        "eval-v3-child-0021-007",
+        "eval-v3-child-0026-003",
+        "eval-v3-child-0012-005",
+        "eval-v3-child-0020-007",
+        "eval-v3-child-0001-014"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-013",
+        "eval-v3-child-0041-001"
+      ],
+      "production_ids": [
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-013",
+        "eval-v3-child-0041-001"
+      ],
+      "expected_time_hint": {
+        "mode": "range",
+        "start_at": "2025-09-12T00:00:00+08:00",
+        "end_at": "2025-09-12T23:59:59+08:00"
+      },
+      "llm_tool_args": {
+        "query": "2025年9月12日群里讨论沪深300时的判断是什么？",
+        "time_hint": {
+          "mode": "range",
+          "start_at": "2025-09-12T00:00:00+08:00",
+          "end_at": "2025-09-12T23:59:59+08:00"
+        }
+      },
+      "time_hint_exact": true,
+      "no_time_ids": [
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-013",
+        "eval-v3-child-0041-001"
+      ],
+      "no_time_rerank_input_ids": [
+        "eval-v3-child-0002-013",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0041-001",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0030-010"
+      ],
+      "oracle_time_ids": [
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-013",
+        "eval-v3-child-0041-001"
+      ],
+      "oracle_time_rerank_input_ids": [
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-013",
+        "eval-v3-child-0041-001",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0030-010"
+      ],
+      "llm_time_ids": [
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-013",
+        "eval-v3-child-0041-001"
+      ],
+      "llm_time_rerank_input_ids": [
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-013",
+        "eval-v3-child-0041-001",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0030-010"
+      ],
+      "llm_time_rrf_ids": [
+        "eval-v3-child-0002-013",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0041-001",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0030-010",
+        "eval-v3-child-0021-007",
+        "eval-v3-child-0026-003",
+        "eval-v3-child-0012-005",
+        "eval-v3-child-0020-007",
+        "eval-v3-child-0001-014"
+      ]
+    },
+    {
+      "qid": "temporal_002",
+      "category": "temporal:latest:沪深300",
+      "question": "最近一次群里讨论沪深300时，大家的判断是什么？",
+      "target_groups": [
+        [
+          "eval-v3-child-0041-001"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0002-013",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0041-001",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0042-001",
+        "eval-v3-child-0021-007",
+        "eval-v3-child-0030-010",
+        "eval-v3-child-0020-007",
+        "eval-v3-child-0026-003",
+        "eval-v3-child-0002-015"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-013",
+        "eval-v3-child-0041-001"
+      ],
+      "production_ids": [
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-013",
+        "eval-v3-child-0041-001"
+      ],
+      "expected_time_hint": {
+        "mode": "latest"
+      },
+      "llm_tool_args": {
+        "query": "群里讨论沪深300时大家的判断是什么？",
+        "time_hint": {
+          "mode": "latest"
+        }
+      },
+      "time_hint_exact": true,
+      "no_time_ids": [
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-013",
+        "eval-v3-child-0041-001"
+      ],
+      "no_time_rerank_input_ids": [
+        "eval-v3-child-0002-013",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0041-001",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0042-001"
+      ],
+      "oracle_time_ids": [
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-013",
+        "eval-v3-child-0041-001"
+      ],
+      "oracle_time_rerank_input_ids": [
+        "eval-v3-child-0002-013",
+        "eval-v3-child-0041-001",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0042-001",
+        "eval-v3-child-0002-014"
+      ],
+      "llm_time_ids": [
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-013",
+        "eval-v3-child-0041-001"
+      ],
+      "llm_time_rerank_input_ids": [
+        "eval-v3-child-0002-013",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0041-001",
+        "eval-v3-child-0030-010",
+        "eval-v3-child-0002-014"
+      ],
+      "llm_time_rrf_ids": [
+        "eval-v3-child-0002-013",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0041-001",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0030-010",
+        "eval-v3-child-0002-015",
+        "eval-v3-child-0026-003",
+        "eval-v3-child-0012-005",
+        "eval-v3-child-0021-007",
+        "eval-v3-child-0001-014"
+      ]
+    },
+    {
+      "qid": "temporal_003",
+      "category": "temporal:range:宁德时代",
+      "question": "2025年9月12日群里讨论宁德时代时的判断是什么？",
+      "target_groups": [
+        [
+          "eval-v3-child-0020-006"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0041-002",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0021-007",
+        "eval-v3-child-0030-010",
+        "eval-v3-child-0060-011",
+        "eval-v3-child-0026-003",
+        "eval-v3-child-0012-005",
+        "eval-v3-child-0030-006",
+        "eval-v3-child-0018-008"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0041-002"
+      ],
+      "production_ids": [
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0041-002"
+      ],
+      "expected_time_hint": {
+        "mode": "range",
+        "start_at": "2025-09-12T00:00:00+08:00",
+        "end_at": "2025-09-12T23:59:59+08:00"
+      },
+      "llm_tool_args": {
+        "query": "2025年9月12日群里讨论宁德时代时的判断是什么？",
+        "time_hint": {
+          "mode": "range",
+          "start_at": "2025-09-12T00:00:00+08:00",
+          "end_at": "2025-09-12T23:59:59+08:00"
+        }
+      },
+      "time_hint_exact": true,
+      "no_time_ids": [
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0041-002"
+      ],
+      "no_time_rerank_input_ids": [
+        "eval-v3-child-0041-002",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0021-007",
+        "eval-v3-child-0030-010"
+      ],
+      "oracle_time_ids": [
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0041-002"
+      ],
+      "oracle_time_rerank_input_ids": [
+        "eval-v3-child-0041-002",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0021-007",
+        "eval-v3-child-0030-010"
+      ],
+      "llm_time_ids": [
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0041-002"
+      ],
+      "llm_time_rerank_input_ids": [
+        "eval-v3-child-0041-002",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0021-007",
+        "eval-v3-child-0030-010"
+      ],
+      "llm_time_rrf_ids": [
+        "eval-v3-child-0041-002",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0021-007",
+        "eval-v3-child-0030-010",
+        "eval-v3-child-0060-011",
+        "eval-v3-child-0026-003",
+        "eval-v3-child-0012-005",
+        "eval-v3-child-0030-006",
+        "eval-v3-child-0018-008"
+      ]
+    },
+    {
+      "qid": "temporal_004",
+      "category": "temporal:latest:宁德时代",
+      "question": "最近一次群里讨论宁德时代时，大家的判断是什么？",
+      "target_groups": [
+        [
+          "eval-v3-child-0041-002"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0041-002",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0042-001",
+        "eval-v3-child-0060-011",
+        "eval-v3-child-0030-006",
+        "eval-v3-child-0030-010",
+        "eval-v3-child-0021-007",
+        "eval-v3-child-0026-003",
+        "eval-v3-child-0012-005"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0041-002"
+      ],
+      "production_ids": [
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0041-002"
+      ],
+      "expected_time_hint": {
+        "mode": "latest"
+      },
+      "llm_tool_args": {
+        "query": "最近一次群里讨论宁德时代时，大家的判断是什么？",
+        "time_hint": {
+          "mode": "latest"
+        }
+      },
+      "time_hint_exact": true,
+      "no_time_ids": [
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0041-002"
+      ],
+      "no_time_rerank_input_ids": [
+        "eval-v3-child-0041-002",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0042-001",
+        "eval-v3-child-0060-011"
+      ],
+      "oracle_time_ids": [
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0041-002"
+      ],
+      "oracle_time_rerank_input_ids": [
+        "eval-v3-child-0041-002",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0042-001",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0060-011"
+      ],
+      "llm_time_ids": [
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0041-002"
+      ],
+      "llm_time_rerank_input_ids": [
+        "eval-v3-child-0041-002",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0042-001",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0060-011"
+      ],
+      "llm_time_rrf_ids": [
+        "eval-v3-child-0041-002",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0042-001",
+        "eval-v3-child-0060-011",
+        "eval-v3-child-0030-006",
+        "eval-v3-child-0030-010",
+        "eval-v3-child-0021-007",
+        "eval-v3-child-0026-003",
+        "eval-v3-child-0012-005"
+      ]
+    },
+    {
+      "qid": "temporal_005",
+      "category": "temporal:range:贵州茅台",
+      "question": "2025年9月12日群里讨论贵州茅台时的判断是什么？",
+      "target_groups": [
+        [
+          "eval-v3-child-0020-007"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0041-003",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0020-007",
+        "eval-v3-child-0021-007",
+        "eval-v3-child-0030-010",
+        "eval-v3-child-0017-001",
+        "eval-v3-child-0026-003",
+        "eval-v3-child-0012-005",
+        "eval-v3-child-0043-002",
+        "eval-v3-child-0018-008"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0041-003",
+        "eval-v3-child-0020-007"
+      ],
+      "production_ids": [
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0041-003",
+        "eval-v3-child-0020-007"
+      ],
+      "expected_time_hint": {
+        "mode": "range",
+        "start_at": "2025-09-12T00:00:00+08:00",
+        "end_at": "2025-09-12T23:59:59+08:00"
+      },
+      "llm_tool_args": {
+        "query": "2025年9月12日群里讨论贵州茅台的判断是什么？",
+        "time_hint": {
+          "mode": "range",
+          "start_at": "2025-09-12T00:00:00+08:00",
+          "end_at": "2025-09-12T23:59:59+08:00"
+        }
+      },
+      "time_hint_exact": true,
+      "no_time_ids": [
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0041-003",
+        "eval-v3-child-0020-007"
+      ],
+      "no_time_rerank_input_ids": [
+        "eval-v3-child-0041-003",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0020-007",
+        "eval-v3-child-0021-007",
+        "eval-v3-child-0030-010"
+      ],
+      "oracle_time_ids": [
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0041-003",
+        "eval-v3-child-0020-007"
+      ],
+      "oracle_time_rerank_input_ids": [
+        "eval-v3-child-0041-003",
+        "eval-v3-child-0020-007",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0021-007",
+        "eval-v3-child-0030-010"
+      ],
+      "llm_time_ids": [
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0041-003",
+        "eval-v3-child-0020-007"
+      ],
+      "llm_time_rerank_input_ids": [
+        "eval-v3-child-0020-007",
+        "eval-v3-child-0041-003",
+        "eval-v3-child-0021-007",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0030-010"
+      ],
+      "llm_time_rrf_ids": [
+        "eval-v3-child-0041-003",
+        "eval-v3-child-0020-007",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0021-007",
+        "eval-v3-child-0030-010",
+        "eval-v3-child-0017-001",
+        "eval-v3-child-0026-003",
+        "eval-v3-child-0012-005",
+        "eval-v3-child-0060-011",
+        "eval-v3-child-0018-008"
+      ]
+    },
+    {
+      "qid": "temporal_006",
+      "category": "temporal:latest:贵州茅台",
+      "question": "最近一次群里讨论贵州茅台时，大家的判断是什么？",
+      "target_groups": [
+        [
+          "eval-v3-child-0041-003"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0041-003",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0020-007",
+        "eval-v3-child-0024-002",
+        "eval-v3-child-0017-001",
+        "eval-v3-child-0042-001",
+        "eval-v3-child-0030-010",
+        "eval-v3-child-0048-003",
+        "eval-v3-child-0026-003",
+        "eval-v3-child-0012-005"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0041-003",
+        "eval-v3-child-0020-007"
+      ],
+      "production_ids": [
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0041-003",
+        "eval-v3-child-0020-007"
+      ],
+      "expected_time_hint": {
+        "mode": "latest"
+      },
+      "llm_tool_args": {
+        "query": "最近一次群里讨论贵州茅台时，大家的判断是什么？",
+        "time_hint": {
+          "mode": "latest"
+        }
+      },
+      "time_hint_exact": true,
+      "no_time_ids": [
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0041-003",
+        "eval-v3-child-0020-007"
+      ],
+      "no_time_rerank_input_ids": [
+        "eval-v3-child-0041-003",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0020-007",
+        "eval-v3-child-0024-002",
+        "eval-v3-child-0017-001"
+      ],
+      "oracle_time_ids": [
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0041-003",
+        "eval-v3-child-0020-007"
+      ],
+      "oracle_time_rerank_input_ids": [
+        "eval-v3-child-0041-003",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0020-007",
+        "eval-v3-child-0024-002",
+        "eval-v3-child-0042-001"
+      ],
+      "llm_time_ids": [
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0041-003",
+        "eval-v3-child-0020-007"
+      ],
+      "llm_time_rerank_input_ids": [
+        "eval-v3-child-0041-003",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0020-007",
+        "eval-v3-child-0024-002",
+        "eval-v3-child-0042-001"
+      ],
+      "llm_time_rrf_ids": [
+        "eval-v3-child-0041-003",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0020-007",
+        "eval-v3-child-0024-002",
+        "eval-v3-child-0017-001",
+        "eval-v3-child-0042-001",
+        "eval-v3-child-0030-010",
+        "eval-v3-child-0048-003",
+        "eval-v3-child-0026-003",
+        "eval-v3-child-0012-005"
+      ]
+    },
+    {
+      "qid": "temporal_007",
+      "category": "temporal:range:黄金ETF",
+      "question": "2025年9月12日群里讨论黄金ETF时的判断是什么？",
+      "target_groups": [
+        [
+          "eval-v3-child-0020-007"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0002-015",
+        "eval-v3-child-0041-004",
+        "eval-v3-child-0020-007",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0030-010",
+        "eval-v3-child-0026-003",
+        "eval-v3-child-0012-005",
+        "eval-v3-child-0021-007",
+        "eval-v3-child-0002-007"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0041-004",
+        "eval-v3-child-0002-015",
+        "eval-v3-child-0020-007"
+      ],
+      "production_ids": [
+        "eval-v3-child-0041-004",
+        "eval-v3-child-0002-015",
+        "eval-v3-child-0020-007"
+      ],
+      "expected_time_hint": {
+        "mode": "range",
+        "start_at": "2025-09-12T00:00:00+08:00",
+        "end_at": "2025-09-12T23:59:59+08:00"
+      },
+      "llm_tool_args": {
+        "query": "2025年9月12日群里讨论黄金ETF时的判断是什么？",
+        "time_hint": {
+          "mode": "range",
+          "start_at": "2025-09-12T00:00:00+08:00",
+          "end_at": "2025-09-12T23:59:59+08:00"
+        }
+      },
+      "time_hint_exact": true,
+      "no_time_ids": [
+        "eval-v3-child-0041-004",
+        "eval-v3-child-0002-015",
+        "eval-v3-child-0020-007"
+      ],
+      "no_time_rerank_input_ids": [
+        "eval-v3-child-0002-015",
+        "eval-v3-child-0041-004",
+        "eval-v3-child-0020-007",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-014"
+      ],
+      "oracle_time_ids": [
+        "eval-v3-child-0041-004",
+        "eval-v3-child-0002-015",
+        "eval-v3-child-0020-007"
+      ],
+      "oracle_time_rerank_input_ids": [
+        "eval-v3-child-0002-015",
+        "eval-v3-child-0020-007",
+        "eval-v3-child-0041-004",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-014"
+      ],
+      "llm_time_ids": [
+        "eval-v3-child-0041-004",
+        "eval-v3-child-0002-015",
+        "eval-v3-child-0020-007"
+      ],
+      "llm_time_rerank_input_ids": [
+        "eval-v3-child-0002-015",
+        "eval-v3-child-0020-007",
+        "eval-v3-child-0041-004",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-014"
+      ],
+      "llm_time_rrf_ids": [
+        "eval-v3-child-0002-015",
+        "eval-v3-child-0041-004",
+        "eval-v3-child-0020-007",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0030-010",
+        "eval-v3-child-0026-003",
+        "eval-v3-child-0012-005",
+        "eval-v3-child-0021-007",
+        "eval-v3-child-0002-007"
+      ]
+    },
+    {
+      "qid": "temporal_008",
+      "category": "temporal:latest:黄金ETF",
+      "question": "最近一次群里讨论黄金ETF时，大家的判断是什么？",
+      "target_groups": [
+        [
+          "eval-v3-child-0041-004"
+        ]
+      ],
+      "rrf_ids": [
+        "eval-v3-child-0002-015",
+        "eval-v3-child-0041-004",
+        "eval-v3-child-0020-007",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0042-001",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0030-010",
+        "eval-v3-child-0002-013",
+        "eval-v3-child-0026-003",
+        "eval-v3-child-0012-005"
+      ],
+      "reranked_ids": [
+        "eval-v3-child-0002-015",
+        "eval-v3-child-0041-004",
+        "eval-v3-child-0020-007"
+      ],
+      "production_ids": [
+        "eval-v3-child-0002-015",
+        "eval-v3-child-0041-004",
+        "eval-v3-child-0020-007"
+      ],
+      "expected_time_hint": {
+        "mode": "latest"
+      },
+      "llm_tool_args": {
+        "query": "最近一次群里讨论黄金ETF时，大家的判断是什么？",
+        "time_hint": {
+          "mode": "latest"
+        }
+      },
+      "time_hint_exact": true,
+      "no_time_ids": [
+        "eval-v3-child-0002-015",
+        "eval-v3-child-0041-004",
+        "eval-v3-child-0020-007"
+      ],
+      "no_time_rerank_input_ids": [
+        "eval-v3-child-0002-015",
+        "eval-v3-child-0041-004",
+        "eval-v3-child-0020-007",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0042-001"
+      ],
+      "oracle_time_ids": [
+        "eval-v3-child-0002-015",
+        "eval-v3-child-0041-004",
+        "eval-v3-child-0020-007"
+      ],
+      "oracle_time_rerank_input_ids": [
+        "eval-v3-child-0041-004",
+        "eval-v3-child-0002-015",
+        "eval-v3-child-0020-007",
+        "eval-v3-child-0042-001",
+        "eval-v3-child-0002-014"
+      ],
+      "llm_time_ids": [
+        "eval-v3-child-0002-015",
+        "eval-v3-child-0041-004",
+        "eval-v3-child-0020-007"
+      ],
+      "llm_time_rerank_input_ids": [
+        "eval-v3-child-0041-004",
+        "eval-v3-child-0002-015",
+        "eval-v3-child-0020-007",
+        "eval-v3-child-0042-001",
+        "eval-v3-child-0002-014"
+      ],
+      "llm_time_rrf_ids": [
+        "eval-v3-child-0002-015",
+        "eval-v3-child-0041-004",
+        "eval-v3-child-0020-007",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0042-001",
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0030-010",
+        "eval-v3-child-0002-013",
+        "eval-v3-child-0026-003",
+        "eval-v3-child-0012-005"
+      ]
+    }
+  ]
+}

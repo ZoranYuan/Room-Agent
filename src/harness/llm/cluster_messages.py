@@ -26,15 +26,18 @@ logger = logging.getLogger(__name__)
 
 
 class MessageGroup(BaseModel):
-    """一个语义分组，使用会话内的消息序号定位成员。"""
+    """一个语义分组，摘要对应消息由会话内序号定位。"""
 
     topic: str = Field(min_length=1, max_length=200)
+    summary: str = Field(
+        min_length=1,
+        max_length=settings.cluster_summary_max_chars,
+    )
     seqs: list[str] = Field(min_length=1)
 
 
 class MessageGroups(BaseModel):
     """一个父块内按主题形成的消息分组，允许忽略无检索价值的消息。"""
-
     groups: list[MessageGroup]
 
 
@@ -60,8 +63,8 @@ async def cluster_messages(messages: Sequence[ChatMessage]) -> MessageGroups:
     )
     chain = _get_cluster_chain()
 
-    # max_retries 表示首次调用失败后，最多额外重试的次数。
-    for attempt in range(settings.cluster_max_retries + 1):
+    # 统一使用 LLM_MAX_RETRIES；max_retries 是首次调用后的额外重试次数。
+    for attempt in range(settings.llm_max_retries + 1):
         try:
             result = await chain.ainvoke(
                 {"messages": messages_json},
@@ -83,10 +86,14 @@ async def cluster_messages(messages: Sequence[ChatMessage]) -> MessageGroups:
                 error.status_code in (408, 409, 429) or error.status_code >= 500
             ):
                 raise
-            if attempt == settings.cluster_max_retries:
+            if attempt == settings.llm_max_retries:
                 raise
 
             logger.warning(LOG_MESSAGE_CLUSTER_RETRY, attempt + 1)
-            await asyncio.sleep(min(2**attempt, 8))
+            delay = min(
+                settings.llm_retry_initial_delay_seconds * 2**attempt,
+                settings.llm_retry_max_delay_seconds,
+            )
+            await asyncio.sleep(delay)
 
     raise AssertionError(DETAIL_INVALID_CLUSTER_RETRIES)

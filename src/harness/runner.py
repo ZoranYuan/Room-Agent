@@ -12,14 +12,17 @@ from agent.runtime import agent_graph
 from agent.state import RoomAgentState
 from config.config import settings
 from constants.exception import (
+    DETAIL_AGENT_MODEL_FAILED,
     DETAIL_AGENT_RECURSION_LIMIT,
     DETAIL_AGENT_TASK_FAILED,
     DETAIL_CUSTOM_EVENT_NOT_DICT,
     DETAIL_UNSUPPORTED_CUSTOM_EVENT,
+    LOG_AGENT_MODEL_FAILED,
     LOG_AGENT_RECURSION_LIMIT,
     LOG_AGENT_RUN_FAILED,
 )
- 
+from harness.exceptions import ModelExecutionError
+
 logger = logging.getLogger(__name__)
 
 
@@ -46,7 +49,7 @@ async def stream_agent_events(
                 "recursion_limit": settings.agent_recursion_limit,
             },
             context=context,
-            stream_mode=["messages", "custom"],
+            stream_mode=["messages", "custom", "updates"],
             subgraphs=True,
         ):
             if mode == "messages":
@@ -73,6 +76,9 @@ async def stream_agent_events(
                         key: value for key, value in payload.items() if key != "type"
                     },
                 )
+            elif mode == "updates":
+                # TODO 判断是否有中断产生，告知前端去进行处理，直接结束此轮的 agent run
+                pass
 
         yield AgentEvent(
             # 向前端发送一个 completed 事件，表示 LLM 的输出已经结束
@@ -85,6 +91,20 @@ async def stream_agent_events(
         yield AgentEvent(
             name="error",
             data={"message": DETAIL_AGENT_RECURSION_LIMIT},
+        )
+
+    # 捕获模型执行异常的错误，执行统一的处理
+    except ModelExecutionError:
+        logger.exception(
+            LOG_AGENT_MODEL_FAILED,
+            extra={
+                "room_id": context.auth_scope.room_id,
+                "task": state.task.value,
+            },
+        )
+        yield AgentEvent(
+            name="error",
+            data={"message": DETAIL_AGENT_MODEL_FAILED},
         )
 
     except Exception:

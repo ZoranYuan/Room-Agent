@@ -4,14 +4,14 @@ from langgraph.graph import END, START, StateGraph
 
 from agent.context import AgentRuntimeContext
 from agent.nodes.chat import chat_node
+from agent.nodes.interrupt import interrupt_node
 from agent.nodes.memory import memory_node
 from agent.nodes.summarize import summarize_node
 from agent.state import AgentTask, RoomAgentState
-from infra.checkpoint.factory import create_memory_checkpointer
-
 from constants.exception import (
     DETAIL_UNSUPPORTED_AGENT_TASK,
 )
+from infra.checkpoint.factory import create_memory_checkpointer
 
 
 def route_task(state: RoomAgentState) -> str:
@@ -23,11 +23,19 @@ def route_task(state: RoomAgentState) -> str:
     raise ValueError(DETAIL_UNSUPPORTED_AGENT_TASK.format(task=state.task))
 
 
+def after_chat(state: RoomAgentState) -> str:
+    if state.interrupt_request is not None:
+        return "interrupt"
+    return "end"
+
+
 def build_dev_agent_graph():
     graph = StateGraph(RoomAgentState, context_schema=AgentRuntimeContext)
     graph.add_node("summarize", summarize_node)
     graph.add_node("chat", chat_node)
     graph.add_node("prepare_memory", memory_node)
+    graph.add_node("interrupt", interrupt_node)
+
 
     graph.add_conditional_edges(
         START,
@@ -37,6 +45,16 @@ def build_dev_agent_graph():
             "chat": "prepare_memory",
         },
     )
+
+    # graph.add_conditional_edges(
+    #     "chat",
+    #     after_chat,
+    #     {
+    #         "interrupt": "interrupt",
+    #         "end": END,
+    #     },
+    # )
+
     graph.add_edge("summarize", END)
     graph.add_edge("prepare_memory", "chat")
     graph.add_edge("chat", END)

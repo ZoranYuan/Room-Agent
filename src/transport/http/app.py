@@ -3,6 +3,7 @@
 from contextlib import AsyncExitStack, asynccontextmanager
 
 from fastapi import APIRouter, FastAPI
+from prometheus_client import make_asgi_app
 
 from infra.mysql.database import close_mysql
 from infra.rag.vector.vector_store import close_vector_store
@@ -24,6 +25,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 register_http_exception_handlers(app)
+app.mount("/metrics", make_asgi_app())
 
 api_router = APIRouter(prefix="/api/v1")
 api_router.include_router(agent_router)

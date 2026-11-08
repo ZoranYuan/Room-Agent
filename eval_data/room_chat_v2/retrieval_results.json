@@ -27,8 +27,8 @@
       "hit_rate_at_k": 0.7840909090909091,
       "complete_evidence_rate_at_k": 0.7272727272727273,
       "mrr": 0.7071969696969697,
-      "mean_latency_ms": 92.212927319038,
-      "p95_latency_ms": 133.78573300724383
+      "mean_latency_ms": 74.61701987498579,
+      "p95_latency_ms": 92.45229799989829
     },
     "hybrid_rrf": {
       "questions": 88,
@@ -36,8 +36,8 @@
       "hit_rate_at_k": 0.7840909090909091,
       "complete_evidence_rate_at_k": 0.7272727272727273,
       "mrr": 0.7071969696969697,
-      "mean_latency_ms": 88.82415090821186,
-      "p95_latency_ms": 124.3280600028811
+      "mean_latency_ms": 72.43589465908103,
+      "p95_latency_ms": 91.90259199999673
     },
     "hybrid_rrf_minilm_reranked": {
       "questions": 88,
@@ -45,8 +45,8 @@
       "hit_rate_at_k": 0.7272727272727273,
       "complete_evidence_rate_at_k": 0.6590909090909091,
       "mrr": 0.6098484848484849,
-      "mean_latency_ms": 111.63929497607486,
-      "p95_latency_ms": 149.07080099510495
+      "mean_latency_ms": 96.67190101134018,
+      "p95_latency_ms": 109.95169500029078
     },
     "hybrid_rrf_qwen_reranked": {
       "questions": 88,
@@ -54,8 +54,8 @@
       "hit_rate_at_k": 0.7840909090909091,
       "complete_evidence_rate_at_k": 0.7272727272727273,
       "mrr": 0.7575757575757576,
-      "mean_latency_ms": 182.49873433920914,
-      "p95_latency_ms": 233.74006399535574
+      "mean_latency_ms": 162.10457457954806,
+      "p95_latency_ms": 184.25461299989365
     }
   },
   "metrics_same_cutoff_top3": {
@@ -65,8 +65,8 @@
       "hit_rate_at_k": 0.7613636363636364,
       "complete_evidence_rate_at_k": 0.6818181818181818,
       "mrr": 0.7026515151515151,
-      "mean_latency_ms": 92.212927319038,
-      "p95_latency_ms": 133.78573300724383
+      "mean_latency_ms": 74.61701987498579,
+      "p95_latency_ms": 92.45229799989829
     },
     "hybrid_rrf_top3": {
       "questions": 88,
@@ -74,8 +74,8 @@
       "hit_rate_at_k": 0.7613636363636364,
       "complete_evidence_rate_at_k": 0.6818181818181818,
       "mrr": 0.7026515151515151,
-      "mean_latency_ms": 88.82415090821186,
-      "p95_latency_ms": 124.3280600028811
+      "mean_latency_ms": 72.43589465908103,
+      "p95_latency_ms": 91.90259199999673
     },
     "hybrid_rrf_minilm_reranked_top3": {
       "questions": 88,
@@ -83,8 +83,8 @@
       "hit_rate_at_k": 0.7272727272727273,
       "complete_evidence_rate_at_k": 0.6590909090909091,
       "mrr": 0.6098484848484849,
-      "mean_latency_ms": 111.63929497607486,
-      "p95_latency_ms": 149.07080099510495
+      "mean_latency_ms": 96.67190101134018,
+      "p95_latency_ms": 109.95169500029078
     },
     "hybrid_rrf_qwen_reranked_top3": {
       "questions": 88,
@@ -92,8 +92,8 @@
       "hit_rate_at_k": 0.7840909090909091,
       "complete_evidence_rate_at_k": 0.7272727272727273,
       "mrr": 0.7575757575757576,
-      "mean_latency_ms": 182.49873433920914,
-      "p95_latency_ms": 233.74006399535574
+      "mean_latency_ms": 162.10457457954806,
+      "p95_latency_ms": 184.25461299989365
     }
   },
   "queries": [
@@ -105,7 +105,7 @@
         45
       ],
       "dense": {
-        "latency_ms": 216.24071699625347,
+        "latency_ms": 294.0320159998464,
         "ranked_seqs": [
           [
             45,
@@ -141,7 +141,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 76.08507700206246,
+        "latency_ms": 74.0607780001028,
         "ranked_seqs": [
           [
             45,
@@ -177,9 +177,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 623.1660510093207,
-        "retrieval_latency_ms": 76.08507700206246,
-        "rerank_latency_ms": 547.0809740072582,
+        "latency_ms": 916.9715929999711,
+        "retrieval_latency_ms": 74.0607780001028,
+        "rerank_latency_ms": 842.9108149998683,
         "ranked_seqs": [
           [
             2045,
@@ -205,9 +205,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 203.77131200802978,
-        "retrieval_latency_ms": 76.08507700206246,
-        "rerank_latency_ms": 127.68623500596732,
+        "latency_ms": 192.46397100005197,
+        "retrieval_latency_ms": 74.0607780001028,
+        "rerank_latency_ms": 118.40319299994917,
         "ranked_seqs": [
           [
             45,
@@ -240,7 +240,7 @@
         47
       ],
       "dense": {
-        "latency_ms": 133.78573300724383,
+        "latency_ms": 77.27041099997223,
         "ranked_seqs": [
           [
             45,
@@ -275,7 +275,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 217.88904200366233,
+        "latency_ms": 73.52777400001287,
         "ranked_seqs": [
           [
             45,
@@ -310,9 +310,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 248.99764099973254,
-        "retrieval_latency_ms": 217.88904200366233,
-        "rerank_latency_ms": 31.108598996070214,
+        "latency_ms": 89.71022900004755,
+        "retrieval_latency_ms": 73.52777400001287,
+        "rerank_latency_ms": 16.18245500003468,
         "ranked_seqs": [
           [
             45,
@@ -338,9 +338,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 384.3337040016195,
-        "retrieval_latency_ms": 217.88904200366233,
-        "rerank_latency_ms": 166.44466199795716,
+        "latency_ms": 164.06485500010604,
+        "retrieval_latency_ms": 73.52777400001287,
+        "rerank_latency_ms": 90.53708100009317,
         "ranked_seqs": [
           [
             45,
@@ -375,7 +375,7 @@
         2048
       ],
       "dense": {
-        "latency_ms": 112.01124500075821,
+        "latency_ms": 69.41666099987742,
         "ranked_seqs": [
           [
             2045,
@@ -409,7 +409,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 92.60677298880182,
+        "latency_ms": 70.20751699997163,
         "ranked_seqs": [
           [
             2045,
@@ -443,9 +443,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 131.76760598435067,
-        "retrieval_latency_ms": 92.60677298880182,
-        "rerank_latency_ms": 39.160832995548844,
+        "latency_ms": 84.79809399977967,
+        "retrieval_latency_ms": 70.20751699997163,
+        "rerank_latency_ms": 14.590576999808036,
         "ranked_seqs": [
           [
             2045,
@@ -471,9 +471,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 228.97493599157315,
-        "retrieval_latency_ms": 92.60677298880182,
-        "rerank_latency_ms": 136.36816300277133,
+        "latency_ms": 161.29633600007764,
+        "retrieval_latency_ms": 70.20751699997163,
+        "rerank_latency_ms": 91.08881900010601,
         "ranked_seqs": [
           [
             2045,
@@ -508,7 +508,7 @@
         2047
       ],
       "dense": {
-        "latency_ms": 178.10469199321233,
+        "latency_ms": 72.10335199988549,
         "ranked_seqs": [
           [
             45,
@@ -541,7 +541,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 170.3554499981692,
+        "latency_ms": 64.28349300017544,
         "ranked_seqs": [
           [
             45,
@@ -574,9 +574,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 198.90674900671002,
-        "retrieval_latency_ms": 170.3554499981692,
-        "rerank_latency_ms": 28.55129900854081,
+        "latency_ms": 78.71210999996947,
+        "retrieval_latency_ms": 64.28349300017544,
+        "rerank_latency_ms": 14.42861699979403,
         "ranked_seqs": [
           [
             45,
@@ -601,9 +601,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 338.433177996194,
-        "retrieval_latency_ms": 170.3554499981692,
-        "rerank_latency_ms": 168.07772799802478,
+        "latency_ms": 155.9395870001481,
+        "retrieval_latency_ms": 64.28349300017544,
+        "rerank_latency_ms": 91.65609399997265,
         "ranked_seqs": [
           [
             45,
@@ -636,7 +636,7 @@
         137
       ],
       "dense": {
-        "latency_ms": 149.54076199501287,
+        "latency_ms": 69.27969899993514,
         "ranked_seqs": [
           [
             136,
@@ -676,7 +676,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 122.082412999589,
+        "latency_ms": 68.72082599988971,
         "ranked_seqs": [
           [
             136,
@@ -716,9 +716,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 137.2438289981801,
-        "retrieval_latency_ms": 122.082412999589,
-        "rerank_latency_ms": 15.16141599859111,
+        "latency_ms": 86.83522799992716,
+        "retrieval_latency_ms": 68.72082599988971,
+        "rerank_latency_ms": 18.114402000037444,
         "ranked_seqs": [
           [
             2136,
@@ -746,9 +746,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 215.61180100252386,
-        "retrieval_latency_ms": 122.082412999589,
-        "rerank_latency_ms": 93.52938800293487,
+        "latency_ms": 167.30145699989407,
+        "retrieval_latency_ms": 68.72082599988971,
+        "rerank_latency_ms": 98.58063100000436,
         "ranked_seqs": [
           [
             136,
@@ -782,7 +782,7 @@
         137
       ],
       "dense": {
-        "latency_ms": 106.17043399543036,
+        "latency_ms": 92.45229799989829,
         "ranked_seqs": [
           [
             136,
@@ -820,7 +820,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 76.8793509923853,
+        "latency_ms": 88.8601250001102,
         "ranked_seqs": [
           [
             136,
@@ -858,9 +858,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 98.19616998720448,
-        "retrieval_latency_ms": 76.8793509923853,
-        "rerank_latency_ms": 21.316818994819187,
+        "latency_ms": 108.18261999997958,
+        "retrieval_latency_ms": 88.8601250001102,
+        "rerank_latency_ms": 19.322494999869377,
         "ranked_seqs": [
           [
             136,
@@ -884,9 +884,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 169.81678098090924,
-        "retrieval_latency_ms": 76.8793509923853,
-        "rerank_latency_ms": 92.93742998852395,
+        "latency_ms": 184.37665500027833,
+        "retrieval_latency_ms": 88.8601250001102,
+        "rerank_latency_ms": 95.51653000016813,
         "ranked_seqs": [
           [
             136,
@@ -922,7 +922,7 @@
         2139
       ],
       "dense": {
-        "latency_ms": 82.23466300114524,
+        "latency_ms": 104.61063700017803,
         "ranked_seqs": [
           [
             1152,
@@ -957,7 +957,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 74.97906000935473,
+        "latency_ms": 92.04564000015125,
         "ranked_seqs": [
           [
             1152,
@@ -992,9 +992,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 89.18781101237983,
-        "retrieval_latency_ms": 74.97906000935473,
-        "rerank_latency_ms": 14.2087510030251,
+        "latency_ms": 109.95169500029078,
+        "retrieval_latency_ms": 92.04564000015125,
+        "rerank_latency_ms": 17.90605500013953,
         "ranked_seqs": [
           [
             1152,
@@ -1019,9 +1019,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 152.6001660095062,
-        "retrieval_latency_ms": 74.97906000935473,
-        "rerank_latency_ms": 77.62110600015149,
+        "latency_ms": 199.89730100019187,
+        "retrieval_latency_ms": 92.04564000015125,
+        "rerank_latency_ms": 107.85166100004062,
         "ranked_seqs": [
           [
             1152,
@@ -1054,7 +1054,7 @@
         2139
       ],
       "dense": {
-        "latency_ms": 77.84966900362633,
+        "latency_ms": 98.8964279999891,
         "ranked_seqs": [
           [
             2136,
@@ -1088,7 +1088,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 69.19808399106842,
+        "latency_ms": 89.63659599999119,
         "ranked_seqs": [
           [
             2136,
@@ -1122,9 +1122,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 84.26768198842183,
-        "retrieval_latency_ms": 69.19808399106842,
-        "rerank_latency_ms": 15.069597997353412,
+        "latency_ms": 105.75987600009285,
+        "retrieval_latency_ms": 89.63659599999119,
+        "rerank_latency_ms": 16.12328000010166,
         "ranked_seqs": [
           [
             1624,
@@ -1148,9 +1148,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 157.8247289871797,
-        "retrieval_latency_ms": 69.19808399106842,
-        "rerank_latency_ms": 88.62664499611128,
+        "latency_ms": 183.49407599998813,
+        "retrieval_latency_ms": 89.63659599999119,
+        "rerank_latency_ms": 93.85747999999694,
         "ranked_seqs": [
           [
             2136,
@@ -1182,7 +1182,7 @@
         228
       ],
       "dense": {
-        "latency_ms": 77.97077800205443,
+        "latency_ms": 72.66942899991591,
         "ranked_seqs": [
           [
             227,
@@ -1215,7 +1215,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 66.1421650002012,
+        "latency_ms": 70.38955200005148,
         "ranked_seqs": [
           [
             227,
@@ -1248,9 +1248,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 80.27450498775579,
-        "retrieval_latency_ms": 66.1421650002012,
-        "rerank_latency_ms": 14.132339987554587,
+        "latency_ms": 84.66875200019786,
+        "retrieval_latency_ms": 70.38955200005148,
+        "rerank_latency_ms": 14.279200000146375,
         "ranked_seqs": [
           [
             2227,
@@ -1275,9 +1275,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 145.0346790079493,
-        "retrieval_latency_ms": 66.1421650002012,
-        "rerank_latency_ms": 78.8925140077481,
+        "latency_ms": 163.18552500001715,
+        "retrieval_latency_ms": 70.38955200005148,
+        "rerank_latency_ms": 92.79597299996567,
         "ranked_seqs": [
           [
             227,
@@ -1310,7 +1310,7 @@
         228
       ],
       "dense": {
-        "latency_ms": 77.09604200499598,
+        "latency_ms": 74.40967200000159,
         "ranked_seqs": [
           [
             3389
@@ -1339,7 +1339,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 117.24115400284063,
+        "latency_ms": 66.87519499996597,
         "ranked_seqs": [
           [
             3389
@@ -1368,9 +1368,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 133.19394100108184,
-        "retrieval_latency_ms": 117.24115400284063,
-        "rerank_latency_ms": 15.952786998241208,
+        "latency_ms": 78.96453800003655,
+        "retrieval_latency_ms": 66.87519499996597,
+        "rerank_latency_ms": 12.089343000070585,
         "ranked_seqs": [
           [
             3389
@@ -1391,9 +1391,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 212.76184200542048,
-        "retrieval_latency_ms": 117.24115400284063,
-        "rerank_latency_ms": 95.52068800257985,
+        "latency_ms": 131.76919699981227,
+        "retrieval_latency_ms": 66.87519499996597,
+        "rerank_latency_ms": 64.8940019998463,
         "ranked_seqs": [
           [
             3765,
@@ -1423,7 +1423,7 @@
         2230
       ],
       "dense": {
-        "latency_ms": 84.25161399645731,
+        "latency_ms": 67.63793899995107,
         "ranked_seqs": [
           [
             227,
@@ -1465,7 +1465,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 78.12751899473369,
+        "latency_ms": 68.53924999995797,
         "ranked_seqs": [
           [
             227,
@@ -1507,9 +1507,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 91.89595098723657,
-        "retrieval_latency_ms": 78.12751899473369,
-        "rerank_latency_ms": 13.768431992502883,
+        "latency_ms": 83.99405199998,
+        "retrieval_latency_ms": 68.53924999995797,
+        "rerank_latency_ms": 15.454802000022028,
         "ranked_seqs": [
           [
             3774,
@@ -1537,9 +1537,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 166.83529599686153,
-        "retrieval_latency_ms": 78.12751899473369,
-        "rerank_latency_ms": 88.70777700212784,
+        "latency_ms": 164.0144489999784,
+        "retrieval_latency_ms": 68.53924999995797,
+        "rerank_latency_ms": 95.47519900002044,
         "ranked_seqs": [
           [
             2227,
@@ -1575,7 +1575,7 @@
         2229
       ],
       "dense": {
-        "latency_ms": 92.4796699982835,
+        "latency_ms": 69.56782999986899,
         "ranked_seqs": [
           [
             3409,
@@ -1612,7 +1612,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 88.12455499719363,
+        "latency_ms": 64.64179299996431,
         "ranked_seqs": [
           [
             3409,
@@ -1649,9 +1649,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 102.48040399164893,
-        "retrieval_latency_ms": 88.12455499719363,
-        "rerank_latency_ms": 14.3558489944553,
+        "latency_ms": 80.17825499996434,
+        "retrieval_latency_ms": 64.64179299996431,
+        "rerank_latency_ms": 15.536462000000029,
         "ranked_seqs": [
           [
             2227,
@@ -1680,9 +1680,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 189.65975398896262,
-        "retrieval_latency_ms": 88.12455499719363,
-        "rerank_latency_ms": 101.535198991769,
+        "latency_ms": 169.26979100003336,
+        "retrieval_latency_ms": 64.64179299996431,
+        "rerank_latency_ms": 104.62799800006906,
         "ranked_seqs": [
           [
             3409,
@@ -1719,7 +1719,7 @@
         319
       ],
       "dense": {
-        "latency_ms": 63.840230999630876,
+        "latency_ms": 67.98018299991782,
         "ranked_seqs": [
           [
             2320,
@@ -1753,7 +1753,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 63.06710599164944,
+        "latency_ms": 63.8623979998556,
         "ranked_seqs": [
           [
             2320,
@@ -1787,9 +1787,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 78.0314289877424,
-        "retrieval_latency_ms": 63.06710599164944,
-        "rerank_latency_ms": 14.96432299609296,
+        "latency_ms": 79.31577599970296,
+        "retrieval_latency_ms": 63.8623979998556,
+        "rerank_latency_ms": 15.453377999847362,
         "ranked_seqs": [
           [
             314,
@@ -1814,9 +1814,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 156.6038749879226,
-        "retrieval_latency_ms": 63.06710599164944,
-        "rerank_latency_ms": 93.53676899627317,
+        "latency_ms": 167.25792599982015,
+        "retrieval_latency_ms": 63.8623979998556,
+        "rerank_latency_ms": 103.39552799996454,
         "ranked_seqs": [
           [
             314,
@@ -1849,7 +1849,7 @@
         318
       ],
       "dense": {
-        "latency_ms": 67.13180600490887,
+        "latency_ms": 66.65032799992332,
         "ranked_seqs": [
           [
             2320,
@@ -1878,7 +1878,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 78.6961190024158,
+        "latency_ms": 65.18837399994482,
         "ranked_seqs": [
           [
             2320,
@@ -1907,9 +1907,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 90.23432400135789,
-        "retrieval_latency_ms": 78.6961190024158,
-        "rerank_latency_ms": 11.538204998942092,
+        "latency_ms": 78.31420099978459,
+        "retrieval_latency_ms": 65.18837399994482,
+        "rerank_latency_ms": 13.125826999839774,
         "ranked_seqs": [
           [
             2320,
@@ -1930,9 +1930,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 143.03131100314204,
-        "retrieval_latency_ms": 78.6961190024158,
-        "rerank_latency_ms": 64.33519200072624,
+        "latency_ms": 132.25158000000192,
+        "retrieval_latency_ms": 65.18837399994482,
+        "rerank_latency_ms": 67.06320600005711,
         "ranked_seqs": [
           [
             2320,
@@ -1962,7 +1962,7 @@
         2321
       ],
       "dense": {
-        "latency_ms": 100.67088399955537,
+        "latency_ms": 68.18283500001598,
         "ranked_seqs": [
           [
             332,
@@ -1996,7 +1996,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 126.42938499629963,
+        "latency_ms": 67.515985,
         "ranked_seqs": [
           [
             332,
@@ -2030,9 +2030,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 152.2367959987605,
-        "retrieval_latency_ms": 126.42938499629963,
-        "rerank_latency_ms": 25.807411002460867,
+        "latency_ms": 82.63218499996583,
+        "retrieval_latency_ms": 67.515985,
+        "rerank_latency_ms": 15.11619999996583,
         "ranked_seqs": [
           [
             314,
@@ -2057,9 +2057,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 225.98499899322633,
-        "retrieval_latency_ms": 126.42938499629963,
-        "rerank_latency_ms": 99.5556139969267,
+        "latency_ms": 167.52809599984175,
+        "retrieval_latency_ms": 67.515985,
+        "rerank_latency_ms": 100.01211099984175,
         "ranked_seqs": [
           [
             314,
@@ -2093,7 +2093,7 @@
         2318
       ],
       "dense": {
-        "latency_ms": 108.43977700278629,
+        "latency_ms": 73.05524100002003,
         "ranked_seqs": [
           [
             2318,
@@ -2128,7 +2128,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 105.59644601016771,
+        "latency_ms": 64.1858129999946,
         "ranked_seqs": [
           [
             2318,
@@ -2163,9 +2163,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 123.91174001095351,
-        "retrieval_latency_ms": 105.59644601016771,
-        "rerank_latency_ms": 18.315294000785798,
+        "latency_ms": 79.44850800004133,
+        "retrieval_latency_ms": 64.1858129999946,
+        "rerank_latency_ms": 15.262695000046733,
         "ranked_seqs": [
           [
             2318,
@@ -2190,9 +2190,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 205.089808019693,
-        "retrieval_latency_ms": 105.59644601016771,
-        "rerank_latency_ms": 99.4933620095253,
+        "latency_ms": 169.12245200001053,
+        "retrieval_latency_ms": 64.1858129999946,
+        "rerank_latency_ms": 104.93663900001593,
         "ranked_seqs": [
           [
             2318,
@@ -2225,7 +2225,7 @@
         411
       ],
       "dense": {
-        "latency_ms": 92.68574700399768,
+        "latency_ms": 66.99111299985816,
         "ranked_seqs": [
           [
             409,
@@ -2258,7 +2258,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 92.7031809987966,
+        "latency_ms": 66.37341900000138,
         "ranked_seqs": [
           [
             409,
@@ -2291,9 +2291,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 108.25462998764124,
-        "retrieval_latency_ms": 92.7031809987966,
-        "rerank_latency_ms": 15.55144898884464,
+        "latency_ms": 80.87092000005214,
+        "retrieval_latency_ms": 66.37341900000138,
+        "rerank_latency_ms": 14.497501000050761,
         "ranked_seqs": [
           [
             409,
@@ -2317,9 +2317,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 186.54173499089666,
-        "retrieval_latency_ms": 92.7031809987966,
-        "rerank_latency_ms": 93.83855399210006,
+        "latency_ms": 157.11338400001296,
+        "retrieval_latency_ms": 66.37341900000138,
+        "rerank_latency_ms": 90.73996500001158,
         "ranked_seqs": [
           [
             409,
@@ -2351,7 +2351,7 @@
         410
       ],
       "dense": {
-        "latency_ms": 83.13157899829093,
+        "latency_ms": 71.26630099992326,
         "ranked_seqs": [
           [
             3368,
@@ -2390,7 +2390,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 90.58871799788903,
+        "latency_ms": 66.887338000015,
         "ranked_seqs": [
           [
             3368,
@@ -2429,9 +2429,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 108.49975299788639,
-        "retrieval_latency_ms": 90.58871799788903,
-        "rerank_latency_ms": 17.911034999997355,
+        "latency_ms": 81.16399400000773,
+        "retrieval_latency_ms": 66.887338000015,
+        "rerank_latency_ms": 14.276655999992727,
         "ranked_seqs": [
           [
             1660,
@@ -2459,9 +2459,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 171.07668799872044,
-        "retrieval_latency_ms": 90.58871799788903,
-        "rerank_latency_ms": 80.48797000083141,
+        "latency_ms": 155.06220599991138,
+        "retrieval_latency_ms": 66.887338000015,
+        "rerank_latency_ms": 88.17486799989638,
         "ranked_seqs": [
           [
             3368,
@@ -2495,7 +2495,7 @@
         2412
       ],
       "dense": {
-        "latency_ms": 67.39977101096883,
+        "latency_ms": 71.08067100011795,
         "ranked_seqs": [
           [
             2409,
@@ -2530,7 +2530,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 77.07747699168976,
+        "latency_ms": 75.37314699993658,
         "ranked_seqs": [
           [
             2409,
@@ -2565,9 +2565,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 91.42669399443548,
-        "retrieval_latency_ms": 77.07747699168976,
-        "rerank_latency_ms": 14.349217002745718,
+        "latency_ms": 89.93662900002164,
+        "retrieval_latency_ms": 75.37314699993658,
+        "rerank_latency_ms": 14.56348200008506,
         "ranked_seqs": [
           [
             2409,
@@ -2592,9 +2592,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 165.0979049882153,
-        "retrieval_latency_ms": 77.07747699168976,
-        "rerank_latency_ms": 88.02042799652554,
+        "latency_ms": 166.34082199993827,
+        "retrieval_latency_ms": 75.37314699993658,
+        "rerank_latency_ms": 90.96767500000169,
         "ranked_seqs": [
           [
             2409,
@@ -2627,7 +2627,7 @@
         2409
       ],
       "dense": {
-        "latency_ms": 76.8021589901764,
+        "latency_ms": 73.64207599994188,
         "ranked_seqs": [
           [
             2426,
@@ -2659,7 +2659,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 100.27688300760929,
+        "latency_ms": 68.7893649999296,
         "ranked_seqs": [
           [
             2426,
@@ -2691,9 +2691,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 115.78512300911825,
-        "retrieval_latency_ms": 100.27688300760929,
-        "rerank_latency_ms": 15.508240001508966,
+        "latency_ms": 84.02034999994612,
+        "retrieval_latency_ms": 68.7893649999296,
+        "rerank_latency_ms": 15.230985000016517,
         "ranked_seqs": [
           [
             3061,
@@ -2715,9 +2715,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 169.88869100168813,
-        "retrieval_latency_ms": 100.27688300760929,
-        "rerank_latency_ms": 69.61180799407884,
+        "latency_ms": 134.66473199991924,
+        "retrieval_latency_ms": 68.7893649999296,
+        "rerank_latency_ms": 65.87536699998964,
         "ranked_seqs": [
           [
             2426,
@@ -2747,7 +2747,7 @@
         500
       ],
       "dense": {
-        "latency_ms": 84.1475680063013,
+        "latency_ms": 67.36043800015068,
         "ranked_seqs": [
           [
             500
@@ -2776,7 +2776,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 139.2552649922436,
+        "latency_ms": 75.45948100005262,
         "ranked_seqs": [
           [
             500
@@ -2805,9 +2805,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 161.86510198167525,
-        "retrieval_latency_ms": 139.2552649922436,
-        "rerank_latency_ms": 22.609836989431642,
+        "latency_ms": 89.31502500013266,
+        "retrieval_latency_ms": 75.45948100005262,
+        "rerank_latency_ms": 13.855544000080044,
         "ranked_seqs": [
           [
             1324,
@@ -2828,9 +2828,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 215.14898199529853,
-        "retrieval_latency_ms": 139.2552649922436,
-        "rerank_latency_ms": 75.89371700305492,
+        "latency_ms": 138.29757600001358,
+        "retrieval_latency_ms": 75.45948100005262,
+        "rerank_latency_ms": 62.83809499996096,
         "ranked_seqs": [
           [
             500
@@ -2858,7 +2858,7 @@
         501
       ],
       "dense": {
-        "latency_ms": 76.56030799262226,
+        "latency_ms": 63.40976799992859,
         "ranked_seqs": [
           [
             501,
@@ -2890,7 +2890,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 70.71244399412535,
+        "latency_ms": 71.22759000003498,
         "ranked_seqs": [
           [
             501,
@@ -2922,9 +2922,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 85.50082398869563,
-        "retrieval_latency_ms": 70.71244399412535,
-        "rerank_latency_ms": 14.788379994570278,
+        "latency_ms": 85.84450900002594,
+        "retrieval_latency_ms": 71.22759000003498,
+        "rerank_latency_ms": 14.616918999990958,
         "ranked_seqs": [
           [
             501,
@@ -2947,9 +2947,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 152.93675599968992,
-        "retrieval_latency_ms": 70.71244399412535,
-        "rerank_latency_ms": 82.22431200556457,
+        "latency_ms": 157.41251600002215,
+        "retrieval_latency_ms": 71.22759000003498,
+        "rerank_latency_ms": 86.18492599998717,
         "ranked_seqs": [
           [
             501,
@@ -2981,7 +2981,7 @@
         2503
       ],
       "dense": {
-        "latency_ms": 80.11803100816905,
+        "latency_ms": 69.1563220000262,
         "ranked_seqs": [
           [
             3500
@@ -3008,7 +3008,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 109.43148699880112,
+        "latency_ms": 67.90162499987673,
         "ranked_seqs": [
           [
             3500
@@ -3035,9 +3035,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 123.75177200010512,
-        "retrieval_latency_ms": 109.43148699880112,
-        "rerank_latency_ms": 14.320285001304,
+        "latency_ms": 80.3069459998369,
+        "retrieval_latency_ms": 67.90162499987673,
+        "rerank_latency_ms": 12.405320999960168,
         "ranked_seqs": [
           [
             1390
@@ -3056,9 +3056,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 181.50308600161225,
-        "retrieval_latency_ms": 109.43148699880112,
-        "rerank_latency_ms": 72.07159900281113,
+        "latency_ms": 131.67221699995935,
+        "retrieval_latency_ms": 67.90162499987673,
+        "rerank_latency_ms": 63.770592000082615,
         "ranked_seqs": [
           [
             3500
@@ -3086,7 +3086,7 @@
         2501
       ],
       "dense": {
-        "latency_ms": 76.54606200230774,
+        "latency_ms": 68.26204699996197,
         "ranked_seqs": [
           [
             872
@@ -3115,7 +3115,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 100.7848709996324,
+        "latency_ms": 69.84797700010859,
         "ranked_seqs": [
           [
             872
@@ -3144,9 +3144,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 115.80744999810122,
-        "retrieval_latency_ms": 100.7848709996324,
-        "rerank_latency_ms": 15.022578998468816,
+        "latency_ms": 81.93495000000439,
+        "retrieval_latency_ms": 69.84797700010859,
+        "rerank_latency_ms": 12.086972999895806,
         "ranked_seqs": [
           [
             1324,
@@ -3167,9 +3167,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 185.55851400014944,
-        "retrieval_latency_ms": 100.7848709996324,
-        "rerank_latency_ms": 84.77364300051704,
+        "latency_ms": 133.9385910002875,
+        "retrieval_latency_ms": 69.84797700010859,
+        "rerank_latency_ms": 64.0906140001789,
         "ranked_seqs": [
           [
             872
@@ -3197,7 +3197,7 @@
         594
       ],
       "dense": {
-        "latency_ms": 106.63263300375547,
+        "latency_ms": 64.37923899989073,
         "ranked_seqs": [
           [
             3010
@@ -3228,7 +3228,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 78.56110099237412,
+        "latency_ms": 76.27027799981079,
         "ranked_seqs": [
           [
             3010
@@ -3259,9 +3259,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 93.04239998164121,
-        "retrieval_latency_ms": 78.56110099237412,
-        "rerank_latency_ms": 14.481298989267088,
+        "latency_ms": 90.98901499987733,
+        "retrieval_latency_ms": 76.27027799981079,
+        "rerank_latency_ms": 14.71873700006654,
         "ranked_seqs": [
           [
             591,
@@ -3284,9 +3284,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 175.41871099092532,
-        "retrieval_latency_ms": 78.56110099237412,
-        "rerank_latency_ms": 96.8576099985512,
+        "latency_ms": 166.76868999979888,
+        "retrieval_latency_ms": 76.27027799981079,
+        "rerank_latency_ms": 90.4984119999881,
         "ranked_seqs": [
           [
             591,
@@ -3316,7 +3316,7 @@
         2593
       ],
       "dense": {
-        "latency_ms": 103.22335000091698,
+        "latency_ms": 67.83239600008528,
         "ranked_seqs": [
           [
             2591,
@@ -3354,7 +3354,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 106.96538600313943,
+        "latency_ms": 66.42737800007126,
         "ranked_seqs": [
           [
             2591,
@@ -3392,9 +3392,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 129.4736989948433,
-        "retrieval_latency_ms": 106.96538600313943,
-        "rerank_latency_ms": 22.50831299170386,
+        "latency_ms": 81.75674100016295,
+        "retrieval_latency_ms": 66.42737800007126,
+        "rerank_latency_ms": 15.32936300009169,
         "ranked_seqs": [
           [
             2591,
@@ -3423,9 +3423,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 200.25428201188333,
-        "retrieval_latency_ms": 106.96538600313943,
-        "rerank_latency_ms": 93.2888960087439,
+        "latency_ms": 171.6939650000313,
+        "retrieval_latency_ms": 66.42737800007126,
+        "rerank_latency_ms": 105.26658699996005,
         "ranked_seqs": [
           [
             2591,
@@ -3463,7 +3463,7 @@
         2592
       ],
       "dense": {
-        "latency_ms": 89.24412900523748,
+        "latency_ms": 68.01367900015975,
         "ranked_seqs": [
           [
             2591,
@@ -3494,7 +3494,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 90.26149900455493,
+        "latency_ms": 67.75487899994914,
         "ranked_seqs": [
           [
             2591,
@@ -3525,9 +3525,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 104.62830901087727,
-        "retrieval_latency_ms": 90.26149900455493,
-        "rerank_latency_ms": 14.36681000632234,
+        "latency_ms": 82.24159899987171,
+        "retrieval_latency_ms": 67.75487899994914,
+        "rerank_latency_ms": 14.48671999992257,
         "ranked_seqs": [
           [
             2591,
@@ -3550,9 +3550,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 186.16024700168055,
-        "retrieval_latency_ms": 90.26149900455493,
-        "rerank_latency_ms": 95.89874799712561,
+        "latency_ms": 158.51199899998392,
+        "retrieval_latency_ms": 67.75487899994914,
+        "rerank_latency_ms": 90.75712000003477,
         "ranked_seqs": [
           [
             2591,
@@ -3582,7 +3582,7 @@
         2593
       ],
       "dense": {
-        "latency_ms": 106.05899599613622,
+        "latency_ms": 69.698790999837,
         "ranked_seqs": [
           [
             2591,
@@ -3621,7 +3621,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 104.5779629930621,
+        "latency_ms": 66.67236299995238,
         "ranked_seqs": [
           [
             2591,
@@ -3660,9 +3660,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 126.69359399296809,
-        "retrieval_latency_ms": 104.5779629930621,
-        "rerank_latency_ms": 22.11563099990599,
+        "latency_ms": 82.06061800001407,
+        "retrieval_latency_ms": 66.67236299995238,
+        "rerank_latency_ms": 15.38825500006169,
         "ranked_seqs": [
           [
             2227,
@@ -3690,9 +3690,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 194.75076599337626,
-        "retrieval_latency_ms": 104.5779629930621,
-        "rerank_latency_ms": 90.17280300031416,
+        "latency_ms": 161.91696100008812,
+        "retrieval_latency_ms": 66.67236299995238,
+        "rerank_latency_ms": 95.24459800013574,
         "ranked_seqs": [
           [
             2591,
@@ -3728,7 +3728,7 @@
         682
       ],
       "dense": {
-        "latency_ms": 123.2983689988032,
+        "latency_ms": 70.36456199989516,
         "ranked_seqs": [
           [
             682,
@@ -3761,7 +3761,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 74.14623799559195,
+        "latency_ms": 71.14804999991975,
         "ranked_seqs": [
           [
             682,
@@ -3794,9 +3794,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 90.3436939988751,
-        "retrieval_latency_ms": 74.14623799559195,
-        "rerank_latency_ms": 16.19745600328315,
+        "latency_ms": 86.63244499985012,
+        "retrieval_latency_ms": 71.14804999991975,
+        "rerank_latency_ms": 15.484394999930373,
         "ranked_seqs": [
           [
             682,
@@ -3821,9 +3821,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 153.8162879878655,
-        "retrieval_latency_ms": 74.14623799559195,
-        "rerank_latency_ms": 79.67004999227356,
+        "latency_ms": 165.22604300007515,
+        "retrieval_latency_ms": 71.14804999991975,
+        "rerank_latency_ms": 94.0779930001554,
         "ranked_seqs": [
           [
             682,
@@ -3854,7 +3854,7 @@
         682
       ],
       "dense": {
-        "latency_ms": 77.1702250058297,
+        "latency_ms": 64.57446099989284,
         "ranked_seqs": [
           [
             2682,
@@ -3887,7 +3887,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 75.88979099818971,
+        "latency_ms": 64.68794800002797,
         "ranked_seqs": [
           [
             2682,
@@ -3920,9 +3920,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 91.7788090009708,
-        "retrieval_latency_ms": 75.88979099818971,
-        "rerank_latency_ms": 15.889018002781086,
+        "latency_ms": 79.34763600019323,
+        "retrieval_latency_ms": 64.68794800002797,
+        "rerank_latency_ms": 14.65968800016526,
         "ranked_seqs": [
           [
             2682,
@@ -3946,9 +3946,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 155.56216800177936,
-        "retrieval_latency_ms": 75.88979099818971,
-        "rerank_latency_ms": 79.67237700358965,
+        "latency_ms": 156.15542899990942,
+        "retrieval_latency_ms": 64.68794800002797,
+        "rerank_latency_ms": 91.46748099988145,
         "ranked_seqs": [
           [
             2682,
@@ -3981,7 +3981,7 @@
         682
       ],
       "dense": {
-        "latency_ms": 69.84255400311667,
+        "latency_ms": 64.40292199999931,
         "ranked_seqs": [
           [
             2682,
@@ -4020,7 +4020,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 73.52375300251879,
+        "latency_ms": 69.1064909999568,
         "ranked_seqs": [
           [
             2682,
@@ -4059,9 +4059,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 87.60613600315992,
-        "retrieval_latency_ms": 73.52375300251879,
-        "rerank_latency_ms": 14.08238300064113,
+        "latency_ms": 83.75342899989846,
+        "retrieval_latency_ms": 69.1064909999568,
+        "rerank_latency_ms": 14.646937999941656,
         "ranked_seqs": [
           [
             2682,
@@ -4089,9 +4089,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 155.2191429946106,
-        "retrieval_latency_ms": 73.52375300251879,
-        "rerank_latency_ms": 81.6953899920918,
+        "latency_ms": 161.30171800000426,
+        "retrieval_latency_ms": 69.1064909999568,
+        "rerank_latency_ms": 92.19522700004745,
         "ranked_seqs": [
           [
             2682,
@@ -4125,7 +4125,7 @@
         685
       ],
       "dense": {
-        "latency_ms": 72.70177800091915,
+        "latency_ms": 66.59129499985283,
         "ranked_seqs": [
           [
             682,
@@ -4159,7 +4159,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 67.96326000767294,
+        "latency_ms": 69.20723200005341,
         "ranked_seqs": [
           [
             682,
@@ -4193,9 +4193,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 86.25781000591815,
-        "retrieval_latency_ms": 67.96326000767294,
-        "rerank_latency_ms": 18.294549998245202,
+        "latency_ms": 83.52961199989295,
+        "retrieval_latency_ms": 69.20723200005341,
+        "rerank_latency_ms": 14.32237999983954,
         "ranked_seqs": [
           [
             2682,
@@ -4221,9 +4221,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 151.46861800167244,
-        "retrieval_latency_ms": 67.96326000767294,
-        "rerank_latency_ms": 83.5053579939995,
+        "latency_ms": 161.2569829999302,
+        "retrieval_latency_ms": 69.20723200005341,
+        "rerank_latency_ms": 92.04975099987678,
         "ranked_seqs": [
           [
             682,
@@ -4257,7 +4257,7 @@
         774
       ],
       "dense": {
-        "latency_ms": 78.45471300242934,
+        "latency_ms": 71.1863839999296,
         "ranked_seqs": [
           [
             773,
@@ -4293,7 +4293,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 89.66824699018616,
+        "latency_ms": 66.59125800001675,
         "ranked_seqs": [
           [
             773,
@@ -4329,9 +4329,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 105.12538898910861,
-        "retrieval_latency_ms": 89.66824699018616,
-        "rerank_latency_ms": 15.457141998922452,
+        "latency_ms": 80.88422700006959,
+        "retrieval_latency_ms": 66.59125800001675,
+        "rerank_latency_ms": 14.292969000052835,
         "ranked_seqs": [
           [
             773,
@@ -4358,9 +4358,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 174.18679599359166,
-        "retrieval_latency_ms": 89.66824699018616,
-        "rerank_latency_ms": 84.5185490034055,
+        "latency_ms": 161.0029350001696,
+        "retrieval_latency_ms": 66.59125800001675,
+        "rerank_latency_ms": 94.41167700015285,
         "ranked_seqs": [
           [
             773,
@@ -4393,7 +4393,7 @@
         774
       ],
       "dense": {
-        "latency_ms": 99.11782400740776,
+        "latency_ms": 74.0451099998154,
         "ranked_seqs": [
           [
             773,
@@ -4428,7 +4428,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 82.35831299680285,
+        "latency_ms": 81.48595600005137,
         "ranked_seqs": [
           [
             773,
@@ -4463,9 +4463,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 99.29543299949728,
-        "retrieval_latency_ms": 82.35831299680285,
-        "rerank_latency_ms": 16.937120002694428,
+        "latency_ms": 96.25536399994417,
+        "retrieval_latency_ms": 81.48595600005137,
+        "rerank_latency_ms": 14.769407999892792,
         "ranked_seqs": [
           [
             773,
@@ -4491,9 +4491,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 170.928831998026,
-        "retrieval_latency_ms": 82.35831299680285,
-        "rerank_latency_ms": 88.57051900122315,
+        "latency_ms": 177.92231399994307,
+        "retrieval_latency_ms": 81.48595600005137,
+        "rerank_latency_ms": 96.4363579998917,
         "ranked_seqs": [
           [
             773,
@@ -4526,7 +4526,7 @@
         2776
       ],
       "dense": {
-        "latency_ms": 92.29711598891299,
+        "latency_ms": 64.1470240000217,
         "ranked_seqs": [
           [
             2773,
@@ -4564,7 +4564,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 75.61338700179476,
+        "latency_ms": 70.33235800008697,
         "ranked_seqs": [
           [
             2773,
@@ -4602,9 +4602,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 90.05749000061769,
-        "retrieval_latency_ms": 75.61338700179476,
-        "rerank_latency_ms": 14.444102998822927,
+        "latency_ms": 87.5890640002126,
+        "retrieval_latency_ms": 70.33235800008697,
+        "rerank_latency_ms": 17.256706000125632,
         "ranked_seqs": [
           [
             2773,
@@ -4631,9 +4631,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 169.2980789957801,
-        "retrieval_latency_ms": 75.61338700179476,
-        "rerank_latency_ms": 93.68469199398533,
+        "latency_ms": 166.15973800003303,
+        "retrieval_latency_ms": 70.33235800008697,
+        "rerank_latency_ms": 95.82737999994606,
         "ranked_seqs": [
           [
             2773,
@@ -4670,7 +4670,7 @@
         2776
       ],
       "dense": {
-        "latency_ms": 106.47292601061054,
+        "latency_ms": 75.95513999990544,
         "ranked_seqs": [
           [
             2773,
@@ -4703,7 +4703,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 80.60343499528244,
+        "latency_ms": 72.62379799999508,
         "ranked_seqs": [
           [
             2773,
@@ -4736,9 +4736,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 95.53807298652828,
-        "retrieval_latency_ms": 80.60343499528244,
-        "rerank_latency_ms": 14.934637991245836,
+        "latency_ms": 88.37680500005263,
+        "retrieval_latency_ms": 72.62379799999508,
+        "rerank_latency_ms": 15.75300700005755,
         "ranked_seqs": [
           [
             2773,
@@ -4763,9 +4763,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 167.52980899764225,
-        "retrieval_latency_ms": 80.60343499528244,
-        "rerank_latency_ms": 86.92637400235981,
+        "latency_ms": 168.28844500014384,
+        "retrieval_latency_ms": 72.62379799999508,
+        "rerank_latency_ms": 95.66464700014876,
         "ranked_seqs": [
           [
             773,
@@ -4798,7 +4798,7 @@
         864
       ],
       "dense": {
-        "latency_ms": 70.2398749999702,
+        "latency_ms": 68.75861599996824,
         "ranked_seqs": [
           [
             864,
@@ -4832,7 +4832,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 75.38028100680094,
+        "latency_ms": 75.24585999999545,
         "ranked_seqs": [
           [
             864,
@@ -4866,9 +4866,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 89.58914199320134,
-        "retrieval_latency_ms": 75.38028100680094,
-        "rerank_latency_ms": 14.208860986400396,
+        "latency_ms": 90.43244599979516,
+        "retrieval_latency_ms": 75.24585999999545,
+        "rerank_latency_ms": 15.186585999799718,
         "ranked_seqs": [
           [
             2864,
@@ -4894,9 +4894,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 160.5959320004331,
-        "retrieval_latency_ms": 75.38028100680094,
-        "rerank_latency_ms": 85.21565099363215,
+        "latency_ms": 165.46774099992945,
+        "retrieval_latency_ms": 75.24585999999545,
+        "rerank_latency_ms": 90.221880999934,
         "ranked_seqs": [
           [
             864,
@@ -4929,7 +4929,7 @@
         865
       ],
       "dense": {
-        "latency_ms": 93.97832800459582,
+        "latency_ms": 72.44430900004772,
         "ranked_seqs": [
           [
             864,
@@ -4962,7 +4962,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 69.10167199384887,
+        "latency_ms": 81.43620200007717,
         "ranked_seqs": [
           [
             864,
@@ -4995,9 +4995,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 84.10443700267933,
-        "retrieval_latency_ms": 69.10167199384887,
-        "rerank_latency_ms": 15.002765008830465,
+        "latency_ms": 95.8095470000444,
+        "retrieval_latency_ms": 81.43620200007717,
+        "rerank_latency_ms": 14.37334499996723,
         "ranked_seqs": [
           [
             864,
@@ -5021,9 +5021,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 146.5230559988413,
-        "retrieval_latency_ms": 69.10167199384887,
-        "rerank_latency_ms": 77.42138400499243,
+        "latency_ms": 167.36936700021943,
+        "retrieval_latency_ms": 81.43620200007717,
+        "rerank_latency_ms": 85.93316500014225,
         "ranked_seqs": [
           [
             3156,
@@ -5056,7 +5056,7 @@
         2867
       ],
       "dense": {
-        "latency_ms": 72.26137800898869,
+        "latency_ms": 65.3500040000381,
         "ranked_seqs": [
           [
             2864,
@@ -5093,7 +5093,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 69.33687999844551,
+        "latency_ms": 67.47406099998443,
         "ranked_seqs": [
           [
             2864,
@@ -5130,9 +5130,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 85.44566499767825,
-        "retrieval_latency_ms": 69.33687999844551,
-        "rerank_latency_ms": 16.10878499923274,
+        "latency_ms": 82.03692000006413,
+        "retrieval_latency_ms": 67.47406099998443,
+        "rerank_latency_ms": 14.562859000079698,
         "ranked_seqs": [
           [
             3591,
@@ -5158,9 +5158,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 154.49335699668154,
-        "retrieval_latency_ms": 69.33687999844551,
-        "rerank_latency_ms": 85.15647699823603,
+        "latency_ms": 162.78944999999112,
+        "retrieval_latency_ms": 67.47406099998443,
+        "rerank_latency_ms": 95.31538900000669,
         "ranked_seqs": [
           [
             2864,
@@ -5194,7 +5194,7 @@
         2866
       ],
       "dense": {
-        "latency_ms": 82.14024499466177,
+        "latency_ms": 67.45804599995608,
         "ranked_seqs": [
           [
             2864,
@@ -5230,7 +5230,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 79.90713499020785,
+        "latency_ms": 74.72772599999189,
         "ranked_seqs": [
           [
             2864,
@@ -5266,9 +5266,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 94.91036899271421,
-        "retrieval_latency_ms": 79.90713499020785,
-        "rerank_latency_ms": 15.00323400250636,
+        "latency_ms": 89.48526399990442,
+        "retrieval_latency_ms": 74.72772599999189,
+        "rerank_latency_ms": 14.757537999912529,
         "ranked_seqs": [
           [
             864,
@@ -5294,9 +5294,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 161.42884698638227,
-        "retrieval_latency_ms": 79.90713499020785,
-        "rerank_latency_ms": 81.52171199617442,
+        "latency_ms": 167.96653699998387,
+        "retrieval_latency_ms": 74.72772599999189,
+        "rerank_latency_ms": 93.23881099999198,
         "ranked_seqs": [
           [
             2864,
@@ -5328,7 +5328,7 @@
         956
       ],
       "dense": {
-        "latency_ms": 69.63171799725387,
+        "latency_ms": 80.69365200003631,
         "ranked_seqs": [
           [
             2670,
@@ -5361,7 +5361,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 86.22905099764466,
+        "latency_ms": 76.02724699995633,
         "ranked_seqs": [
           [
             2670,
@@ -5394,9 +5394,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 101.01008700439706,
-        "retrieval_latency_ms": 86.22905099764466,
-        "rerank_latency_ms": 14.781036006752402,
+        "latency_ms": 92.56020999987413,
+        "retrieval_latency_ms": 76.02724699995633,
+        "rerank_latency_ms": 16.5329629999178,
         "ranked_seqs": [
           [
             1114,
@@ -5418,9 +5418,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 162.88311999232974,
-        "retrieval_latency_ms": 86.22905099764466,
-        "rerank_latency_ms": 76.65406899468508,
+        "latency_ms": 171.18327299999692,
+        "retrieval_latency_ms": 76.02724699995633,
+        "rerank_latency_ms": 95.15602600004058,
         "ranked_seqs": [
           [
             955,
@@ -5452,7 +5452,7 @@
         955
       ],
       "dense": {
-        "latency_ms": 85.60068999940995,
+        "latency_ms": 79.49537199988299,
         "ranked_seqs": [
           [
             955,
@@ -5485,7 +5485,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 76.0755630035419,
+        "latency_ms": 88.90007299987701,
         "ranked_seqs": [
           [
             955,
@@ -5518,9 +5518,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 93.59807301370893,
-        "retrieval_latency_ms": 76.0755630035419,
-        "rerank_latency_ms": 17.522510010167025,
+        "latency_ms": 103.8348799997948,
+        "retrieval_latency_ms": 88.90007299987701,
+        "rerank_latency_ms": 14.934806999917782,
         "ranked_seqs": [
           [
             955,
@@ -5544,9 +5544,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 155.63059200940188,
-        "retrieval_latency_ms": 76.0755630035419,
-        "rerank_latency_ms": 79.55502900585998,
+        "latency_ms": 176.71153699984643,
+        "retrieval_latency_ms": 88.90007299987701,
+        "rerank_latency_ms": 87.81146399996942,
         "ranked_seqs": [
           [
             955,
@@ -5580,7 +5580,7 @@
         2958
       ],
       "dense": {
-        "latency_ms": 69.06299199908972,
+        "latency_ms": 97.53117900004327,
         "ranked_seqs": [
           [
             2955,
@@ -5613,7 +5613,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 90.18618600384798,
+        "latency_ms": 93.62041600002158,
         "ranked_seqs": [
           [
             2955,
@@ -5646,9 +5646,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 103.89468100038357,
-        "retrieval_latency_ms": 90.18618600384798,
-        "rerank_latency_ms": 13.708494996535592,
+        "latency_ms": 110.88011299989375,
+        "retrieval_latency_ms": 93.62041600002158,
+        "rerank_latency_ms": 17.259696999872176,
         "ranked_seqs": [
           [
             2955,
@@ -5672,9 +5672,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 177.3490540072089,
-        "retrieval_latency_ms": 90.18618600384798,
-        "rerank_latency_ms": 87.16286800336093,
+        "latency_ms": 185.52598799988118,
+        "retrieval_latency_ms": 93.62041600002158,
+        "rerank_latency_ms": 91.9055719998596,
         "ranked_seqs": [
           [
             2955,
@@ -5705,7 +5705,7 @@
         958
       ],
       "dense": {
-        "latency_ms": 88.48624399979599,
+        "latency_ms": 85.98900300012247,
         "ranked_seqs": [
           [
             1107,
@@ -5737,7 +5737,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 116.34151999896858,
+        "latency_ms": 94.13719700000911,
         "ranked_seqs": [
           [
             1107,
@@ -5769,9 +5769,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 129.31378700886853,
-        "retrieval_latency_ms": 116.34151999896858,
-        "rerank_latency_ms": 12.972267009899952,
+        "latency_ms": 110.4415350000636,
+        "retrieval_latency_ms": 94.13719700000911,
+        "rerank_latency_ms": 16.304338000054486,
         "ranked_seqs": [
           [
             3971,
@@ -5793,9 +5793,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 197.08300399361178,
-        "retrieval_latency_ms": 116.34151999896858,
-        "rerank_latency_ms": 80.7414839946432,
+        "latency_ms": 179.9129839998841,
+        "retrieval_latency_ms": 94.13719700000911,
+        "rerank_latency_ms": 85.77578699987498,
         "ranked_seqs": [
           [
             1107,
@@ -5825,7 +5825,7 @@
         1045
       ],
       "dense": {
-        "latency_ms": 92.94026999850757,
+        "latency_ms": 108.91990100003568,
         "ranked_seqs": [
           [
             3514,
@@ -5856,7 +5856,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 88.16415499313734,
+        "latency_ms": 97.74820600000567,
         "ranked_seqs": [
           [
             3514,
@@ -5887,9 +5887,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 101.89537699625362,
-        "retrieval_latency_ms": 88.16415499313734,
-        "rerank_latency_ms": 13.731222003116272,
+        "latency_ms": 110.70524000001569,
+        "retrieval_latency_ms": 97.74820600000567,
+        "rerank_latency_ms": 12.957034000010026,
         "ranked_seqs": [
           [
             2022,
@@ -5911,9 +5911,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 173.62006899202242,
-        "retrieval_latency_ms": 88.16415499313734,
-        "rerank_latency_ms": 85.45591399888508,
+        "latency_ms": 170.26577999990877,
+        "retrieval_latency_ms": 97.74820600000567,
+        "rerank_latency_ms": 72.5175739999031,
         "ranked_seqs": [
           [
             2434
@@ -5942,7 +5942,7 @@
         1045
       ],
       "dense": {
-        "latency_ms": 122.3618730000453,
+        "latency_ms": 79.45126399999936,
         "ranked_seqs": [
           [
             2067,
@@ -5977,7 +5977,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 92.32027600228321,
+        "latency_ms": 66.97713699986707,
         "ranked_seqs": [
           [
             2067,
@@ -6012,9 +6012,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 106.36505800357554,
-        "retrieval_latency_ms": 92.32027600228321,
-        "rerank_latency_ms": 14.044782001292333,
+        "latency_ms": 81.44356099978722,
+        "retrieval_latency_ms": 66.97713699986707,
+        "rerank_latency_ms": 14.466423999920153,
         "ranked_seqs": [
           [
             3045,
@@ -6038,9 +6038,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 179.480174992932,
-        "retrieval_latency_ms": 92.32027600228321,
-        "rerank_latency_ms": 87.1598989906488,
+        "latency_ms": 161.24024399982773,
+        "retrieval_latency_ms": 66.97713699986707,
+        "rerank_latency_ms": 94.26310699996066,
         "ranked_seqs": [
           [
             709,
@@ -6074,7 +6074,7 @@
         3048
       ],
       "dense": {
-        "latency_ms": 81.00982999894768,
+        "latency_ms": 73.6739920000673,
         "ranked_seqs": [
           [
             2864,
@@ -6109,7 +6109,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 93.4788050071802,
+        "latency_ms": 65.80292000012378,
         "ranked_seqs": [
           [
             2864,
@@ -6144,9 +6144,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 109.93222100660205,
-        "retrieval_latency_ms": 93.4788050071802,
-        "rerank_latency_ms": 16.45341599942185,
+        "latency_ms": 80.50472100012485,
+        "retrieval_latency_ms": 65.80292000012378,
+        "rerank_latency_ms": 14.701801000001069,
         "ranked_seqs": [
           [
             3045,
@@ -6172,9 +6172,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 262.33001401124056,
-        "retrieval_latency_ms": 93.4788050071802,
-        "rerank_latency_ms": 168.85120900406037,
+        "latency_ms": 159.3973520000418,
+        "retrieval_latency_ms": 65.80292000012378,
+        "rerank_latency_ms": 93.59443199991802,
         "ranked_seqs": [
           [
             3045,
@@ -6208,7 +6208,7 @@
         1048
       ],
       "dense": {
-        "latency_ms": 140.10194600268733,
+        "latency_ms": 68.59618899989073,
         "ranked_seqs": [
           [
             1045,
@@ -6239,7 +6239,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 124.3280600028811,
+        "latency_ms": 68.89339199983624,
         "ranked_seqs": [
           [
             1045,
@@ -6270,9 +6270,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 141.11089300422464,
-        "retrieval_latency_ms": 124.3280600028811,
-        "rerank_latency_ms": 16.782833001343533,
+        "latency_ms": 83.51451099974838,
+        "retrieval_latency_ms": 68.89339199983624,
+        "rerank_latency_ms": 14.621118999912142,
         "ranked_seqs": [
           [
             1045,
@@ -6295,9 +6295,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 209.27485800348222,
-        "retrieval_latency_ms": 124.3280600028811,
-        "rerank_latency_ms": 84.94679800060112,
+        "latency_ms": 163.1683079999675,
+        "retrieval_latency_ms": 68.89339199983624,
+        "rerank_latency_ms": 94.27491600013127,
         "ranked_seqs": [
           [
             1045,
@@ -6327,7 +6327,7 @@
         1137
       ],
       "dense": {
-        "latency_ms": 84.69278599659447,
+        "latency_ms": 69.27994300008322,
         "ranked_seqs": [
           [
             1136,
@@ -6364,7 +6364,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 85.9568049927475,
+        "latency_ms": 71.25046500004828,
         "ranked_seqs": [
           [
             1136,
@@ -6401,9 +6401,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 103.14956298680045,
-        "retrieval_latency_ms": 85.9568049927475,
-        "rerank_latency_ms": 17.192757994052954,
+        "latency_ms": 86.83996500008107,
+        "retrieval_latency_ms": 71.25046500004828,
+        "rerank_latency_ms": 15.589500000032785,
         "ranked_seqs": [
           [
             1136,
@@ -6429,9 +6429,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 181.5322619950166,
-        "retrieval_latency_ms": 85.9568049927475,
-        "rerank_latency_ms": 95.5754570022691,
+        "latency_ms": 162.53705400004037,
+        "retrieval_latency_ms": 71.25046500004828,
+        "rerank_latency_ms": 91.28658899999209,
         "ranked_seqs": [
           [
             1136,
@@ -6464,7 +6464,7 @@
         1138
       ],
       "dense": {
-        "latency_ms": 65.65910100471228,
+        "latency_ms": 74.60342900003525,
         "ranked_seqs": [
           [
             3656,
@@ -6502,7 +6502,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 66.5126960084308,
+        "latency_ms": 69.037212000012,
         "ranked_seqs": [
           [
             3656,
@@ -6540,9 +6540,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 81.08615901437588,
-        "retrieval_latency_ms": 66.5126960084308,
-        "rerank_latency_ms": 14.573463005945086,
+        "latency_ms": 83.8155359999746,
+        "retrieval_latency_ms": 69.037212000012,
+        "rerank_latency_ms": 14.778323999962595,
         "ranked_seqs": [
           [
             3656,
@@ -6569,9 +6569,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 164.5745620044181,
-        "retrieval_latency_ms": 66.5126960084308,
-        "rerank_latency_ms": 98.06186599598732,
+        "latency_ms": 182.92077000000972,
+        "retrieval_latency_ms": 69.037212000012,
+        "rerank_latency_ms": 113.88355799999772,
         "ranked_seqs": [
           [
             804,
@@ -6603,7 +6603,7 @@
         3139
       ],
       "dense": {
-        "latency_ms": 66.49552199814934,
+        "latency_ms": 68.50063000001683,
         "ranked_seqs": [
           [
             3591,
@@ -6641,7 +6641,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 83.00766999309417,
+        "latency_ms": 74.25921899994137,
         "ranked_seqs": [
           [
             3591,
@@ -6679,9 +6679,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 97.0543579896912,
-        "retrieval_latency_ms": 83.00766999309417,
-        "rerank_latency_ms": 14.04668799659703,
+        "latency_ms": 88.74448699998538,
+        "retrieval_latency_ms": 74.25921899994137,
+        "rerank_latency_ms": 14.485268000044016,
         "ranked_seqs": [
           [
             3045,
@@ -6709,9 +6709,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 179.82778398436494,
-        "retrieval_latency_ms": 83.00766999309417,
-        "rerank_latency_ms": 96.82011399127077,
+        "latency_ms": 168.56916899996577,
+        "retrieval_latency_ms": 74.25921899994137,
+        "rerank_latency_ms": 94.3099500000244,
         "ranked_seqs": [
           [
             3045,
@@ -6744,7 +6744,7 @@
         3139
       ],
       "dense": {
-        "latency_ms": 86.02131198858842,
+        "latency_ms": 73.09027799988144,
         "ranked_seqs": [
           [
             2406,
@@ -6787,7 +6787,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 89.15854900260456,
+        "latency_ms": 66.62601099992571,
         "ranked_seqs": [
           [
             2406,
@@ -6830,9 +6830,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 104.77161800372414,
-        "retrieval_latency_ms": 89.15854900260456,
-        "rerank_latency_ms": 15.613069001119584,
+        "latency_ms": 81.28411100005906,
+        "retrieval_latency_ms": 66.62601099992571,
+        "rerank_latency_ms": 14.658100000133345,
         "ranked_seqs": [
           [
             704,
@@ -6860,9 +6860,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 177.03601000539493,
-        "retrieval_latency_ms": 89.15854900260456,
-        "rerank_latency_ms": 87.87746100279037,
+        "latency_ms": 167.99499299986564,
+        "retrieval_latency_ms": 66.62601099992571,
+        "rerank_latency_ms": 101.36898199993993,
         "ranked_seqs": [
           [
             3136,
@@ -6897,7 +6897,7 @@
         1228
       ],
       "dense": {
-        "latency_ms": 83.7210900062928,
+        "latency_ms": 72.83647799999926,
         "ranked_seqs": [
           [
             1227,
@@ -6934,7 +6934,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 93.0848019925179,
+        "latency_ms": 72.7105380001376,
         "ranked_seqs": [
           [
             1227,
@@ -6971,9 +6971,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 106.6081229946576,
-        "retrieval_latency_ms": 93.0848019925179,
-        "rerank_latency_ms": 13.52332100213971,
+        "latency_ms": 87.26974800015341,
+        "retrieval_latency_ms": 72.7105380001376,
+        "rerank_latency_ms": 14.55921000001581,
         "ranked_seqs": [
           [
             1227,
@@ -7001,9 +7001,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 177.42934498528484,
-        "retrieval_latency_ms": 93.0848019925179,
-        "rerank_latency_ms": 84.34454299276695,
+        "latency_ms": 168.14803800025402,
+        "retrieval_latency_ms": 72.7105380001376,
+        "rerank_latency_ms": 95.43750000011642,
         "ranked_seqs": [
           [
             1227,
@@ -7040,7 +7040,7 @@
         1230
       ],
       "dense": {
-        "latency_ms": 69.62717200804036,
+        "latency_ms": 67.78169499989417,
         "ranked_seqs": [
           [
             1227,
@@ -7074,7 +7074,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 70.40986799984239,
+        "latency_ms": 67.87820899990038,
         "ranked_seqs": [
           [
             1227,
@@ -7108,9 +7108,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 83.16683598968666,
-        "retrieval_latency_ms": 70.40986799984239,
-        "rerank_latency_ms": 12.75696798984427,
+        "latency_ms": 83.45874499991623,
+        "retrieval_latency_ms": 67.87820899990038,
+        "rerank_latency_ms": 15.580536000015854,
         "ranked_seqs": [
           [
             1227,
@@ -7134,9 +7134,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 149.59100099804346,
-        "retrieval_latency_ms": 70.40986799984239,
-        "rerank_latency_ms": 79.18113299820106,
+        "latency_ms": 158.8776510000116,
+        "retrieval_latency_ms": 67.87820899990038,
+        "rerank_latency_ms": 90.99944200011123,
         "ranked_seqs": [
           [
             1227,
@@ -7168,7 +7168,7 @@
         3230
       ],
       "dense": {
-        "latency_ms": 77.7984800079139,
+        "latency_ms": 68.48910700000488,
         "ranked_seqs": [
           [
             1227,
@@ -7205,7 +7205,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 68.974669004092,
+        "latency_ms": 71.44320199995491,
         "ranked_seqs": [
           [
             1227,
@@ -7242,9 +7242,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 82.65224500792101,
-        "retrieval_latency_ms": 68.974669004092,
-        "rerank_latency_ms": 13.677576003829017,
+        "latency_ms": 88.2662789999813,
+        "retrieval_latency_ms": 71.44320199995491,
+        "rerank_latency_ms": 16.823077000026387,
         "ranked_seqs": [
           [
             3227,
@@ -7272,9 +7272,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 153.1114960089326,
-        "retrieval_latency_ms": 68.974669004092,
-        "rerank_latency_ms": 84.1368270048406,
+        "latency_ms": 169.78266399996755,
+        "retrieval_latency_ms": 71.44320199995491,
+        "rerank_latency_ms": 98.33946200001265,
         "ranked_seqs": [
           [
             3227,
@@ -7311,7 +7311,7 @@
         1227
       ],
       "dense": {
-        "latency_ms": 74.03789399540983,
+        "latency_ms": 79.09417899986693,
         "ranked_seqs": [
           [
             3227,
@@ -7348,7 +7348,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 89.81992000190075,
+        "latency_ms": 85.79631499992502,
         "ranked_seqs": [
           [
             3227,
@@ -7385,9 +7385,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 111.6787319915602,
-        "retrieval_latency_ms": 89.81992000190075,
-        "rerank_latency_ms": 21.858811989659443,
+        "latency_ms": 102.00118199986719,
+        "retrieval_latency_ms": 85.79631499992502,
+        "rerank_latency_ms": 16.20486699994217,
         "ranked_seqs": [
           [
             3227,
@@ -7413,9 +7413,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 199.82210399757605,
-        "retrieval_latency_ms": 89.81992000190075,
-        "rerank_latency_ms": 110.0021839956753,
+        "latency_ms": 182.49731299988525,
+        "retrieval_latency_ms": 85.79631499992502,
+        "rerank_latency_ms": 96.70099799996024,
         "ranked_seqs": [
           [
             3227,
@@ -7449,7 +7449,7 @@
         1319
       ],
       "dense": {
-        "latency_ms": 77.22900999942794,
+        "latency_ms": 83.91639699993902,
         "ranked_seqs": [
           [
             1318,
@@ -7482,7 +7482,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 79.86880400858354,
+        "latency_ms": 87.82378599994445,
         "ranked_seqs": [
           [
             1318,
@@ -7515,9 +7515,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 97.22573900944553,
-        "retrieval_latency_ms": 79.86880400858354,
-        "rerank_latency_ms": 17.356935000861995,
+        "latency_ms": 104.78661499996633,
+        "retrieval_latency_ms": 87.82378599994445,
+        "rerank_latency_ms": 16.962829000021884,
         "ranked_seqs": [
           [
             3318,
@@ -7542,9 +7542,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 179.11149200517684,
-        "retrieval_latency_ms": 79.86880400858354,
-        "rerank_latency_ms": 99.2426879965933,
+        "latency_ms": 184.25461299989365,
+        "retrieval_latency_ms": 87.82378599994445,
+        "rerank_latency_ms": 96.4308269999492,
         "ranked_seqs": [
           [
             1318,
@@ -7577,7 +7577,7 @@
         1319
       ],
       "dense": {
-        "latency_ms": 107.48356999829412,
+        "latency_ms": 90.64929500004837,
         "ranked_seqs": [
           [
             1318,
@@ -7611,7 +7611,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 75.8429159905063,
+        "latency_ms": 96.8256339999698,
         "ranked_seqs": [
           [
             1318,
@@ -7645,9 +7645,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 90.78796398534905,
-        "retrieval_latency_ms": 75.8429159905063,
-        "rerank_latency_ms": 14.945047994842753,
+        "latency_ms": 113.80165299988221,
+        "retrieval_latency_ms": 96.8256339999698,
+        "rerank_latency_ms": 16.976018999912412,
         "ranked_seqs": [
           [
             3318,
@@ -7673,9 +7673,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 160.624583993922,
-        "retrieval_latency_ms": 75.8429159905063,
-        "rerank_latency_ms": 84.78166800341569,
+        "latency_ms": 206.85453199985204,
+        "retrieval_latency_ms": 96.8256339999698,
+        "rerank_latency_ms": 110.02889799988225,
         "ranked_seqs": [
           [
             1318,
@@ -7709,7 +7709,7 @@
         3320
       ],
       "dense": {
-        "latency_ms": 68.24731700180564,
+        "latency_ms": 90.41627400006291,
         "ranked_seqs": [
           [
             3318,
@@ -7745,7 +7745,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 77.64970501011703,
+        "latency_ms": 90.13238199986517,
         "ranked_seqs": [
           [
             3318,
@@ -7781,9 +7781,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 93.06502300023567,
-        "retrieval_latency_ms": 77.64970501011703,
-        "rerank_latency_ms": 15.415317990118638,
+        "latency_ms": 106.27825899996424,
+        "retrieval_latency_ms": 90.13238199986517,
+        "rerank_latency_ms": 16.145877000099063,
         "ranked_seqs": [
           [
             3318,
@@ -7809,9 +7809,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 157.72665000986308,
-        "retrieval_latency_ms": 77.64970501011703,
-        "rerank_latency_ms": 80.07694499974605,
+        "latency_ms": 180.2331519998006,
+        "retrieval_latency_ms": 90.13238199986517,
+        "rerank_latency_ms": 90.10076999993544,
         "ranked_seqs": [
           [
             3318,
@@ -7846,7 +7846,7 @@
         3321
       ],
       "dense": {
-        "latency_ms": 73.15934500365984,
+        "latency_ms": 69.01091899999301,
         "ranked_seqs": [
           [
             3318,
@@ -7880,7 +7880,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 70.01568400301039,
+        "latency_ms": 70.9299860000101,
         "ranked_seqs": [
           [
             3318,
@@ -7914,9 +7914,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 83.37373100221157,
-        "retrieval_latency_ms": 70.01568400301039,
-        "rerank_latency_ms": 13.358046999201179,
+        "latency_ms": 85.86308899998585,
+        "retrieval_latency_ms": 70.9299860000101,
+        "rerank_latency_ms": 14.933102999975745,
         "ranked_seqs": [
           [
             1318,
@@ -7942,9 +7942,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 148.27673499530647,
-        "retrieval_latency_ms": 70.01568400301039,
-        "rerank_latency_ms": 78.26105099229608,
+        "latency_ms": 157.5619039999765,
+        "retrieval_latency_ms": 70.9299860000101,
+        "rerank_latency_ms": 86.63191799996639,
         "ranked_seqs": [
           [
             3318,
@@ -7977,7 +7977,7 @@
         1409
       ],
       "dense": {
-        "latency_ms": 90.56227699329611,
+        "latency_ms": 81.30958700007795,
         "ranked_seqs": [
           [
             1409,
@@ -8009,7 +8009,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 69.9348310008645,
+        "latency_ms": 70.43461500006742,
         "ranked_seqs": [
           [
             1409,
@@ -8041,9 +8041,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 82.8777459973935,
-        "retrieval_latency_ms": 69.9348310008645,
-        "rerank_latency_ms": 12.942914996528998,
+        "latency_ms": 85.1595560000078,
+        "retrieval_latency_ms": 70.43461500006742,
+        "rerank_latency_ms": 14.724940999940372,
         "ranked_seqs": [
           [
             1409,
@@ -8067,9 +8067,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 151.55082500132266,
-        "retrieval_latency_ms": 69.9348310008645,
-        "rerank_latency_ms": 81.61599400045816,
+        "latency_ms": 157.50969700002315,
+        "retrieval_latency_ms": 70.43461500006742,
+        "rerank_latency_ms": 87.07508199995573,
         "ranked_seqs": [
           [
             1409,
@@ -8100,7 +8100,7 @@
         1412
       ],
       "dense": {
-        "latency_ms": 84.37100099399686,
+        "latency_ms": 68.45582400001149,
         "ranked_seqs": [
           [
             2978
@@ -8129,7 +8129,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 65.41538299643435,
+        "latency_ms": 83.15328500020769,
         "ranked_seqs": [
           [
             2978
@@ -8158,9 +8158,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 77.98593099869322,
-        "retrieval_latency_ms": 65.41538299643435,
-        "rerank_latency_ms": 12.570548002258874,
+        "latency_ms": 96.19136400010575,
+        "retrieval_latency_ms": 83.15328500020769,
+        "rerank_latency_ms": 13.038078999898062,
         "ranked_seqs": [
           [
             264,
@@ -8181,9 +8181,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 141.20927899784874,
-        "retrieval_latency_ms": 65.41538299643435,
-        "rerank_latency_ms": 75.7938960014144,
+        "latency_ms": 147.03993000011906,
+        "retrieval_latency_ms": 83.15328500020769,
+        "rerank_latency_ms": 63.88664499991137,
         "ranked_seqs": [
           [
             1810,
@@ -8213,7 +8213,7 @@
         3410
       ],
       "dense": {
-        "latency_ms": 78.92674399772659,
+        "latency_ms": 66.48038299999826,
         "ranked_seqs": [
           [
             3409,
@@ -8254,7 +8254,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 91.03426799993031,
+        "latency_ms": 73.14594600006785,
         "ranked_seqs": [
           [
             3409,
@@ -8295,9 +8295,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 107.42704498989042,
-        "retrieval_latency_ms": 91.03426799993031,
-        "rerank_latency_ms": 16.39277698996011,
+        "latency_ms": 89.91003599999203,
+        "retrieval_latency_ms": 73.14594600006785,
+        "rerank_latency_ms": 16.76408999992418,
         "ranked_seqs": [
           [
             3409,
@@ -8326,9 +8326,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 190.62517999554984,
-        "retrieval_latency_ms": 91.03426799993031,
-        "rerank_latency_ms": 99.59091199561954,
+        "latency_ms": 170.10288200003743,
+        "retrieval_latency_ms": 73.14594600006785,
+        "rerank_latency_ms": 96.95693599996957,
         "ranked_seqs": [
           [
             3409,
@@ -8364,7 +8364,7 @@
         3409
       ],
       "dense": {
-        "latency_ms": 93.31027399457525,
+        "latency_ms": 70.0243590001719,
         "ranked_seqs": [
           [
             3409,
@@ -8398,7 +8398,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 74.34542798728216,
+        "latency_ms": 73.43068699992727,
         "ranked_seqs": [
           [
             3409,
@@ -8432,9 +8432,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 94.28194299107417,
-        "retrieval_latency_ms": 74.34542798728216,
-        "rerank_latency_ms": 19.93651500379201,
+        "latency_ms": 87.64737999990757,
+        "retrieval_latency_ms": 73.43068699992727,
+        "rerank_latency_ms": 14.216692999980296,
         "ranked_seqs": [
           [
             2227,
@@ -8459,9 +8459,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 169.39021099824458,
-        "retrieval_latency_ms": 74.34542798728216,
-        "rerank_latency_ms": 95.04478301096242,
+        "latency_ms": 158.6220849997062,
+        "retrieval_latency_ms": 73.43068699992727,
+        "rerank_latency_ms": 85.19139799977893,
         "ranked_seqs": [
           [
             3409,
@@ -8494,7 +8494,7 @@
         1501
       ],
       "dense": {
-        "latency_ms": 83.19044999370817,
+        "latency_ms": 66.00099100000989,
         "ranked_seqs": [
           [
             1501,
@@ -8528,7 +8528,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 100.3271720110206,
+        "latency_ms": 67.89582800001881,
         "ranked_seqs": [
           [
             1501,
@@ -8562,9 +8562,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 138.90938201802783,
-        "retrieval_latency_ms": 100.3271720110206,
-        "rerank_latency_ms": 38.582210007007234,
+        "latency_ms": 80.45817900006114,
+        "retrieval_latency_ms": 67.89582800001881,
+        "rerank_latency_ms": 12.562351000042327,
         "ranked_seqs": [
           [
             1501,
@@ -8589,9 +8589,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 228.66808201069944,
-        "retrieval_latency_ms": 100.3271720110206,
-        "rerank_latency_ms": 128.34090999967884,
+        "latency_ms": 142.0186510001713,
+        "retrieval_latency_ms": 67.89582800001881,
+        "rerank_latency_ms": 74.1228230001525,
         "ranked_seqs": [
           [
             1501,
@@ -8624,7 +8624,7 @@
         1502
       ],
       "dense": {
-        "latency_ms": 82.94160600053146,
+        "latency_ms": 66.97119099999327,
         "ranked_seqs": [
           [
             1500
@@ -8659,7 +8659,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 80.64498299791012,
+        "latency_ms": 64.17117000000871,
         "ranked_seqs": [
           [
             1500
@@ -8694,9 +8694,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 94.92817899445072,
-        "retrieval_latency_ms": 80.64498299791012,
-        "rerank_latency_ms": 14.283195996540599,
+        "latency_ms": 78.15056600020398,
+        "retrieval_latency_ms": 64.17117000000871,
+        "rerank_latency_ms": 13.979396000195266,
         "ranked_seqs": [
           [
             1409,
@@ -8722,9 +8722,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 165.9030629962217,
-        "retrieval_latency_ms": 80.64498299791012,
-        "rerank_latency_ms": 85.25807999831159,
+        "latency_ms": 150.61458900004254,
+        "retrieval_latency_ms": 64.17117000000871,
+        "rerank_latency_ms": 86.44341900003383,
         "ranked_seqs": [
           [
             1501,
@@ -8757,7 +8757,7 @@
         3503
       ],
       "dense": {
-        "latency_ms": 77.86850200500339,
+        "latency_ms": 65.14569299997675,
         "ranked_seqs": [
           [
             3501,
@@ -8794,7 +8794,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 77.38390300073661,
+        "latency_ms": 65.77790799997274,
         "ranked_seqs": [
           [
             3501,
@@ -8831,9 +8831,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 92.43291500024498,
-        "retrieval_latency_ms": 77.38390300073661,
-        "rerank_latency_ms": 15.049011999508366,
+        "latency_ms": 81.23859199986327,
+        "retrieval_latency_ms": 65.77790799997274,
+        "rerank_latency_ms": 15.460683999890534,
         "ranked_seqs": [
           [
             2227,
@@ -8860,9 +8860,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 163.56412800087128,
-        "retrieval_latency_ms": 77.38390300073661,
-        "rerank_latency_ms": 86.18022500013467,
+        "latency_ms": 154.2494650000208,
+        "retrieval_latency_ms": 65.77790799997274,
+        "rerank_latency_ms": 88.47155700004805,
         "ranked_seqs": [
           [
             3501,
@@ -8894,7 +8894,7 @@
         3500
       ],
       "dense": {
-        "latency_ms": 87.93289700406604,
+        "latency_ms": 67.6384789999247,
         "ranked_seqs": [
           [
             3409,
@@ -8934,7 +8934,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 75.05301000492182,
+        "latency_ms": 71.40858299999309,
         "ranked_seqs": [
           [
             3409,
@@ -8974,9 +8974,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 91.01337801257614,
-        "retrieval_latency_ms": 75.05301000492182,
-        "rerank_latency_ms": 15.960368007654324,
+        "latency_ms": 87.62567300004775,
+        "retrieval_latency_ms": 71.40858299999309,
+        "rerank_latency_ms": 16.217090000054668,
         "ranked_seqs": [
           [
             2227,
@@ -9004,9 +9004,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 165.7024279993493,
-        "retrieval_latency_ms": 75.05301000492182,
-        "rerank_latency_ms": 90.6494179944275,
+        "latency_ms": 169.31482700010747,
+        "retrieval_latency_ms": 71.40858299999309,
+        "rerank_latency_ms": 97.90624400011438,
         "ranked_seqs": [
           [
             1409,
@@ -9039,7 +9039,7 @@
         1592
       ],
       "dense": {
-        "latency_ms": 75.0884700100869,
+        "latency_ms": 70.6781520000277,
         "ranked_seqs": [
           [
             1703,
@@ -9071,7 +9071,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 80.92532599403057,
+        "latency_ms": 62.243821999800275,
         "ranked_seqs": [
           [
             1703,
@@ -9103,9 +9103,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 95.78574399347417,
-        "retrieval_latency_ms": 80.92532599403057,
-        "rerank_latency_ms": 14.860417999443598,
+        "latency_ms": 77.06708699970477,
+        "retrieval_latency_ms": 62.243821999800275,
+        "rerank_latency_ms": 14.823264999904495,
         "ranked_seqs": [
           [
             3259,
@@ -9129,9 +9129,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 209.67005999409594,
-        "retrieval_latency_ms": 80.92532599403057,
-        "rerank_latency_ms": 128.74473400006536,
+        "latency_ms": 146.20472599995082,
+        "retrieval_latency_ms": 62.243821999800275,
+        "rerank_latency_ms": 83.96090400015055,
         "ranked_seqs": [
           [
             1591,
@@ -9162,7 +9162,7 @@
         1593
       ],
       "dense": {
-        "latency_ms": 127.81435300712474,
+        "latency_ms": 68.1078840000282,
         "ranked_seqs": [
           [
             1591,
@@ -9195,7 +9195,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 117.56985500687733,
+        "latency_ms": 67.10362699982397,
         "ranked_seqs": [
           [
             1591,
@@ -9228,9 +9228,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 134.85085300635546,
-        "retrieval_latency_ms": 117.56985500687733,
-        "rerank_latency_ms": 17.28099799947813,
+        "latency_ms": 80.65903799979424,
+        "retrieval_latency_ms": 67.10362699982397,
+        "rerank_latency_ms": 13.555410999970263,
         "ranked_seqs": [
           [
             1591,
@@ -9254,9 +9254,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 274.8750180035131,
-        "retrieval_latency_ms": 117.56985500687733,
-        "rerank_latency_ms": 157.30516299663577,
+        "latency_ms": 150.75327899990043,
+        "retrieval_latency_ms": 67.10362699982397,
+        "rerank_latency_ms": 83.64965200007646,
         "ranked_seqs": [
           [
             1591,
@@ -9288,7 +9288,7 @@
         3594
       ],
       "dense": {
-        "latency_ms": 210.58620599796996,
+        "latency_ms": 65.14328600019326,
         "ranked_seqs": [
           [
             3591,
@@ -9323,7 +9323,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 133.69395599875133,
+        "latency_ms": 64.83496199984984,
         "ranked_seqs": [
           [
             3591,
@@ -9358,9 +9358,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 149.07080099510495,
-        "retrieval_latency_ms": 133.69395599875133,
-        "rerank_latency_ms": 15.376844996353611,
+        "latency_ms": 80.61124999994718,
+        "retrieval_latency_ms": 64.83496199984984,
+        "rerank_latency_ms": 15.776288000097338,
         "ranked_seqs": [
           [
             2227,
@@ -9387,9 +9387,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 233.74006399535574,
-        "retrieval_latency_ms": 133.69395599875133,
-        "rerank_latency_ms": 100.0461079966044,
+        "latency_ms": 148.50287399985973,
+        "retrieval_latency_ms": 64.83496199984984,
+        "rerank_latency_ms": 83.66791200000989,
         "ranked_seqs": [
           [
             3591,
@@ -9422,7 +9422,7 @@
         3593
       ],
       "dense": {
-        "latency_ms": 100.64963399781846,
+        "latency_ms": 73.09729700000389,
         "ranked_seqs": [
           [
             562,
@@ -9453,7 +9453,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 71.87645199883264,
+        "latency_ms": 63.64099199981865,
         "ranked_seqs": [
           [
             562,
@@ -9484,9 +9484,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 87.87934599968139,
-        "retrieval_latency_ms": 71.87645199883264,
-        "rerank_latency_ms": 16.002894000848755,
+        "latency_ms": 75.2593879997221,
+        "retrieval_latency_ms": 63.64099199981865,
+        "rerank_latency_ms": 11.618395999903441,
         "ranked_seqs": [
           [
             2570,
@@ -9508,9 +9508,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 161.28355199180078,
-        "retrieval_latency_ms": 71.87645199883264,
-        "rerank_latency_ms": 89.40709999296814,
+        "latency_ms": 130.67419099979816,
+        "retrieval_latency_ms": 63.64099199981865,
+        "rerank_latency_ms": 67.0331989999795,
         "ranked_seqs": [
           [
             2322,
@@ -9539,7 +9539,7 @@
         1683
       ],
       "dense": {
-        "latency_ms": 89.16910900734365,
+        "latency_ms": 65.98335900002894,
         "ranked_seqs": [
           [
             1682,
@@ -9573,7 +9573,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 73.13796399103012,
+        "latency_ms": 91.90259199999673,
         "ranked_seqs": [
           [
             1682,
@@ -9607,9 +9607,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 92.29557699291036,
-        "retrieval_latency_ms": 73.13796399103012,
-        "rerank_latency_ms": 19.157613001880236,
+        "latency_ms": 108.82328799993957,
+        "retrieval_latency_ms": 91.90259199999673,
+        "rerank_latency_ms": 16.920695999942836,
         "ranked_seqs": [
           [
             1682,
@@ -9633,9 +9633,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 153.0224189918954,
-        "retrieval_latency_ms": 73.13796399103012,
-        "rerank_latency_ms": 79.88445500086527,
+        "latency_ms": 175.75330599993322,
+        "retrieval_latency_ms": 91.90259199999673,
+        "rerank_latency_ms": 83.85071399993649,
         "ranked_seqs": [
           [
             1682,
@@ -9667,7 +9667,7 @@
         1683
       ],
       "dense": {
-        "latency_ms": 73.67733200953808,
+        "latency_ms": 64.02363400002287,
         "ranked_seqs": [
           [
             1682,
@@ -9702,7 +9702,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 96.45445700152777,
+        "latency_ms": 62.24812400000701,
         "ranked_seqs": [
           [
             1682,
@@ -9737,9 +9737,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 111.33572999096941,
-        "retrieval_latency_ms": 96.45445700152777,
-        "rerank_latency_ms": 14.88127298944164,
+        "latency_ms": 75.89281700006723,
+        "retrieval_latency_ms": 62.24812400000701,
+        "rerank_latency_ms": 13.644693000060215,
         "ranked_seqs": [
           [
             3045,
@@ -9765,9 +9765,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 207.90258199849632,
-        "retrieval_latency_ms": 96.45445700152777,
-        "rerank_latency_ms": 111.44812499696855,
+        "latency_ms": 150.59667800005627,
+        "retrieval_latency_ms": 62.24812400000701,
+        "rerank_latency_ms": 88.34855400004926,
         "ranked_seqs": [
           [
             1682,
@@ -9799,7 +9799,7 @@
         3685
       ],
       "dense": {
-        "latency_ms": 101.57669399632141,
+        "latency_ms": 63.89414299997043,
         "ranked_seqs": [
           [
             626,
@@ -9829,7 +9829,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 95.26498999912292,
+        "latency_ms": 66.32796500002769,
         "ranked_seqs": [
           [
             626,
@@ -9859,9 +9859,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 109.44512199785095,
-        "retrieval_latency_ms": 95.26498999912292,
-        "rerank_latency_ms": 14.18013199872803,
+        "latency_ms": 77.91683200002808,
+        "retrieval_latency_ms": 66.32796500002769,
+        "rerank_latency_ms": 11.588867000000391,
         "ranked_seqs": [
           [
             3062,
@@ -9883,9 +9883,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 175.37069699028507,
-        "retrieval_latency_ms": 95.26498999912292,
-        "rerank_latency_ms": 80.10570699116215,
+        "latency_ms": 131.29965200005245,
+        "retrieval_latency_ms": 66.32796500002769,
+        "rerank_latency_ms": 64.97168700002476,
         "ranked_seqs": [
           [
             1202,
@@ -9913,7 +9913,7 @@
         3684
       ],
       "dense": {
-        "latency_ms": 85.9971509926254,
+        "latency_ms": 61.724722000008114,
         "ranked_seqs": [
           [
             3652,
@@ -9949,7 +9949,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 80.357675004052,
+        "latency_ms": 78.03910699999506,
         "ranked_seqs": [
           [
             3652,
@@ -9985,9 +9985,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 94.08752599847503,
-        "retrieval_latency_ms": 80.357675004052,
-        "rerank_latency_ms": 13.729850994423032,
+        "latency_ms": 91.4585000000443,
+        "retrieval_latency_ms": 78.03910699999506,
+        "rerank_latency_ms": 13.41939300004924,
         "ranked_seqs": [
           [
             3167,
@@ -10009,9 +10009,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 180.72592301177792,
-        "retrieval_latency_ms": 80.357675004052,
-        "rerank_latency_ms": 100.36824800772592,
+        "latency_ms": 181.20774499993786,
+        "retrieval_latency_ms": 78.03910699999506,
+        "rerank_latency_ms": 103.1686379999428,
         "ranked_seqs": [
           [
             3652,
@@ -10046,7 +10046,7 @@
         1774
       ],
       "dense": {
-        "latency_ms": 92.08240899897646,
+        "latency_ms": 71.15722499997901,
         "ranked_seqs": [
           [
             1773,
@@ -10088,7 +10088,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 66.214624006534,
+        "latency_ms": 67.29372599988892,
         "ranked_seqs": [
           [
             1773,
@@ -10130,9 +10130,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 80.3786580072483,
-        "retrieval_latency_ms": 66.214624006534,
-        "rerank_latency_ms": 14.16403400071431,
+        "latency_ms": 81.22280499969747,
+        "retrieval_latency_ms": 67.29372599988892,
+        "rerank_latency_ms": 13.929078999808553,
         "ranked_seqs": [
           [
             1773,
@@ -10160,9 +10160,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 151.47630401770584,
-        "retrieval_latency_ms": 66.214624006534,
-        "rerank_latency_ms": 85.26168001117185,
+        "latency_ms": 154.10670699998263,
+        "retrieval_latency_ms": 67.29372599988892,
+        "rerank_latency_ms": 86.81298100009371,
         "ranked_seqs": [
           [
             1773,
@@ -10198,7 +10198,7 @@
         1775
       ],
       "dense": {
-        "latency_ms": 86.18135200231336,
+        "latency_ms": 64.6357949999583,
         "ranked_seqs": [
           [
             98
@@ -10232,7 +10232,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 80.10716199351009,
+        "latency_ms": 69.81957200014222,
         "ranked_seqs": [
           [
             98
@@ -10266,9 +10266,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 96.67765699850861,
-        "retrieval_latency_ms": 80.10716199351009,
-        "rerank_latency_ms": 16.57049500499852,
+        "latency_ms": 85.05901900025492,
+        "retrieval_latency_ms": 69.81957200014222,
+        "rerank_latency_ms": 15.239447000112705,
         "ranked_seqs": [
           [
             3774,
@@ -10294,9 +10294,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 159.63340598682407,
-        "retrieval_latency_ms": 80.10716199351009,
-        "rerank_latency_ms": 79.52624399331398,
+        "latency_ms": 154.11337000023195,
+        "retrieval_latency_ms": 69.81957200014222,
+        "rerank_latency_ms": 84.29379800008974,
         "ranked_seqs": [
           [
             3774,
@@ -10331,7 +10331,7 @@
         3775
       ],
       "dense": {
-        "latency_ms": 97.206581995124,
+        "latency_ms": 69.75507499987543,
         "ranked_seqs": [
           [
             3774,
@@ -10371,7 +10371,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 74.08013600797858,
+        "latency_ms": 66.01816600004895,
         "ranked_seqs": [
           [
             3774,
@@ -10411,9 +10411,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 89.40847001213115,
-        "retrieval_latency_ms": 74.08013600797858,
-        "rerank_latency_ms": 15.328334004152566,
+        "latency_ms": 81.07511799994427,
+        "retrieval_latency_ms": 66.01816600004895,
+        "rerank_latency_ms": 15.056951999895318,
         "ranked_seqs": [
           [
             3774,
@@ -10441,9 +10441,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 157.01767000427935,
-        "retrieval_latency_ms": 74.08013600797858,
-        "rerank_latency_ms": 82.93753399630077,
+        "latency_ms": 153.16734100019858,
+        "retrieval_latency_ms": 66.01816600004895,
+        "rerank_latency_ms": 87.14917500014963,
         "ranked_seqs": [
           [
             3774,
@@ -10480,7 +10480,7 @@
         3776
       ],
       "dense": {
-        "latency_ms": 83.43960301135667,
+        "latency_ms": 65.62568700019256,
         "ranked_seqs": [
           [
             113,
@@ -10512,7 +10512,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 80.3956140007358,
+        "latency_ms": 66.45174099980977,
         "ranked_seqs": [
           [
             113,
@@ -10544,9 +10544,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 95.34515500126872,
-        "retrieval_latency_ms": 80.3956140007358,
-        "rerank_latency_ms": 14.949541000532918,
+        "latency_ms": 78.94963999979154,
+        "retrieval_latency_ms": 66.45174099980977,
+        "rerank_latency_ms": 12.497898999981771,
         "ranked_seqs": [
           [
             3705,
@@ -10568,9 +10568,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 161.46471399406437,
-        "retrieval_latency_ms": 80.3956140007358,
-        "rerank_latency_ms": 81.06909999332856,
+        "latency_ms": 129.30803499989452,
+        "retrieval_latency_ms": 66.45174099980977,
+        "rerank_latency_ms": 62.856294000084745,
         "ranked_seqs": [
           [
             2425,
@@ -10600,7 +10600,7 @@
         1865
       ],
       "dense": {
-        "latency_ms": 98.12641100143082,
+        "latency_ms": 63.43296199997894,
         "ranked_seqs": [
           [
             1864,
@@ -10637,7 +10637,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 99.22842399100773,
+        "latency_ms": 62.063708000096085,
         "ranked_seqs": [
           [
             1864,
@@ -10674,9 +10674,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 115.2016959968023,
-        "retrieval_latency_ms": 99.22842399100773,
-        "rerank_latency_ms": 15.97327200579457,
+        "latency_ms": 76.02629300004082,
+        "retrieval_latency_ms": 62.063708000096085,
+        "rerank_latency_ms": 13.962584999944738,
         "ranked_seqs": [
           [
             3864,
@@ -10704,9 +10704,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 193.76124299014919,
-        "retrieval_latency_ms": 99.22842399100773,
-        "rerank_latency_ms": 94.53281899914145,
+        "latency_ms": 158.17775900018205,
+        "retrieval_latency_ms": 62.063708000096085,
+        "rerank_latency_ms": 96.11405100008596,
         "ranked_seqs": [
           [
             1864,
@@ -10743,7 +10743,7 @@
         3865
       ],
       "dense": {
-        "latency_ms": 80.59448300627992,
+        "latency_ms": 70.41236899999603,
         "ranked_seqs": [
           [
             3864,
@@ -10779,7 +10779,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 95.47247599402908,
+        "latency_ms": 69.21020599997973,
         "ranked_seqs": [
           [
             3864,
@@ -10815,9 +10815,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 111.38964399287943,
-        "retrieval_latency_ms": 95.47247599402908,
-        "rerank_latency_ms": 15.917167998850346,
+        "latency_ms": 84.2107420000957,
+        "retrieval_latency_ms": 69.21020599997973,
+        "rerank_latency_ms": 15.000536000115972,
         "ranked_seqs": [
           [
             3864,
@@ -10845,9 +10845,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 196.71297300374135,
-        "retrieval_latency_ms": 95.47247599402908,
-        "rerank_latency_ms": 101.24049700971227,
+        "latency_ms": 164.31210299992927,
+        "retrieval_latency_ms": 69.21020599997973,
+        "rerank_latency_ms": 95.10189699994953,
         "ranked_seqs": [
           [
             3864,
@@ -10883,7 +10883,7 @@
         3867
       ],
       "dense": {
-        "latency_ms": 96.33277100510895,
+        "latency_ms": 67.12916099991162,
         "ranked_seqs": [
           [
             1864,
@@ -10919,7 +10919,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 108.12129000260029,
+        "latency_ms": 64.8328769998443,
         "ranked_seqs": [
           [
             1864,
@@ -10955,9 +10955,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 124.56474601640366,
-        "retrieval_latency_ms": 108.12129000260029,
-        "rerank_latency_ms": 16.44345601380337,
+        "latency_ms": 78.64388299981329,
+        "retrieval_latency_ms": 64.8328769998443,
+        "rerank_latency_ms": 13.811005999968984,
         "ranked_seqs": [
           [
             1864,
@@ -10984,9 +10984,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 234.40732000744902,
-        "retrieval_latency_ms": 108.12129000260029,
-        "rerank_latency_ms": 126.28603000484873,
+        "latency_ms": 156.81967499995153,
+        "retrieval_latency_ms": 64.8328769998443,
+        "rerank_latency_ms": 91.98679800010723,
         "ranked_seqs": [
           [
             1864,
@@ -11020,7 +11020,7 @@
         3867
       ],
       "dense": {
-        "latency_ms": 90.83546100009698,
+        "latency_ms": 70.45407800001158,
         "ranked_seqs": [
           [
             3864,
@@ -11055,7 +11055,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 72.99027599219698,
+        "latency_ms": 81.878455000151,
         "ranked_seqs": [
           [
             3864,
@@ -11090,9 +11090,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 92.0982749958057,
-        "retrieval_latency_ms": 72.99027599219698,
-        "rerank_latency_ms": 19.10799900360871,
+        "latency_ms": 97.04824799996459,
+        "retrieval_latency_ms": 81.878455000151,
+        "rerank_latency_ms": 15.16979299981358,
         "ranked_seqs": [
           [
             3864,
@@ -11119,9 +11119,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 179.86972100334242,
-        "retrieval_latency_ms": 72.99027599219698,
-        "rerank_latency_ms": 106.87944501114544,
+        "latency_ms": 181.92204499996478,
+        "retrieval_latency_ms": 81.878455000151,
+        "rerank_latency_ms": 100.04358999981378,
         "ranked_seqs": [
           [
             3864,
@@ -11156,7 +11156,7 @@
         1956
       ],
       "dense": {
-        "latency_ms": 97.19470900017768,
+        "latency_ms": 69.3586919999234,
         "ranked_seqs": [
           [
             1955,
@@ -11191,7 +11191,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 74.12934099556878,
+        "latency_ms": 76.3742930000717,
         "ranked_seqs": [
           [
             1955,
@@ -11226,9 +11226,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 89.99291200598236,
-        "retrieval_latency_ms": 74.12934099556878,
-        "rerank_latency_ms": 15.86357101041358,
+        "latency_ms": 89.65768699999899,
+        "retrieval_latency_ms": 76.3742930000717,
+        "rerank_latency_ms": 13.283393999927284,
         "ranked_seqs": [
           [
             1955,
@@ -11254,9 +11254,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 166.06764298921917,
-        "retrieval_latency_ms": 74.12934099556878,
-        "rerank_latency_ms": 91.93830199365038,
+        "latency_ms": 160.12870200006546,
+        "retrieval_latency_ms": 76.3742930000717,
+        "rerank_latency_ms": 83.75440899999376,
         "ranked_seqs": [
           [
             1955,
@@ -11290,7 +11290,7 @@
         3955
       ],
       "dense": {
-        "latency_ms": 78.68500000040513,
+        "latency_ms": 59.821872999918924,
         "ranked_seqs": [
           [
             3955,
@@ -11321,7 +11321,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 86.92510898981709,
+        "latency_ms": 60.474836000139476,
         "ranked_seqs": [
           [
             3955,
@@ -11352,9 +11352,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 102.98366799543146,
-        "retrieval_latency_ms": 86.92510898981709,
-        "rerank_latency_ms": 16.05855900561437,
+        "latency_ms": 73.33096699994712,
+        "retrieval_latency_ms": 60.474836000139476,
+        "rerank_latency_ms": 12.856130999807647,
         "ranked_seqs": [
           [
             3955,
@@ -11377,9 +11377,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 172.51923198637087,
-        "retrieval_latency_ms": 86.92510898981709,
-        "rerank_latency_ms": 85.59412299655378,
+        "latency_ms": 144.3973780003489,
+        "retrieval_latency_ms": 60.474836000139476,
+        "rerank_latency_ms": 83.92254200020943,
         "ranked_seqs": [
           [
             3955,
@@ -11411,7 +11411,7 @@
         3958
       ],
       "dense": {
-        "latency_ms": 97.24840099806897,
+        "latency_ms": 68.49504900014836,
         "ranked_seqs": [
           [
             2198
@@ -11441,7 +11441,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 92.44933401350863,
+        "latency_ms": 61.61700899997413,
         "ranked_seqs": [
           [
             2198
@@ -11471,9 +11471,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 118.76208301691804,
-        "retrieval_latency_ms": 92.44933401350863,
-        "rerank_latency_ms": 26.312749003409408,
+        "latency_ms": 73.60693600003287,
+        "retrieval_latency_ms": 61.61700899997413,
+        "rerank_latency_ms": 11.989927000058742,
         "ranked_seqs": [
           [
             1164,
@@ -11495,9 +11495,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 189.2962280107895,
-        "retrieval_latency_ms": 92.44933401350863,
-        "rerank_latency_ms": 96.84689399728086,
+        "latency_ms": 130.33193800015397,
+        "retrieval_latency_ms": 61.61700899997413,
+        "rerank_latency_ms": 68.71492900017984,
         "ranked_seqs": [
           [
             3554,
@@ -11525,7 +11525,7 @@
         3956
       ],
       "dense": {
-        "latency_ms": 81.4351790031651,
+        "latency_ms": 74.73595000010391,
         "ranked_seqs": [
           [
             3955,
@@ -11561,7 +11561,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 87.37777099304367,
+        "latency_ms": 70.15249200003382,
         "ranked_seqs": [
           [
             3955,
@@ -11597,9 +11597,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 102.33308200258762,
-        "retrieval_latency_ms": 87.37777099304367,
-        "rerank_latency_ms": 14.955311009543948,
+        "latency_ms": 84.9201980001908,
+        "retrieval_latency_ms": 70.15249200003382,
+        "rerank_latency_ms": 14.767706000156977,
         "ranked_seqs": [
           [
             3955,
@@ -11626,9 +11626,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 176.38828698545694,
-        "retrieval_latency_ms": 87.37777099304367,
-        "rerank_latency_ms": 89.01051599241327,
+        "latency_ms": 168.78200100018148,
+        "retrieval_latency_ms": 70.15249200003382,
+        "rerank_latency_ms": 98.62950900014766,
         "ranked_seqs": [
           [
             3955,
@@ -11657,7 +11657,7 @@
       "answerable": false,
       "gold_seqs": [],
       "dense": {
-        "latency_ms": 85.5647420103196,
+        "latency_ms": 70.76602699999057,
         "ranked_seqs": [
           [
             45,
@@ -11691,7 +11691,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 76.99139000033028,
+        "latency_ms": 65.35141399990607,
         "ranked_seqs": [
           [
             45,
@@ -11725,9 +11725,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 91.03942800720688,
-        "retrieval_latency_ms": 76.99139000033028,
-        "rerank_latency_ms": 14.048038006876595,
+        "latency_ms": 79.58469999994122,
+        "retrieval_latency_ms": 65.35141399990607,
+        "rerank_latency_ms": 14.23328600003515,
         "ranked_seqs": [
           [
             45,
@@ -11753,9 +11753,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 161.52609499113169,
-        "retrieval_latency_ms": 76.99139000033028,
-        "rerank_latency_ms": 84.5347049908014,
+        "latency_ms": 155.39721000004647,
+        "retrieval_latency_ms": 65.35141399990607,
+        "rerank_latency_ms": 90.0457960001404,
         "ranked_seqs": [
           [
             45,
@@ -11787,7 +11787,7 @@
       "answerable": false,
       "gold_seqs": [],
       "dense": {
-        "latency_ms": 74.25048600998707,
+        "latency_ms": 62.459783999884166,
         "ranked_seqs": [
           [
             136,
@@ -11818,7 +11818,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 88.30129299894907,
+        "latency_ms": 62.594708000005994,
         "ranked_seqs": [
           [
             136,
@@ -11849,9 +11849,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 103.8930229988182,
-        "retrieval_latency_ms": 88.30129299894907,
-        "rerank_latency_ms": 15.59172999986913,
+        "latency_ms": 76.37650099991333,
+        "retrieval_latency_ms": 62.594708000005994,
+        "rerank_latency_ms": 13.781792999907339,
         "ranked_seqs": [
           [
             136,
@@ -11874,9 +11874,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 177.86083299142774,
-        "retrieval_latency_ms": 88.30129299894907,
-        "rerank_latency_ms": 89.55953999247868,
+        "latency_ms": 150.35077700008515,
+        "retrieval_latency_ms": 62.594708000005994,
+        "rerank_latency_ms": 87.75606900007915,
         "ranked_seqs": [
           [
             136,
@@ -11904,7 +11904,7 @@
       "answerable": false,
       "gold_seqs": [],
       "dense": {
-        "latency_ms": 90.56231600698084,
+        "latency_ms": 65.05830400010382,
         "ranked_seqs": [
           [
             227,
@@ -11938,7 +11938,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 82.5187879963778,
+        "latency_ms": 60.146972999973514,
         "ranked_seqs": [
           [
             227,
@@ -11972,9 +11972,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 97.81599800044205,
-        "retrieval_latency_ms": 82.5187879963778,
-        "rerank_latency_ms": 15.297210004064254,
+        "latency_ms": 75.15634700007467,
+        "retrieval_latency_ms": 60.146972999973514,
+        "rerank_latency_ms": 15.009374000101161,
         "ranked_seqs": [
           [
             227,
@@ -11998,9 +11998,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 179.44358500244562,
-        "retrieval_latency_ms": 82.5187879963778,
-        "rerank_latency_ms": 96.92479700606782,
+        "latency_ms": 143.95254700002624,
+        "retrieval_latency_ms": 60.146972999973514,
+        "rerank_latency_ms": 83.80557400005273,
         "ranked_seqs": [
           [
             227,
@@ -12030,7 +12030,7 @@
       "answerable": false,
       "gold_seqs": [],
       "dense": {
-        "latency_ms": 124.62334999872837,
+        "latency_ms": 65.55092199982937,
         "ranked_seqs": [
           [
             173
@@ -12060,7 +12060,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 77.08149400423281,
+        "latency_ms": 65.66373800001202,
         "ranked_seqs": [
           [
             173
@@ -12090,9 +12090,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 102.03057900071144,
-        "retrieval_latency_ms": 77.08149400423281,
-        "rerank_latency_ms": 24.949084996478632,
+        "latency_ms": 77.9230779999125,
+        "retrieval_latency_ms": 65.66373800001202,
+        "rerank_latency_ms": 12.259339999900476,
         "ranked_seqs": [
           [
             1953,
@@ -12114,9 +12114,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 222.8062840003986,
-        "retrieval_latency_ms": 77.08149400423281,
-        "rerank_latency_ms": 145.72478999616578,
+        "latency_ms": 143.72767100007877,
+        "retrieval_latency_ms": 65.66373800001202,
+        "rerank_latency_ms": 78.06393300006675,
         "ranked_seqs": [
           [
             173
@@ -12142,7 +12142,7 @@
       "answerable": false,
       "gold_seqs": [],
       "dense": {
-        "latency_ms": 93.99035699607339,
+        "latency_ms": 60.90691500003231,
         "ranked_seqs": [
           [
             409,
@@ -12177,7 +12177,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 84.93574100430124,
+        "latency_ms": 69.70089800006463,
         "ranked_seqs": [
           [
             409,
@@ -12212,9 +12212,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 99.19073099445086,
-        "retrieval_latency_ms": 84.93574100430124,
-        "rerank_latency_ms": 14.254989990149625,
+        "latency_ms": 83.44135600009395,
+        "retrieval_latency_ms": 69.70089800006463,
+        "rerank_latency_ms": 13.74045800002932,
         "ranked_seqs": [
           [
             2409,
@@ -12240,9 +12240,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 165.33705800247844,
-        "retrieval_latency_ms": 84.93574100430124,
-        "rerank_latency_ms": 80.40131699817721,
+        "latency_ms": 160.53380600010314,
+        "retrieval_latency_ms": 69.70089800006463,
+        "rerank_latency_ms": 90.83290800003851,
         "ranked_seqs": [
           [
             409,
@@ -12274,7 +12274,7 @@
       "answerable": false,
       "gold_seqs": [],
       "dense": {
-        "latency_ms": 77.79343800211791,
+        "latency_ms": 65.58755399987604,
         "ranked_seqs": [
           [
             2739
@@ -12305,7 +12305,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 74.95900499634445,
+        "latency_ms": 68.0340859998978,
         "ranked_seqs": [
           [
             2739
@@ -12336,9 +12336,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 90.93428500636946,
-        "retrieval_latency_ms": 74.95900499634445,
-        "rerank_latency_ms": 15.975280010025017,
+        "latency_ms": 82.53812499992819,
+        "retrieval_latency_ms": 68.0340859998978,
+        "rerank_latency_ms": 14.504039000030389,
         "ranked_seqs": [
           [
             2211,
@@ -12361,9 +12361,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 144.1787350049708,
-        "retrieval_latency_ms": 74.95900499634445,
-        "rerank_latency_ms": 69.21973000862636,
+        "latency_ms": 176.44015099995158,
+        "retrieval_latency_ms": 68.0340859998978,
+        "rerank_latency_ms": 108.40606500005379,
         "ranked_seqs": [
           [
             2663,
@@ -12391,7 +12391,7 @@
       "answerable": false,
       "gold_seqs": [],
       "dense": {
-        "latency_ms": 113.75576100545004,
+        "latency_ms": 69.57141199995931,
         "ranked_seqs": [
           [
             2591,
@@ -12427,7 +12427,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 92.29934599716216,
+        "latency_ms": 80.17656900005932,
         "ranked_seqs": [
           [
             2591,
@@ -12463,9 +12463,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 108.5999889910454,
-        "retrieval_latency_ms": 92.29934599716216,
-        "rerank_latency_ms": 16.30064299388323,
+        "latency_ms": 93.4988980000071,
+        "retrieval_latency_ms": 80.17656900005932,
+        "rerank_latency_ms": 13.322328999947786,
         "ranked_seqs": [
           [
             591,
@@ -12491,9 +12491,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 179.34972699731588,
-        "retrieval_latency_ms": 92.29934599716216,
-        "rerank_latency_ms": 87.05038100015372,
+        "latency_ms": 164.39151400004448,
+        "retrieval_latency_ms": 80.17656900005932,
+        "rerank_latency_ms": 84.21494499998516,
         "ranked_seqs": [
           [
             2591,
@@ -12525,7 +12525,7 @@
       "answerable": false,
       "gold_seqs": [],
       "dense": {
-        "latency_ms": 74.34212199586909,
+        "latency_ms": 66.77981200004979,
         "ranked_seqs": [
           [
             682,
@@ -12557,7 +12557,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 103.056680993177,
+        "latency_ms": 68.65625299997191,
         "ranked_seqs": [
           [
             682,
@@ -12589,9 +12589,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 116.92434499855153,
-        "retrieval_latency_ms": 103.056680993177,
-        "rerank_latency_ms": 13.867664005374536,
+        "latency_ms": 81.37945099997523,
+        "retrieval_latency_ms": 68.65625299997191,
+        "rerank_latency_ms": 12.723198000003322,
         "ranked_seqs": [
           [
             682,
@@ -12614,9 +12614,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 189.65104398375843,
-        "retrieval_latency_ms": 103.056680993177,
-        "rerank_latency_ms": 86.59436299058143,
+        "latency_ms": 147.39220299998124,
+        "retrieval_latency_ms": 68.65625299997191,
+        "rerank_latency_ms": 78.73595000000932,
         "ranked_seqs": [
           [
             682,
@@ -12645,7 +12645,7 @@
       "answerable": false,
       "gold_seqs": [],
       "dense": {
-        "latency_ms": 73.53937599691562,
+        "latency_ms": 54.75171099988074,
         "ranked_seqs": [
           [
             2773,
@@ -12679,7 +12679,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 64.87386899243575,
+        "latency_ms": 59.62324000006447,
         "ranked_seqs": [
           [
             2773,
@@ -12713,9 +12713,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 79.45997999922838,
-        "retrieval_latency_ms": 64.87386899243575,
-        "rerank_latency_ms": 14.586111006792635,
+        "latency_ms": 72.3026690000097,
+        "retrieval_latency_ms": 59.62324000006447,
+        "rerank_latency_ms": 12.67942899994523,
         "ranked_seqs": [
           [
             2773,
@@ -12740,9 +12740,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 151.06642599857878,
-        "retrieval_latency_ms": 64.87386899243575,
-        "rerank_latency_ms": 86.19255700614303,
+        "latency_ms": 140.7536379999783,
+        "retrieval_latency_ms": 59.62324000006447,
+        "rerank_latency_ms": 81.13039799991384,
         "ranked_seqs": [
           [
             2773,
@@ -12773,7 +12773,7 @@
       "answerable": false,
       "gold_seqs": [],
       "dense": {
-        "latency_ms": 82.77121499122586,
+        "latency_ms": 85.42403799992826,
         "ranked_seqs": [
           [
             864,
@@ -12807,7 +12807,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 120.77999000030104,
+        "latency_ms": 67.79065399996398,
         "ranked_seqs": [
           [
             864,
@@ -12841,9 +12841,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 137.79583299765363,
-        "retrieval_latency_ms": 120.77999000030104,
-        "rerank_latency_ms": 17.015842997352593,
+        "latency_ms": 81.1225850000028,
+        "retrieval_latency_ms": 67.79065399996398,
+        "rerank_latency_ms": 13.331931000038821,
         "ranked_seqs": [
           [
             864,
@@ -12869,9 +12869,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 218.05220800160896,
-        "retrieval_latency_ms": 120.77999000030104,
-        "rerank_latency_ms": 97.27221800130792,
+        "latency_ms": 149.4778089997908,
+        "retrieval_latency_ms": 67.79065399996398,
+        "rerank_latency_ms": 81.68715499982682,
         "ranked_seqs": [
           [
             864,
@@ -12900,7 +12900,7 @@
       "answerable": false,
       "gold_seqs": [],
       "dense": {
-        "latency_ms": 102.5148010085104,
+        "latency_ms": 61.32667199995012,
         "ranked_seqs": [
           [
             1366
@@ -12929,7 +12929,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 135.05262800026685,
+        "latency_ms": 77.54915699979392,
         "ranked_seqs": [
           [
             1366
@@ -12958,9 +12958,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 149.56358599010855,
-        "retrieval_latency_ms": 135.05262800026685,
-        "rerank_latency_ms": 14.5109579898417,
+        "latency_ms": 89.68207699990671,
+        "retrieval_latency_ms": 77.54915699979392,
+        "rerank_latency_ms": 12.13292000011279,
         "ranked_seqs": [
           [
             310,
@@ -12981,9 +12981,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 197.6085070054978,
-        "retrieval_latency_ms": 135.05262800026685,
-        "rerank_latency_ms": 62.55587900523096,
+        "latency_ms": 133.3032419997835,
+        "retrieval_latency_ms": 77.54915699979392,
+        "rerank_latency_ms": 55.75408499998957,
         "ranked_seqs": [
           [
             3574
@@ -13008,7 +13008,7 @@
       "answerable": false,
       "gold_seqs": [],
       "dense": {
-        "latency_ms": 80.3002010070486,
+        "latency_ms": 56.65189899991674,
         "ranked_seqs": [
           [
             1045,
@@ -13043,7 +13043,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 80.42112000111956,
+        "latency_ms": 64.21947900003033,
         "ranked_seqs": [
           [
             1045,
@@ -13078,9 +13078,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 93.63795799436048,
-        "retrieval_latency_ms": 80.42112000111956,
-        "rerank_latency_ms": 13.216837993240915,
+        "latency_ms": 76.99691400011943,
+        "retrieval_latency_ms": 64.21947900003033,
+        "rerank_latency_ms": 12.777435000089099,
         "ranked_seqs": [
           [
             3045,
@@ -13106,9 +13106,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 164.08407999551855,
-        "retrieval_latency_ms": 80.42112000111956,
-        "rerank_latency_ms": 83.66295999439899,
+        "latency_ms": 149.5460749999893,
+        "retrieval_latency_ms": 64.21947900003033,
+        "rerank_latency_ms": 85.32659599995895,
         "ranked_seqs": [
           [
             1045,
@@ -13138,7 +13138,7 @@
       "answerable": false,
       "gold_seqs": [],
       "dense": {
-        "latency_ms": 71.86040398664773,
+        "latency_ms": 79.12267599999723,
         "ranked_seqs": [
           [
             1136,
@@ -13174,7 +13174,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 92.70359200309031,
+        "latency_ms": 69.02393599989409,
         "ranked_seqs": [
           [
             1136,
@@ -13210,9 +13210,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 108.47532500338275,
-        "retrieval_latency_ms": 92.70359200309031,
-        "rerank_latency_ms": 15.771733000292443,
+        "latency_ms": 82.06863000009434,
+        "retrieval_latency_ms": 69.02393599989409,
+        "rerank_latency_ms": 13.044694000200252,
         "ranked_seqs": [
           [
             3136,
@@ -13238,9 +13238,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 177.54687200067565,
-        "retrieval_latency_ms": 92.70359200309031,
-        "rerank_latency_ms": 84.84327999758534,
+        "latency_ms": 148.94193100008124,
+        "retrieval_latency_ms": 69.02393599989409,
+        "rerank_latency_ms": 79.91799500018715,
         "ranked_seqs": [
           [
             1136,
@@ -13272,7 +13272,7 @@
       "answerable": false,
       "gold_seqs": [],
       "dense": {
-        "latency_ms": 79.65056800458115,
+        "latency_ms": 60.512999999900785,
         "ranked_seqs": [
           [
             1227,
@@ -13306,7 +13306,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 115.36398499447387,
+        "latency_ms": 63.649356000041735,
         "ranked_seqs": [
           [
             1227,
@@ -13340,9 +13340,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 134.39646500046365,
-        "retrieval_latency_ms": 115.36398499447387,
-        "rerank_latency_ms": 19.032480005989783,
+        "latency_ms": 77.91850900002828,
+        "retrieval_latency_ms": 63.649356000041735,
+        "rerank_latency_ms": 14.269152999986545,
         "ranked_seqs": [
           [
             3227,
@@ -13368,9 +13368,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 204.89293099672068,
-        "retrieval_latency_ms": 115.36398499447387,
-        "rerank_latency_ms": 89.52894600224681,
+        "latency_ms": 147.10705700008475,
+        "retrieval_latency_ms": 63.649356000041735,
+        "rerank_latency_ms": 83.45770100004302,
         "ranked_seqs": [
           [
             3227,
@@ -13402,7 +13402,7 @@
       "answerable": false,
       "gold_seqs": [],
       "dense": {
-        "latency_ms": 75.60649000515696,
+        "latency_ms": 67.9112590000841,
         "ranked_seqs": [
           [
             1318,
@@ -13436,7 +13436,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 72.05536900437437,
+        "latency_ms": 71.80187499989188,
         "ranked_seqs": [
           [
             1318,
@@ -13470,9 +13470,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 95.06191400578246,
-        "retrieval_latency_ms": 72.05536900437437,
-        "rerank_latency_ms": 23.006545001408085,
+        "latency_ms": 86.3231079997604,
+        "retrieval_latency_ms": 71.80187499989188,
+        "rerank_latency_ms": 14.521232999868516,
         "ranked_seqs": [
           [
             1318,
@@ -13497,9 +13497,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 159.42482500395272,
-        "retrieval_latency_ms": 72.05536900437437,
-        "rerank_latency_ms": 87.36945599957835,
+        "latency_ms": 155.19584100002248,
+        "retrieval_latency_ms": 71.80187499989188,
+        "rerank_latency_ms": 83.3939660001306,
         "ranked_seqs": [
           [
             1318,
@@ -13529,7 +13529,7 @@
       "answerable": false,
       "gold_seqs": [],
       "dense": {
-        "latency_ms": 75.41183399735019,
+        "latency_ms": 71.33414600002652,
         "ranked_seqs": [
           [
             1409,
@@ -13567,7 +13567,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 74.63818599353544,
+        "latency_ms": 77.20758699997532,
         "ranked_seqs": [
           [
             1409,
@@ -13605,9 +13605,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 87.8108990000328,
-        "retrieval_latency_ms": 74.63818599353544,
-        "rerank_latency_ms": 13.17271300649736,
+        "latency_ms": 92.444721999982,
+        "retrieval_latency_ms": 77.20758699997532,
+        "rerank_latency_ms": 15.237135000006674,
         "ranked_seqs": [
           [
             2227,
@@ -13635,9 +13635,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 158.69018399098422,
-        "retrieval_latency_ms": 74.63818599353544,
-        "rerank_latency_ms": 84.05199799744878,
+        "latency_ms": 161.5309429998888,
+        "retrieval_latency_ms": 77.20758699997532,
+        "rerank_latency_ms": 84.32335599991347,
         "ranked_seqs": [
           [
             1409,
@@ -13671,7 +13671,7 @@
       "answerable": false,
       "gold_seqs": [],
       "dense": {
-        "latency_ms": 113.87748099514283,
+        "latency_ms": 62.892388999898685,
         "ranked_seqs": [
           [
             3969
@@ -13699,7 +13699,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 77.57555900025181,
+        "latency_ms": 67.19304499983991,
         "ranked_seqs": [
           [
             3969
@@ -13727,9 +13727,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 90.55317999445833,
-        "retrieval_latency_ms": 77.57555900025181,
-        "rerank_latency_ms": 12.977620994206518,
+        "latency_ms": 81.6110559999288,
+        "retrieval_latency_ms": 67.19304499983991,
+        "rerank_latency_ms": 14.418011000088882,
         "ranked_seqs": [
           [
             477
@@ -13749,9 +13749,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 179.6512239961885,
-        "retrieval_latency_ms": 77.57555900025181,
-        "rerank_latency_ms": 102.07566499593668,
+        "latency_ms": 129.11823899980845,
+        "retrieval_latency_ms": 67.19304499983991,
+        "rerank_latency_ms": 61.92519399996854,
         "ranked_seqs": [
           [
             1668,
@@ -13777,7 +13777,7 @@
       "answerable": false,
       "gold_seqs": [],
       "dense": {
-        "latency_ms": 88.44689599936828,
+        "latency_ms": 57.32725000007122,
         "ranked_seqs": [
           [
             526,
@@ -13808,7 +13808,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 108.61302001285367,
+        "latency_ms": 65.44671599999674,
         "ranked_seqs": [
           [
             526,
@@ -13839,9 +13839,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 122.32483801199123,
-        "retrieval_latency_ms": 108.61302001285367,
-        "rerank_latency_ms": 13.711817999137565,
+        "latency_ms": 78.46245599989743,
+        "retrieval_latency_ms": 65.44671599999674,
+        "rerank_latency_ms": 13.015739999900688,
         "ranked_seqs": [
           [
             1682,
@@ -13864,9 +13864,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 199.30386800842825,
-        "retrieval_latency_ms": 108.61302001285367,
-        "rerank_latency_ms": 90.69084799557459,
+        "latency_ms": 147.08090600015566,
+        "retrieval_latency_ms": 65.44671599999674,
+        "rerank_latency_ms": 81.63419000015892,
         "ranked_seqs": [
           [
             2306
@@ -13892,7 +13892,7 @@
       "answerable": false,
       "gold_seqs": [],
       "dense": {
-        "latency_ms": 103.7980490073096,
+        "latency_ms": 64.39143200009312,
         "ranked_seqs": [
           [
             3598
@@ -13922,7 +13922,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 102.20650100382045,
+        "latency_ms": 70.32729399998061,
         "ranked_seqs": [
           [
             3598
@@ -13952,9 +13952,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 115.71908500627615,
-        "retrieval_latency_ms": 102.20650100382045,
-        "rerank_latency_ms": 13.512584002455696,
+        "latency_ms": 84.02249599998868,
+        "retrieval_latency_ms": 70.32729399998061,
+        "rerank_latency_ms": 13.695202000008067,
         "ranked_seqs": [
           [
             2457,
@@ -13976,9 +13976,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 182.06194801314268,
-        "retrieval_latency_ms": 102.20650100382045,
-        "rerank_latency_ms": 79.85544700932223,
+        "latency_ms": 138.82688900002904,
+        "retrieval_latency_ms": 70.32729399998061,
+        "rerank_latency_ms": 68.49959500004843,
         "ranked_seqs": [
           [
             3598
@@ -14003,7 +14003,7 @@
       "answerable": false,
       "gold_seqs": [],
       "dense": {
-        "latency_ms": 77.52954399620648,
+        "latency_ms": 68.0392669999037,
         "ranked_seqs": [
           [
             3955,
@@ -14041,7 +14041,7 @@
         ]
       },
       "hybrid": {
-        "latency_ms": 98.62971899565309,
+        "latency_ms": 60.54597599995759,
         "ranked_seqs": [
           [
             3955,
@@ -14079,9 +14079,9 @@
         ]
       },
       "hybrid_reranked_minilm": {
-        "latency_ms": 114.46354899089783,
-        "retrieval_latency_ms": 98.62971899565309,
-        "rerank_latency_ms": 15.833829995244741,
+        "latency_ms": 73.83967200007646,
+        "retrieval_latency_ms": 60.54597599995759,
+        "rerank_latency_ms": 13.29369600011887,
         "ranked_seqs": [
           [
             1955,
@@ -14108,9 +14108,9 @@
         ]
       },
       "hybrid_reranked_qwen": {
-        "latency_ms": 198.4547640022356,
-        "retrieval_latency_ms": 98.62971899565309,
-        "rerank_latency_ms": 99.82504500658251,
+        "latency_ms": 153.62175699988256,
+        "retrieval_latency_ms": 60.54597599995759,
+        "rerank_latency_ms": 93.07578099992497,
         "ranked_seqs": [
           [
             3955,
@@ -14136,5 +14136,75 @@
         ]
       }
     }
-  ]
+  ],
+  "final_metrics_at_k": {
+    "dense": {
+      "k1": {
+        "questions": 88,
+        "evidence_recall": 0.5814393939393939,
+        "hit_rate": 0.6590909090909091,
+        "complete_evidence_rate": 0.5113636363636364,
+        "mrr": 0.6590909090909091
+      },
+      "k3": {
+        "questions": 88,
+        "evidence_recall": 0.7178030303030303,
+        "hit_rate": 0.7613636363636364,
+        "complete_evidence_rate": 0.6818181818181818,
+        "mrr": 0.7026515151515151
+      },
+      "latency_mean_ms": 74.61701987498579
+    },
+    "hybrid": {
+      "k1": {
+        "questions": 88,
+        "evidence_recall": 0.5814393939393939,
+        "hit_rate": 0.6590909090909091,
+        "complete_evidence_rate": 0.5113636363636364,
+        "mrr": 0.6590909090909091
+      },
+      "k3": {
+        "questions": 88,
+        "evidence_recall": 0.7178030303030303,
+        "hit_rate": 0.7613636363636364,
+        "complete_evidence_rate": 0.6818181818181818,
+        "mrr": 0.7026515151515151
+      },
+      "latency_mean_ms": 72.43589465908103
+    },
+    "hybrid_reranked_minilm": {
+      "k1": {
+        "questions": 88,
+        "evidence_recall": 0.4412878787878788,
+        "hit_rate": 0.5,
+        "complete_evidence_rate": 0.38636363636363635,
+        "mrr": 0.5
+      },
+      "k3": {
+        "questions": 88,
+        "evidence_recall": 0.6912878787878788,
+        "hit_rate": 0.7272727272727273,
+        "complete_evidence_rate": 0.6590909090909091,
+        "mrr": 0.6098484848484849
+      },
+      "latency_mean_ms": 96.67190101134018
+    },
+    "hybrid_reranked_qwen": {
+      "k1": {
+        "questions": 88,
+        "evidence_recall": 0.6609848484848485,
+        "hit_rate": 0.7386363636363636,
+        "complete_evidence_rate": 0.5909090909090909,
+        "mrr": 0.7386363636363636
+      },
+      "k3": {
+        "questions": 88,
+        "evidence_recall": 0.7537878787878788,
+        "hit_rate": 0.7840909090909091,
+        "complete_evidence_rate": 0.7272727272727273,
+        "mrr": 0.7575757575757576
+      },
+      "latency_mean_ms": 162.10457457954806
+    }
+  }
 }

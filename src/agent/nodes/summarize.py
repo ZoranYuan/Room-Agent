@@ -6,7 +6,7 @@ from langgraph.runtime import Runtime
 
 from agent.context import AgentRuntimeContext
 from agent.state import RoomAgentState
-from harness.llm.summary import run_summary
+from harness.llm.summary_agent import run_summary
 
 
 async def summarize_node(

@@ -40,7 +40,7 @@
 {"qid": "v2-q-040", "room_id": "eval-room-v2", "question": "看演出时大家提醒不要做什么？", "answerable": true, "answer": "不要开闪光灯", "gold_seqs": [2866], "category": "演唱会碰面", "source": "manual_scenario"}
 {"qid": "v2-q-041", "room_id": "eval-room-v2", "question": "是谁答应假期去喂猫？", "answerable": true, "answer": "阿宁", "gold_seqs": [956], "category": "假期猫咪照看", "source": "manual_scenario"}
 {"qid": "v2-q-042", "room_id": "eval-room-v2", "question": "为什么不把猫一起带回老家？", "answerable": true, "answer": "乘高铁不方便带猫", "gold_seqs": [955], "category": "假期猫咪照看", "source": "manual_scenario"}
-{"qid": "v2-q-043", "room_id": "eval-room-v2", "question": "照看时间和钥匙交接最后怎么定的？", "answerable": true, "answer": "十月一日至三日每天七点去，备用钥匙交给大伟", "gold_seqs": [957, 958, 2956, 2958], "category": "假期猫咪照看", "source": "manual_scenario"}
+{"qid": "v2-q-043", "room_id": "eval-room-v2", "question": "照看时间和钥匙交接最后怎么定的？", "answerable": true, "answer": "十月一日至三日每天七点去，备用钥匙交给大伟", "gold_seqs": [2956, 2958], "category": "假期猫咪照看", "source": "manual_scenario"}
 {"qid": "v2-q-044", "room_id": "eval-room-v2", "question": "喂食说明放在哪里？", "answerable": true, "answer": "冰箱门上", "gold_seqs": [958], "category": "假期猫咪照看", "source": "manual_scenario"}
 {"qid": "v2-q-045", "room_id": "eval-room-v2", "question": "拍摄行程是谁提出来的？", "answerable": true, "answer": "林可", "gold_seqs": [1045], "category": "湖边拍照", "source": "manual_scenario"}
 {"qid": "v2-q-046", "room_id": "eval-room-v2", "question": "为什么要在太阳出来前到湖边？", "answerable": true, "answer": "想拍晨雾，日出后效果就不同了", "gold_seqs": [1045], "category": "湖边拍照", "source": "manual_scenario"}
@@ -48,12 +48,12 @@
 {"qid": "v2-q-048", "room_id": "eval-room-v2", "question": "拍鸟需要用什么镜头，谁去取？", "answerable": true, "answer": "长焦镜头，小周去相机店取", "gold_seqs": [1047, 1048], "category": "湖边拍照", "source": "manual_scenario"}
 {"qid": "v2-q-049", "room_id": "eval-room-v2", "question": "谁先报名参加河边清理？", "answerable": true, "answer": "小周", "gold_seqs": [1137], "category": "公园志愿清理", "source": "manual_scenario"}
 {"qid": "v2-q-050", "room_id": "eval-room-v2", "question": "为什么垃圾袋要按颜色分开？", "answerable": true, "answer": "方便垃圾分类，不能混装", "gold_seqs": [1138], "category": "公园志愿清理", "source": "manual_scenario"}
-{"qid": "v2-q-051", "room_id": "eval-room-v2", "question": "周六集合地点和时间是什么？", "answerable": true, "answer": "南门公告栏，八点四十", "gold_seqs": [1139, 3139], "category": "公园志愿清理", "source": "manual_scenario"}
+{"qid": "v2-q-051", "room_id": "eval-room-v2", "question": "周六集合地点和时间是什么？", "answerable": true, "answer": "南门公告栏，八点四十", "gold_seqs": [3137], "category": "公园志愿清理", "source": "manual_scenario"}
 {"qid": "v2-q-052", "room_id": "eval-room-v2", "question": "活动结束后工具要放到哪里？", "answerable": true, "answer": "服务台", "gold_seqs": [3139], "category": "公园志愿清理", "source": "manual_scenario"}
 {"qid": "v2-q-053", "room_id": "eval-room-v2", "question": "是谁建议周六上午搬家？", "answerable": true, "answer": "大伟", "gold_seqs": [1228], "category": "搬家安排", "source": "manual_scenario"}
 {"qid": "v2-q-054", "room_id": "eval-room-v2", "question": "为什么搬家前要量书柜？", "answerable": true, "answer": "书柜太大，需要拆门才能进电梯", "gold_seqs": [1229, 1230], "category": "搬家安排", "source": "manual_scenario"}
-{"qid": "v2-q-055", "room_id": "eval-room-v2", "question": "搬家公司的到达时间和搬运顺序怎么定？", "answerable": true, "answer": "八点半到，先搬床和书柜，最后搬纸箱", "gold_seqs": [3230], "category": "搬家安排", "source": "manual_scenario"}
-{"qid": "v2-q-056", "room_id": "eval-room-v2", "question": "退电梯押金前还要做什么？", "answerable": true, "answer": "检查并拍下保护垫照片", "gold_seqs": [3229, 1227], "category": "搬家安排", "source": "manual_scenario"}
+{"qid": "v2-q-055", "room_id": "eval-room-v2", "question": "搬家公司的到达时间和搬运顺序怎么定？", "answerable": true, "answer": "八点半到，先搬床和书柜，最后搬纸箱", "gold_seqs": [3229], "category": "搬家安排", "source": "manual_scenario"}
+{"qid": "v2-q-056", "room_id": "eval-room-v2", "question": "退电梯押金前还要做什么？", "answerable": true, "answer": "检查并拍下保护垫照片", "gold_seqs": [3227, 3230], "category": "搬家安排", "source": "manual_scenario"}
 {"qid": "v2-q-057", "room_id": "eval-room-v2", "question": "谁提出用语音练口语？", "answerable": true, "answer": "佳佳", "gold_seqs": [1319], "category": "英语口语练习", "source": "manual_scenario"}
 {"qid": "v2-q-058", "room_id": "eval-room-v2", "question": "为什么不要求一开始就纠正所有语法？", "answerable": true, "answer": "先鼓励开口表达，不想让纠错打断练习", "gold_seqs": [1319], "category": "英语口语练习", "source": "manual_scenario"}
 {"qid": "v2-q-059", "room_id": "eval-room-v2", "question": "第一次练习改到什么时候，聊什么？", "answerable": true, "answer": "周四九点，聊上次旅行", "gold_seqs": [3318, 3320], "category": "英语口语练习", "source": "manual_scenario"}
@@ -61,7 +61,7 @@
 {"qid": "v2-q-061", "room_id": "eval-room-v2", "question": "团建人均预算上限一开始定了多少？", "answerable": true, "answer": "三百元以内", "gold_seqs": [1409], "category": "团建费用分摊", "source": "manual_scenario"}
 {"qid": "v2-q-062", "room_id": "eval-room-v2", "question": "报名人数不够时的备选方案是什么？", "answerable": true, "answer": "改去咖啡馆", "gold_seqs": [1412], "category": "团建费用分摊", "source": "manual_scenario"}
 {"qid": "v2-q-063", "room_id": "eval-room-v2", "question": "包间费用和饮料费用分别怎么分？", "answerable": true, "answer": "包间费和小食平摊，饮料各自承担", "gold_seqs": [1410, 3410], "category": "团建费用分摊", "source": "manual_scenario"}
-{"qid": "v2-q-064", "room_id": "eval-room-v2", "question": "最后每个人先交多少？", "answerable": true, "answer": "二百五十元，多退少补", "gold_seqs": [3409], "category": "团建费用分摊", "source": "manual_scenario"}
+{"qid": "v2-q-064", "room_id": "eval-room-v2", "question": "最后每个人先交多少？", "answerable": true, "answer": "二百五十元，多退少补", "gold_seqs": [3412], "category": "团建费用分摊", "source": "manual_scenario"}
 {"qid": "v2-q-065", "room_id": "eval-room-v2", "question": "谁说带《代号》去玩？", "answerable": true, "answer": "小周", "gold_seqs": [1501], "category": "桌游夜", "source": "manual_scenario"}
 {"qid": "v2-q-066", "room_id": "eval-room-v2", "question": "为什么不选特别烧脑的桌游？", "answerable": true, "answer": "大家下班后比较累，想轻松玩", "gold_seqs": [1502], "category": "桌游夜", "source": "manual_scenario"}
 {"qid": "v2-q-067", "room_id": "eval-room-v2", "question": "桌游夜最后订了什么时候、先玩哪款？", "answerable": true, "answer": "周四七点半，先玩《代号》", "gold_seqs": [3500, 3503], "category": "桌游夜", "source": "manual_scenario"}
@@ -75,7 +75,7 @@
 {"qid": "v2-q-075", "room_id": "eval-room-v2", "question": "最后确认的路线长度和集合信息是什么？", "answerable": true, "answer": "北岸往返二十四公里，周日七点公园桥集合", "gold_seqs": [3682, 3685], "category": "河边骑行", "source": "manual_scenario"}
 {"qid": "v2-q-076", "room_id": "eval-room-v2", "question": "谁会带备用头盔？", "answerable": true, "answer": "佳佳", "gold_seqs": [3684], "category": "河边骑行", "source": "manual_scenario"}
 {"qid": "v2-q-077", "room_id": "eval-room-v2", "question": "大家希望生日聚餐是什么氛围？", "answerable": true, "answer": "轻松、不太正式，能方便聊天", "gold_seqs": [1773, 1774], "category": "生日聚餐", "source": "manual_scenario"}
-{"qid": "v2-q-078", "room_id": "eval-room-v2", "question": "礼物最后决定做什么？", "answerable": true, "answer": "大家一起做照片小册子", "gold_seqs": [1775], "category": "生日聚餐", "source": "manual_scenario"}
+{"qid": "v2-q-078", "room_id": "eval-room-v2", "question": "礼物最后决定做什么？", "answerable": true, "answer": "大家一起做照片小册子", "gold_seqs": [3776], "category": "生日聚餐", "source": "manual_scenario"}
 {"qid": "v2-q-079", "room_id": "eval-room-v2", "question": "聚餐订在何时，谁负责拿蛋糕？", "answerable": true, "answer": "周六六点；阿哲取蛋糕", "gold_seqs": [3774, 3775], "category": "生日聚餐", "source": "manual_scenario"}
 {"qid": "v2-q-080", "room_id": "eval-room-v2", "question": "餐厅需要提前告知什么饮食信息？", "answerable": true, "answer": "有人不吃花生", "gold_seqs": [1775, 3776], "category": "生日聚餐", "source": "manual_scenario"}
 {"qid": "v2-q-081", "room_id": "eval-room-v2", "question": "谁提议用共享表格记公共开销？", "answerable": true, "answer": "小雨", "gold_seqs": [1865], "category": "家庭记账", "source": "manual_scenario"}

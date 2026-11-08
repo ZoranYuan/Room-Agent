@@ -1,7 +1,9 @@
 import asyncio
+from typing import Any, cast
 
 from llama_index.core import VectorStoreIndex
 from llama_index.vector_stores.milvus import MilvusVectorStore
+from llama_index.vector_stores.milvus.utils import BM25BuiltInFunction
 
 from config.config import settings
 from infra.model.embedding_model_factory import get_embedding_model
@@ -30,8 +32,9 @@ async def get_vector_index() -> VectorStoreIndex:
                 similarity_metric="COSINE",
                 # 开启 BM25
                 enable_sparse=True,
+                sparse_embedding_function=cast(Any, BM25BuiltInFunction(analyzer_params={"type": "chinese"})),
                 hybrid_ranker="RRFRanker",
-                hybrid_ranker_params={"k": 60},
+                hybrid_ranker_params={"k": settings.rag_rrf_k},
                 consistency_level="Strong",
                 overwrite=False,
                 upsert_mode=True,   # 同一个节点 ID 重复写入时更新

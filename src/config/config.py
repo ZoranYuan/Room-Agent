@@ -28,7 +28,7 @@ class _Settings(BaseModel):
     agent_base_url: str = _env("AGENT_BASE_URL")
     agent_model: str = _env("AGENT_MODEL", "deepseek-chat")
     agent_temperature: float = float(_env("AGENT_TEMPERATURE", "0.0"))
-    agent_recursion_limit: int = int(_env("AGENT_RECURSION_LIMIT", "14"))
+    agent_recursion_limit: int = int(_env("AGENT_RECURSION_LIMIT", "24"))
     agent_timeout_seconds: float = float(_env("AGENT_TIMEOUT_SECONDS", "60"))
     memory_trigger_tokens: int = Field(
         default=int(_env("MEMORY_TRIGGER_TOKENS", "8000")),
@@ -45,6 +45,12 @@ class _Settings(BaseModel):
         gt=0,
         validate_default=True,
     )
+    summary_max_output_tokens: int = int(
+        _env("SUMMARY_MAX_OUTPUT_TOKENS", "1024")
+    )
+    chat_max_output_tokens: int = int(
+        _env("CHAT_MAX_OUTPUT_TOKENS", "1024")
+    )
     app_env: str = _env("APP_ENV", "development")
     server_host: str = _env("SERVER_HOST", "0.0.0.0")
     server_port: int = int(_env("SERVER_PORT", "8000"))
@@ -59,6 +65,10 @@ class _Settings(BaseModel):
         "EMBEDDING_MODEL_ID",
         "Qwen/Qwen3-Embedding-0.6B",
     )
+    reranker_model_id: str = _env(
+        "RERANKER_MODEL_ID",
+        "Qwen/Qwen3-Reranker-0.6B",
+    )
     embedding_dimension: int = int(_env("EMBEDDING_DIMENSION", "1024"))
     # BM25 需要在建表时配置稀疏向量字段，使用新集合保留旧的纯向量集合。
     milvus_collection: str = _env(
@@ -67,10 +77,17 @@ class _Settings(BaseModel):
     mysql_url: str = Field(default=_env("MYSQL_URL"), exclude=True, repr=False)
     mysql_max_open_conns: int = int(_env("MYSQL_MAX_OPEN_CONNS", "50"))
     mysql_max_idle_conns: int = int(_env("MYSQL_MAX_IDLE_CONNS", "50"))
-    mysql_conn_max_lifetime_seconds: int = int(_env("MYSQL_CONN_MAX_LIFETIME_SECONDS", "240"))
-    mysql_slow_threshold_milliseconds: int = int(_env("MYSQL_SLOW_THRESHOLD_MILLISECONDS", "1000"))
+    mysql_conn_max_lifetime_seconds: int = int(
+        _env("MYSQL_CONN_MAX_LIFETIME_SECONDS", "240")
+    )
+    mysql_slow_threshold_milliseconds: int = int(
+        _env("MYSQL_SLOW_THRESHOLD_MILLISECONDS", "1000")
+    )
     rag_parent_message_count: int = Field(
-        default=int(_env("RAG_PARENT_MESSAGE_COUNT", "50")), gt=0, le=4096, validate_default=True
+        default=int(_env("RAG_PARENT_MESSAGE_COUNT", "50")),
+        gt=0,
+        le=4096,
+        validate_default=True,
     )
     rag_parent_max_chars: int = Field(
         default=int(_env("RAG_PARENT_MAX_CHARS", "6000")), ge=1, validate_default=True
@@ -81,17 +98,37 @@ class _Settings(BaseModel):
     rag_message_max_chars: int = Field(
         default=int(_env("RAG_MESSAGE_MAX_CHARS", "100")), ge=1, validate_default=True
     )
-    cluster_max_retries: int = Field(
-        default=int(_env("CLUSTER_MAX_RETRIES", "2")), ge=0, validate_default=True
+    rag_timezone: str = _env("RAG_TIMEZONE", "Asia/Shanghai")
+    rag_temporal_rank_weight: float = Field(
+        default=float(_env("RAG_TEMPORAL_RANK_WEIGHT", "0.25")),
+        ge=0,
+        validate_default=True,
     )
+    rag_rrf_k: int = int(_env("RAG_RRF_K", "60"))
+    rag_candidate_top_k: int = int(_env("RAG_CANDIDATE_TOP_K", "10"))
+    rag_rerank_input_top_n: int = int(_env("RAG_RERANK_INPUT_TOP_N", "5"))
+    rag_final_top_n: int = int(_env("RAG_FINAL_TOP_N", "3"))
+    llm_max_retries: int = int(_env("LLM_MAX_RETRIES", "2"))
+    llm_retry_initial_delay_seconds: float = float(
+        _env("LLM_RETRY_INITIAL_DELAY_SECONDS", "1")
+    )
+    llm_retry_max_delay_seconds: float = float(
+        _env("LLM_RETRY_MAX_DELAY_SECONDS", "8")
+    )
+    cluster_summary_max_chars: int = int(_env("CLUSTER_SUMMARY_MAX_CHARS", "225"))
+    cluster_max_output_tokens: int = int(_env("CLUSTER_MAX_OUTPUT_TOKENS", "3072"))
 
     snowflake_instance_id: str = "1"
 
     @model_validator(mode="after")
     def validate_memory_budget(self) -> "_Settings":
         """为近期对话和历史摘要保留足够的压缩空间."""
-        if self.memory_keep_tokens + self.memory_summary_max_tokens >= self.memory_trigger_tokens:
+        if (
+            self.memory_keep_tokens + self.memory_summary_max_tokens
+            >= self.memory_trigger_tokens
+        ):
             raise ValueError(DETAIL_INVALID_MEMORY_BUDGET)
         return self
+
 
 settings = _Settings()

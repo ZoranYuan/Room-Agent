@@ -1,0 +1,3205 @@
+{
+  "dataset": "room_chat_v3",
+  "corpus_messages": 3000,
+  "child_chunks": 685,
+  "question_count": 37,
+  "successful_requests": 1,
+  "failed_requests": 36,
+  "request_errors": {
+    "Agent 任务执行失败": 36
+  },
+  "single_evidence": {
+    "questions": 2,
+    "search_executed": 2,
+    "recall_at_1": 1.0,
+    "recall_at_3": 1.0,
+    "mrr_at_3": 1.0
+  },
+  "multi_evidence": {
+    "questions": 15,
+    "evidence_total": 45,
+    "evidence_recall_at_final_3_per_query": 0.5778,
+    "complete_evidence_rate": 0.2,
+    "questions_with_search": 15,
+    "queries_per_question": 2.933,
+    "questions_using_two_queries": 4
+  },
+  "temporal": {
+    "questions": 5,
+    "search_executed": 5,
+    "time_hint_exact": 5,
+    "time_hint_questions": 5
+  },
+  "no_answer": {
+    "questions": 15,
+    "completed_responses": 0,
+    "refusal_pattern_hits": 0,
+    "refusal_pattern_rate_on_completed": null
+  },
+  "answerable_reference_phrase_match": {
+    "reference_clauses_hit": 0,
+    "reference_clauses_total": 3,
+    "reference_clause_match_rate": 0.0,
+    "all_reference_clauses_matched": 0,
+    "all_reference_clause_rate": 0.0,
+    "completed_answerable_questions": 1,
+    "all_dataset_reference_clauses": 52,
+    "matched_clause_lower_bound_over_full_set": 0.0
+  },
+  "tool_calls": {
+    "search_total": 74,
+    "search_mean_per_question": 2,
+    "search_query_total": 91,
+    "sync_total": 25,
+    "tool_limit_reached_outputs": 37
+  },
+  "latency_ms": {
+    "end_to_end_mean": 7516.247,
+    "end_to_end_p95": 7516.247,
+    "first_token_mean": 7513.776,
+    "first_token_p95": 7513.776,
+    "first_token_p99": 7513.776,
+    "retrieval_calls": 91,
+    "retrieval_and_rerank_mean": 147.444,
+    "retrieval_and_rerank_p95": 189.254,
+    "retrieval_and_rerank_p99": 233.148,
+    "warm_retrieval_and_rerank_mean": 147.444,
+    "warm_retrieval_and_rerank_p95": 189.254
+  },
+  "settings": {
+    "collection": "eval_room_chat_v3_541cd394e9",
+    "embedding_model": "Qwen/Qwen3-Embedding-0.6B",
+    "reranker_model": "Qwen/Qwen3-Reranker-0.6B",
+    "retrieval_final_top_n": 3,
+    "rerank_input_top_n": 5,
+    "candidate_top_k": 10,
+    "rrf_k": 60,
+    "agent_recursion_limit": 24
+  },
+  "records": [
+    {
+      "qid": "single_011",
+      "category": "single_block:名侦探柯南",
+      "question": "群友觉得哪部作品适合边看边推理案件？",
+      "answerable": true,
+      "reference_answer": "《名侦探柯南》",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "群友觉得哪部作品适合边看边推理案件？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-011",
+            "eval-v3-child-0002-012",
+            "eval-v3-child-0001-006"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 142.075
+        },
+        {
+          "query": "群里讨论适合边看边推理、暂停猜凶手的作品",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-011",
+            "eval-v3-child-0042-001",
+            "eval-v3-child-0002-012"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 135.74
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0001-011",
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0042-001"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0001-011"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 4187.496,
+      "total_ms": 4296.408,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "single_030",
+      "category": "single_block:名侦探柯南剧场版",
+      "question": "推荐一起重看的柯南剧场版是哪一部？",
+      "answerable": true,
+      "reference_answer": "《名侦探柯南：贝克街的亡灵》",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "大家推荐一起重看的柯南剧场版是哪一部？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0002-012",
+            "eval-v3-child-0004-008",
+            "eval-v3-child-0001-011"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0004",
+            "eval-v3-parent-0001"
+          ],
+          "retrieval_ms": 127.347
+        },
+        {
+          "query": "一起重看的柯南剧场版推荐哪一部",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0002-012",
+            "eval-v3-child-0004-008",
+            "eval-v3-child-0001-011"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0004",
+            "eval-v3-parent-0001"
+          ],
+          "retrieval_ms": 136.757
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0004-008",
+        "eval-v3-child-0001-011"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0002-012"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 4666.239,
+      "total_ms": 4689.864,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_001",
+      "category": "multi_block:3:周末补番",
+      "question": "大家选了哪部番、几点开始、准备看几集？",
+      "answerable": true,
+      "reference_answer": "《葬送的芙莉莲》；周六晚八点；两集",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "大家选了哪部番、几点开始看、准备看几集？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0041-005",
+            "eval-v3-child-0042-007",
+            "eval-v3-child-0021-023"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 144.308
+        },
+        {
+          "query": "大家决定看哪部番（番剧名称）？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0002-007",
+            "eval-v3-child-0001-001",
+            "eval-v3-child-0001-004"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0001"
+          ],
+          "retrieval_ms": 136.137
+        },
+        {
+          "query": "看番几点开始、看几集？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-013",
+            "eval-v3-child-0018-009",
+            "eval-v3-child-0042-007"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0018",
+            "eval-v3-parent-0042"
+          ],
+          "retrieval_ms": 129.637
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0041-005",
+        "eval-v3-child-0042-007",
+        "eval-v3-child-0021-023",
+        "eval-v3-child-0002-007",
+        "eval-v3-child-0001-001",
+        "eval-v3-child-0001-004",
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0018-009"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0002-016"
+        ],
+        [
+          "eval-v3-child-0020-008"
+        ],
+        [
+          "eval-v3-child-0041-005"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        null,
+        1
+      ],
+      "first_token_ms": 5250.346,
+      "total_ms": 5276.949,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_002",
+      "category": "multi_block:3:老番重温",
+      "question": "重看的作品、集合时间和观看范围是什么？",
+      "answerable": true,
+      "reference_answer": "《灌篮高手》；周日下午三点；全国大赛相关剧集",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "重看的作品、集合时间和观看范围是什么？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-013",
+            "eval-v3-child-0021-025",
+            "eval-v3-child-0001-006"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0001"
+          ],
+          "retrieval_ms": 136.249
+        },
+        {
+          "query": "重看旧剧/旧番的安排：重看哪部作品、集合时间、观看范围",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-008",
+            "eval-v3-child-0021-025",
+            "eval-v3-child-0004-005"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0004"
+          ],
+          "retrieval_ms": 189.254
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0021-025",
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0020-008",
+        "eval-v3-child-0004-005"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-001"
+        ],
+        [
+          "eval-v3-child-0020-008"
+        ],
+        [
+          "eval-v3-child-0041-005"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        4,
+        null
+      ],
+      "first_token_ms": 4881.872,
+      "total_ms": 4901.277,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_003",
+      "category": "multi_block:3:电影夜",
+      "question": "电影夜看哪部、几点开始、中途怎么安排？",
+      "answerable": true,
+      "reference_answer": "《千与千寻》；周五晚九点；中途暂停十分钟",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "电影夜看哪部电影、几点开始、中途怎么安排？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0041-006",
+            "eval-v3-child-0003-002"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0003"
+          ],
+          "retrieval_ms": 134.917
+        },
+        {
+          "query": "电影夜看哪部电影？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0003-002",
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0041-006"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0041"
+          ],
+          "retrieval_ms": 126.721
+        },
+        {
+          "query": "电影夜几点开始、中途怎么安排？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0041-006",
+            "eval-v3-child-0022-008"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 125.835
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0041-006",
+        "eval-v3-child-0003-002",
+        "eval-v3-child-0022-008"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-002"
+        ],
+        [
+          "eval-v3-child-0020-009"
+        ],
+        [
+          "eval-v3-child-0041-005"
+        ]
+      ],
+      "target_hit_ranks": [
+        3,
+        1,
+        null
+      ],
+      "first_token_ms": 5761.192,
+      "total_ms": 5778.854,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_006",
+      "category": "multi_block:3:漫画交换",
+      "question": "交换时带哪部漫画、在哪里见、怎么开始？",
+      "answerable": true,
+      "reference_answer": "《蓝色时期》；地铁站旁咖啡馆；先聊五分钟读后感",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "交换时带哪部漫画、在哪里见、怎么开始？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0003-005",
+            "eval-v3-child-0020-011",
+            "eval-v3-child-0041-009"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0041"
+          ],
+          "retrieval_ms": 137.06
+        },
+        {
+          "query": "漫画交换在哪里见、几点集合？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-011",
+            "eval-v3-child-0041-009",
+            "eval-v3-child-0003-005"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0003"
+          ],
+          "retrieval_ms": 128.919
+        },
+        {
+          "query": "漫画交换怎么开始、带几本、流程是什么？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0041-009",
+            "eval-v3-child-0003-005",
+            "eval-v3-child-0020-011"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0020"
+          ],
+          "retrieval_ms": 128.473
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0003-005",
+        "eval-v3-child-0020-011",
+        "eval-v3-child-0041-009"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-005"
+        ],
+        [
+          "eval-v3-child-0020-011"
+        ],
+        [
+          "eval-v3-child-0041-009"
+        ]
+      ],
+      "target_hit_ranks": [
+        1,
+        2,
+        3
+      ],
+      "first_token_ms": 4450.194,
+      "total_ms": 4471.44,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_007",
+      "category": "multi_block:3:动画配乐",
+      "question": "分享什么原声、几点开房、先听几首？",
+      "answerable": true,
+      "reference_answer": "《星际牛仔》原声；周日晚七点；前三首",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "分享什么原声、几点开房、先听几首",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0003-006",
+            "eval-v3-child-0002-011",
+            "eval-v3-child-0042-009"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0042"
+          ],
+          "retrieval_ms": 157.085
+        },
+        {
+          "query": "分享原声、开房时间、先听几首的具体安排",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0003-006",
+            "eval-v3-child-0021-020",
+            "eval-v3-child-0044-005"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0044"
+          ],
+          "retrieval_ms": 163.902
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0003-006",
+        "eval-v3-child-0002-011",
+        "eval-v3-child-0042-009",
+        "eval-v3-child-0021-020",
+        "eval-v3-child-0044-005"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-006"
+        ],
+        [
+          "eval-v3-child-0020-011"
+        ],
+        [
+          "eval-v3-child-0041-010"
+        ]
+      ],
+      "target_hit_ranks": [
+        1,
+        null,
+        null
+      ],
+      "first_token_ms": 4427.334,
+      "total_ms": 4456.72,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_008",
+      "category": "multi_block:3:影展报名",
+      "question": "报名了哪部电影、几点场、散场后在哪等？",
+      "answerable": true,
+      "reference_answer": "《机器人之梦》；周六下午一点半；一楼长椅等十分钟",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "报名了哪部电影、几点场、散场后在哪等",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0041-011",
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0041-006"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0020"
+          ],
+          "retrieval_ms": 150.127
+        },
+        {
+          "query": "影展报名了哪部电影、几点场次",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0003-007",
+            "eval-v3-child-0041-011",
+            "eval-v3-child-0021-003"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 149.329
+        },
+        {
+          "query": "影展散场后在哪里集合等",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0041-011",
+            "eval-v3-child-0042-004",
+            "eval-v3-child-0020-008"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0020"
+          ],
+          "retrieval_ms": 211.95
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0041-011",
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0041-006",
+        "eval-v3-child-0003-007",
+        "eval-v3-child-0021-003",
+        "eval-v3-child-0042-004",
+        "eval-v3-child-0020-008"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-007"
+        ],
+        [
+          "eval-v3-child-0021-001"
+        ],
+        [
+          "eval-v3-child-0041-011"
+        ]
+      ],
+      "target_hit_ranks": [
+        4,
+        null,
+        1
+      ],
+      "first_token_ms": 4601.729,
+      "total_ms": 4621.579,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_009",
+      "category": "multi_block:3:游戏联机",
+      "question": "联机玩什么、几点进频道、队伍怎么轮换？",
+      "answerable": true,
+      "reference_answer": "《胡闹厨房2》；周四晚九点；每局轮换队长",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "联机玩什么游戏、几点进频道",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-004",
+            "eval-v3-child-0003-008",
+            "eval-v3-child-0022-009"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 149.045
+        },
+        {
+          "query": "队伍怎么轮换",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0041-012",
+            "eval-v3-child-0047-002",
+            "eval-v3-child-0008-004"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0047",
+            "eval-v3-parent-0008"
+          ],
+          "retrieval_ms": 140.534
+        },
+        {
+          "query": "联机游戏《胡闹厨房2》和进语音频道的时间安排",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-004",
+            "eval-v3-child-0003-008",
+            "eval-v3-child-0020-011"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0020"
+          ],
+          "retrieval_ms": 144.617
+        },
+        {
+          "query": "游戏联机时每局换队长、队伍轮换的安排",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0041-012",
+            "eval-v3-child-0003-008",
+            "eval-v3-child-0047-002"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0047"
+          ],
+          "retrieval_ms": 135.816
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0021-004",
+        "eval-v3-child-0003-008",
+        "eval-v3-child-0022-009",
+        "eval-v3-child-0041-012",
+        "eval-v3-child-0047-002",
+        "eval-v3-child-0008-004",
+        "eval-v3-child-0020-011"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-008"
+        ],
+        [
+          "eval-v3-child-0021-004"
+        ],
+        [
+          "eval-v3-child-0041-012"
+        ]
+      ],
+      "target_hit_ranks": [
+        2,
+        1,
+        4
+      ],
+      "first_token_ms": 5418.668,
+      "total_ms": 5438.327,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_014",
+      "category": "multi_block:3:复古动画",
+      "question": "重看哪部电影、什么时候看、选什么字幕？",
+      "answerable": true,
+      "reference_answer": "《魔女宅急便》；周六下午两点；普通话字幕版",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).我查了房间里的相关讨论，能确认的只有一部分，具体如下：\n\n**重看哪部**\n- 孔知夏（u092）说想重看《甄嬛传》，理由是“台词现在听还是很有味道”（消息 v3-m000162）。\n- 另外也有人提到《攻壳机动队》剧场版“值得重看”（陈晓安，v3-m000171），但那是另一条提议，不是《甄嬛传》这条。\n\n**什么时候看**\n- 目前检索到的消息里没有明确敲定《甄嬛传》重看的具体时间。房间里出现的“周六晚上八点开投影”“周日下午三点在客厅集合”“周五九点线上开播”等时间，分别对应周末补番、老番重温、电影夜等不同话题，不能直接算作《甄嬛传》的安排。\n\n**选什么字幕**\n- 房间里有几条字幕相关的说法，但分属不同话题，且互相不一致：\n  - 沈嘉宁（u044）：“字幕选简体中文字幕版，免得大家对不上台词”（v3-m002076）\n  - 郑晓安（u021）：“这次用日文原声中文字幕版，别开配音版”（v3-m002082）\n  - 许星野（u070）：“字幕用简体中文，片尾曲放完再结束语音”（v3-m002091）\n  - 杨知夏（u052）：“字幕用普通话版，避免版本不同对不上”（v3-m002049）\n- 这些消息没有明确标注是针对《甄嬛传》的，所以我无法确定《甄嬛传》重看最终选了哪个字幕版本。\n\n结论：电影（剧）选的是《甄嬛传》这一点比较明确；但“什么时候看”和“选什么字幕”在现有记录里没有针对它的定论。如果你记得是谁提的时间或字幕，或者大概是什么时候聊的，我可以再帮你缩小范围查一次。",
+      "http_status": 200,
+      "error": null,
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "token",
+        "completed"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "大家讨论重看哪部电影、什么时候看、选什么字幕",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0042-008",
+            "eval-v3-child-0013-004",
+            "eval-v3-child-0004-006"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0013",
+            "eval-v3-parent-0004"
+          ],
+          "retrieval_ms": 147.894
+        },
+        {
+          "query": "重看电影安排在什么时候看、具体时间",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-001",
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0041-006"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0041"
+          ],
+          "retrieval_ms": 137.592
+        },
+        {
+          "query": "重看电影选简体中文字幕还是原声字幕",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0042-008",
+            "eval-v3-child-0041-017",
+            "eval-v3-child-0042-011"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0041"
+          ],
+          "retrieval_ms": 140.744
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0042-008",
+        "eval-v3-child-0013-004",
+        "eval-v3-child-0004-006",
+        "eval-v3-child-0021-001",
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0041-006",
+        "eval-v3-child-0041-017",
+        "eval-v3-child-0042-011"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-013"
+        ],
+        [
+          "eval-v3-child-0021-011"
+        ],
+        [
+          "eval-v3-child-0041-017"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        null,
+        7
+      ],
+      "first_token_ms": 7513.776,
+      "total_ms": 7516.247,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_017",
+      "category": "multi_block:3:漫画改编",
+      "question": "看哪部作品、几点看、看完留多久讨论？",
+      "answerable": true,
+      "reference_answer": "《迷宫饭》；周三晚八点；讨论十五分钟",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "大家决定看哪部作品、几点开始看、看完留多久讨论？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0023-002",
+            "eval-v3-child-0001-006",
+            "eval-v3-child-0021-023"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0023",
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 161.454
+        },
+        {
+          "query": "一起看片安排：看哪部作品、几点开始、看完留多久讨论",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-006",
+            "eval-v3-child-0021-001",
+            "eval-v3-child-0023-002"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0023"
+          ],
+          "retrieval_ms": 162.379
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0023-002",
+        "eval-v3-child-0001-006",
+        "eval-v3-child-0021-023",
+        "eval-v3-child-0021-001"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-016"
+        ],
+        [
+          "eval-v3-child-0021-017"
+        ],
+        [
+          "eval-v3-child-0042-002"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        null,
+        null
+      ],
+      "first_token_ms": 4432.779,
+      "total_ms": 4467.944,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_018",
+      "category": "multi_block:3:游戏原声",
+      "question": "想找哪款游戏的原声、什么时候去、预算多少？",
+      "answerable": true,
+      "reference_answer": "《女神异闻录5》原声；周五下班后；两百元以内",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "想找哪款游戏的原声、什么时候去、预算多少",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-020",
+            "eval-v3-child-0003-017",
+            "eval-v3-child-0042-004"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0042"
+          ],
+          "retrieval_ms": 160.932
+        },
+        {
+          "query": "游戏原声 想找哪款游戏的原声 去唱片店试听 预算",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0003-017",
+            "eval-v3-child-0004-001",
+            "eval-v3-child-0021-020"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0004",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 138.487
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0021-020",
+        "eval-v3-child-0003-017",
+        "eval-v3-child-0042-004",
+        "eval-v3-child-0004-001"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0003-017"
+        ],
+        [
+          "eval-v3-child-0021-019"
+        ],
+        [
+          "eval-v3-child-0042-003"
+        ]
+      ],
+      "target_hit_ranks": [
+        2,
+        null,
+        null
+      ],
+      "first_token_ms": 4636.906,
+      "total_ms": 4659.895,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_019",
+      "category": "multi_block:3:经典电影",
+      "question": "选了哪部电影、几点在哪里看、散场后怎么安排？",
+      "answerable": true,
+      "reference_answer": "《天堂电影院》；周六晚七点社区影厅；散场后各自回家",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "大家选了哪部电影、几点在哪里看？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-001",
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0003-002"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0003"
+          ],
+          "retrieval_ms": 140.876
+        },
+        {
+          "query": "电影散场后怎么安排？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0042-004",
+            "eval-v3-child-0041-011",
+            "eval-v3-child-0041-006"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0041"
+          ],
+          "retrieval_ms": 138.57
+        },
+        {
+          "query": "电影夜最终选了哪部电影？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0003-002",
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0041-006"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0041"
+          ],
+          "retrieval_ms": 147.901
+        },
+        {
+          "query": "电影夜几点、在哪里看，散场后怎么安排？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0041-006",
+            "eval-v3-child-0021-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 148.938
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0021-001",
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0003-002",
+        "eval-v3-child-0042-004",
+        "eval-v3-child-0041-011",
+        "eval-v3-child-0041-006"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0004-002"
+        ],
+        [
+          "eval-v3-child-0021-001"
+        ],
+        [
+          "eval-v3-child-0042-004"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        1,
+        4
+      ],
+      "first_token_ms": 4945.563,
+      "total_ms": 4965.985,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_021",
+      "category": "multi_block:3:动画投票",
+      "question": "选了哪部动画、几点开始、第一晚看几集？",
+      "answerable": true,
+      "reference_answer": "《强风吹拂》；周日晚七点半；三集",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "大家选了哪部动画、几点开始、第一晚看几集？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0042-007",
+            "eval-v3-child-0003-002",
+            "eval-v3-child-0004-004"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0004"
+          ],
+          "retrieval_ms": 154.252
+        },
+        {
+          "query": "周末补番最终选定的动画是哪部，几点开始看",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0041-005",
+            "eval-v3-child-0020-008",
+            "eval-v3-child-0003-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0003"
+          ],
+          "retrieval_ms": 160.826
+        },
+        {
+          "query": "补番第一晚看几集",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0042-006",
+            "eval-v3-child-0041-005",
+            "eval-v3-child-0003-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0003"
+          ],
+          "retrieval_ms": 155.015
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0042-007",
+        "eval-v3-child-0003-002",
+        "eval-v3-child-0004-004",
+        "eval-v3-child-0041-005",
+        "eval-v3-child-0020-008",
+        "eval-v3-child-0003-001",
+        "eval-v3-child-0042-006"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0004-004"
+        ],
+        [
+          "eval-v3-child-0021-023"
+        ],
+        [
+          "eval-v3-child-0042-006"
+        ]
+      ],
+      "target_hit_ranks": [
+        3,
+        null,
+        7
+      ],
+      "first_token_ms": 4908.166,
+      "total_ms": 4928.857,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_023",
+      "category": "multi_block:3:电影选择",
+      "question": "选了哪部电影、几点看、字幕用哪个版本？",
+      "answerable": true,
+      "reference_answer": "《银翼杀手2049》；周五晚九点；简体中文字幕版",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "大家选了哪部电影、几点看、字幕用哪个版本？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0042-008",
+            "eval-v3-child-0041-017",
+            "eval-v3-child-0042-011"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0041"
+          ],
+          "retrieval_ms": 137.552
+        },
+        {
+          "query": "电影夜选哪部电影、几点开始看？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0003-002",
+            "eval-v3-child-0004-006",
+            "eval-v3-child-0021-027"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0004",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 144.684
+        },
+        {
+          "query": "电影夜字幕用哪个版本？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0041-017",
+            "eval-v3-child-0042-008",
+            "eval-v3-child-0041-006"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0042"
+          ],
+          "retrieval_ms": 136.388
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0042-008",
+        "eval-v3-child-0041-017",
+        "eval-v3-child-0042-011",
+        "eval-v3-child-0003-002",
+        "eval-v3-child-0004-006",
+        "eval-v3-child-0021-027",
+        "eval-v3-child-0041-006"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0004-006"
+        ],
+        [
+          "eval-v3-child-0021-026"
+        ],
+        [
+          "eval-v3-child-0042-008"
+        ]
+      ],
+      "target_hit_ranks": [
+        5,
+        null,
+        1
+      ],
+      "first_token_ms": 3923.006,
+      "total_ms": 3945.814,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_024",
+      "category": "multi_block:3:音乐分享",
+      "question": "分享谁的哪种专辑、什么时候发、放在哪个平台？",
+      "answerable": true,
+      "reference_answer": "陈粒现场专辑；周日下午；网易云歌单",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "谁要发专辑，什么类型的专辑，什么时候发布，放在哪个平台",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0002-011",
+            "eval-v3-child-0042-009"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0042"
+          ],
+          "retrieval_ms": 149.788
+        },
+        {
+          "query": "分享谁的专辑、什么类型、什么时候发、放在哪个平台",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0004-007",
+            "eval-v3-child-0022-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0004"
+          ],
+          "retrieval_ms": 142.017
+        },
+        {
+          "query": "音乐分享 专辑 发布 平台 安排",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0022-001",
+            "eval-v3-child-0004-007",
+            "eval-v3-child-0042-009"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0004",
+            "eval-v3-parent-0042"
+          ],
+          "retrieval_ms": 155.505
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0002-011",
+        "eval-v3-child-0042-009",
+        "eval-v3-child-0004-007",
+        "eval-v3-child-0022-001"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0004-007"
+        ],
+        [
+          "eval-v3-child-0022-001"
+        ],
+        [
+          "eval-v3-child-0042-009"
+        ]
+      ],
+      "target_hit_ranks": [
+        4,
+        5,
+        3
+      ],
+      "first_token_ms": 4926.717,
+      "total_ms": 4947.349,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "multi_029",
+      "category": "multi_block:3:游戏聚会",
+      "question": "玩什么游戏、几点开始、攻略怎么处理？",
+      "answerable": true,
+      "reference_answer": "《双人成行》；周五晚八点；从第一章开始且不看攻略",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "大家打算玩什么游戏、几点开始",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0022-009",
+            "eval-v3-child-0021-004",
+            "eval-v3-child-0003-008"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0003"
+          ],
+          "retrieval_ms": 154.706
+        },
+        {
+          "query": "游戏攻略怎么处理、谁负责整理攻略",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0042-012",
+            "eval-v3-child-0008-004",
+            "eval-v3-child-0047-002"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0008",
+            "eval-v3-parent-0047"
+          ],
+          "retrieval_ms": 158.229
+        },
+        {
+          "query": "联机游戏《胡闹厨房2》几点开始、谁建房间",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-004",
+            "eval-v3-child-0003-008",
+            "eval-v3-child-0022-009"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0003",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 209.113
+        },
+        {
+          "query": "游戏聚会先从第一章开始、暂时不看攻略",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0042-012",
+            "eval-v3-child-0022-009",
+            "eval-v3-child-0002-017"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 135.378
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0022-009",
+        "eval-v3-child-0021-004",
+        "eval-v3-child-0003-008",
+        "eval-v3-child-0042-012",
+        "eval-v3-child-0008-004",
+        "eval-v3-child-0047-002",
+        "eval-v3-child-0002-017"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0004-012"
+        ],
+        [
+          "eval-v3-child-0022-009"
+        ],
+        [
+          "eval-v3-child-0042-012"
+        ]
+      ],
+      "target_hit_ranks": [
+        null,
+        1,
+        4
+      ],
+      "first_token_ms": 5370.353,
+      "total_ms": 5393.455,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "temporal_002",
+      "category": "temporal:latest:沪深300",
+      "question": "最近一次群里讨论沪深300时，大家的判断是什么？",
+      "answerable": true,
+      "reference_answer": "指数站回关键区间但短期涨幅不小，仍不建议追高。",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages",
+        "search_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "最近一次群里讨论沪深300时，大家的判断是什么？",
+          "time_hint": {
+            "mode": "latest",
+            "start_at": null,
+            "end_at": null
+          },
+          "child_ids": [
+            "eval-v3-child-0020-006",
+            "eval-v3-child-0002-013",
+            "eval-v3-child-0041-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0041"
+          ],
+          "retrieval_ms": 154.748
+        },
+        {
+          "query": "沪深300 指数 成交量 估值 判断",
+          "time_hint": {
+            "mode": "latest",
+            "start_at": null,
+            "end_at": null
+          },
+          "child_ids": [
+            "eval-v3-child-0002-013",
+            "eval-v3-child-0020-006",
+            "eval-v3-child-0041-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0041"
+          ],
+          "retrieval_ms": 166.46
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0002-013",
+        "eval-v3-child-0041-001"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0041-001"
+        ]
+      ],
+      "target_hit_ranks": [
+        3
+      ],
+      "first_token_ms": 4073.833,
+      "total_ms": 4092.365,
+      "time_hint_exact": true
+    },
+    {
+      "qid": "temporal_004",
+      "category": "temporal:latest:宁德时代",
+      "question": "最近一次群里讨论宁德时代时，大家的判断是什么？",
+      "answerable": true,
+      "reference_answer": "继续关注海外订单与毛利率，暂时不追涨。",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages",
+        "search_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "最近一次群里讨论宁德时代时，大家的判断是什么？",
+          "time_hint": {
+            "mode": "latest",
+            "start_at": null,
+            "end_at": null
+          },
+          "child_ids": [
+            "eval-v3-child-0020-006",
+            "eval-v3-child-0041-002",
+            "eval-v3-child-0002-014"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 160.296
+        },
+        {
+          "query": "宁德时代 讨论 判断 订单 毛利率 季报",
+          "time_hint": {
+            "mode": "latest",
+            "start_at": null,
+            "end_at": null
+          },
+          "child_ids": [
+            "eval-v3-child-0041-002",
+            "eval-v3-child-0002-014",
+            "eval-v3-child-0020-006"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0020"
+          ],
+          "retrieval_ms": 156.592
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-006",
+        "eval-v3-child-0041-002",
+        "eval-v3-child-0002-014"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0041-002"
+        ]
+      ],
+      "target_hit_ranks": [
+        2
+      ],
+      "first_token_ms": 4570.339,
+      "total_ms": 4601.879,
+      "time_hint_exact": true
+    },
+    {
+      "qid": "temporal_006",
+      "category": "temporal:latest:贵州茅台",
+      "question": "最近一次群里讨论贵州茅台时，大家的判断是什么？",
+      "answerable": true,
+      "reference_answer": "继续观察渠道库存和财报，不因短期波动下结论。",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages",
+        "search_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "最近一次群里讨论贵州茅台时，大家的判断是什么？",
+          "time_hint": {
+            "mode": "latest",
+            "start_at": null,
+            "end_at": null
+          },
+          "child_ids": [
+            "eval-v3-child-0041-003",
+            "eval-v3-child-0002-014",
+            "eval-v3-child-0020-007"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0020"
+          ],
+          "retrieval_ms": 155.481
+        },
+        {
+          "query": "贵州茅台 渠道库存 财报 判断",
+          "time_hint": {
+            "mode": "latest",
+            "start_at": null,
+            "end_at": null
+          },
+          "child_ids": [
+            "eval-v3-child-0041-003",
+            "eval-v3-child-0002-014",
+            "eval-v3-child-0020-007"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0020"
+          ],
+          "retrieval_ms": 163.967
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0041-003",
+        "eval-v3-child-0002-014",
+        "eval-v3-child-0020-007"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0041-003"
+        ]
+      ],
+      "target_hit_ranks": [
+        1
+      ],
+      "first_token_ms": 4090.744,
+      "total_ms": 4113.162,
+      "time_hint_exact": true
+    },
+    {
+      "qid": "temporal_007",
+      "category": "temporal:range:黄金ETF",
+      "question": "2025年9月12日群里讨论黄金ETF时的判断是什么？",
+      "answerable": true,
+      "reference_answer": "利率预期变化较大，先观察回撤、不急着追涨。",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "2025年9月12日群里讨论黄金ETF时的判断是什么？",
+          "time_hint": {
+            "mode": "range",
+            "start_at": "2025-09-12T00:00:00+08:00",
+            "end_at": "2025-09-12T23:59:59+08:00"
+          },
+          "child_ids": [
+            "eval-v3-child-0002-015",
+            "eval-v3-child-0041-004",
+            "eval-v3-child-0020-007"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0020"
+          ],
+          "retrieval_ms": 176.806
+        },
+        {
+          "query": "2025年9月12日聊到黄金ETF时的判断",
+          "time_hint": {
+            "mode": "range",
+            "start_at": "2025-09-12T00:00:00+08:00",
+            "end_at": "2025-09-12T23:59:59+08:00"
+          },
+          "child_ids": [
+            "eval-v3-child-0002-015",
+            "eval-v3-child-0041-004",
+            "eval-v3-child-0020-007"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0020"
+          ],
+          "retrieval_ms": 173.465
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0002-015",
+        "eval-v3-child-0041-004",
+        "eval-v3-child-0020-007"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0020-007"
+        ]
+      ],
+      "target_hit_ranks": [
+        3
+      ],
+      "first_token_ms": 4820.8,
+      "total_ms": 4840.506,
+      "time_hint_exact": true
+    },
+    {
+      "qid": "temporal_008",
+      "category": "temporal:latest:黄金ETF",
+      "question": "最近一次群里讨论黄金ETF时，大家的判断是什么？",
+      "answerable": true,
+      "reference_answer": "继续观察利率和回撤情况。",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "sync_room_messages",
+        "search_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "最近一次群里讨论黄金ETF时，大家的判断是什么？",
+          "time_hint": {
+            "mode": "latest",
+            "start_at": null,
+            "end_at": null
+          },
+          "child_ids": [
+            "eval-v3-child-0002-015",
+            "eval-v3-child-0041-004",
+            "eval-v3-child-0020-007"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0020"
+          ],
+          "retrieval_ms": 167.568
+        },
+        {
+          "query": "最近一次聊到黄金ETF时，大家的判断和看法是什么？",
+          "time_hint": {
+            "mode": "latest",
+            "start_at": null,
+            "end_at": null
+          },
+          "child_ids": [
+            "eval-v3-child-0002-015",
+            "eval-v3-child-0041-004",
+            "eval-v3-child-0020-007"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0002",
+            "eval-v3-parent-0041",
+            "eval-v3-parent-0020"
+          ],
+          "retrieval_ms": 159.394
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0002-015",
+        "eval-v3-child-0041-004",
+        "eval-v3-child-0020-007"
+      ],
+      "target_groups": [
+        [
+          "eval-v3-child-0041-004"
+        ]
+      ],
+      "target_hit_ranks": [
+        2
+      ],
+      "first_token_ms": 4361.548,
+      "total_ms": 4384.299,
+      "time_hint_exact": true
+    },
+    {
+      "qid": "noanswer_001",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《来自深渊》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《来自深渊》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0022-007"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 139.166
+        },
+        {
+          "query": "《来自深渊》一起看的时间安排和开播平台",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0022-007",
+            "eval-v3-child-0021-023"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 131.901
+        },
+        {
+          "query": "来自深渊 开播 平台 链接",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0022-010"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0020"
+          ],
+          "retrieval_ms": 127.066
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0022-007",
+        "eval-v3-child-0021-023",
+        "eval-v3-child-0022-010"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 4592.391,
+      "total_ms": 4610.619,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_002",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《昭和元禄落语心中》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《昭和元禄落语心中》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0022-002",
+            "eval-v3-child-0021-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 136.733
+        },
+        {
+          "query": "《昭和元禄落语心中》一起看的时间安排和开播平台",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0001-003",
+            "eval-v3-child-0002-012"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 150.962
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0022-002",
+        "eval-v3-child-0021-001",
+        "eval-v3-child-0001-003",
+        "eval-v3-child-0002-012"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 4814.113,
+      "total_ms": 4835.187,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_003",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《比宇宙更远的地方》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《比宇宙更远的地方》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0021-011",
+            "eval-v3-child-0022-005"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 148.211
+        },
+        {
+          "query": "《比宇宙更远的地方》一起看的时间安排和平台",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-011",
+            "eval-v3-child-0022-007",
+            "eval-v3-child-0002-012"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 134.003
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0021-011",
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0022-007",
+        "eval-v3-child-0002-012"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 4264.81,
+      "total_ms": 4286.109,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_004",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《夏目友人帐》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《夏目友人帐》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0021-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 130.456
+        },
+        {
+          "query": "《夏目友人帐》一起看的时间和平台",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-023",
+            "eval-v3-child-0021-026",
+            "eval-v3-child-0022-005"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 129.445
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0021-001",
+        "eval-v3-child-0021-023",
+        "eval-v3-child-0021-026"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 4290.472,
+      "total_ms": 4329.894,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_005",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《白箱》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《白箱》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0021-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 145.187
+        },
+        {
+          "query": "《白箱》一起看的时间安排和开播平台",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0022-007",
+            "eval-v3-child-0021-023"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 135.66
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0021-001",
+        "eval-v3-child-0022-007",
+        "eval-v3-child-0021-023"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 4184.879,
+      "total_ms": 4207.122,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_006",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《少女终末旅行》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《少女终末旅行》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-001",
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0021-023"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 233.148
+        },
+        {
+          "query": "《少女终末旅行》一起看的时间安排和开播平台",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-023",
+            "eval-v3-child-0001-001",
+            "eval-v3-child-0002-016"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 141.988
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0021-001",
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0021-023",
+        "eval-v3-child-0001-001",
+        "eval-v3-child-0002-016"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 4666.313,
+      "total_ms": 4687.631,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_007",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《异度侵入》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《异度侵入》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0021-011",
+            "eval-v3-child-0022-005"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 132.985
+        },
+        {
+          "query": "《异度侵入》一起看的时间安排和开播平台",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0021-011",
+            "eval-v3-child-0021-023"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 127.039
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0021-011",
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0021-023"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 5279.342,
+      "total_ms": 5298.994,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_008",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《四叠半神话大系》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《四叠半神话大系》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0021-011",
+            "eval-v3-child-0022-005"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 213.922
+        },
+        {
+          "query": "《四叠半神话大系》一起看的时间安排和开播平台",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-011",
+            "eval-v3-child-0021-023",
+            "eval-v3-child-0022-005"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 143.641
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0021-011",
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0021-023"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 4648.874,
+      "total_ms": 4668.599,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_009",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《花开伊吕波》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《花开伊吕波》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0021-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 141.437
+        },
+        {
+          "query": "《花开伊吕波》一起看的时间安排和开播平台",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-005",
+            "eval-v3-child-0021-023",
+            "eval-v3-child-0022-005"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 142.351
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0021-001",
+        "eval-v3-child-0021-005",
+        "eval-v3-child-0021-023"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 5163.24,
+      "total_ms": 5200.266,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_010",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《冰菓》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《冰菓》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0021-011",
+            "eval-v3-child-0022-005"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 131.952
+        },
+        {
+          "query": "《冰菓》一起看的时间安排和平台",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0042-012",
+            "eval-v3-child-0021-023",
+            "eval-v3-child-0002-012"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0042",
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 131.619
+        },
+        {
+          "query": "冰菓 开播 平台 链接",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0022-010"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 126.241
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0021-011",
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0042-012",
+        "eval-v3-child-0021-023",
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0022-010"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 4080.189,
+      "total_ms": 4098.185,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_011",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《日常》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《日常》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0025-004",
+            "eval-v3-child-0021-023"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0025",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 140.804
+        },
+        {
+          "query": "《日常》一起看的时间安排和开播平台",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0001-003",
+            "eval-v3-child-0021-013",
+            "eval-v3-child-0002-002"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0001",
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 138.541
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0025-004",
+        "eval-v3-child-0021-023",
+        "eval-v3-child-0001-003",
+        "eval-v3-child-0021-013",
+        "eval-v3-child-0002-002"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 4942.321,
+      "total_ms": 4960.531,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_012",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《昭和元禄落语心中》剧场版，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《昭和元禄落语心中》剧场版，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0021-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 143.038
+        },
+        {
+          "query": "《昭和元禄落语心中》剧场版 一起看 哪天 平台 开播",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-023",
+            "eval-v3-child-0004-008",
+            "eval-v3-child-0002-012"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0004",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 132.736
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0021-001",
+        "eval-v3-child-0021-023",
+        "eval-v3-child-0004-008",
+        "eval-v3-child-0002-012"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 4697.086,
+      "total_ms": 4723.292,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_013",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《平家物语》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《平家物语》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0021-001",
+            "eval-v3-child-0022-005"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 129.41
+        },
+        {
+          "query": "《平家物语》一起看的时间安排和开播平台",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-023",
+            "eval-v3-child-0021-026",
+            "eval-v3-child-0001-003"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0001"
+          ],
+          "retrieval_ms": 127.476
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0021-001",
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0021-023",
+        "eval-v3-child-0021-026",
+        "eval-v3-child-0001-003"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 4683.304,
+      "total_ms": 4707.261,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_014",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《乒乓》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《乒乓》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0021-001"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 150.562
+        },
+        {
+          "query": "《乒乓》一起看的时间和平台",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-023",
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0002-012"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 135.918
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0021-001",
+        "eval-v3-child-0021-023",
+        "eval-v3-child-0002-012"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 4238.4,
+      "total_ms": 4261.759,
+      "time_hint_exact": null
+    },
+    {
+      "qid": "noanswer_015",
+      "category": "no_answer:unmentioned_title",
+      "question": "群里最后决定哪天一起看《妄想代理人》，在哪个平台开播？",
+      "answerable": false,
+      "reference_answer": "",
+      "answer_text": "Tool call limit reached: run limit exceeded (4/3 calls).",
+      "http_status": 200,
+      "error": "Agent 任务执行失败",
+      "events": [
+        "connected",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "tool_start",
+        "tool_end",
+        "token",
+        "error"
+      ],
+      "tool_names": [
+        "search_messages",
+        "search_messages",
+        "sync_room_messages"
+      ],
+      "search_tool_calls": 2,
+      "search_calls": [
+        {
+          "query": "群里最后决定哪天一起看《妄想代理人》，在哪个平台开播？",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0020-009",
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0022-007"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0022"
+          ],
+          "retrieval_ms": 153.28
+        },
+        {
+          "query": "《妄想代理人》一起看的时间安排和开播平台",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0021-023",
+            "eval-v3-child-0022-005",
+            "eval-v3-child-0002-012"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0021",
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0002"
+          ],
+          "retrieval_ms": 143.262
+        },
+        {
+          "query": "妄想代理人 补番 线上放映 平台链接",
+          "time_hint": null,
+          "child_ids": [
+            "eval-v3-child-0022-002",
+            "eval-v3-child-0020-008",
+            "eval-v3-child-0021-011"
+          ],
+          "parent_ids": [
+            "eval-v3-parent-0022",
+            "eval-v3-parent-0020",
+            "eval-v3-parent-0021"
+          ],
+          "retrieval_ms": 131.467
+        }
+      ],
+      "unique_reranked_child_ids": [
+        "eval-v3-child-0020-009",
+        "eval-v3-child-0022-005",
+        "eval-v3-child-0022-007",
+        "eval-v3-child-0021-023",
+        "eval-v3-child-0002-012",
+        "eval-v3-child-0022-002",
+        "eval-v3-child-0020-008",
+        "eval-v3-child-0021-011"
+      ],
+      "target_groups": [],
+      "target_hit_ranks": [],
+      "first_token_ms": 5545.079,
+      "total_ms": 5575.355,
+      "time_hint_exact": null
+    }
+  ]
+}

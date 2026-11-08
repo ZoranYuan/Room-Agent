@@ -1,6 +1,7 @@
 """收集内部 Agent 的消息，转发工具状态，校验最终回答。"""
 
 from collections.abc import Sequence
+from dataclasses import dataclass
 from typing import Any
 
 from langchain.agents.middleware.types import InputAgentState
@@ -17,16 +18,24 @@ from constants.exception import (
 from harness.middleware.tool_result_cache import tool_result_cache_scope
 
 
+@dataclass
+class AgentExecutionResult:
+    messages: list[AnyMessage]
+    structured_response: object | None
+
+
 async def run_agent(
     agent: Any,
     *,
     messages: Sequence[AnyMessage],
     context: AgentRuntimeContext,
     config: RunnableConfig | None = None,
-) -> list[AnyMessage]:
+) -> AgentExecutionResult:
     """执行 Agent；文本继续通过 LangGraph 原生 messages 流传播。"""
     writer = get_stream_writer()
+    # 收集一次模型调用的输出，保存到 graph 的检查点中
     responses: list[AnyMessage] = []
+    structured_response: object | None = None
     agent_input: InputAgentState = {"messages": list(messages)}
 
     async with tool_result_cache_scope():
@@ -47,6 +56,11 @@ async def run_agent(
             elif kind == "on_chat_model_end":
                 assert "output" in data
                 responses.append(data["output"])
+            # Agent 嵌套在外层图节点中时也会有 parent_ids；仅在事件输出含结构化结果时取值。
+            elif kind == "on_chain_end":
+                output = data.get("output")
+                if isinstance(output, dict) and output.get("structured_response") is not None:
+                    structured_response = output["structured_response"]
 
     if not responses:
         raise RuntimeError(DETAIL_AGENT_NO_MESSAGES)
@@ -54,11 +68,15 @@ async def run_agent(
     final_response = responses[-1]
     if isinstance(final_response, AIMessage) and final_response.invalid_tool_calls:
         raise ValueError(DETAIL_INVALID_TOOL_CALLS)
-    if (
+
+    if structured_response is None and (
         not isinstance(final_response, AIMessage)
         or final_response.tool_calls
         or not final_response.text.strip()
     ):
         raise RuntimeError(DETAIL_AGENT_NO_FINAL_ANSWER)
 
-    return responses
+    return AgentExecutionResult(
+        messages=responses,
+        structured_response=structured_response,
+    )
