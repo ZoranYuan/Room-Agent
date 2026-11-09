@@ -59,7 +59,10 @@ async def run_chat(
     time_context = SystemMessage(
         content=(
             f"本次请求的当前时间为 {now.isoformat()}，时区为 {settings.rag_timezone}。"
-            "仅用于解释用户的相对时间表达。"
+            f"当前年份为 {now.year}；年份换算以此为准：去年是 {now.year - 1} 年，"
+            f"今年是 {now.year} 年，明年是 {now.year + 1} 年。"
+            f"例如，去年11月15日对应 {now.year - 1}-11-15。"
+            "不要使用模型自身的当前日期或知识截止时间推算。"
         )
     )
     response = await run_agent(

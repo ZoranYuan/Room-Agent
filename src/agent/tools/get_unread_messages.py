@@ -31,8 +31,8 @@ async def get_unread_messages(
             不由模型填写。
 
     Returns:
-        status 为 success 表示查询成功；unread_messages 为按 seq 排序的
-        正常非空文本消息列表，包含发送者姓名和原始发送时间；
+        status 为 success 表示查询成功；
+        unread_messages 为按 seq 排序的正常非空文本消息列表，包含发送者姓名和原始发送时间；
         extra_message 提供补充说明。空列表表示没有可用于摘要的未读文本。
         鉴权失败或查询异常直接抛出，不伪装成空结果。
     """

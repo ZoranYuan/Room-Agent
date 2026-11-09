@@ -1,6 +1,5 @@
 import asyncio
 from datetime import datetime
-from functools import lru_cache
 from zoneinfo import ZoneInfo
 
 from llama_index.core.schema import MetadataMode, NodeWithScore
@@ -9,34 +8,11 @@ from llama_index.core.vector_stores import (
     MetadataFilters,
 )
 from llama_index.core.vector_stores.types import VectorStoreQueryMode
-from sentence_transformers import CrossEncoder
 
 from config.config import settings
 from domain.time_hint import TimeHint
+from infra.model.reranker_model_factory import get_message_reranker
 from infra.rag.vector.vector_store import get_vector_index
-
-CHAT_HISTORY_INSTRUCTION = (
-    "Given a question about a chat room's history, judge whether the passage "
-    "contains evidence that supports any requested fact. A question may require "
-    "multiple facts from different passages. A passage is relevant if it supports "
-    "at least one part of the answer. When the query includes a time constraint, "
-    "also compare it with the passage's candidate time range: prefer overlapping "
-    "ranges for a specified period, and prefer the latest end time for a latest "
-    "query. If there is no time constraint, judge relevance by the evidence."
-)
-
-
-@lru_cache(maxsize=1)
-def get_message_reranker() -> CrossEncoder:
-    """加载并复用带聊天记录检索指令的重排模型。"""
-    return CrossEncoder(
-        settings.reranker_model_id,
-        max_length=512,  # 与当前 LlamaIndex 封装保持一致，便于公平对比
-        trust_remote_code=True,
-        prompts={"chat_history": CHAT_HISTORY_INSTRUCTION},
-        default_prompt_name="chat_history",
-    )
-
 
 def epoch_seconds(value: object) -> float | None:
     if not isinstance(value, int | float):
@@ -79,13 +55,12 @@ async def rerank_chat_chunks(
     *,
     query: str,
     candidates: list[NodeWithScore],
-    top_n: int,
     time_hint: TimeHint | None = None,
 ) -> list[NodeWithScore]:
     if not candidates:
         return []
 
-    model = await asyncio.to_thread(get_message_reranker)
+    model = await get_message_reranker()
     query_text = query
     if time_hint is not None:
         query_text = f"{query}\n{_format_time_hint(time_hint)}"
@@ -109,7 +84,7 @@ async def rerank_chat_chunks(
         for candidate, score in zip(candidates, scores)
     ]
 
-    return sorted(ranked, key=lambda item: item.score or 0, reverse=True)[:top_n]
+    return sorted(ranked, key=lambda item: item.score or 0, reverse=True)
 
 
 def temporal_order(
@@ -186,33 +161,31 @@ def temporal_order(
     return sorted(candidates, key=range_order)
 
 
-def select_rerank_candidates(
-    retrieval_candidates: list[NodeWithScore],
-    temporal_candidates: list[NodeWithScore],
+def combine_rerank_and_temporal_ranks(
+    reranked_candidates: list[NodeWithScore],
+    time_hint: TimeHint,
 ) -> list[NodeWithScore]:
-    retrieval_rank = {
+    """在精排后的完整候选池中融合语义排名与时间排名。"""
+    temporal_candidates = temporal_order(reranked_candidates, time_hint)
+    rerank_rank = {
         candidate.node.node_id: rank
-        for rank, candidate in enumerate(retrieval_candidates, start=1)
+        for rank, candidate in enumerate(reranked_candidates, start=1)
     }
     temporal_rank = {
         candidate.node.node_id: rank
         for rank, candidate in enumerate(temporal_candidates, start=1)
     }
 
-    ranked_candidates = []
-    for candidate in retrieval_candidates:
+    combined = []
+    for candidate in reranked_candidates:
         node_id = candidate.node.node_id
-        score = 1 / (settings.rag_rrf_k + retrieval_rank[node_id])
+        score = 1 / (settings.rag_rrf_k + rerank_rank[node_id])
         score += settings.rag_temporal_rank_weight / (
             settings.rag_rrf_k + temporal_rank[node_id]
         )
-        ranked_candidates.append(NodeWithScore(node=candidate.node, score=score))
+        combined.append(NodeWithScore(node=candidate.node, score=score))
 
-    ranked_candidates.sort(
-        key=lambda candidate: candidate.score or 0,
-        reverse=True,
-    )
-    return ranked_candidates[: settings.rag_rerank_input_top_n]
+    return sorted(combined, key=lambda item: item.score or 0, reverse=True)
 
 
 async def retrieve_message_chunks(
@@ -238,20 +211,18 @@ async def retrieve_message_chunks(
     if not candidates:
         return []
 
-    rerank_candidates = candidates
-    if time_hint is None:
-        rerank_candidates = candidates[: settings.rag_rerank_input_top_n]
-    else:
-        temporal_candidates = temporal_order(candidates, time_hint)
-        rerank_candidates = select_rerank_candidates(
-            candidates,
-            temporal_candidates,
-        )
-
-    # Cross-Encoder 只计算预筛选后的小候选集，top_n 决定最终保留数量。
-    return await rerank_chat_chunks(
+    # RRF 候选池全部进入 Cross-Encoder，时间因素不提前淘汰语义候选。
+    rerank_candidates = candidates[: settings.rag_rerank_input_top_n]
+    reranked_candidates = await rerank_chat_chunks(
         query=query,
         candidates=rerank_candidates,
-        top_n=settings.rag_final_top_n,
         time_hint=time_hint,
     )
+
+    if time_hint is not None:
+        reranked_candidates = combine_rerank_and_temporal_ranks(
+            reranked_candidates,
+            time_hint,
+        )
+
+    return reranked_candidates[: settings.rag_final_top_n]
