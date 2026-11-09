@@ -1,6 +1,7 @@
 """模型生成器."""
 
 from typing import Any, Mapping
+from urllib.parse import urlparse
 
 from langchain_openai import ChatOpenAI
 from pydantic import SecretStr
@@ -19,6 +20,11 @@ def create_llm_model(
     extra_body: Mapping[str, Any] | None = None,
 ) -> ChatOpenAI:
     """创建模型入口，当业务层需要创建模型时，可以直接调用."""
+    provider_options = dict(extra_body or {})
+    if urlparse(model_base_url).hostname == "api.openai.com":
+        # thinking 是部分兼容供应商的扩展字段，OpenAI API 不接受该参数。
+        provider_options.pop("thinking", None)
+
     return ChatOpenAI(
         model=model_name,
         api_key=SecretStr(model_api_key) if model_api_key else None,
@@ -28,5 +34,5 @@ def create_llm_model(
         max_retries=(
             settings.llm_max_retries if max_retries is None else max_retries
         ),
-        extra_body=extra_body,
+        extra_body=provider_options or None,
     )

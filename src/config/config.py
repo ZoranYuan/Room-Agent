@@ -70,6 +70,7 @@ class _Settings(BaseModel):
         "Qwen/Qwen3-Reranker-0.6B",
     )
     embedding_dimension: int = int(_env("EMBEDDING_DIMENSION", "1024"))
+    rag_device: str = _env("RAG_DEVICE", "cpu")
     # BM25 需要在建表时配置稀疏向量字段，使用新集合保留旧的纯向量集合。
     milvus_collection: str = _env(
         "MILVUS_HYBRID_COLLECTION", "message_child_chunks_hybrid"
@@ -90,23 +91,28 @@ class _Settings(BaseModel):
         validate_default=True,
     )
     rag_parent_max_chars: int = Field(
-        default=int(_env("RAG_PARENT_MAX_CHARS", "6000")), ge=1, validate_default=True
+        default=int(_env("RAG_PARENT_MAX_CHARS", "2000")), ge=1, validate_default=True
     )
     rag_chunk_max_chars: int = Field(
-        default=int(_env("RAG_CHUNK_MAX_CHARS", "400")), ge=1, validate_default=True
+        default=int(_env("RAG_CHUNK_MAX_CHARS", "300")), ge=1, validate_default=True
+    )
+    rag_chunk_overlap_chars: int = Field(
+        default=int(_env("RAG_CHUNK_OVERLAP_CHARS", "20")),
+        ge=0,
+        validate_default=True,
     )
     rag_message_max_chars: int = Field(
         default=int(_env("RAG_MESSAGE_MAX_CHARS", "100")), ge=1, validate_default=True
     )
     rag_timezone: str = _env("RAG_TIMEZONE", "Asia/Shanghai")
     rag_temporal_rank_weight: float = Field(
-        default=float(_env("RAG_TEMPORAL_RANK_WEIGHT", "0.25")),
+        default=float(_env("RAG_TEMPORAL_RANK_WEIGHT", "1")),
         ge=0,
         validate_default=True,
     )
     rag_rrf_k: int = int(_env("RAG_RRF_K", "60"))
     rag_candidate_top_k: int = int(_env("RAG_CANDIDATE_TOP_K", "10"))
-    rag_rerank_input_top_n: int = int(_env("RAG_RERANK_INPUT_TOP_N", "5"))
+    rag_rerank_input_top_n: int = int(_env("RAG_RERANK_INPUT_TOP_N", "10"))
     rag_final_top_n: int = int(_env("RAG_FINAL_TOP_N", "3"))
     llm_max_retries: int = int(_env("LLM_MAX_RETRIES", "2"))
     llm_retry_initial_delay_seconds: float = float(
@@ -115,7 +121,6 @@ class _Settings(BaseModel):
     llm_retry_max_delay_seconds: float = float(
         _env("LLM_RETRY_MAX_DELAY_SECONDS", "8")
     )
-    cluster_summary_max_chars: int = int(_env("CLUSTER_SUMMARY_MAX_CHARS", "225"))
     cluster_max_output_tokens: int = int(_env("CLUSTER_MAX_OUTPUT_TOKENS", "3072"))
 
     snowflake_instance_id: str = "1"

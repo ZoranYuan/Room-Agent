@@ -1,6 +1,8 @@
+import re
 from threading import Lock
 from typing import Sequence
 
+from llama_index.core.node_parser import SentenceSplitter
 from llama_index.core.schema import (
     TextNode,
 )
@@ -25,13 +27,19 @@ def _next_id() -> str:
 
 
 def _message_text(message: ChatMessage) -> str:
-    """保留人物、时间和正文，作为 Embedding 与 BM25 的输入内容。"""
+    """用于父块字符预算，包含人物、时间和原始正文。"""
     sender = message.sender_name or message.sender_id
     return (
         f"[seq={message.seq}, send_time={message.send_time}] "
         f"[{sender} ({message.sender_id})]: "
         f"{message.content}"
     )
+
+
+def _child_message_text(message: ChatMessage) -> str:
+    """子块保留原始发言；消息时间范围单独放在 metadata。"""
+    sender = message.sender_name or message.sender_id
+    return f"[seq={message.seq}] [{sender} ({message.sender_id})]: {message.content}"
 
 
 def _parent_batches(
@@ -95,26 +103,79 @@ async def build_message_chunks(
         seq_ms = {str(message.seq): message for message in batch}
 
         for group in message_group.groups:
-            members = [seq_ms[seq] for seq in group.seqs]
+            members = sorted(
+                [seq_ms[seq] for seq in group.seqs],
+                key=lambda message: message.seq,
+            )
             metadata = {
                 "parent_id": parent.id,
                 "room_id": room_id,
                 "topic": group.topic,
-                "seqs": group.seqs,
+                "seqs": [str(message.seq) for message in members],
                 "start_time": min(message.send_time for message in members),
                 "end_time": max(message.send_time for message in members),
             }
 
-            text = f"主题：{group.topic}\n摘要：{group.summary}"
-            children.append(
-                TextNode(
-                    id_=_next_id(),
-                    text=text,
-                    metadata=metadata,
-                    excluded_embed_metadata_keys=list(metadata),
-                    excluded_llm_metadata_keys=list(metadata),
-                )
+            topic_prefix = f"主题：{group.topic}\n"
+            content_budget = settings.rag_chunk_max_chars - len(topic_prefix)
+            splitter = SentenceSplitter(
+                chunk_size=content_budget,
+                chunk_overlap=min(
+                    settings.rag_chunk_overlap_chars,
+                    content_budget - 1,
+                ),
+                tokenizer=list,
+                chunking_tokenizer_fn=lambda text: re.findall(
+                    r"[^。！？\n]+[。！？\n]*|[。！？\n]+",
+                    text,
+                ),
             )
+            message_records: list[str] = []
+            message_spans: list[tuple[ChatMessage, int, int]] = []
+            text_offset = 0
+            for index, message in enumerate(members):
+                if index:
+                    message_records.append("\n")
+                    text_offset += 1
+
+                record = _child_message_text(message)
+                message_start = text_offset
+                message_records.append(record)
+                text_offset += len(record)
+                message_spans.append((message, message_start, text_offset))
+
+            message_text = "".join(message_records)
+            search_from = 0
+            for content in splitter.split_text(message_text):
+                chunk_start = message_text.find(content, search_from)
+                assert chunk_start >= 0
+                chunk_end = chunk_start + len(content)
+                # Overlap means adjacent chunks share text; map each chunk's
+                # actual span back to the messages it contains.
+                chunk_members = [
+                    message
+                    for message, message_start, message_end in message_spans
+                    if message_start < chunk_end and message_end > chunk_start
+                ]
+                search_from = chunk_start + 1
+
+                chunk_metadata = {
+                    **metadata,
+                    "seqs": [str(message.seq) for message in chunk_members],
+                    "start_time": min(
+                        message.send_time for message in chunk_members
+                    ),
+                    "end_time": max(message.send_time for message in chunk_members),
+                }
+                children.append(
+                    TextNode(
+                        id_=_next_id(),
+                        text=f"{topic_prefix}{content}",
+                        metadata=chunk_metadata,
+                        excluded_embed_metadata_keys=list(chunk_metadata),
+                        excluded_llm_metadata_keys=list(chunk_metadata),
+                    )
+                )
     return parents, children
 
 

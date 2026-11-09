@@ -1,9 +1,7 @@
 """定义 Agent model"""
 
-from functools import lru_cache
-
-from langchain_openai import ChatOpenAI
-
+from agent.prompts.cluster import CLUSTER_PROMPT
+from agent.schemas.cluster import MessageGroups
 from config.config import settings
 from infra.model.llm_model_factory import create_llm_model
 
@@ -46,21 +44,21 @@ memory_summary_model = create_llm_model(
 )
 
 
-@lru_cache(maxsize=1)
-def get_cluster_model() -> ChatOpenAI:
-    """复用聚类模型，重试由 Harness 统一管理。"""
-    topic_cluster_model = create_llm_model(
-        model_name=settings.agent_model,
-        model_base_url=settings.agent_base_url,
-        model_api_key=settings.agent_key,
-        timeout_seconds=settings.agent_timeout_seconds,
-        temperature=0.0,
-        # 聚类 Harness 负责重试，避免和模型客户端重试叠加。
-        max_retries=0,
-        extra_body={
-            "thinking": {"type": "disabled"},
-            "max_tokens": settings.cluster_max_output_tokens,
-        },
-    )
+topic_cluster_model = create_llm_model(
+    model_name=settings.agent_model,
+    model_base_url=settings.agent_base_url,
+    model_api_key=settings.agent_key,
+    timeout_seconds=settings.agent_timeout_seconds,
+    temperature=0.0,
+    # 聚类 Harness 负责重试，避免和模型客户端重试叠加。
+    max_retries=0,
+    extra_body={
+        "thinking": {"type": "disabled"},
+        "max_tokens": settings.cluster_max_output_tokens,
+    },
+)
 
-    return topic_cluster_model
+topic_cluster_chain = CLUSTER_PROMPT | topic_cluster_model.with_structured_output(
+    MessageGroups,
+    method="function_calling",
+)

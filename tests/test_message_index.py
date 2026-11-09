@@ -7,7 +7,7 @@ from llama_index.core.schema import NodeRelationship, TextNode
 
 from config.config import settings
 from domain.chat_message import ChatMessage
-from harness.llm.cluster_messages import MessageGroup, MessageGroups
+from agent.schemas.cluster import MessageGroup, MessageGroups
 from infra.rag import message_index as rag
 
 

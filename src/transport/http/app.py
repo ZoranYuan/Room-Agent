@@ -5,8 +5,9 @@ from contextlib import AsyncExitStack, asynccontextmanager
 from fastapi import APIRouter, FastAPI
 from prometheus_client import make_asgi_app
 
+from infra.model.reranker_model_factory import get_message_reranker
 from infra.mysql.database import close_mysql
-from infra.rag.vector.vector_store import close_vector_store
+from infra.rag.vector.vector_store import close_vector_store, get_vector_index
 from transport.grpc.client import close_grpc_client
 from transport.http.exception_handlers import register_http_exception_handlers
 from transport.http.routers.agent import router as agent_router
@@ -19,6 +20,10 @@ async def lifespan(app: FastAPI):
         stack.push_async_callback(close_mysql)
         stack.push_async_callback(close_grpc_client)
         stack.push_async_callback(close_vector_store)
+
+        # 启动时完成模型和向量客户端初始化，避免首个请求承担冷启动耗时。
+        await get_vector_index()
+        await get_message_reranker()
 
         yield
 

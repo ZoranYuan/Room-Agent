@@ -31,8 +31,8 @@ def result(seqs=None):
 def chain(monkeypatch):
     chain = Mock()
     chain.ainvoke = AsyncMock(return_value=result())
-    monkeypatch.setattr(cluster, "_get_cluster_chain", lambda: chain)
-    monkeypatch.setattr(settings, "cluster_max_retries", 1)
+    monkeypatch.setattr(cluster, "topic_cluster_chain", chain)
+    monkeypatch.setattr(settings, "llm_max_retries", 1)
     monkeypatch.setattr(cluster.asyncio, "sleep", AsyncMock())
     return chain
 

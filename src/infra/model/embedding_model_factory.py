@@ -1,6 +1,6 @@
 """延迟加载 ModelScope 模型，提供 LlamaIndex Embedding 实例."""
 
-from functools import lru_cache
+import asyncio
 
 from llama_index.core.base.embeddings.base import BaseEmbedding
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
@@ -8,17 +8,28 @@ from modelscope import snapshot_download
 
 from config.config import settings
 
+_embedding_model: BaseEmbedding | None = None
 
-@lru_cache(maxsize=1)
-def get_embedding_model() -> BaseEmbedding:
-    """首次使用时下载或读取缓存模型，后续复用实例."""
-    model_path = snapshot_download(settings.embedding_model_id)
-    return HuggingFaceEmbedding(
-        model_name=model_path,
-        normalize=True,
-        truncate_dim=settings.embedding_dimension,
-        embed_batch_size=8,
-        query_instruction=(
-            "指令：根据用户提出的聊天室相关问题，检索相关的聊天记录。\n" "查询："
-        ),
-    )
+
+async def get_embedding_model() -> BaseEmbedding:
+    """首次初始化，后续在当前服务进程内复用。"""
+    global _embedding_model
+
+    if _embedding_model is None:
+        model_path = await asyncio.to_thread(
+            snapshot_download, settings.embedding_model_id
+        )
+        _embedding_model = await asyncio.to_thread(
+            HuggingFaceEmbedding,
+            model_name=model_path,
+            device=settings.rag_device,
+            normalize=True,
+            truncate_dim=settings.embedding_dimension,
+            embed_batch_size=8,
+            query_instruction=(
+                "Instruct: Given a question about a chat room's history, retrieve "
+                "relevant messages that contain evidence to answer it.\n"
+                "Query: "
+            ),
+        )
+    return _embedding_model
