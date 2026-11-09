@@ -1,0 +1,342 @@
+{
+  "questions": 10,
+  "time_hint_exact": "10/10",
+  "time_hint_exact_accuracy": 1.0,
+  "no_time_recall_at_3": 0.6,
+  "llm_time_recall_at_3": 0.8,
+  "no_time_mrr_at_3": 0.4167,
+  "llm_time_mrr_at_3": 0.6167,
+  "llm_parse_mean_ms": 1048.51,
+  "records": [
+    {
+      "qid": "time_01_1",
+      "question": "2026年7月20日群里讨论2027届秋招投递节奏时，大家建议怎么做？",
+      "expected_time_hint": {
+        "mode": "range",
+        "start_at": "2026-07-20T00:00:00+08:00",
+        "end_at": "2026-07-20T23:59:59.999999+08:00"
+      },
+      "actual_time_hint": {
+        "mode": "range",
+        "start_at": "2026-07-20T00:00:00+08:00",
+        "end_at": "2026-07-20T23:59:59+08:00"
+      },
+      "time_hint_exact": true,
+      "llm_parse_ms": 1626.42,
+      "no_time_rank": 1,
+      "llm_time_rank": 1,
+      "llm_time_top3": [
+        "v4-child-0001-1",
+        "v4-child-0124-1",
+        "v4-child-0042-1"
+      ],
+      "tool_args": {
+        "queries": [
+          {
+            "query": "2026年7月20日群里讨论2027届秋招投递节奏时，大家建议怎么做？",
+            "time_hint": {
+              "mode": "range",
+              "start_at": "2026-07-20T00:00:00+08:00",
+              "end_at": "2026-07-20T23:59:59+08:00"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "qid": "time_11_2",
+      "question": "2026年8月10日群里讨论基金定投计划时，大家建议怎么做？",
+      "expected_time_hint": {
+        "mode": "range",
+        "start_at": "2026-08-10T00:00:00+08:00",
+        "end_at": "2026-08-10T23:59:59.999999+08:00"
+      },
+      "actual_time_hint": {
+        "mode": "range",
+        "start_at": "2026-08-10T00:00:00+08:00",
+        "end_at": "2026-08-10T23:59:59+08:00"
+      },
+      "time_hint_exact": true,
+      "llm_parse_ms": 703.78,
+      "no_time_rank": 2,
+      "llm_time_rank": 1,
+      "llm_time_top3": [
+        "v4-child-0052-1",
+        "v4-child-0011-1",
+        "v4-child-0173-1"
+      ],
+      "tool_args": {
+        "queries": [
+          {
+            "query": "2026年8月10日群里讨论基金定投计划时，大家建议怎么做？",
+            "time_hint": {
+              "mode": "range",
+              "start_at": "2026-08-10T00:00:00+08:00",
+              "end_at": "2026-08-10T23:59:59+08:00"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "qid": "time_13_3",
+      "question": "2026年8月31日群里讨论周末短途旅行时，大家建议怎么做？",
+      "expected_time_hint": {
+        "mode": "range",
+        "start_at": "2026-08-31T00:00:00+08:00",
+        "end_at": "2026-08-31T23:59:59.999999+08:00"
+      },
+      "actual_time_hint": {
+        "mode": "range",
+        "start_at": "2026-08-31T00:00:00+08:00",
+        "end_at": "2026-08-31T23:59:59+08:00"
+      },
+      "time_hint_exact": true,
+      "llm_parse_ms": 1111.58,
+      "no_time_rank": 1,
+      "llm_time_rank": 1,
+      "llm_time_top3": [
+        "v4-child-0095-1",
+        "v4-child-0054-1",
+        "v4-child-0136-1"
+      ],
+      "tool_args": {
+        "queries": [
+          {
+            "query": "2026年8月31日群里讨论周末短途旅行时，大家建议怎么做？",
+            "time_hint": {
+              "mode": "range",
+              "start_at": "2026-08-31T00:00:00+08:00",
+              "end_at": "2026-08-31T23:59:59+08:00"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "qid": "time_14_4",
+      "question": "2026年9月21日群里讨论动画补番安排时，大家建议怎么做？",
+      "expected_time_hint": {
+        "mode": "range",
+        "start_at": "2026-09-21T00:00:00+08:00",
+        "end_at": "2026-09-21T23:59:59.999999+08:00"
+      },
+      "actual_time_hint": {
+        "mode": "range",
+        "start_at": "2026-09-21T00:00:00+08:00",
+        "end_at": "2026-09-21T23:59:59+08:00"
+      },
+      "time_hint_exact": true,
+      "llm_parse_ms": 1216.23,
+      "no_time_rank": null,
+      "llm_time_rank": 1,
+      "llm_time_top3": [
+        "v4-child-0137-1",
+        "v4-child-0096-1",
+        "v4-child-0014-1"
+      ],
+      "tool_args": {
+        "queries": [
+          {
+            "query": "2026年9月21日群里讨论动画补番安排时，大家建议怎么做？",
+            "time_hint": {
+              "mode": "range",
+              "start_at": "2026-09-21T00:00:00+08:00",
+              "end_at": "2026-09-21T23:59:59+08:00"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "qid": "time_19_1",
+      "question": "2026年7月20日群里讨论合租看房安排时，大家建议怎么做？",
+      "expected_time_hint": {
+        "mode": "range",
+        "start_at": "2026-07-20T00:00:00+08:00",
+        "end_at": "2026-07-20T23:59:59.999999+08:00"
+      },
+      "actual_time_hint": {
+        "mode": "range",
+        "start_at": "2026-07-20T00:00:00+08:00",
+        "end_at": "2026-07-20T23:59:59+08:00"
+      },
+      "time_hint_exact": true,
+      "llm_parse_ms": 1080.08,
+      "no_time_rank": 1,
+      "llm_time_rank": 1,
+      "llm_time_top3": [
+        "v4-child-0019-1",
+        "v4-child-0060-1",
+        "v4-child-0142-1"
+      ],
+      "tool_args": {
+        "queries": [
+          {
+            "query": "2026年7月20日群里讨论合租看房安排时，大家建议怎么做？",
+            "time_hint": {
+              "mode": "range",
+              "start_at": "2026-07-20T00:00:00+08:00",
+              "end_at": "2026-07-20T23:59:59+08:00"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "qid": "time_02_5",
+      "question": "最近一次群里讨论2027届秋招项目经历时，大家给出的建议是什么？",
+      "expected_time_hint": {
+        "mode": "latest"
+      },
+      "actual_time_hint": {
+        "mode": "latest",
+        "start_at": null,
+        "end_at": null
+      },
+      "time_hint_exact": true,
+      "llm_parse_ms": 1121.09,
+      "no_time_rank": null,
+      "llm_time_rank": null,
+      "llm_time_top3": [
+        "v4-child-0002-1",
+        "v4-child-0084-1",
+        "v4-child-0043-1"
+      ],
+      "tool_args": {
+        "queries": [
+          {
+            "query": "最近一次群里讨论2027届秋招项目经历时，大家给出的建议是什么？",
+            "time_hint": {
+              "mode": "latest"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "qid": "time_12_5",
+      "question": "最近一次群里讨论黄金ETF讨论时，大家给出的建议是什么？",
+      "expected_time_hint": {
+        "mode": "latest"
+      },
+      "actual_time_hint": {
+        "mode": "latest",
+        "start_at": null,
+        "end_at": null
+      },
+      "time_hint_exact": true,
+      "llm_parse_ms": 981.16,
+      "no_time_rank": null,
+      "llm_time_rank": 3,
+      "llm_time_top3": [
+        "v4-child-0012-1",
+        "v4-child-0135-1",
+        "v4-child-0174-1"
+      ],
+      "tool_args": {
+        "queries": [
+          {
+            "query": "最近一次群里讨论黄金ETF时，大家给出的建议是什么？",
+            "time_hint": {
+              "mode": "latest"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "qid": "time_15_5",
+      "question": "最近一次群里讨论电影夜安排时，大家给出的建议是什么？",
+      "expected_time_hint": {
+        "mode": "latest"
+      },
+      "actual_time_hint": {
+        "mode": "latest",
+        "start_at": null,
+        "end_at": null
+      },
+      "time_hint_exact": true,
+      "llm_parse_ms": 731.76,
+      "no_time_rank": 3,
+      "llm_time_rank": 2,
+      "llm_time_top3": [
+        "v4-child-0015-1",
+        "v4-child-0177-1",
+        "v4-child-0056-1"
+      ],
+      "tool_args": {
+        "queries": [
+          {
+            "query": "最近一次群里讨论电影夜安排时，大家给出的建议是什么？",
+            "time_hint": {
+              "mode": "latest"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "qid": "time_17_5",
+      "question": "最近一次群里讨论读书会选书时，大家给出的建议是什么？",
+      "expected_time_hint": {
+        "mode": "latest"
+      },
+      "actual_time_hint": {
+        "mode": "latest",
+        "start_at": null,
+        "end_at": null
+      },
+      "time_hint_exact": true,
+      "llm_parse_ms": 1140.73,
+      "no_time_rank": null,
+      "llm_time_rank": null,
+      "llm_time_top3": [
+        "v4-child-0058-1",
+        "v4-child-0140-1",
+        "v4-child-0017-1"
+      ],
+      "tool_args": {
+        "queries": [
+          {
+            "query": "最近一次群里讨论读书会选书时，大家给出的建议是什么？",
+            "time_hint": {
+              "mode": "latest"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "qid": "time_20_5",
+      "question": "最近一次群里讨论聚餐地点选择时，大家给出的建议是什么？",
+      "expected_time_hint": {
+        "mode": "latest"
+      },
+      "actual_time_hint": {
+        "mode": "latest",
+        "start_at": null,
+        "end_at": null
+      },
+      "time_hint_exact": true,
+      "llm_parse_ms": 772.3,
+      "no_time_rank": 3,
+      "llm_time_rank": 3,
+      "llm_time_top3": [
+        "v4-child-0020-1",
+        "v4-child-0143-1",
+        "v4-child-0182-1"
+      ],
+      "tool_args": {
+        "queries": [
+          {
+            "query": "最近一次群里讨论聚餐地点选择时，大家给出的建议是什么？",
+            "time_hint": {
+              "mode": "latest"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

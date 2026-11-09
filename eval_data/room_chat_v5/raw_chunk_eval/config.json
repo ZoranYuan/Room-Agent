@@ -1,0 +1,23 @@
+{
+  "corpus_sha256": "dbb8566de64fe5abff9817ab785cfc1cf570bff0eb34b60c17bec596a49d9825",
+  "queries_sha256": "33e35aafcb3ebc849c9b0f27c10d044fb1ffaa371971375bb601730105691d92",
+  "cluster_model": "deepseek-flash",
+  "embedding_model": "Qwen/Qwen3-Embedding-0.6B",
+  "reranker_model": "Qwen/Qwen3-Reranker-0.6B",
+  "device": "cuda",
+  "parent_message_count": 50,
+  "parent_max_chars": 2000,
+  "child_max_chars": 300,
+  "overlap_chars": 20,
+  "rrf_candidates": 10,
+  "rerank_input": 5,
+  "final_top_n": 3,
+  "rrf_k": 60,
+  "temporal_weight": 0.25,
+  "sources": {
+    "src/infra/rag/message_index.py": "74124ac8a7c8eecff4ce0a07cd007c7d2e0099bb2c18221e75cd6c781aa7e509",
+    "src/agent/prompts/cluster.py": "b8109d5c573c54c22722b744ed539a388af81ee5c3a9df4c4eef5c622737dbd3",
+    "src/harness/llm/cluster_messages.py": "889c8c865bcbcb283eae75f55f561cc97535a09b062eb83257699763ca547010",
+    "src/infra/rag/message_retriever.py": "f02516fe97fcfa0cdccca064a8549a8cea8cb7ddfeb77fe3f51d58cfc9f2d02d"
+  }
+}

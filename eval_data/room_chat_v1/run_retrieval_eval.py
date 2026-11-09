@@ -162,7 +162,7 @@ async def run() -> None:
     uri = settings.milvus_uri
     if "://" not in uri:
         uri = f"http://{uri}"
-    embedding_model = await asyncio.to_thread(get_embedding_model)
+    embedding_model = await get_embedding_model()
 
     hybrid_store: MilvusVectorStore | None = None
     dense_store: MilvusVectorStore | None = None

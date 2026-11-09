@@ -1,0 +1,58 @@
+{
+  "parameters": {
+    "dense_k": 20,
+    "bm25_k": 20,
+    "rrf_keep_l": 10,
+    "rerank_input": 5,
+    "final_n": 3,
+    "rrf_smoothing_k": 60,
+    "time_weight": 1.0,
+    "embedding": "Qwen/Qwen3-Embedding-0.6B",
+    "reranker": "Qwen/Qwen3-Reranker-0.6B",
+    "device": "cuda",
+    "questions": 150,
+    "children": 2490,
+    "source_chunks_sha256": "d986aaec640409714f57181c753f15781e0387e392c098d36211c5e51fbcf7c9",
+    "llm_requests": 0,
+    "reused_rrf_candidates": true
+  },
+  "overall": {
+    "weight_025": {
+      "questions": 150,
+      "hits": 126,
+      "recall_at_3": 0.84,
+      "mrr_at_3": 0.7144444444444444
+    },
+    "weight_1": {
+      "questions": 150,
+      "hits": 133,
+      "recall_at_3": 0.8866666666666667,
+      "mrr_at_3": 0.7577777777777778
+    }
+  },
+  "temporal": {
+    "weight_025": {
+      "questions": 100,
+      "hits": 83,
+      "recall_at_3": 0.83,
+      "mrr_at_3": 0.6566666666666666
+    },
+    "weight_1": {
+      "questions": 100,
+      "hits": 90,
+      "recall_at_3": 0.9,
+      "mrr_at_3": 0.7216666666666667
+    }
+  },
+  "changed_shortlists": 99,
+  "recovered_questions": [
+    "time-02-3",
+    "time-05-4",
+    "time-19-4",
+    "time-03-5",
+    "time-05-5",
+    "time-13-5",
+    "time-19-5"
+  ],
+  "lost_questions": []
+}

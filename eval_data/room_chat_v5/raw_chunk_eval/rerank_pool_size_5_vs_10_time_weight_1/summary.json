@@ -1,0 +1,112 @@
+{
+  "parameters": {
+    "dataset": "room_chat_v5 single-evidence subset",
+    "questions": 150,
+    "rrf_candidates": 10,
+    "reranker_pools_compared": [
+      5,
+      10
+    ],
+    "final_top_n": 3,
+    "temporal_rank_weight": 1.0,
+    "rrf_k": 60,
+    "reranker": "Qwen/Qwen3-Reranker-0.6B",
+    "device": "cuda",
+    "prompt": "current production reranker instruction",
+    "llm_calls": 0
+  },
+  "candidate_recall": {
+    "overall": {
+      "top5": {
+        "questions": 150,
+        "hits": 127,
+        "recall": 0.8466666666666667
+      },
+      "top10": {
+        "questions": 150,
+        "hits": 143,
+        "recall": 0.9533333333333334
+      }
+    },
+    "temporal": {
+      "top5": {
+        "questions": 100,
+        "hits": 84,
+        "recall": 0.84
+      },
+      "top10": {
+        "questions": 100,
+        "hits": 100,
+        "recall": 1.0
+      }
+    },
+    "non_temporal": {
+      "top5": {
+        "questions": 50,
+        "hits": 43,
+        "recall": 0.86
+      },
+      "top10": {
+        "questions": 50,
+        "hits": 43,
+        "recall": 0.86
+      }
+    }
+  },
+  "final_metrics": {
+    "overall": {
+      "rerank_top5": {
+        "questions": 150,
+        "recall_at_3": 0.8466666666666667,
+        "mrr_at_3": 0.7866666666666666,
+        "rerank_mean_ms": 131.3134643006682,
+        "rerank_p95_ms": 148.11941399239004,
+        "rerank_p99_ms": 153.81987000000663
+      },
+      "rerank_top10": {
+        "questions": 150,
+        "recall_at_3": 0.9466666666666667,
+        "mrr_at_3": 0.8866666666666667,
+        "rerank_mean_ms": 271.0645181920457,
+        "rerank_p95_ms": 311.1185769957956,
+        "rerank_p99_ms": 315.60199498198926
+      }
+    },
+    "temporal": {
+      "rerank_top5": {
+        "questions": 100,
+        "recall_at_3": 0.84,
+        "mrr_at_3": 0.765,
+        "rerank_mean_ms": 141.60237697971752,
+        "rerank_p95_ms": 148.4544920094777,
+        "rerank_p99_ms": 153.81987000000663
+      },
+      "rerank_top10": {
+        "questions": 100,
+        "recall_at_3": 0.99,
+        "mrr_at_3": 0.92,
+        "rerank_mean_ms": 296.2877479783492,
+        "rerank_p95_ms": 312.0467010012362,
+        "rerank_p99_ms": 315.60199498198926
+      }
+    },
+    "non_temporal": {
+      "rerank_top5": {
+        "questions": 50,
+        "recall_at_3": 0.86,
+        "mrr_at_3": 0.83,
+        "rerank_mean_ms": 110.7356389425695,
+        "rerank_p95_ms": 116.08432198408991,
+        "rerank_p99_ms": 118.45488200196996
+      },
+      "rerank_top10": {
+        "questions": 50,
+        "recall_at_3": 0.86,
+        "mrr_at_3": 0.82,
+        "rerank_mean_ms": 220.61805861943867,
+        "rerank_p95_ms": 229.94706899044104,
+        "rerank_p99_ms": 231.6174010047689
+      }
+    }
+  }
+}

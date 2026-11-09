@@ -316,7 +316,7 @@ async def run_stage_evaluation() -> None:
             upsert_mode=True,
             use_async_client=True,
         )
-        embed_model = await asyncio.to_thread(get_embedding_model)
+        embed_model = await get_embedding_model()
         index = VectorStoreIndex.from_vector_store(
             vector_store=store,
             embed_model=embed_model,

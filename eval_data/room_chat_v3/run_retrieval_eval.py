@@ -353,7 +353,7 @@ async def run_evaluation() -> None:
         )
         index = VectorStoreIndex.from_vector_store(
             vector_store=store,
-            embed_model=await asyncio.to_thread(get_embedding_model),
+            embed_model=await get_embedding_model(),
         )
         await index.ainsert_nodes(children)
         retriever = index.as_retriever(

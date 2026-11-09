@@ -1,0 +1,16 @@
+{
+  "dense_k": 20,
+  "bm25_k": 20,
+  "rrf_keep_l": 10,
+  "rerank_input": 5,
+  "final_n": 3,
+  "rrf_smoothing_k": 60,
+  "time_weight": 0.25,
+  "embedding": "Qwen/Qwen3-Embedding-0.6B",
+  "reranker": "Qwen/Qwen3-Reranker-0.6B",
+  "device": "cuda",
+  "questions": 150,
+  "children": 2490,
+  "source_chunks_sha256": "d986aaec640409714f57181c753f15781e0387e392c098d36211c5e51fbcf7c9",
+  "llm_requests": 0
+}

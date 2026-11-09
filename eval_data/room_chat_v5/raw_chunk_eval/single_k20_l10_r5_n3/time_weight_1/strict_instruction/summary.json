@@ -1,0 +1,74 @@
+{
+  "parameters": {
+    "dense_k": 20,
+    "bm25_k": 20,
+    "rrf_keep_l": 10,
+    "rerank_input": 5,
+    "final_n": 3,
+    "rrf_smoothing_k": 60,
+    "time_weight": 1.0,
+    "embedding": "Qwen/Qwen3-Embedding-0.6B",
+    "reranker": "Qwen/Qwen3-Reranker-0.6B",
+    "device": "cuda",
+    "questions": 150,
+    "children": 2490,
+    "source_chunks_sha256": "d986aaec640409714f57181c753f15781e0387e392c098d36211c5e51fbcf7c9",
+    "llm_requests": 0,
+    "reused_rrf_candidates": true,
+    "instruction": "Given a question about a chat room's history, judge whether the passage directly provides evidence answering the query. All explicit constraints, including the requested time range, must be satisfied. A passage outside the requested time range is not relevant, even if it discusses the same topic. Merely mentioning the topic or stating that a conclusion was recorded does not provide sufficient evidence.",
+    "reuse_exact_rerank_input": true,
+    "local_checkpoint": "/root/.cache/huggingface/hub/models--Qwen--Qwen3-Reranker-0.6B/snapshots/e61197ed45024b0ed8a2d74b80b4d909f1255473"
+  },
+  "pre_rerank": {
+    "overall": {
+      "questions": 150,
+      "hits": 143,
+      "recall_at_5": 0.9533333333333334
+    },
+    "temporal": {
+      "questions": 100,
+      "hits": 100,
+      "recall_at_5": 1.0
+    },
+    "non_temporal": {
+      "questions": 50,
+      "hits": 43,
+      "recall_at_5": 0.86
+    }
+  },
+  "overall": {
+    "old_instruction": {
+      "questions": 150,
+      "hits": 133,
+      "recall_at_3": 0.8866666666666667,
+      "mrr_at_3": 0.7577777777777778
+    },
+    "new_instruction": {
+      "questions": 150,
+      "hits": 134,
+      "recall_at_3": 0.8933333333333333,
+      "mrr_at_3": 0.7844444444444444
+    }
+  },
+  "temporal": {
+    "old_instruction": {
+      "questions": 100,
+      "hits": 90,
+      "recall_at_3": 0.9,
+      "mrr_at_3": 0.7216666666666667
+    },
+    "new_instruction": {
+      "questions": 100,
+      "hits": 91,
+      "recall_at_3": 0.91,
+      "mrr_at_3": 0.7616666666666667
+    }
+  },
+  "recovered": [
+    "time-01-3",
+    "time-13-4"
+  ],
+  "lost": [
+    "time-08-4"
+  ]
+}
