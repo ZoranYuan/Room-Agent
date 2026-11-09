@@ -10,12 +10,14 @@ from langchain_core.runnables import RunnableConfig
 from langgraph.config import get_stream_writer
 
 from agent.context import AgentRuntimeContext
+from config.config import settings
 from constants.exception import (
     DETAIL_AGENT_NO_FINAL_ANSWER,
     DETAIL_AGENT_NO_MESSAGES,
     DETAIL_INVALID_TOOL_CALLS,
 )
 from harness.middleware.tool_result_cache import tool_result_cache_scope
+from infra.monitoring import LLM_TOKENS
 
 
 @dataclass
@@ -36,6 +38,7 @@ async def run_agent(
     # 收集一次模型调用的输出，保存到 graph 的检查点中
     responses: list[AnyMessage] = []
     structured_response: object | None = None
+    agent_run_id: str | None = None
     agent_input: InputAgentState = {"messages": list(messages)}
 
     async with tool_result_cache_scope():
@@ -47,21 +50,64 @@ async def run_agent(
         ):
             kind = event["event"]
             data = event["data"]
-            if kind == "on_tool_start":
-                writer({"type": "tool_start", "name": event["name"]})
-            elif kind == "on_tool_end":
-                assert "output" in data
-                writer({"type": "tool_end", "name": event["name"]})
-                responses.append(data["output"])
-            elif kind == "on_chat_model_end":
-                assert "output" in data
-                responses.append(data["output"])
-            # Agent 嵌套在外层图节点中时也会有 parent_ids；仅在事件输出含结构化结果时取值。
-            elif kind == "on_chain_end":
-                output = data.get("output")
-                if isinstance(output, dict) and output.get("structured_response") is not None:
-                    structured_response = output["structured_response"]
 
+            match kind:
+                case "on_tool_start":
+                    writer({"type": "tool_start", "name": event["name"]})
+
+                case "on_tool_end":
+                    assert "output" in data
+                    writer({"type": "tool_end", "name": event["name"]})
+                    responses.append(data["output"])
+
+                case "on_chat_model_end":
+                    assert "output" in data
+                    output = data["output"]
+                    responses.append(output)
+
+                    if isinstance(output, AIMessage):
+                        usage = output.usage_metadata or {}
+                        if not usage:
+                            provider_usage = output.response_metadata.get(
+                                "token_usage", {}
+                            )
+                            usage = {
+                                "input_tokens": provider_usage.get("prompt_tokens", 0),
+                                "output_tokens": provider_usage.get(
+                                    "completion_tokens", 0
+                                ),
+                            }
+
+                        model_name = output.response_metadata.get(
+                            "model_name", settings.agent_model
+                        )
+                        input_tokens = usage.get("input_tokens", 0)
+                        output_tokens = usage.get("output_tokens", 0)
+
+                        if input_tokens:
+                            LLM_TOKENS.labels(model=model_name, direction="input").inc(
+                                input_tokens
+                            )
+                        if output_tokens:
+                            LLM_TOKENS.labels(model=model_name, direction="output").inc(
+                                output_tokens
+                            )
+
+                case "on_chain_start":
+                    if agent_run_id is None:
+                        # 通过 run_id 来获取根 Agent 的输出
+                        agent_run_id = event["run_id"]
+
+                case "on_chain_end" if event.get("run_id") == agent_run_id:
+                    output = data.get("output")
+                    if (
+                        isinstance(output, dict)
+                        and output.get("structured_response") is not None
+                    ):
+                        structured_response = output["structured_response"]
+
+                case _:
+                    pass
     if not responses:
         raise RuntimeError(DETAIL_AGENT_NO_MESSAGES)
 

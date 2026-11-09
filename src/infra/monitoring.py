@@ -1,6 +1,6 @@
 """Prometheus 指标。"""
 
-from prometheus_client import Histogram
+from prometheus_client import Counter, Histogram
 
 _LATENCY_BUCKETS = (
     0.01,
@@ -27,6 +27,12 @@ RAG_RETRIEVAL_DURATION = Histogram(
     "Query embedding, hybrid retrieval, temporal ordering, and reranking duration.",
     labelnames=("outcome",),
     buckets=_LATENCY_BUCKETS,
+)
+
+LLM_TOKENS = Counter(
+    "room_agent_llm_tokens_total",
+    "Total input and output tokens reported by chat models.",
+    labelnames=("model", "direction"),
 )
 
 AGENT_FIRST_TOKEN_DURATION = Histogram(
