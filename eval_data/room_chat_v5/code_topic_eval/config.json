@@ -1,0 +1,21 @@
+{
+  "corpus_sha256": "dbb8566de64fe5abff9817ab785cfc1cf570bff0eb34b60c17bec596a49d9825",
+  "queries_sha256": "33e35aafcb3ebc849c9b0f27c10d044fb1ffaa371971375bb601730105691d92",
+  "topic_labels_sha256": "6c92cd2142adda86201639d02e45764d9a6698eb45f99ac65fc4832375a9ea9d",
+  "topic_source": "v5 synthetic labels",
+  "embedding_model": "Qwen/Qwen3-Embedding-0.6B",
+  "reranker_model": "Qwen/Qwen3-Reranker-0.6B",
+  "device": "cuda",
+  "parent_message_count": 50,
+  "parent_max_chars": 2000,
+  "child_max_chars": 500,
+  "rrf_candidates": 10,
+  "rerank_input": 10,
+  "final_top_n": 3,
+  "rrf_k": 60,
+  "temporal_weight": 1.0,
+  "sources": {
+    "src/infra/rag/message_index.py": "3627f4b9c0a8c0e6ad80e545c51727ea8133c28cf1fc2224cd1d0aa7a2c3dc49",
+    "src/infra/rag/message_retriever.py": "beed882c054585397033a95b4fd7ddc947d96385ee9931c4e67d7610122ba220"
+  }
+}

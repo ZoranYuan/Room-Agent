@@ -1,0 +1,3320 @@
+{
+  "questions": {
+    "time-01-1": [
+      {
+        "group_id": "time-01-1_e1",
+        "message_ids": [
+          "v5-m000002"
+        ],
+        "seq": 2,
+        "answer_text": "先用草行久打下半，把高爆发队留给上半。",
+        "acceptable_child_ids": [
+          "7525750326809333760"
+        ]
+      }
+    ],
+    "time-02-1": [
+      {
+        "group_id": "time-02-1_e1",
+        "message_ids": [
+          "v5-m000042"
+        ],
+        "seq": 42,
+        "answer_text": "主词条先对，再考虑副词条，不必追求每件都毕业。",
+        "acceptable_child_ids": [
+          "7525750326872248321"
+        ]
+      }
+    ],
+    "time-03-1": [
+      {
+        "group_id": "time-03-1_e1",
+        "message_ids": [
+          "v5-m000082"
+        ],
+        "seq": 82,
+        "answer_text": "双排先选能补位的组合，别两个人都抢输出位。",
+        "acceptable_child_ids": [
+          "7525750326935162882"
+        ]
+      }
+    ],
+    "time-04-1": [
+      {
+        "group_id": "time-04-1_e1",
+        "message_ids": [
+          "v5-m000122"
+        ],
+        "seq": 122,
+        "answer_text": "先回头检查土地庙附近的岔路，很多线索不在主路上。",
+        "acceptable_child_ids": [
+          "7525750326981300225"
+        ]
+      }
+    ],
+    "time-05-1": [
+      {
+        "group_id": "time-05-1_e1",
+        "message_ids": [
+          "v5-m000162"
+        ],
+        "seq": 162,
+        "answer_text": "先开塔确认地形，再沿河谷找神庙会省不少路。",
+        "acceptable_child_ids": [
+          "7525750327094546433"
+        ]
+      }
+    ],
+    "time-06-1": [
+      {
+        "group_id": "time-06-1_e1",
+        "message_ids": [
+          "v5-m000202"
+        ],
+        "seq": 202,
+        "answer_text": "重点看前十五分钟的视野和先锋交换，比分落后不等于没机会。",
+        "acceptable_child_ids": [
+          "7525750327140683777"
+        ]
+      }
+    ],
+    "time-07-1": [
+      {
+        "group_id": "time-07-1_e1",
+        "message_ids": [
+          "v5-m000242"
+        ],
+        "seq": 242,
+        "answer_text": "先把主路和居民区定下来，装饰可以之后慢慢补。",
+        "acceptable_child_ids": [
+          "7525750327182626818"
+        ]
+      }
+    ],
+    "time-08-1": [
+      {
+        "group_id": "time-08-1_e1",
+        "message_ids": [
+          "v5-m000282"
+        ],
+        "seq": 282,
+        "answer_text": "我们觉得重点是勇者离开后，芙莉莲才慢慢理解时间和陪伴。",
+        "acceptable_child_ids": [
+          "7525750327228764163"
+        ]
+      }
+    ],
+    "time-09-1": [
+      {
+        "group_id": "time-09-1_e1",
+        "message_ids": [
+          "v5-m000322"
+        ],
+        "seq": 322,
+        "answer_text": "先看角色做选择时在保护谁，动机比台词里的立场更可靠。",
+        "acceptable_child_ids": [
+          "7525750327333621761"
+        ]
+      }
+    ],
+    "time-10-1": [
+      {
+        "group_id": "time-10-1_e1",
+        "message_ids": [
+          "v5-m000362"
+        ],
+        "seq": 362,
+        "answer_text": "先看发球轮次怎么打乱一传，再看二传如何调整进攻。",
+        "acceptable_child_ids": [
+          "7525750327383953410"
+        ]
+      }
+    ],
+    "time-11-1": [
+      {
+        "group_id": "time-11-1_e1",
+        "message_ids": [
+          "v5-m000402"
+        ],
+        "seq": 402,
+        "answer_text": "约尔和阿尼亚的日常互动让这个家庭慢慢有了真实感。",
+        "acceptable_child_ids": [
+          "7525750327446867970"
+        ]
+      }
+    ],
+    "time-12-1": [
+      {
+        "group_id": "time-12-1_e1",
+        "message_ids": [
+          "v5-m000442"
+        ],
+        "seq": 442,
+        "answer_text": "先观察每个人如何找到自己的武器，不必只比较进球数。",
+        "acceptable_child_ids": [
+          "7525750327551725569"
+        ]
+      }
+    ],
+    "time-13-1": [
+      {
+        "group_id": "time-13-1_e1",
+        "message_ids": [
+          "v5-m000482"
+        ],
+        "seq": 482,
+        "answer_text": "先聊食材来源和队伍分工，料理设定让冒险更有生活感。",
+        "acceptable_child_ids": [
+          "7525750327602057218"
+        ]
+      }
+    ],
+    "time-14-1": [
+      {
+        "group_id": "time-14-1_e1",
+        "message_ids": [
+          "v5-m000522"
+        ],
+        "seq": 522,
+        "answer_text": "先把角色各自知道的信息列出来，再讨论选择是否合理。",
+        "acceptable_child_ids": [
+          "7525750327652388866"
+        ]
+      }
+    ],
+    "time-15-1": [
+      {
+        "group_id": "time-15-1_e1",
+        "message_ids": [
+          "v5-m000562"
+        ],
+        "seq": 562,
+        "answer_text": "先确认试行线路和末班车时间，周末出行再看是否适用。",
+        "acceptable_child_ids": [
+          "7525750327694331906"
+        ]
+      }
+    ],
+    "time-16-1": [
+      {
+        "group_id": "time-16-1_e1",
+        "message_ids": [
+          "v5-m000602"
+        ],
+        "seq": 602,
+        "answer_text": "出门前看本地预警更新，沿江步道先暂停安排。",
+        "acceptable_child_ids": [
+          "7525750327794995203"
+        ]
+      }
+    ],
+    "time-17-1": [
+      {
+        "group_id": "time-17-1_e1",
+        "message_ids": [
+          "v5-m000642"
+        ],
+        "seq": 642,
+        "answer_text": "预约名额要提前在官方小程序抢，现场不一定能补票。",
+        "acceptable_child_ids": [
+          "7525750327836938243"
+        ]
+      }
+    ],
+    "time-18-1": [
+      {
+        "group_id": "time-18-1_e1",
+        "message_ids": [
+          "v5-m000682"
+        ],
+        "seq": 682,
+        "answer_text": "活动按类别收书，教材和杂志要分开放，方便现场整理。",
+        "acceptable_child_ids": [
+          "7525750327908241411"
+        ]
+      }
+    ],
+    "time-19-1": [
+      {
+        "group_id": "time-19-1_e1",
+        "message_ids": [
+          "v5-m000722"
+        ],
+        "seq": 722,
+        "answer_text": "先看新站是否支持夜间停车，不能只按充电枪数量判断。",
+        "acceptable_child_ids": [
+          "7525750328008904707"
+        ]
+      }
+    ],
+    "time-20-1": [
+      {
+        "group_id": "time-20-1_e1",
+        "message_ids": [
+          "v5-m000762"
+        ],
+        "seq": 762,
+        "answer_text": "先看参会企业名单和专业要求，再决定带几份简历。",
+        "acceptable_child_ids": [
+          "7525750328059236355"
+        ]
+      }
+    ],
+    "time-01-2": [
+      {
+        "group_id": "time-01-2_e1",
+        "message_ids": [
+          "v5-m001762"
+        ],
+        "seq": 1762,
+        "answer_text": "这期先带钟离，生存压力比竞速更大。",
+        "acceptable_child_ids": [
+          "7525750329695014913"
+        ]
+      }
+    ],
+    "time-02-2": [
+      {
+        "group_id": "time-02-2_e1",
+        "message_ids": [
+          "v5-m001802"
+        ],
+        "seq": 1802,
+        "answer_text": "速度鞋优先留给需要抢回合的辅助。",
+        "acceptable_child_ids": [
+          "7525750329741152259"
+        ]
+      }
+    ],
+    "time-03-2": [
+      {
+        "group_id": "time-03-2_e1",
+        "message_ids": [
+          "v5-m001842"
+        ],
+        "seq": 1842,
+        "answer_text": "先练两三个版本强势英雄，排位里少临时换人。",
+        "acceptable_child_ids": [
+          "7525750329833426946"
+        ]
+      }
+    ],
+    "time-04-2": [
+      {
+        "group_id": "time-04-2_e1",
+        "message_ids": [
+          "v5-m001882"
+        ],
+        "seq": 1882,
+        "answer_text": "打完头目先别急着离开，场景里还有可互动的物件。",
+        "acceptable_child_ids": [
+          "7525750329904730113"
+        ]
+      }
+    ],
+    "time-05-2": [
+      {
+        "group_id": "time-05-2_e1",
+        "message_ids": [
+          "v5-m001922"
+        ],
+        "seq": 1922,
+        "answer_text": "遇到高处就先找附近的弹射装置，不要一直爬。",
+        "acceptable_child_ids": [
+          "7525750329959256066"
+        ]
+      }
+    ],
+    "time-06-2": [
+      {
+        "group_id": "time-06-2_e1",
+        "message_ids": [
+          "v5-m001962"
+        ],
+        "seq": 1962,
+        "answer_text": "先关注打野路线，团战前的资源控制更能说明局势。",
+        "acceptable_child_ids": [
+          "7525750330051530753"
+        ]
+      }
+    ],
+    "time-07-2": [
+      {
+        "group_id": "time-07-2_e1",
+        "message_ids": [
+          "v5-m002002"
+        ],
+        "seq": 2002,
+        "answer_text": "花田留一块统一区域，浇水和杂交都方便。",
+        "acceptable_child_ids": [
+          "7525750338935066626"
+        ]
+      }
+    ],
+    "time-08-2": [
+      {
+        "group_id": "time-08-2_e1",
+        "message_ids": [
+          "v5-m002042"
+        ],
+        "seq": 2042,
+        "answer_text": "先看她和费伦的相处变化，情绪线比战斗线更关键。",
+        "acceptable_child_ids": [
+          "7525750338977009666"
+        ]
+      }
+    ],
+    "time-09-2": [
+      {
+        "group_id": "time-09-2_e1",
+        "message_ids": [
+          "v5-m002082"
+        ],
+        "seq": 2082,
+        "answer_text": "我们打算重看涩谷篇，前后反差能看清人物变化。",
+        "acceptable_child_ids": [
+          "7525750339086061569"
+        ]
+      }
+    ],
+    "time-10-2": [
+      {
+        "group_id": "time-10-2_e1",
+        "message_ids": [
+          "v5-m002122"
+        ],
+        "seq": 2122,
+        "answer_text": "那场比赛的转折是替补上场后接发球稳定下来。",
+        "acceptable_child_ids": [
+          "7525750339153170434"
+        ]
+      }
+    ],
+    "time-11-2": [
+      {
+        "group_id": "time-11-2_e1",
+        "message_ids": [
+          "v5-m002162"
+        ],
+        "seq": 2162,
+        "answer_text": "先看彼此隐瞒身份时仍然做出的照顾，主题就在这里。",
+        "acceptable_child_ids": [
+          "7525750339199307778"
+        ]
+      }
+    ],
+    "time-12-2": [
+      {
+        "group_id": "time-12-2_e1",
+        "message_ids": [
+          "v5-m002202"
+        ],
+        "seq": 2202,
+        "answer_text": "这次讨论认为团队配合和个人欲望的冲突最有意思。",
+        "acceptable_child_ids": [
+          "7525750339245445121"
+        ]
+      }
+    ],
+    "time-13-2": [
+      {
+        "group_id": "time-13-2_e1",
+        "message_ids": [
+          "v5-m002242"
+        ],
+        "seq": 2242,
+        "answer_text": "我们记得那次讨论认为，吃饭也是队伍建立信任的过程。",
+        "acceptable_child_ids": [
+          "7525750339337719810"
+        ]
+      }
+    ],
+    "time-14-2": [
+      {
+        "group_id": "time-14-2_e1",
+        "message_ids": [
+          "v5-m002282"
+        ],
+        "seq": 2282,
+        "answer_text": "我们觉得结尾留出的分歧比给单一答案更有讨论空间。",
+        "acceptable_child_ids": [
+          "7525750339388051458"
+        ]
+      }
+    ],
+    "time-15-2": [
+      {
+        "group_id": "time-15-2_e1",
+        "message_ids": [
+          "v5-m002322"
+        ],
+        "seq": 2322,
+        "answer_text": "群里提醒先查官方公告，社交平台转发的站点名单有误。",
+        "acceptable_child_ids": [
+          "7525750339446771714"
+        ]
+      }
+    ],
+    "time-16-2": [
+      {
+        "group_id": "time-16-2_e1",
+        "message_ids": [
+          "v5-m002362"
+        ],
+        "seq": 2362,
+        "answer_text": "群里决定把线下聚会改到地铁站附近的室内场地。",
+        "acceptable_child_ids": [
+          "7525750339576795138"
+        ]
+      }
+    ],
+    "time-17-2": [
+      {
+        "group_id": "time-17-2_e1",
+        "message_ids": [
+          "v5-m002402"
+        ],
+        "seq": 2402,
+        "answer_text": "夜场先看临展时间，常设展关闭会比白天早。",
+        "acceptable_child_ids": [
+          "7525750339631321090"
+        ]
+      }
+    ],
+    "time-18-2": [
+      {
+        "group_id": "time-18-2_e1",
+        "message_ids": [
+          "v5-m002442"
+        ],
+        "seq": 2442,
+        "answer_text": "群里约好带三本以内，剩下的交给主办方统一流转。",
+        "acceptable_child_ids": [
+          "7525750339673264131"
+        ]
+      }
+    ],
+    "time-19-2": [
+      {
+        "group_id": "time-19-2_e1",
+        "message_ids": [
+          "v5-m002482"
+        ],
+        "seq": 2482,
+        "answer_text": "群里提到老小区附近会新增慢充位，快充站仍在审批。",
+        "acceptable_child_ids": [
+          "7525750339769733122"
+        ]
+      }
+    ],
+    "time-20-2": [
+      {
+        "group_id": "time-20-2_e1",
+        "message_ids": [
+          "v5-m002522"
+        ],
+        "seq": 2522,
+        "answer_text": "线上预约入口开在学校就业平台，现场也要带学生证。",
+        "acceptable_child_ids": [
+          "7525750339811676162"
+        ]
+      }
+    ],
+    "time-01-3": [
+      {
+        "group_id": "time-01-3_e1",
+        "message_ids": [
+          "v5-m005442"
+        ],
+        "seq": 5442,
+        "answer_text": "上半用冻结队更稳，下半再处理多波小怪。",
+        "acceptable_child_ids": [
+          "7525750344765149186"
+        ]
+      }
+    ],
+    "time-02-3": [
+      {
+        "group_id": "time-02-3_e1",
+        "message_ids": [
+          "v5-m005482"
+        ],
+        "seq": 5482,
+        "answer_text": "双暴差一点可以先用套装效果补，不急着重刷。",
+        "acceptable_child_ids": [
+          "7525750344828063747"
+        ]
+      }
+    ],
+    "time-03-3": [
+      {
+        "group_id": "time-03-3_e1",
+        "message_ids": [
+          "v5-m005522"
+        ],
+        "seq": 5522,
+        "answer_text": "连输两把就休息，状态差时继续排只会更急。",
+        "acceptable_child_ids": [
+          "7525750344937115650"
+        ]
+      }
+    ],
+    "time-04-3": [
+      {
+        "group_id": "time-04-3_e1",
+        "message_ids": [
+          "v5-m005562"
+        ],
+        "seq": 5562,
+        "answer_text": "把关键道具留到支线对话后再用，能多开一段剧情。",
+        "acceptable_child_ids": [
+          "7525750345016807426"
+        ]
+      }
+    ],
+    "time-05-3": [
+      {
+        "group_id": "time-05-3_e1",
+        "message_ids": [
+          "v5-m005602"
+        ],
+        "seq": 5602,
+        "answer_text": "把耐寒料理带够，雪山区域可以一次清完。",
+        "acceptable_child_ids": [
+          "7525750345096499202"
+        ]
+      }
+    ],
+    "time-06-3": [
+      {
+        "group_id": "time-06-3_e1",
+        "message_ids": [
+          "v5-m005642"
+        ],
+        "seq": 5642,
+        "answer_text": "看阵容后期曲线，别只凭一波团战判断谁更强。",
+        "acceptable_child_ids": [
+          "7525750345222328321"
+        ]
+      }
+    ],
+    "time-07-3": [
+      {
+        "group_id": "time-07-3_e1",
+        "message_ids": [
+          "v5-m005682"
+        ],
+        "seq": 5682,
+        "answer_text": "博物馆周围做成广场，岛上动线会自然很多。",
+        "acceptable_child_ids": [
+          "7525750345297825794"
+        ]
+      }
+    ],
+    "time-08-3": [
+      {
+        "group_id": "time-08-3_e1",
+        "message_ids": [
+          "v5-m005722"
+        ],
+        "seq": 5722,
+        "answer_text": "辛美尔留下的小事不断回响，串起了后面很多选择。",
+        "acceptable_child_ids": [
+          "7525750345364934658"
+        ]
+      }
+    ],
+    "time-09-3": [
+      {
+        "group_id": "time-09-3_e1",
+        "message_ids": [
+          "v5-m005762"
+        ],
+        "seq": 5762,
+        "answer_text": "别只按战力排角色，承担的代价也是理解动机的一部分。",
+        "acceptable_child_ids": [
+          "7525750345469792257"
+        ]
+      }
+    ],
+    "time-10-3": [
+      {
+        "group_id": "time-10-3_e1",
+        "message_ids": [
+          "v5-m005802"
+        ],
+        "seq": 5802,
+        "answer_text": "我们认为关键不是单人得分，而是拦防开始形成连续配合。",
+        "acceptable_child_ids": [
+          "7525750345524318210"
+        ]
+      }
+    ],
+    "time-11-3": [
+      {
+        "group_id": "time-11-3_e1",
+        "message_ids": [
+          "v5-m005842"
+        ],
+        "seq": 5842,
+        "answer_text": "我们觉得喜剧外壳下写的是互相接纳，不只是任务。",
+        "acceptable_child_ids": [
+          "7525750345578844162"
+        ]
+      }
+    ],
+    "time-12-3": [
+      {
+        "group_id": "time-12-3_e1",
+        "message_ids": [
+          "v5-m005882"
+        ],
+        "seq": 5882,
+        "answer_text": "把几次失败后的选择连起来看，成长轨迹更清楚。",
+        "acceptable_child_ids": [
+          "7525750345633370114"
+        ]
+      }
+    ],
+    "time-13-3": [
+      {
+        "group_id": "time-13-3_e1",
+        "message_ids": [
+          "v5-m005922"
+        ],
+        "seq": 5922,
+        "answer_text": "把怪物生态和料理方法放一起看，世界观细节很多。",
+        "acceptable_child_ids": [
+          "7525750345734033410"
+        ]
+      }
+    ],
+    "time-14-3": [
+      {
+        "group_id": "time-14-3_e1",
+        "message_ids": [
+          "v5-m005962"
+        ],
+        "seq": 5962,
+        "answer_text": "可以从自由的代价切入，前后几季的主题能连起来。",
+        "acceptable_child_ids": [
+          "7525750345809530882"
+        ]
+      }
+    ],
+    "time-15-3": [
+      {
+        "group_id": "time-15-3_e1",
+        "message_ids": [
+          "v5-m006002"
+        ],
+        "seq": 6002,
+        "answer_text": "这项安排只在节假日前后试行，平日时刻表暂时没变。",
+        "acceptable_child_ids": [
+          "7525750345868251138"
+        ]
+      }
+    ],
+    "time-16-3": [
+      {
+        "group_id": "time-16-3_e1",
+        "message_ids": [
+          "v5-m006042"
+        ],
+        "seq": 6042,
+        "answer_text": "关注学校和场馆的临时通知，不只看天气软件图标。",
+        "acceptable_child_ids": [
+          "7525750346023440387"
+        ]
+      }
+    ],
+    "time-17-3": [
+      {
+        "group_id": "time-17-3_e1",
+        "message_ids": [
+          "v5-m006082"
+        ],
+        "seq": 6082,
+        "answer_text": "我们打算周五去，进馆后先看二楼的城市史展。",
+        "acceptable_child_ids": [
+          "7525750346103132163"
+        ]
+      }
+    ],
+    "time-18-3": [
+      {
+        "group_id": "time-18-3_e1",
+        "message_ids": [
+          "v5-m006122"
+        ],
+        "seq": 6122,
+        "answer_text": "先登记书名和品相，避免到场后重复登记。",
+        "acceptable_child_ids": [
+          "7525750346166046722"
+        ]
+      }
+    ],
+    "time-19-3": [
+      {
+        "group_id": "time-19-3_e1",
+        "message_ids": [
+          "v5-m006162"
+        ],
+        "seq": 6162,
+        "answer_text": "我们建议关注施工公告，开放日期可能会分批调整。",
+        "acceptable_child_ids": [
+          "7525750346275098626"
+        ]
+      }
+    ],
+    "time-20-3": [
+      {
+        "group_id": "time-20-3_e1",
+        "message_ids": [
+          "v5-m006202"
+        ],
+        "seq": 6202,
+        "answer_text": "群里建议按目标岗位规划路线，别从头到尾随便逛。",
+        "acceptable_child_ids": [
+          "7525750346321235970"
+        ]
+      }
+    ],
+    "time-01-4": [
+      {
+        "group_id": "time-01-4_e1",
+        "message_ids": [
+          "v5-m007482"
+        ],
+        "seq": 7482,
+        "answer_text": "练度不够就把输出位换成治疗，别硬凹满星。",
+        "acceptable_child_ids": [
+          "7525750348665851906"
+        ]
+      }
+    ],
+    "time-02-4": [
+      {
+        "group_id": "time-02-4_e1",
+        "message_ids": [
+          "v5-m007522"
+        ],
+        "seq": 7522,
+        "answer_text": "先把主力角色的遗器强化到十二级再决定去留。",
+        "acceptable_child_ids": [
+          "7525750348787486721"
+        ]
+      }
+    ],
+    "time-03-4": [
+      {
+        "group_id": "time-03-4_e1",
+        "message_ids": [
+          "v5-m007562"
+        ],
+        "seq": 7562,
+        "answer_text": "开局先报清楚分路和召唤师技能，减少误会。",
+        "acceptable_child_ids": [
+          "7525750348842012674"
+        ]
+      }
+    ],
+    "time-04-4": [
+      {
+        "group_id": "time-04-4_e1",
+        "message_ids": [
+          "v5-m007602"
+        ],
+        "seq": 7602,
+        "answer_text": "地图边缘也要绕一圈，容易漏掉小怪和宝箱。",
+        "acceptable_child_ids": [
+          "7525750348892344322"
+        ]
+      }
+    ],
+    "time-05-4": [
+      {
+        "group_id": "time-05-4_e1",
+        "message_ids": [
+          "v5-m007642"
+        ],
+        "seq": 7642,
+        "answer_text": "先做主线拿到能力，再回来解机关更顺手。",
+        "acceptable_child_ids": [
+          "7525750348942675970"
+        ]
+      }
+    ],
+    "time-06-4": [
+      {
+        "group_id": "time-06-4_e1",
+        "message_ids": [
+          "v5-m007682"
+        ],
+        "seq": 7682,
+        "answer_text": "把BP和选手近期英雄池一起看，比单看版本榜更准。",
+        "acceptable_child_ids": [
+          "7525750349034950658"
+        ]
+      }
+    ],
+    "time-07-4": [
+      {
+        "group_id": "time-07-4_e1",
+        "message_ids": [
+          "v5-m007722"
+        ],
+        "seq": 7722,
+        "answer_text": "先用临时道路试布局，确认满意再换正式地砖。",
+        "acceptable_child_ids": [
+          "7525750349093670914"
+        ]
+      }
+    ],
+    "time-08-4": [
+      {
+        "group_id": "time-08-4_e1",
+        "message_ids": [
+          "v5-m007762"
+        ],
+        "seq": 7762,
+        "answer_text": "这段更像迟来的告别，不是单纯的冒险回忆。",
+        "acceptable_child_ids": [
+          "7525750349148196866"
+        ]
+      }
+    ],
+    "time-09-4": [
+      {
+        "group_id": "time-09-4_e1",
+        "message_ids": [
+          "v5-m007802"
+        ],
+        "seq": 7802,
+        "answer_text": "这条线里同伴关系的变化比单场胜负更重要。",
+        "acceptable_child_ids": [
+          "7525750349257248769"
+        ]
+      }
+    ],
+    "time-10-4": [
+      {
+        "group_id": "time-10-4_e1",
+        "message_ids": [
+          "v5-m007842"
+        ],
+        "seq": 7842,
+        "answer_text": "先复盘暂停前后的站位变化，节奏转折很明显。",
+        "acceptable_child_ids": [
+          "7525750349311774721"
+        ]
+      }
+    ],
+    "time-11-4": [
+      {
+        "group_id": "time-11-4_e1",
+        "message_ids": [
+          "v5-m007882"
+        ],
+        "seq": 7882,
+        "answer_text": "阿尼亚的视角很重要，她经常把大人的谎言变成连接。",
+        "acceptable_child_ids": [
+          "7525750349357912066"
+        ]
+      }
+    ],
+    "time-12-4": [
+      {
+        "group_id": "time-12-4_e1",
+        "message_ids": [
+          "v5-m007922"
+        ],
+        "seq": 7922,
+        "answer_text": "我们准备按比赛顺序复盘，不从角色人气开始聊。",
+        "acceptable_child_ids": [
+          "7525750349412438018"
+        ]
+      }
+    ],
+    "time-13-4": [
+      {
+        "group_id": "time-13-4_e1",
+        "message_ids": [
+          "v5-m007962"
+        ],
+        "seq": 7962,
+        "answer_text": "不需要每道菜都找现实原型，设定内部自洽就够了。",
+        "acceptable_child_ids": [
+          "7525750349517295618"
+        ]
+      }
+    ],
+    "time-14-4": [
+      {
+        "group_id": "time-14-4_e1",
+        "message_ids": [
+          "v5-m008002"
+        ],
+        "seq": 8002,
+        "answer_text": "先区分角色意图和行动结果，讨论不会混成一团。",
+        "acceptable_child_ids": [
+          "7525750349571821570"
+        ]
+      }
+    ],
+    "time-15-4": [
+      {
+        "group_id": "time-15-4_e1",
+        "message_ids": [
+          "v5-m008042"
+        ],
+        "seq": 8042,
+        "answer_text": "我们建议把换乘末班时间也一起核对，别只看单条线路。",
+        "acceptable_child_ids": [
+          "7525750349643124738"
+        ]
+      }
+    ],
+    "time-16-4": [
+      {
+        "group_id": "time-16-4_e1",
+        "message_ids": [
+          "v5-m008082"
+        ],
+        "seq": 8082,
+        "answer_text": "雨具准备之外也要留意公交改线消息。",
+        "acceptable_child_ids": [
+          "7525750349752176642"
+        ]
+      }
+    ],
+    "time-17-4": [
+      {
+        "group_id": "time-17-4_e1",
+        "message_ids": [
+          "v5-m008122"
+        ],
+        "seq": 8122,
+        "answer_text": "带学生证也要确认优惠票的入场时段。",
+        "acceptable_child_ids": [
+          "7525750349810896897"
+        ]
+      }
+    ],
+    "time-18-4": [
+      {
+        "group_id": "time-18-4_e1",
+        "message_ids": [
+          "v5-m008162"
+        ],
+        "seq": 8162,
+        "answer_text": "现场有儿童读物专区，大家可以把绘本带过去。",
+        "acceptable_child_ids": [
+          "7525750349861228547"
+        ]
+      }
+    ],
+    "time-19-4": [
+      {
+        "group_id": "time-19-4_e1",
+        "message_ids": [
+          "v5-m008202"
+        ],
+        "seq": 8202,
+        "answer_text": "地图上标注的点位还不是全部可用，先查运营状态。",
+        "acceptable_child_ids": [
+          "7525750349970280450"
+        ]
+      }
+    ],
+    "time-20-4": [
+      {
+        "group_id": "time-20-4_e1",
+        "message_ids": [
+          "v5-m008242"
+        ],
+        "seq": 8242,
+        "answer_text": "宣讲会时间撞车时，先去目标岗位更多的那场。",
+        "acceptable_child_ids": [
+          "7525750350024806402"
+        ]
+      }
+    ],
+    "time-01-5": [
+      {
+        "group_id": "time-01-5_e1",
+        "message_ids": [
+          "v5-m009082"
+        ],
+        "seq": 9082,
+        "answer_text": "先看敌人抗性再换队，别照搬上期阵容。",
+        "acceptable_child_ids": [
+          "7525750351576698882"
+        ]
+      }
+    ],
+    "time-02-5": [
+      {
+        "group_id": "time-02-5_e1",
+        "message_ids": [
+          "v5-m009122"
+        ],
+        "seq": 9122,
+        "answer_text": "刷到速度和有效副词条就先停，体力留给新角色。",
+        "acceptable_child_ids": [
+          "7525750351681556481"
+        ]
+      }
+    ],
+    "time-03-5": [
+      {
+        "group_id": "time-03-5_e1",
+        "message_ids": [
+          "v5-m009162"
+        ],
+        "seq": 9162,
+        "answer_text": "优先拿熟练度高的英雄，阵容缺控制时再补功能位。",
+        "acceptable_child_ids": [
+          "7525750351727693826"
+        ]
+      }
+    ],
+    "time-04-5": [
+      {
+        "group_id": "time-04-5_e1",
+        "message_ids": [
+          "v5-m009202"
+        ],
+        "seq": 9202,
+        "answer_text": "先完成前置对话再去挑战，不然支线入口会错过。",
+        "acceptable_child_ids": [
+          "7525750351786414082"
+        ]
+      }
+    ],
+    "time-05-5": [
+      {
+        "group_id": "time-05-5_e1",
+        "message_ids": [
+          "v5-m009242"
+        ],
+        "seq": 9242,
+        "answer_text": "营地附近做标记，支线回来时不容易迷路。",
+        "acceptable_child_ids": [
+          "7525750351891271681"
+        ]
+      }
+    ],
+    "time-06-5": [
+      {
+        "group_id": "time-06-5_e1",
+        "message_ids": [
+          "v5-m009282"
+        ],
+        "seq": 9282,
+        "answer_text": "关键局先记下龙魂和大龙时间线，复盘会清晰很多。",
+        "acceptable_child_ids": [
+          "7525750351941603330"
+        ]
+      }
+    ],
+    "time-07-5": [
+      {
+        "group_id": "time-07-5_e1",
+        "message_ids": [
+          "v5-m009322"
+        ],
+        "seq": 9322,
+        "answer_text": "商店和机场之间留宽一点，来访时不容易堵。",
+        "acceptable_child_ids": [
+          "7525750351983546370"
+        ]
+      }
+    ],
+    "time-08-5": [
+      {
+        "group_id": "time-08-5_e1",
+        "message_ids": [
+          "v5-m009362"
+        ],
+        "seq": 9362,
+        "answer_text": "可以从不同角色对寿命的感受来聊，主题会更完整。",
+        "acceptable_child_ids": [
+          "7525750352054849537"
+        ]
+      }
+    ],
+    "time-09-5": [
+      {
+        "group_id": "time-09-5_e1",
+        "message_ids": [
+          "v5-m009402"
+        ],
+        "seq": 9402,
+        "answer_text": "把早期伏笔和后续行动对照起来，很多决定就不突兀了。",
+        "acceptable_child_ids": [
+          "7525750352184872961"
+        ]
+      }
+    ],
+    "time-10-5": [
+      {
+        "group_id": "time-10-5_e1",
+        "message_ids": [
+          "v5-m009442"
+        ],
+        "seq": 9442,
+        "answer_text": "把自由人和主攻的防守分工理清，比分变化就好理解了。",
+        "acceptable_child_ids": [
+          "7525750352251981826"
+        ]
+      }
+    ],
+    "time-11-5": [
+      {
+        "group_id": "time-11-5_e1",
+        "message_ids": [
+          "v5-m009482"
+        ],
+        "seq": 9482,
+        "answer_text": "后面讨论时可以对照最初的任务目标和现在的相处方式。",
+        "acceptable_child_ids": [
+          "7525750352314896386"
+        ]
+      }
+    ],
+    "time-12-5": [
+      {
+        "group_id": "time-12-5_e1",
+        "message_ids": [
+          "v5-m009522"
+        ],
+        "seq": 9522,
+        "answer_text": "关键是他开始主动创造机会，而不是等队友喂球。",
+        "acceptable_child_ids": [
+          "7525750352432336898"
+        ]
+      }
+    ],
+    "time-13-5": [
+      {
+        "group_id": "time-13-5_e1",
+        "message_ids": [
+          "v5-m009562"
+        ],
+        "seq": 9562,
+        "answer_text": "这段的重点是大家从嫌弃到主动帮忙处理食材。",
+        "acceptable_child_ids": [
+          "7525750352478474242"
+        ]
+      }
+    ],
+    "time-14-5": [
+      {
+        "group_id": "time-14-5_e1",
+        "message_ids": [
+          "v5-m009602"
+        ],
+        "seq": 9602,
+        "answer_text": "那次大家主要争论的是因果链，不是简单评价谁对谁错。",
+        "acceptable_child_ids": [
+          "7525750352533000194"
+        ]
+      }
+    ],
+    "time-15-5": [
+      {
+        "group_id": "time-15-5_e1",
+        "message_ids": [
+          "v5-m009642"
+        ],
+        "seq": 9642,
+        "answer_text": "先收藏运营方的通知页面，后续调整以那里为准。",
+        "acceptable_child_ids": [
+          "7525750352625274882"
+        ]
+      }
+    ],
+    "time-16-5": [
+      {
+        "group_id": "time-16-5_e1",
+        "message_ids": [
+          "v5-m009682"
+        ],
+        "seq": 9682,
+        "answer_text": "等风力预警解除后再约户外活动，不提前冒险。",
+        "acceptable_child_ids": [
+          "7525750352751104002"
+        ]
+      }
+    ],
+    "time-17-5": [
+      {
+        "group_id": "time-17-5_e1",
+        "message_ids": [
+          "v5-m009722"
+        ],
+        "seq": 9722,
+        "answer_text": "馆方公告说入口改到东门，导航不要直接搜老地址。",
+        "acceptable_child_ids": [
+          "7525750352805629955"
+        ]
+      }
+    ],
+    "time-18-5": [
+      {
+        "group_id": "time-18-5_e1",
+        "message_ids": [
+          "v5-m009762"
+        ],
+        "seq": 9762,
+        "answer_text": "活动结束后未交换的书会捐给社区阅览室。",
+        "acceptable_child_ids": [
+          "7525750352855961602"
+        ]
+      }
+    ],
+    "time-19-5": [
+      {
+        "group_id": "time-19-5_e1",
+        "message_ids": [
+          "v5-m009802"
+        ],
+        "seq": 9802,
+        "answer_text": "如果夜间收费不同，最好把服务费和停车费一起比较。",
+        "acceptable_child_ids": [
+          "7525750352960819202"
+        ]
+      }
+    ],
+    "time-20-5": [
+      {
+        "group_id": "time-20-5_e1",
+        "message_ids": [
+          "v5-m009842"
+        ],
+        "seq": 9842,
+        "answer_text": "把招聘会后的投递截止日期记下来，现场聊完及时跟进。",
+        "acceptable_child_ids": [
+          "7525750353002762242"
+        ]
+      }
+    ],
+    "plain_001": [
+      {
+        "group_id": "plain_001_1",
+        "message_ids": [
+          "v5-m000802"
+        ],
+        "seq": 802,
+        "answer_text": "先把常用配置存好，再去测试高难内容。",
+        "acceptable_child_ids": [
+          "7525750328105373698"
+        ]
+      }
+    ],
+    "plain_002": [
+      {
+        "group_id": "plain_002_1",
+        "message_ids": [
+          "v5-m001202"
+        ],
+        "seq": 1202,
+        "answer_text": "先把常用配置存好，再去测试高难内容。",
+        "acceptable_child_ids": [
+          "7525750328793239554"
+        ]
+      }
+    ],
+    "plain_003": [
+      {
+        "group_id": "plain_003_1",
+        "message_ids": [
+          "v5-m002562"
+        ],
+        "seq": 2562,
+        "answer_text": "按正片播放顺序补，特别篇放到对应季度后。",
+        "acceptable_child_ids": [
+          "7525750339874590722"
+        ]
+      }
+    ],
+    "plain_004": [
+      {
+        "group_id": "plain_004_1",
+        "message_ids": [
+          "v5-m003122"
+        ],
+        "seq": 3122,
+        "answer_text": "先找发布单位的原文，核对日期和适用范围。",
+        "acceptable_child_ids": [
+          "7525750340780560386"
+        ]
+      }
+    ],
+    "plain_005": [
+      {
+        "group_id": "plain_005_1",
+        "message_ids": [
+          "v5-m003682"
+        ],
+        "seq": 3682,
+        "answer_text": "先找发布单位的原文，核对日期和适用范围。",
+        "acceptable_child_ids": [
+          "7525750341757833219"
+        ]
+      }
+    ],
+    "plain_006": [
+      {
+        "group_id": "plain_006_1",
+        "message_ids": [
+          "v5-m004242"
+        ],
+        "seq": 4242,
+        "answer_text": "先清主线标记，再沿地图边缘补收集物。",
+        "acceptable_child_ids": [
+          "7525750342756077570"
+        ]
+      }
+    ],
+    "plain_007": [
+      {
+        "group_id": "plain_007_1",
+        "message_ids": [
+          "v5-m004802"
+        ],
+        "seq": 4802,
+        "answer_text": "先统一动画集数，再回头讨论设定细节。",
+        "acceptable_child_ids": [
+          "7525750343670435841"
+        ]
+      }
+    ],
+    "plain_008": [
+      {
+        "group_id": "plain_008_1",
+        "message_ids": [
+          "v5-m005362"
+        ],
+        "seq": 5362,
+        "answer_text": "先统一动画集数，再回头讨论设定细节。",
+        "acceptable_child_ids": [
+          "7525750344618348546"
+        ]
+      }
+    ],
+    "plain_009": [
+      {
+        "group_id": "plain_009_1",
+        "message_ids": [
+          "v5-m006722"
+        ],
+        "seq": 6722,
+        "answer_text": "出门前看官方实时公告，再确认交通应用的变更。",
+        "acceptable_child_ids": [
+          "7525750347231399939"
+        ]
+      }
+    ],
+    "plain_010": [
+      {
+        "group_id": "plain_010_1",
+        "message_ids": [
+          "v5-m007322"
+        ],
+        "seq": 7322,
+        "answer_text": "稀缺材料优先留给常用角色，不要平均分配。",
+        "acceptable_child_ids": [
+          "7525750348292558850"
+        ]
+      }
+    ],
+    "plain_011": [
+      {
+        "group_id": "plain_011_1",
+        "message_ids": [
+          "v5-m008402"
+        ],
+        "seq": 8402,
+        "answer_text": "把片尾曲和插曲按集数记下来，之后更容易找到。",
+        "acceptable_child_ids": [
+          "7525750350318407682"
+        ]
+      }
+    ],
+    "plain_012": [
+      {
+        "group_id": "plain_012_1",
+        "message_ids": [
+          "v5-m008682"
+        ],
+        "seq": 8682,
+        "answer_text": "把片尾曲和插曲按集数记下来，之后更容易找到。",
+        "acceptable_child_ids": [
+          "7525750350876250113"
+        ]
+      }
+    ],
+    "plain_013": [
+      {
+        "group_id": "plain_013_1",
+        "message_ids": [
+          "v5-m008962"
+        ],
+        "seq": 8962,
+        "answer_text": "把预约入口和截止时间一起记进日历。",
+        "acceptable_child_ids": [
+          "7525750351362789379"
+        ]
+      }
+    ],
+    "plain_014": [
+      {
+        "group_id": "plain_014_1",
+        "message_ids": [
+          "v5-m001082"
+        ],
+        "seq": 1082,
+        "answer_text": "联机前先说清角色职责，避免重复选位。",
+        "acceptable_child_ids": [
+          "7525750328562552834"
+        ]
+      }
+    ],
+    "plain_015": [
+      {
+        "group_id": "plain_015_1",
+        "message_ids": [
+          "v5-m001642"
+        ],
+        "seq": 1642,
+        "answer_text": "联机前先说清角色职责，避免重复选位。",
+        "acceptable_child_ids": [
+          "7525750329510465538"
+        ]
+      }
+    ],
+    "plain_016": [
+      {
+        "group_id": "plain_016_1",
+        "message_ids": [
+          "v5-m003002"
+        ],
+        "seq": 3002,
+        "answer_text": "讨论前先说清动画还是漫画进度，避免误剧透。",
+        "acceptable_child_ids": [
+          "7525750340587622403"
+        ]
+      }
+    ],
+    "plain_017": [
+      {
+        "group_id": "plain_017_1",
+        "message_ids": [
+          "v5-m003562"
+        ],
+        "seq": 3562,
+        "answer_text": "有争议时把来源链接发群里，不转无出处截图。",
+        "acceptable_child_ids": [
+          "7525750341531340803"
+        ]
+      }
+    ],
+    "plain_018": [
+      {
+        "group_id": "plain_018_1",
+        "message_ids": [
+          "v5-m003962"
+        ],
+        "seq": 3962,
+        "answer_text": "有争议时把来源链接发群里，不转无出处截图。",
+        "acceptable_child_ids": [
+          "7525750342277926914"
+        ]
+      }
+    ],
+    "plain_019": [
+      {
+        "group_id": "plain_019_1",
+        "message_ids": [
+          "v5-m004682"
+        ],
+        "seq": 4682,
+        "answer_text": "打完记下卡点和掉落，下一轮直接调整。",
+        "acceptable_child_ids": [
+          "7525750343485886466"
+        ]
+      }
+    ],
+    "plain_020": [
+      {
+        "group_id": "plain_020_1",
+        "message_ids": [
+          "v5-m005242"
+        ],
+        "seq": 5242,
+        "answer_text": "按剧情顺序整理伏笔，不要只按角色人气归类。",
+        "acceptable_child_ids": [
+          "7525750344408633346"
+        ]
+      }
+    ],
+    "plain_021": [
+      {
+        "group_id": "plain_021_1",
+        "message_ids": [
+          "v5-m006602"
+        ],
+        "seq": 6602,
+        "answer_text": "等正式通告更新后再调整安排，不按传言行动。",
+        "acceptable_child_ids": [
+          "7525750347009101827"
+        ]
+      }
+    ],
+    "plain_022": [
+      {
+        "group_id": "plain_022_1",
+        "message_ids": [
+          "v5-m007082"
+        ],
+        "seq": 7082,
+        "answer_text": "等正式通告更新后再调整安排，不按传言行动。",
+        "acceptable_child_ids": [
+          "7525750347868934147"
+        ]
+      }
+    ],
+    "plain_023": [
+      {
+        "group_id": "plain_023_1",
+        "message_ids": [
+          "v5-m000962"
+        ],
+        "seq": 962,
+        "answer_text": "先把常用配置存好，再去测试高难内容。",
+        "acceptable_child_ids": [
+          "7525750328373809154"
+        ]
+      }
+    ],
+    "plain_024": [
+      {
+        "group_id": "plain_024_1",
+        "message_ids": [
+          "v5-m001522"
+        ],
+        "seq": 1522,
+        "answer_text": "按正片播放顺序补，特别篇放到对应季度后。",
+        "acceptable_child_ids": [
+          "7525750329283973122"
+        ]
+      }
+    ],
+    "plain_025": [
+      {
+        "group_id": "plain_025_1",
+        "message_ids": [
+          "v5-m002882"
+        ],
+        "seq": 2882,
+        "answer_text": "按正片播放顺序补，特别篇放到对应季度后。",
+        "acceptable_child_ids": [
+          "7525750340453404674"
+        ]
+      }
+    ],
+    "plain_026": [
+      {
+        "group_id": "plain_026_1",
+        "message_ids": [
+          "v5-m003442"
+        ],
+        "seq": 3442,
+        "answer_text": "先找发布单位的原文，核对日期和适用范围。",
+        "acceptable_child_ids": [
+          "7525750341313236995"
+        ]
+      }
+    ],
+    "plain_027": [
+      {
+        "group_id": "plain_027_1",
+        "message_ids": [
+          "v5-m004082"
+        ],
+        "seq": 4082,
+        "answer_text": "先清主线标记，再沿地图边缘补收集物。",
+        "acceptable_child_ids": [
+          "7525750342462476290"
+        ]
+      }
+    ],
+    "plain_028": [
+      {
+        "group_id": "plain_028_1",
+        "message_ids": [
+          "v5-m004562"
+        ],
+        "seq": 4562,
+        "answer_text": "先清主线标记，再沿地图边缘补收集物。",
+        "acceptable_child_ids": [
+          "7525750343288754178"
+        ]
+      }
+    ],
+    "plain_029": [
+      {
+        "group_id": "plain_029_1",
+        "message_ids": [
+          "v5-m005122"
+        ],
+        "seq": 5122,
+        "answer_text": "先统一动画集数，再回头讨论设定细节。",
+        "acceptable_child_ids": [
+          "7525750344186335234"
+        ]
+      }
+    ],
+    "plain_030": [
+      {
+        "group_id": "plain_030_1",
+        "message_ids": [
+          "v5-m006482"
+        ],
+        "seq": 6482,
+        "answer_text": "出门前看官方实时公告，再确认交通应用的变更。",
+        "acceptable_child_ids": [
+          "7525750346820358145"
+        ]
+      }
+    ],
+    "plain_031": [
+      {
+        "group_id": "plain_031_1",
+        "message_ids": [
+          "v5-m007202"
+        ],
+        "seq": 7202,
+        "answer_text": "稀缺材料优先留给常用角色，不要平均分配。",
+        "acceptable_child_ids": [
+          "7525750348074455042"
+        ]
+      }
+    ],
+    "plain_032": [
+      {
+        "group_id": "plain_032_1",
+        "message_ids": [
+          "v5-m008282"
+        ],
+        "seq": 8282,
+        "answer_text": "稀缺材料优先留给常用角色，不要平均分配。",
+        "acceptable_child_ids": [
+          "7525750350096109570"
+        ]
+      }
+    ],
+    "plain_033": [
+      {
+        "group_id": "plain_033_1",
+        "message_ids": [
+          "v5-m008562"
+        ],
+        "seq": 8562,
+        "answer_text": "把片尾曲和插曲按集数记下来，之后更容易找到。",
+        "acceptable_child_ids": [
+          "7525750350658146306"
+        ]
+      }
+    ],
+    "plain_034": [
+      {
+        "group_id": "plain_034_1",
+        "message_ids": [
+          "v5-m008842"
+        ],
+        "seq": 8842,
+        "answer_text": "把预约入口和截止时间一起记进日历。",
+        "acceptable_child_ids": [
+          "7525750351153074179"
+        ]
+      }
+    ],
+    "plain_035": [
+      {
+        "group_id": "plain_035_1",
+        "message_ids": [
+          "v5-m009922"
+        ],
+        "seq": 9922,
+        "answer_text": "把预约入口和截止时间一起记进日历。",
+        "acceptable_child_ids": [
+          "7525750353170534402"
+        ]
+      }
+    ],
+    "plain_036": [
+      {
+        "group_id": "plain_036_1",
+        "message_ids": [
+          "v5-m001402"
+        ],
+        "seq": 1402,
+        "answer_text": "联机前先说清角色职责，避免重复选位。",
+        "acceptable_child_ids": [
+          "7525750329149755393"
+        ]
+      }
+    ],
+    "plain_037": [
+      {
+        "group_id": "plain_037_1",
+        "message_ids": [
+          "v5-m002762"
+        ],
+        "seq": 2762,
+        "answer_text": "讨论前先说清动画还是漫画进度，避免误剧透。",
+        "acceptable_child_ids": [
+          "7525750340243689474"
+        ]
+      }
+    ],
+    "plain_038": [
+      {
+        "group_id": "plain_038_1",
+        "message_ids": [
+          "v5-m003322"
+        ],
+        "seq": 3322,
+        "answer_text": "讨论前先说清动画还是漫画进度，避免误剧透。",
+        "acceptable_child_ids": [
+          "7525750341111910402"
+        ]
+      }
+    ],
+    "plain_039": [
+      {
+        "group_id": "plain_039_1",
+        "message_ids": [
+          "v5-m003842"
+        ],
+        "seq": 3842,
+        "answer_text": "有争议时把来源链接发群里，不转无出处截图。",
+        "acceptable_child_ids": [
+          "7525750342017880067"
+        ]
+      }
+    ],
+    "plain_040": [
+      {
+        "group_id": "plain_040_1",
+        "message_ids": [
+          "v5-m004442"
+        ],
+        "seq": 4442,
+        "answer_text": "打完记下卡点和掉落，下一轮直接调整。",
+        "acceptable_child_ids": [
+          "7525750343095816194"
+        ]
+      }
+    ],
+    "plain_041": [
+      {
+        "group_id": "plain_041_1",
+        "message_ids": [
+          "v5-m005002"
+        ],
+        "seq": 5002,
+        "answer_text": "按剧情顺序整理伏笔，不要只按角色人气归类。",
+        "acceptable_child_ids": [
+          "7525750343993397250"
+        ]
+      }
+    ],
+    "plain_042": [
+      {
+        "group_id": "plain_042_1",
+        "message_ids": [
+          "v5-m006362"
+        ],
+        "seq": 6362,
+        "answer_text": "按剧情顺序整理伏笔，不要只按角色人气归类。",
+        "acceptable_child_ids": [
+          "7525750346581282818"
+        ]
+      }
+    ],
+    "plain_043": [
+      {
+        "group_id": "plain_043_1",
+        "message_ids": [
+          "v5-m006922"
+        ],
+        "seq": 6922,
+        "answer_text": "等正式通告更新后再调整安排，不按传言行动。",
+        "acceptable_child_ids": [
+          "7525750347566944258"
+        ]
+      }
+    ],
+    "plain_044": [
+      {
+        "group_id": "plain_044_1",
+        "message_ids": [
+          "v5-m000842"
+        ],
+        "seq": 842,
+        "answer_text": "先把常用配置存好，再去测试高难内容。",
+        "acceptable_child_ids": [
+          "7525750328155705347"
+        ]
+      }
+    ],
+    "plain_045": [
+      {
+        "group_id": "plain_045_1",
+        "message_ids": [
+          "v5-m001282"
+        ],
+        "seq": 1282,
+        "answer_text": "先把常用配置存好，再去测试高难内容。",
+        "acceptable_child_ids": [
+          "7525750328961011713"
+        ]
+      }
+    ],
+    "plain_046": [
+      {
+        "group_id": "plain_046_1",
+        "message_ids": [
+          "v5-m002642"
+        ],
+        "seq": 2642,
+        "answer_text": "按正片播放顺序补，特别篇放到对应季度后。",
+        "acceptable_child_ids": [
+          "7525750340059140098"
+        ]
+      }
+    ],
+    "plain_047": [
+      {
+        "group_id": "plain_047_1",
+        "message_ids": [
+          "v5-m003202"
+        ],
+        "seq": 3202,
+        "answer_text": "先找发布单位的原文，核对日期和适用范围。",
+        "acceptable_child_ids": [
+          "7525750340927361026"
+        ]
+      }
+    ],
+    "plain_048": [
+      {
+        "group_id": "plain_048_1",
+        "message_ids": [
+          "v5-m003762"
+        ],
+        "seq": 3762,
+        "answer_text": "先找发布单位的原文，核对日期和适用范围。",
+        "acceptable_child_ids": [
+          "7525750341908828161"
+        ]
+      }
+    ],
+    "plain_049": [
+      {
+        "group_id": "plain_049_1",
+        "message_ids": [
+          "v5-m004322"
+        ],
+        "seq": 4322,
+        "answer_text": "先清主线标记，再沿地图边缘补收集物。",
+        "acceptable_child_ids": [
+          "7525750342898683906"
+        ]
+      }
+    ],
+    "plain_050": [
+      {
+        "group_id": "plain_050_1",
+        "message_ids": [
+          "v5-m004882"
+        ],
+        "seq": 4882,
+        "answer_text": "先统一动画集数，再回头讨论设定细节。",
+        "acceptable_child_ids": [
+          "7525750343775293441"
+        ]
+      }
+    ],
+    "plain_051": [
+      {
+        "group_id": "plain_051_1",
+        "message_ids": [
+          "v5-m006242"
+        ],
+        "seq": 6242,
+        "answer_text": "出门前看官方实时公告，再确认交通应用的变更。",
+        "acceptable_child_ids": [
+          "7525750346392539138"
+        ]
+      },
+      {
+        "group_id": "plain_051_2",
+        "message_ids": [
+          "v5-m009882"
+        ],
+        "seq": 9882,
+        "answer_text": "把预约入口和截止时间一起记进日历。",
+        "acceptable_child_ids": [
+          "7525750353074065411"
+        ]
+      }
+    ],
+    "plain_052": [
+      {
+        "group_id": "plain_052_1",
+        "message_ids": [
+          "v5-m006802"
+        ],
+        "seq": 6802,
+        "answer_text": "出门前看官方实时公告，再确认交通应用的变更。",
+        "acceptable_child_ids": [
+          "7525750347374006274"
+        ]
+      },
+      {
+        "group_id": "plain_052_2",
+        "message_ids": [
+          "v5-m001322"
+        ],
+        "seq": 1322,
+        "answer_text": "联机前先说清角色职责，避免重复选位。",
+        "acceptable_child_ids": [
+          "7525750329007149058"
+        ]
+      }
+    ],
+    "plain_053": [
+      {
+        "group_id": "plain_053_1",
+        "message_ids": [
+          "v5-m007362"
+        ],
+        "seq": 7362,
+        "answer_text": "稀缺材料优先留给常用角色，不要平均分配。",
+        "acceptable_child_ids": [
+          "7525750348384833538"
+        ]
+      },
+      {
+        "group_id": "plain_053_2",
+        "message_ids": [
+          "v5-m002682"
+        ],
+        "seq": 2682,
+        "answer_text": "讨论前先说清动画还是漫画进度，避免误剧透。",
+        "acceptable_child_ids": [
+          "7525750340109471746"
+        ]
+      }
+    ],
+    "plain_054": [
+      {
+        "group_id": "plain_054_1",
+        "message_ids": [
+          "v5-m008442"
+        ],
+        "seq": 8442,
+        "answer_text": "把片尾曲和插曲按集数记下来，之后更容易找到。",
+        "acceptable_child_ids": [
+          "7525750350377127939"
+        ]
+      },
+      {
+        "group_id": "plain_054_2",
+        "message_ids": [
+          "v5-m003242"
+        ],
+        "seq": 3242,
+        "answer_text": "讨论前先说清动画还是漫画进度，避免误剧透。",
+        "acceptable_child_ids": [
+          "7525750340973498370"
+        ]
+      }
+    ],
+    "plain_055": [
+      {
+        "group_id": "plain_055_1",
+        "message_ids": [
+          "v5-m008722"
+        ],
+        "seq": 8722,
+        "answer_text": "把片尾曲和插曲按集数记下来，之后更容易找到。",
+        "acceptable_child_ids": [
+          "7525750350955941891"
+        ]
+      },
+      {
+        "group_id": "plain_055_2",
+        "message_ids": [
+          "v5-m003802"
+        ],
+        "seq": 3802,
+        "answer_text": "有争议时把来源链接发群里，不转无出处截图。",
+        "acceptable_child_ids": [
+          "7525750341963354115"
+        ]
+      }
+    ],
+    "plain_056": [
+      {
+        "group_id": "plain_056_1",
+        "message_ids": [
+          "v5-m009002"
+        ],
+        "seq": 9002,
+        "answer_text": "把预约入口和截止时间一起记进日历。",
+        "acceptable_child_ids": [
+          "7525750351463452675"
+        ]
+      },
+      {
+        "group_id": "plain_056_2",
+        "message_ids": [
+          "v5-m004362"
+        ],
+        "seq": 4362,
+        "answer_text": "打完记下卡点和掉落，下一轮直接调整。",
+        "acceptable_child_ids": [
+          "7525750342949015554"
+        ]
+      }
+    ],
+    "plain_057": [
+      {
+        "group_id": "plain_057_1",
+        "message_ids": [
+          "v5-m001162"
+        ],
+        "seq": 1162,
+        "answer_text": "联机前先说清角色职责，避免重复选位。",
+        "acceptable_child_ids": [
+          "7525750328738713601"
+        ]
+      },
+      {
+        "group_id": "plain_057_2",
+        "message_ids": [
+          "v5-m004922"
+        ],
+        "seq": 4922,
+        "answer_text": "打完记下卡点和掉落，下一轮直接调整。",
+        "acceptable_child_ids": [
+          "7525750343838208002"
+        ]
+      }
+    ],
+    "plain_058": [
+      {
+        "group_id": "plain_058_1",
+        "message_ids": [
+          "v5-m001722"
+        ],
+        "seq": 1722,
+        "answer_text": "联机前先说清角色职责，避免重复选位。",
+        "acceptable_child_ids": [
+          "7525750329648877569"
+        ]
+      },
+      {
+        "group_id": "plain_058_2",
+        "message_ids": [
+          "v5-m006282"
+        ],
+        "seq": 6282,
+        "answer_text": "按剧情顺序整理伏笔，不要只按角色人气归类。",
+        "acceptable_child_ids": [
+          "7525750346493202434"
+        ]
+      }
+    ],
+    "plain_059": [
+      {
+        "group_id": "plain_059_1",
+        "message_ids": [
+          "v5-m003082"
+        ],
+        "seq": 3082,
+        "answer_text": "讨论前先说清动画还是漫画进度，避免误剧透。",
+        "acceptable_child_ids": [
+          "7525750340730228738"
+        ]
+      },
+      {
+        "group_id": "plain_059_2",
+        "message_ids": [
+          "v5-m006842"
+        ],
+        "seq": 6842,
+        "answer_text": "等正式通告更新后再调整安排，不按传言行动。",
+        "acceptable_child_ids": [
+          "7525750347424337923"
+        ]
+      }
+    ],
+    "plain_060": [
+      {
+        "group_id": "plain_060_1",
+        "message_ids": [
+          "v5-m003642"
+        ],
+        "seq": 3642,
+        "answer_text": "有争议时把来源链接发群里，不转无出处截图。",
+        "acceptable_child_ids": [
+          "7525750341690724353"
+        ]
+      },
+      {
+        "group_id": "plain_060_2",
+        "message_ids": [
+          "v5-m000802"
+        ],
+        "seq": 802,
+        "answer_text": "先把常用配置存好，再去测试高难内容。",
+        "acceptable_child_ids": [
+          "7525750328105373698"
+        ]
+      }
+    ],
+    "plain_061": [
+      {
+        "group_id": "plain_061_1",
+        "message_ids": [
+          "v5-m004202"
+        ],
+        "seq": 4202,
+        "answer_text": "打完记下卡点和掉落，下一轮直接调整。",
+        "acceptable_child_ids": [
+          "7525750342701551618"
+        ]
+      },
+      {
+        "group_id": "plain_061_2",
+        "message_ids": [
+          "v5-m001202"
+        ],
+        "seq": 1202,
+        "answer_text": "先把常用配置存好，再去测试高难内容。",
+        "acceptable_child_ids": [
+          "7525750328793239554"
+        ]
+      }
+    ],
+    "plain_062": [
+      {
+        "group_id": "plain_062_1",
+        "message_ids": [
+          "v5-m004762"
+        ],
+        "seq": 4762,
+        "answer_text": "打完记下卡点和掉落，下一轮直接调整。",
+        "acceptable_child_ids": [
+          "7525750343573966850"
+        ]
+      },
+      {
+        "group_id": "plain_062_2",
+        "message_ids": [
+          "v5-m002562"
+        ],
+        "seq": 2562,
+        "answer_text": "按正片播放顺序补，特别篇放到对应季度后。",
+        "acceptable_child_ids": [
+          "7525750339874590722"
+        ]
+      }
+    ],
+    "plain_063": [
+      {
+        "group_id": "plain_063_1",
+        "message_ids": [
+          "v5-m005322"
+        ],
+        "seq": 5322,
+        "answer_text": "按剧情顺序整理伏笔，不要只按角色人气归类。",
+        "acceptable_child_ids": [
+          "7525750344509296642"
+        ]
+      },
+      {
+        "group_id": "plain_063_2",
+        "message_ids": [
+          "v5-m003122"
+        ],
+        "seq": 3122,
+        "answer_text": "先找发布单位的原文，核对日期和适用范围。",
+        "acceptable_child_ids": [
+          "7525750340780560386"
+        ]
+      }
+    ],
+    "plain_064": [
+      {
+        "group_id": "plain_064_1",
+        "message_ids": [
+          "v5-m006682"
+        ],
+        "seq": 6682,
+        "answer_text": "等正式通告更新后再调整安排，不按传言行动。",
+        "acceptable_child_ids": [
+          "7525750347168485378"
+        ]
+      },
+      {
+        "group_id": "plain_064_2",
+        "message_ids": [
+          "v5-m003682"
+        ],
+        "seq": 3682,
+        "answer_text": "先找发布单位的原文，核对日期和适用范围。",
+        "acceptable_child_ids": [
+          "7525750341757833219"
+        ]
+      }
+    ],
+    "plain_065": [
+      {
+        "group_id": "plain_065_1",
+        "message_ids": [
+          "v5-m007122"
+        ],
+        "seq": 7122,
+        "answer_text": "等正式通告更新后再调整安排，不按传言行动。",
+        "acceptable_child_ids": [
+          "7525750347919265795"
+        ]
+      },
+      {
+        "group_id": "plain_065_2",
+        "message_ids": [
+          "v5-m004242"
+        ],
+        "seq": 4242,
+        "answer_text": "先清主线标记，再沿地图边缘补收集物。",
+        "acceptable_child_ids": [
+          "7525750342756077570"
+        ]
+      }
+    ],
+    "plain_066": [
+      {
+        "group_id": "plain_066_1",
+        "message_ids": [
+          "v5-m001042"
+        ],
+        "seq": 1042,
+        "answer_text": "先把常用配置存好，再去测试高难内容。",
+        "acceptable_child_ids": [
+          "7525750328516415490"
+        ]
+      },
+      {
+        "group_id": "plain_066_2",
+        "message_ids": [
+          "v5-m004802"
+        ],
+        "seq": 4802,
+        "answer_text": "先统一动画集数，再回头讨论设定细节。",
+        "acceptable_child_ids": [
+          "7525750343670435841"
+        ]
+      }
+    ],
+    "plain_067": [
+      {
+        "group_id": "plain_067_1",
+        "message_ids": [
+          "v5-m001602"
+        ],
+        "seq": 1602,
+        "answer_text": "按正片播放顺序补，特别篇放到对应季度后。",
+        "acceptable_child_ids": [
+          "7525750329455939586"
+        ]
+      },
+      {
+        "group_id": "plain_067_2",
+        "message_ids": [
+          "v5-m005362"
+        ],
+        "seq": 5362,
+        "answer_text": "先统一动画集数，再回头讨论设定细节。",
+        "acceptable_child_ids": [
+          "7525750344618348546"
+        ]
+      }
+    ],
+    "plain_068": [
+      {
+        "group_id": "plain_068_1",
+        "message_ids": [
+          "v5-m002962"
+        ],
+        "seq": 2962,
+        "answer_text": "按正片播放顺序补，特别篇放到对应季度后。",
+        "acceptable_child_ids": [
+          "7525750340537290754"
+        ]
+      },
+      {
+        "group_id": "plain_068_2",
+        "message_ids": [
+          "v5-m006722"
+        ],
+        "seq": 6722,
+        "answer_text": "出门前看官方实时公告，再确认交通应用的变更。",
+        "acceptable_child_ids": [
+          "7525750347231399939"
+        ]
+      }
+    ],
+    "plain_069": [
+      {
+        "group_id": "plain_069_1",
+        "message_ids": [
+          "v5-m003522"
+        ],
+        "seq": 3522,
+        "answer_text": "先找发布单位的原文，核对日期和适用范围。",
+        "acceptable_child_ids": [
+          "7525750341476814849"
+        ]
+      },
+      {
+        "group_id": "plain_069_2",
+        "message_ids": [
+          "v5-m007322"
+        ],
+        "seq": 7322,
+        "answer_text": "稀缺材料优先留给常用角色，不要平均分配。",
+        "acceptable_child_ids": [
+          "7525750348292558850"
+        ]
+      }
+    ],
+    "plain_070": [
+      {
+        "group_id": "plain_070_1",
+        "message_ids": [
+          "v5-m004122"
+        ],
+        "seq": 4122,
+        "answer_text": "先清主线标记，再沿地图边缘补收集物。",
+        "acceptable_child_ids": [
+          "7525750342512807939"
+        ]
+      },
+      {
+        "group_id": "plain_070_2",
+        "message_ids": [
+          "v5-m008402"
+        ],
+        "seq": 8402,
+        "answer_text": "把片尾曲和插曲按集数记下来，之后更容易找到。",
+        "acceptable_child_ids": [
+          "7525750350318407682"
+        ]
+      }
+    ],
+    "plain_071": [
+      {
+        "group_id": "plain_071_1",
+        "message_ids": [
+          "v5-m004642"
+        ],
+        "seq": 4642,
+        "answer_text": "先统一动画集数，再回头讨论设定细节。",
+        "acceptable_child_ids": [
+          "7525750343389417474"
+        ]
+      },
+      {
+        "group_id": "plain_071_2",
+        "message_ids": [
+          "v5-m008682"
+        ],
+        "seq": 8682,
+        "answer_text": "把片尾曲和插曲按集数记下来，之后更容易找到。",
+        "acceptable_child_ids": [
+          "7525750350876250113"
+        ]
+      }
+    ],
+    "plain_072": [
+      {
+        "group_id": "plain_072_1",
+        "message_ids": [
+          "v5-m005202"
+        ],
+        "seq": 5202,
+        "answer_text": "先统一动画集数，再回头讨论设定细节。",
+        "acceptable_child_ids": [
+          "7525750344299581442"
+        ]
+      },
+      {
+        "group_id": "plain_072_2",
+        "message_ids": [
+          "v5-m008962"
+        ],
+        "seq": 8962,
+        "answer_text": "把预约入口和截止时间一起记进日历。",
+        "acceptable_child_ids": [
+          "7525750351362789379"
+        ]
+      }
+    ],
+    "plain_073": [
+      {
+        "group_id": "plain_073_1",
+        "message_ids": [
+          "v5-m006562"
+        ],
+        "seq": 6562,
+        "answer_text": "出门前看官方实时公告，再确认交通应用的变更。",
+        "acceptable_child_ids": [
+          "7525750346962964482"
+        ]
+      },
+      {
+        "group_id": "plain_073_2",
+        "message_ids": [
+          "v5-m001082"
+        ],
+        "seq": 1082,
+        "answer_text": "联机前先说清角色职责，避免重复选位。",
+        "acceptable_child_ids": [
+          "7525750328562552834"
+        ]
+      }
+    ],
+    "plain_074": [
+      {
+        "group_id": "plain_074_1",
+        "message_ids": [
+          "v5-m007242"
+        ],
+        "seq": 7242,
+        "answer_text": "稀缺材料优先留给常用角色，不要平均分配。",
+        "acceptable_child_ids": [
+          "7525750348128980994"
+        ]
+      },
+      {
+        "group_id": "plain_074_2",
+        "message_ids": [
+          "v5-m001642"
+        ],
+        "seq": 1642,
+        "answer_text": "联机前先说清角色职责，避免重复选位。",
+        "acceptable_child_ids": [
+          "7525750329510465538"
+        ]
+      }
+    ],
+    "plain_075": [
+      {
+        "group_id": "plain_075_1",
+        "message_ids": [
+          "v5-m008322"
+        ],
+        "seq": 8322,
+        "answer_text": "稀缺材料优先留给常用角色，不要平均分配。",
+        "acceptable_child_ids": [
+          "7525750350221938690"
+        ]
+      },
+      {
+        "group_id": "plain_075_2",
+        "message_ids": [
+          "v5-m003002"
+        ],
+        "seq": 3002,
+        "answer_text": "讨论前先说清动画还是漫画进度，避免误剧透。",
+        "acceptable_child_ids": [
+          "7525750340587622403"
+        ]
+      }
+    ],
+    "plain_076": [
+      {
+        "group_id": "plain_076_1",
+        "message_ids": [
+          "v5-m008602"
+        ],
+        "seq": 8602,
+        "answer_text": "把片尾曲和插曲按集数记下来，之后更容易找到。",
+        "acceptable_child_ids": [
+          "7525750350771392514"
+        ]
+      },
+      {
+        "group_id": "plain_076_2",
+        "message_ids": [
+          "v5-m003562"
+        ],
+        "seq": 3562,
+        "answer_text": "有争议时把来源链接发群里，不转无出处截图。",
+        "acceptable_child_ids": [
+          "7525750341531340803"
+        ]
+      }
+    ],
+    "plain_077": [
+      {
+        "group_id": "plain_077_1",
+        "message_ids": [
+          "v5-m008882"
+        ],
+        "seq": 8882,
+        "answer_text": "把预约入口和截止时间一起记进日历。",
+        "acceptable_child_ids": [
+          "7525750351257931778"
+        ]
+      },
+      {
+        "group_id": "plain_077_2",
+        "message_ids": [
+          "v5-m003962"
+        ],
+        "seq": 3962,
+        "answer_text": "有争议时把来源链接发群里，不转无出处截图。",
+        "acceptable_child_ids": [
+          "7525750342277926914"
+        ]
+      }
+    ],
+    "plain_078": [
+      {
+        "group_id": "plain_078_1",
+        "message_ids": [
+          "v5-m009962"
+        ],
+        "seq": 9962,
+        "answer_text": "把预约入口和截止时间一起记进日历。",
+        "acceptable_child_ids": [
+          "7525750353216671747"
+        ]
+      },
+      {
+        "group_id": "plain_078_2",
+        "message_ids": [
+          "v5-m004682"
+        ],
+        "seq": 4682,
+        "answer_text": "打完记下卡点和掉落，下一轮直接调整。",
+        "acceptable_child_ids": [
+          "7525750343485886466"
+        ]
+      }
+    ],
+    "plain_079": [
+      {
+        "group_id": "plain_079_1",
+        "message_ids": [
+          "v5-m001482"
+        ],
+        "seq": 1482,
+        "answer_text": "联机前先说清角色职责，避免重复选位。",
+        "acceptable_child_ids": [
+          "7525750329242030082"
+        ]
+      },
+      {
+        "group_id": "plain_079_2",
+        "message_ids": [
+          "v5-m005242"
+        ],
+        "seq": 5242,
+        "answer_text": "按剧情顺序整理伏笔，不要只按角色人气归类。",
+        "acceptable_child_ids": [
+          "7525750344408633346"
+        ]
+      }
+    ],
+    "plain_080": [
+      {
+        "group_id": "plain_080_1",
+        "message_ids": [
+          "v5-m002842"
+        ],
+        "seq": 2842,
+        "answer_text": "讨论前先说清动画还是漫画进度，避免误剧透。",
+        "acceptable_child_ids": [
+          "7525750340356935682"
+        ]
+      },
+      {
+        "group_id": "plain_080_2",
+        "message_ids": [
+          "v5-m006602"
+        ],
+        "seq": 6602,
+        "answer_text": "等正式通告更新后再调整安排，不按传言行动。",
+        "acceptable_child_ids": [
+          "7525750347009101827"
+        ]
+      }
+    ],
+    "plain_081": [
+      {
+        "group_id": "plain_081_1",
+        "message_ids": [
+          "v5-m003402"
+        ],
+        "seq": 3402,
+        "answer_text": "有争议时把来源链接发群里，不转无出处截图。",
+        "acceptable_child_ids": [
+          "7525750341258711041"
+        ]
+      },
+      {
+        "group_id": "plain_081_2",
+        "message_ids": [
+          "v5-m007082"
+        ],
+        "seq": 7082,
+        "answer_text": "等正式通告更新后再调整安排，不按传言行动。",
+        "acceptable_child_ids": [
+          "7525750347868934147"
+        ]
+      }
+    ],
+    "plain_082": [
+      {
+        "group_id": "plain_082_1",
+        "message_ids": [
+          "v5-m003882"
+        ],
+        "seq": 3882,
+        "answer_text": "有争议时把来源链接发群里，不转无出处截图。",
+        "acceptable_child_ids": [
+          "7525750342173069313"
+        ]
+      },
+      {
+        "group_id": "plain_082_2",
+        "message_ids": [
+          "v5-m000962"
+        ],
+        "seq": 962,
+        "answer_text": "先把常用配置存好，再去测试高难内容。",
+        "acceptable_child_ids": [
+          "7525750328373809154"
+        ]
+      }
+    ],
+    "plain_083": [
+      {
+        "group_id": "plain_083_1",
+        "message_ids": [
+          "v5-m004522"
+        ],
+        "seq": 4522,
+        "answer_text": "打完记下卡点和掉落，下一轮直接调整。",
+        "acceptable_child_ids": [
+          "7525750343183896578"
+        ]
+      },
+      {
+        "group_id": "plain_083_2",
+        "message_ids": [
+          "v5-m001522"
+        ],
+        "seq": 1522,
+        "answer_text": "按正片播放顺序补，特别篇放到对应季度后。",
+        "acceptable_child_ids": [
+          "7525750329283973122"
+        ]
+      }
+    ],
+    "plain_084": [
+      {
+        "group_id": "plain_084_1",
+        "message_ids": [
+          "v5-m005082"
+        ],
+        "seq": 5082,
+        "answer_text": "按剧情顺序整理伏笔，不要只按角色人气归类。",
+        "acceptable_child_ids": [
+          "7525750344136003586"
+        ]
+      },
+      {
+        "group_id": "plain_084_2",
+        "message_ids": [
+          "v5-m002882"
+        ],
+        "seq": 2882,
+        "answer_text": "按正片播放顺序补，特别篇放到对应季度后。",
+        "acceptable_child_ids": [
+          "7525750340453404674"
+        ]
+      }
+    ],
+    "plain_085": [
+      {
+        "group_id": "plain_085_1",
+        "message_ids": [
+          "v5-m006442"
+        ],
+        "seq": 6442,
+        "answer_text": "按剧情顺序整理伏笔，不要只按角色人气归类。",
+        "acceptable_child_ids": [
+          "7525750346749054977"
+        ]
+      },
+      {
+        "group_id": "plain_085_2",
+        "message_ids": [
+          "v5-m003442"
+        ],
+        "seq": 3442,
+        "answer_text": "先找发布单位的原文，核对日期和适用范围。",
+        "acceptable_child_ids": [
+          "7525750341313236995"
+        ]
+      }
+    ],
+    "plain_086": [
+      {
+        "group_id": "plain_086_1",
+        "message_ids": [
+          "v5-m007002"
+        ],
+        "seq": 7002,
+        "answer_text": "等正式通告更新后再调整安排，不按传言行动。",
+        "acceptable_child_ids": [
+          "7525750347717939203"
+        ]
+      },
+      {
+        "group_id": "plain_086_2",
+        "message_ids": [
+          "v5-m004082"
+        ],
+        "seq": 4082,
+        "answer_text": "先清主线标记，再沿地图边缘补收集物。",
+        "acceptable_child_ids": [
+          "7525750342462476290"
+        ]
+      },
+      {
+        "group_id": "plain_086_3",
+        "message_ids": [
+          "v5-m008362"
+        ],
+        "seq": 8362,
+        "answer_text": "稀缺材料优先留给常用角色，不要平均分配。",
+        "acceptable_child_ids": [
+          "7525750350268076034"
+        ]
+      }
+    ],
+    "plain_087": [
+      {
+        "group_id": "plain_087_1",
+        "message_ids": [
+          "v5-m000882"
+        ],
+        "seq": 882,
+        "answer_text": "先把常用配置存好，再去测试高难内容。",
+        "acceptable_child_ids": [
+          "7525750328243785729"
+        ]
+      },
+      {
+        "group_id": "plain_087_2",
+        "message_ids": [
+          "v5-m004562"
+        ],
+        "seq": 4562,
+        "answer_text": "先清主线标记，再沿地图边缘补收集物。",
+        "acceptable_child_ids": [
+          "7525750343288754178"
+        ]
+      },
+      {
+        "group_id": "plain_087_3",
+        "message_ids": [
+          "v5-m008642"
+        ],
+        "seq": 8642,
+        "answer_text": "把片尾曲和插曲按集数记下来，之后更容易找到。",
+        "acceptable_child_ids": [
+          "7525750350825918465"
+        ]
+      }
+    ],
+    "plain_088": [
+      {
+        "group_id": "plain_088_1",
+        "message_ids": [
+          "v5-m001362"
+        ],
+        "seq": 1362,
+        "answer_text": "先把常用配置存好，再去测试高难内容。",
+        "acceptable_child_ids": [
+          "7525750329061675009"
+        ]
+      },
+      {
+        "group_id": "plain_088_2",
+        "message_ids": [
+          "v5-m005122"
+        ],
+        "seq": 5122,
+        "answer_text": "先统一动画集数，再回头讨论设定细节。",
+        "acceptable_child_ids": [
+          "7525750344186335234"
+        ]
+      },
+      {
+        "group_id": "plain_088_3",
+        "message_ids": [
+          "v5-m008922"
+        ],
+        "seq": 8922,
+        "answer_text": "把预约入口和截止时间一起记进日历。",
+        "acceptable_child_ids": [
+          "7525750351320846338"
+        ]
+      }
+    ],
+    "plain_089": [
+      {
+        "group_id": "plain_089_1",
+        "message_ids": [
+          "v5-m002722"
+        ],
+        "seq": 2722,
+        "answer_text": "按正片播放顺序补，特别篇放到对应季度后。",
+        "acceptable_child_ids": [
+          "7525750340155609090"
+        ]
+      },
+      {
+        "group_id": "plain_089_2",
+        "message_ids": [
+          "v5-m006482"
+        ],
+        "seq": 6482,
+        "answer_text": "出门前看官方实时公告，再确认交通应用的变更。",
+        "acceptable_child_ids": [
+          "7525750346820358145"
+        ]
+      },
+      {
+        "group_id": "plain_089_3",
+        "message_ids": [
+          "v5-m001002"
+        ],
+        "seq": 1002,
+        "answer_text": "联机前先说清角色职责，避免重复选位。",
+        "acceptable_child_ids": [
+          "7525750328466083842"
+        ]
+      }
+    ],
+    "plain_090": [
+      {
+        "group_id": "plain_090_1",
+        "message_ids": [
+          "v5-m003282"
+        ],
+        "seq": 3282,
+        "answer_text": "先找发布单位的原文，核对日期和适用范围。",
+        "acceptable_child_ids": [
+          "7525750341065773058"
+        ]
+      },
+      {
+        "group_id": "plain_090_2",
+        "message_ids": [
+          "v5-m007202"
+        ],
+        "seq": 7202,
+        "answer_text": "稀缺材料优先留给常用角色，不要平均分配。",
+        "acceptable_child_ids": [
+          "7525750348074455042"
+        ]
+      },
+      {
+        "group_id": "plain_090_3",
+        "message_ids": [
+          "v5-m001562"
+        ],
+        "seq": 1562,
+        "answer_text": "联机前先说清角色职责，避免重复选位。",
+        "acceptable_child_ids": [
+          "7525750329397219330"
+        ]
+      }
+    ],
+    "plain_091": [
+      {
+        "group_id": "plain_091_1",
+        "message_ids": [
+          "v5-m004002"
+        ],
+        "seq": 4002,
+        "answer_text": "先清主线标记，再沿地图边缘补收集物。",
+        "acceptable_child_ids": [
+          "7525750342378590208"
+        ]
+      },
+      {
+        "group_id": "plain_091_2",
+        "message_ids": [
+          "v5-m008282"
+        ],
+        "seq": 8282,
+        "answer_text": "稀缺材料优先留给常用角色，不要平均分配。",
+        "acceptable_child_ids": [
+          "7525750350096109570"
+        ]
+      },
+      {
+        "group_id": "plain_091_3",
+        "message_ids": [
+          "v5-m002922"
+        ],
+        "seq": 2922,
+        "answer_text": "讨论前先说清动画还是漫画进度，避免误剧透。",
+        "acceptable_child_ids": [
+          "7525750340495347714"
+        ]
+      }
+    ],
+    "plain_092": [
+      {
+        "group_id": "plain_092_1",
+        "message_ids": [
+          "v5-m004402"
+        ],
+        "seq": 4402,
+        "answer_text": "先清主线标记，再沿地图边缘补收集物。",
+        "acceptable_child_ids": [
+          "7525750343045484544"
+        ]
+      },
+      {
+        "group_id": "plain_092_2",
+        "message_ids": [
+          "v5-m008562"
+        ],
+        "seq": 8562,
+        "answer_text": "把片尾曲和插曲按集数记下来，之后更容易找到。",
+        "acceptable_child_ids": [
+          "7525750350658146306"
+        ]
+      },
+      {
+        "group_id": "plain_092_3",
+        "message_ids": [
+          "v5-m003482"
+        ],
+        "seq": 3482,
+        "answer_text": "有争议时把来源链接发群里，不转无出处截图。",
+        "acceptable_child_ids": [
+          "7525750341367762946"
+        ]
+      }
+    ],
+    "plain_093": [
+      {
+        "group_id": "plain_093_1",
+        "message_ids": [
+          "v5-m004962"
+        ],
+        "seq": 4962,
+        "answer_text": "先统一动画集数，再回头讨论设定细节。",
+        "acceptable_child_ids": [
+          "7525750343930482689"
+        ]
+      },
+      {
+        "group_id": "plain_093_2",
+        "message_ids": [
+          "v5-m008842"
+        ],
+        "seq": 8842,
+        "answer_text": "把预约入口和截止时间一起记进日历。",
+        "acceptable_child_ids": [
+          "7525750351153074179"
+        ]
+      },
+      {
+        "group_id": "plain_093_3",
+        "message_ids": [
+          "v5-m003922"
+        ],
+        "seq": 3922,
+        "answer_text": "有争议时把来源链接发群里，不转无出处截图。",
+        "acceptable_child_ids": [
+          "7525750342219206658"
+        ]
+      }
+    ],
+    "plain_094": [
+      {
+        "group_id": "plain_094_1",
+        "message_ids": [
+          "v5-m006322"
+        ],
+        "seq": 6322,
+        "answer_text": "出门前看官方实时公告，再确认交通应用的变更。",
+        "acceptable_child_ids": [
+          "7525750346539339778"
+        ]
+      },
+      {
+        "group_id": "plain_094_2",
+        "message_ids": [
+          "v5-m009922"
+        ],
+        "seq": 9922,
+        "answer_text": "把预约入口和截止时间一起记进日历。",
+        "acceptable_child_ids": [
+          "7525750353170534402"
+        ]
+      },
+      {
+        "group_id": "plain_094_3",
+        "message_ids": [
+          "v5-m004602"
+        ],
+        "seq": 4602,
+        "answer_text": "打完记下卡点和掉落，下一轮直接调整。",
+        "acceptable_child_ids": [
+          "7525750343330697218"
+        ]
+      }
+    ],
+    "plain_095": [
+      {
+        "group_id": "plain_095_1",
+        "message_ids": [
+          "v5-m006882"
+        ],
+        "seq": 6882,
+        "answer_text": "出门前看官方实时公告，再确认交通应用的变更。",
+        "acceptable_child_ids": [
+          "7525750347474669570"
+        ]
+      },
+      {
+        "group_id": "plain_095_2",
+        "message_ids": [
+          "v5-m001402"
+        ],
+        "seq": 1402,
+        "answer_text": "联机前先说清角色职责，避免重复选位。",
+        "acceptable_child_ids": [
+          "7525750329149755393"
+        ]
+      },
+      {
+        "group_id": "plain_095_3",
+        "message_ids": [
+          "v5-m005162"
+        ],
+        "seq": 5162,
+        "answer_text": "按剧情顺序整理伏笔，不要只按角色人气归类。",
+        "acceptable_child_ids": [
+          "7525750344245055490"
+        ]
+      }
+    ],
+    "plain_096": [
+      {
+        "group_id": "plain_096_1",
+        "message_ids": [
+          "v5-m007402"
+        ],
+        "seq": 7402,
+        "answer_text": "稀缺材料优先留给常用角色，不要平均分配。",
+        "acceptable_child_ids": [
+          "7525750348548411394"
+        ]
+      },
+      {
+        "group_id": "plain_096_2",
+        "message_ids": [
+          "v5-m002762"
+        ],
+        "seq": 2762,
+        "answer_text": "讨论前先说清动画还是漫画进度，避免误剧透。",
+        "acceptable_child_ids": [
+          "7525750340243689474"
+        ]
+      },
+      {
+        "group_id": "plain_096_3",
+        "message_ids": [
+          "v5-m006522"
+        ],
+        "seq": 6522,
+        "answer_text": "按剧情顺序整理伏笔，不要只按角色人气归类。",
+        "acceptable_child_ids": [
+          "7525750346870689795"
+        ]
+      }
+    ],
+    "plain_097": [
+      {
+        "group_id": "plain_097_1",
+        "message_ids": [
+          "v5-m008482"
+        ],
+        "seq": 8482,
+        "answer_text": "把片尾曲和插曲按集数记下来，之后更容易找到。",
+        "acceptable_child_ids": [
+          "7525750350515539970"
+        ]
+      },
+      {
+        "group_id": "plain_097_2",
+        "message_ids": [
+          "v5-m003322"
+        ],
+        "seq": 3322,
+        "answer_text": "讨论前先说清动画还是漫画进度，避免误剧透。",
+        "acceptable_child_ids": [
+          "7525750341111910402"
+        ]
+      },
+      {
+        "group_id": "plain_097_3",
+        "message_ids": [
+          "v5-m007042"
+        ],
+        "seq": 7042,
+        "answer_text": "等正式通告更新后再调整安排，不按传言行动。",
+        "acceptable_child_ids": [
+          "7525750347826991107"
+        ]
+      }
+    ],
+    "plain_098": [
+      {
+        "group_id": "plain_098_1",
+        "message_ids": [
+          "v5-m008762"
+        ],
+        "seq": 8762,
+        "answer_text": "把片尾曲和插曲按集数记下来，之后更容易找到。",
+        "acceptable_child_ids": [
+          "7525750351056605185"
+        ]
+      },
+      {
+        "group_id": "plain_098_2",
+        "message_ids": [
+          "v5-m003842"
+        ],
+        "seq": 3842,
+        "answer_text": "有争议时把来源链接发群里，不转无出处截图。",
+        "acceptable_child_ids": [
+          "7525750342017880067"
+        ]
+      },
+      {
+        "group_id": "plain_098_3",
+        "message_ids": [
+          "v5-m000922"
+        ],
+        "seq": 922,
+        "answer_text": "先把常用配置存好，再去测试高难内容。",
+        "acceptable_child_ids": [
+          "7525750328294117378"
+        ]
+      }
+    ],
+    "plain_099": [
+      {
+        "group_id": "plain_099_1",
+        "message_ids": [
+          "v5-m009042"
+        ],
+        "seq": 9042,
+        "answer_text": "把预约入口和截止时间一起记进日历。",
+        "acceptable_child_ids": [
+          "7525750351526367235"
+        ]
+      },
+      {
+        "group_id": "plain_099_2",
+        "message_ids": [
+          "v5-m004442"
+        ],
+        "seq": 4442,
+        "answer_text": "打完记下卡点和掉落，下一轮直接调整。",
+        "acceptable_child_ids": [
+          "7525750343095816194"
+        ]
+      },
+      {
+        "group_id": "plain_099_3",
+        "message_ids": [
+          "v5-m001442"
+        ],
+        "seq": 1442,
+        "answer_text": "按正片播放顺序补，特别篇放到对应季度后。",
+        "acceptable_child_ids": [
+          "7525750329195892738"
+        ]
+      }
+    ],
+    "plain_100": [
+      {
+        "group_id": "plain_100_1",
+        "message_ids": [
+          "v5-m001242"
+        ],
+        "seq": 1242,
+        "answer_text": "联机前先说清角色职责，避免重复选位。",
+        "acceptable_child_ids": [
+          "7525750328843571202"
+        ]
+      },
+      {
+        "group_id": "plain_100_2",
+        "message_ids": [
+          "v5-m005002"
+        ],
+        "seq": 5002,
+        "answer_text": "按剧情顺序整理伏笔，不要只按角色人气归类。",
+        "acceptable_child_ids": [
+          "7525750343993397250"
+        ]
+      },
+      {
+        "group_id": "plain_100_3",
+        "message_ids": [
+          "v5-m002802"
+        ],
+        "seq": 2802,
+        "answer_text": "按正片播放顺序补，特别篇放到对应季度后。",
+        "acceptable_child_ids": [
+          "7525750340314992642"
+        ]
+      }
+    ]
+  },
+  "unindexed_evidence": []
+}

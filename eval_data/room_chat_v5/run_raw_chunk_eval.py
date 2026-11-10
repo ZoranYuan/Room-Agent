@@ -12,9 +12,9 @@ import statistics
 import time
 from contextlib import asynccontextmanager
 from dataclasses import fields
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+from uuid import uuid4
 
 print("loading application modules", flush=True)
 
@@ -27,6 +27,7 @@ os.environ["MILVUS_URI"] = uri
 
 from domain.chat_message import ChatMessage
 from domain.time_hint import TimeHint
+from agent.schemas.cluster import MessageGroup, MessageGroups
 from infra.model.embedding_model_factory import get_embedding_model
 from infra.model.reranker_model_factory import get_message_reranker
 from infra.rag import message_index
@@ -36,7 +37,7 @@ from llama_index.core.schema import MetadataMode, NodeWithScore, TextNode
 
 DATA = Path(__file__).parent
 ROOT = DATA.parents[1]
-OUT = DATA / "raw_chunk_eval"
+OUT = DATA / "code_topic_eval"
 ROOM = "eval-room-v5"
 
 
@@ -112,21 +113,44 @@ async def run() -> None:
     (OUT / "batches").mkdir(exist_ok=True)
     corpus = read_jsonl(DATA / "corpus.jsonl")
     questions = read_jsonl(DATA / "queries.jsonl")
+    reference_chunks = read_jsonl(DATA / "child_chunks.jsonl")
+    topic_by_seq = {
+        seq: row["metadata"]["topic"]
+        for row in reference_chunks
+        for seq in row["metadata"]["seqs"]
+    }
     field_names = {field.name for field in fields(ChatMessage)}
     messages = [ChatMessage(**{key: value for key, value in row.items() if key in field_names}) for row in corpus]
     by_message_id = {row["message_id"]: row for row in corpus}
     batches = message_index._parent_batches(messages)
+    if set(topic_by_seq) != {str(message.seq) for message in messages}:
+        raise RuntimeError("合成主题标签未能覆盖全部消息")
+
+    async def code_topic_groups(batch: list[ChatMessage]) -> MessageGroups:
+        grouped: dict[str, list[str]] = {}
+        for message in batch:
+            topic = topic_by_seq[str(message.seq)]
+            grouped.setdefault(topic, []).append(str(message.seq))
+        return MessageGroups(
+            groups=[
+                MessageGroup(topic=topic, seqs=seqs)
+                for topic, seqs in grouped.items()
+            ]
+        )
+
+    # 使用数据集预置的合成主题标签；不调用配置的聊天模型 API。
+    message_index.cluster_messages = code_topic_groups
     config = {
         "corpus_sha256": hashlib.sha256((DATA / "corpus.jsonl").read_bytes()).hexdigest(),
         "queries_sha256": hashlib.sha256((DATA / "queries.jsonl").read_bytes()).hexdigest(),
-        "cluster_model": settings.agent_model,
+        "topic_labels_sha256": hashlib.sha256((DATA / "child_chunks.jsonl").read_bytes()).hexdigest(),
+        "topic_source": "v5 synthetic labels",
         "embedding_model": settings.embedding_model_id,
         "reranker_model": settings.reranker_model_id,
         "device": settings.rag_device,
         "parent_message_count": settings.rag_parent_message_count,
         "parent_max_chars": settings.rag_parent_max_chars,
         "child_max_chars": settings.rag_chunk_max_chars,
-        "overlap_chars": settings.rag_chunk_overlap_chars,
         "rrf_candidates": settings.rag_candidate_top_k,
         "rerank_input": settings.rag_rerank_input_top_n,
         "final_top_n": settings.rag_final_top_n,
@@ -134,8 +158,7 @@ async def run() -> None:
         "temporal_weight": settings.rag_temporal_rank_weight,
         "sources": {},
     }
-    for name in ("src/infra/rag/message_index.py", "src/agent/prompts/cluster.py",
-                 "src/harness/llm/cluster_messages.py", "src/infra/rag/message_retriever.py"):
+    for name in ("src/infra/rag/message_index.py", "src/infra/rag/message_retriever.py"):
         config["sources"][name] = hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
     assert settings.rag_final_top_n == 3
     config_path = OUT / "config.json"
@@ -144,8 +167,7 @@ async def run() -> None:
     save_json(config_path, config)
     print(f"data: {len(messages)} messages, {len(batches)} parents, {len(questions)} questions; device={settings.rag_device}", flush=True)
 
-    # Evaluation does not store parent rows or call IM. Topic clustering and
-    # child text construction still execute the actual application function.
+    # Evaluation does not store parent rows or call IM. It uses production chunk construction.
     message_index.get_session_factory = lambda: unused_session
     message_index.MessageChunkRepository = OfflineParentRepository
     semaphore = asyncio.Semaphore(4)
@@ -171,10 +193,10 @@ async def run() -> None:
                 save_json(path, result)
             completed += 1
             if completed == 1 or completed % 10 == 0 or completed == len(batches):
-                print(f"cluster {completed}/{len(batches)}; elapsed={time.perf_counter()-started:.1f}s", flush=True)
+                print(f"grouped {completed}/{len(batches)}; elapsed={time.perf_counter()-started:.1f}s", flush=True)
             return result
 
-    # Check one real clustering request before scheduling the remaining batches.
+    # Check one code-based grouping batch before scheduling the remaining batches.
     first = await build_batch(0)
     remaining = await asyncio.gather(*(build_batch(i) for i in range(1, len(batches))), return_exceptions=True)
     failures = [(i + 1, str(value)) for i, value in enumerate(remaining) if isinstance(value, BaseException)]
@@ -183,16 +205,12 @@ async def run() -> None:
         raise RuntimeError(f"Clustering failed for {len(failures)} batches; successful batches are checkpointed.")
     built = [first, *remaining]
     nodes = [load_node(row) for batch in built for row in batch["children"]]
-    assert all(len(node.text) <= settings.rag_chunk_max_chars for node in nodes)
+    assert nodes
     with (OUT / "child_chunks.jsonl").open("w") as output:
         for node in nodes:
             output.write(json.dumps(node_record(node), ensure_ascii=False) + "\n")
     save_json(OUT / "parents.json", [{key: value for key, value in batch.items() if key != "children"} for batch in built])
 
-    nodes_by_seq: dict[str, list[TextNode]] = {}
-    for node in nodes:
-        for seq in set(node.metadata["seqs"]):
-            nodes_by_seq.setdefault(seq, []).append(node)
     labels = {}
     missing = []
     for question in questions:
@@ -201,8 +219,14 @@ async def run() -> None:
             gold_messages = [by_message_id[mid] for mid in group["message_ids"]]
             assert len(gold_messages) == 1
             gold = gold_messages[0]
-            targets = [node.node_id for node in nodes_by_seq.get(str(gold["seq"]), [])
-                       if gold["content"] in node.text.split("\n", 1)[-1]]
+            sender = gold["sender_name"] or gold["sender_id"]
+            header = f"{gold['send_time']}: {sender}:"
+            topic = topic_by_seq[str(gold["seq"])]
+            targets = [
+                node.node_id
+                for node in nodes
+                if node.metadata["topic"] == topic and header in node.text
+            ]
             evidence.append({"group_id": group["group_id"], "message_ids": group["message_ids"],
                              "seq": gold["seq"], "answer_text": gold["content"],
                              "acceptable_child_ids": targets})
@@ -212,7 +236,7 @@ async def run() -> None:
     save_json(OUT / "evidence_mapping.json", {"questions": labels, "unindexed_evidence": missing})
     print(f"chunks ready: {len(nodes)} children; missing evidence groups={len(missing)} (remain in scoring denominator)", flush=True)
 
-    collection = "eval_v5_raw_" + datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+    collection = "eval_v5_code_topic_" + uuid4().hex[:10]
     settings.milvus_collection = collection
     save_json(OUT / "collection.json", {"name": collection})
     try:
@@ -266,7 +290,7 @@ async def run() -> None:
                 if position % 10 == 0:
                     print(f"scored {position}/{len(questions)}", flush=True)
         summary = {
-            "method": "Original question; strict final Top3; no LLM query decomposition or final answer. Exact answer text plus seq maps evidence groups to new child IDs; unindexed evidence remains a miss.",
+            "method": "Code-based grouping from v5 synthetic topic labels; no chat LLM API, query decomposition, or final answer. Original query, strict final Top3; unindexed evidence remains a miss.",
             "messages": len(messages), "parents": len(built), "children": len(nodes),
             "unindexed_evidence_groups": len(missing),
             "index_embedding_seconds": embedding_ms/1000, "index_write_seconds": insert_ms/1000,

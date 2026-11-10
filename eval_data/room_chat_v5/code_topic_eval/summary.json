@@ -1,0 +1,49 @@
+{
+  "method": "Code-based grouping from v5 synthetic topic labels; no chat LLM API, query decomposition, or final answer. Original query, strict final Top3; unindexed evidence remains a miss.",
+  "messages": 10000,
+  "parents": 326,
+  "children": 771,
+  "unindexed_evidence_groups": 0,
+  "index_embedding_seconds": 44.245590252999136,
+  "index_write_seconds": 0.5453416289983579,
+  "overall": {
+    "time_off": {
+      "questions": 200,
+      "evidence_recall_at_3": 0.6483333333333333,
+      "mrr_at_3": 0.5958333333333333,
+      "mean_ms": 245.40765515504063,
+      "p95_ms": 331.58080100020015
+    },
+    "time_on": {
+      "questions": 200,
+      "evidence_recall_at_3": 0.8783333333333333,
+      "mrr_at_3": 0.905,
+      "mean_ms": 272.3428566450639,
+      "p95_ms": 331.173974000194
+    }
+  },
+  "temporal": {
+    "time_off": {
+      "questions": 100,
+      "evidence_recall_at_3": 0.54,
+      "mrr_at_3": 0.31666666666666665,
+      "mean_ms": 250.41684874004204,
+      "p95_ms": 340.591891999793
+    },
+    "time_on": {
+      "questions": 100,
+      "evidence_recall_at_3": 1.0,
+      "mrr_at_3": 0.935,
+      "mean_ms": 304.28725172008853,
+      "p95_ms": 340.7110570005898
+    }
+  },
+  "non_temporal": {
+    "questions": 100,
+    "evidence_recall_at_3": 0.7566666666666667,
+    "mrr_at_3": 0.875,
+    "mean_ms": 240.39846157003922,
+    "p95_ms": 268.49497700004576
+  },
+  "total_seconds": 150.6803767649999
+}
