@@ -94,12 +94,7 @@ class _Settings(BaseModel):
         default=int(_env("RAG_PARENT_MAX_CHARS", "2000")), ge=1, validate_default=True
     )
     rag_chunk_max_chars: int = Field(
-        default=int(_env("RAG_CHUNK_MAX_CHARS", "300")), ge=1, validate_default=True
-    )
-    rag_chunk_overlap_chars: int = Field(
-        default=int(_env("RAG_CHUNK_OVERLAP_CHARS", "20")),
-        ge=0,
-        validate_default=True,
+        default=int(_env("RAG_CHUNK_MAX_CHARS", "500")), ge=1, validate_default=True
     )
     rag_message_max_chars: int = Field(
         default=int(_env("RAG_MESSAGE_MAX_CHARS", "100")), ge=1, validate_default=True

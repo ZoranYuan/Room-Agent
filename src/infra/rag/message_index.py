@@ -1,11 +1,7 @@
-import re
 from threading import Lock
 from typing import Sequence
 
-from llama_index.core.node_parser import SentenceSplitter
-from llama_index.core.schema import (
-    TextNode,
-)
+from llama_index.core.schema import TextNode
 from snowflake import SnowflakeGenerator
 
 from config.config import settings
@@ -36,10 +32,10 @@ def _message_text(message: ChatMessage) -> str:
     )
 
 
-def _child_message_text(message: ChatMessage) -> str:
+def _child_message_text(message: ChatMessage, body_part: str) -> str:
     """子块保留原始发言；消息时间范围单独放在 metadata。"""
     sender = message.sender_name or message.sender_id
-    return f"[seq={message.seq}] [{sender} ({message.sender_id})]: {message.content}"
+    return f"{message.send_time}: {sender}: {body_part}"
 
 
 def _parent_batches(
@@ -111,71 +107,58 @@ async def build_message_chunks(
                 "parent_id": parent.id,
                 "room_id": room_id,
                 "topic": group.topic,
-                "seqs": [str(message.seq) for message in members],
-                "start_time": min(message.send_time for message in members),
-                "end_time": max(message.send_time for message in members),
             }
 
             topic_prefix = f"主题：{group.topic}\n"
-            content_budget = settings.rag_chunk_max_chars - len(topic_prefix)
-            splitter = SentenceSplitter(
-                chunk_size=content_budget,
-                chunk_overlap=min(
-                    settings.rag_chunk_overlap_chars,
-                    content_budget - 1,
-                ),
-                tokenizer=list,
-                chunking_tokenizer_fn=lambda text: re.findall(
-                    r"[^。！？\n]+[。！？\n]*|[。！？\n]+",
-                    text,
-                ),
-            )
-            message_records: list[str] = []
-            message_spans: list[tuple[ChatMessage, int, int]] = []
-            text_offset = 0
-            for index, message in enumerate(members):
-                if index:
-                    message_records.append("\n")
-                    text_offset += 1
 
-                record = _child_message_text(message)
-                message_start = text_offset
-                message_records.append(record)
-                text_offset += len(record)
-                message_spans.append((message, message_start, text_offset))
-
-            message_text = "".join(message_records)
-            search_from = 0
-            for content in splitter.split_text(message_text):
-                chunk_start = message_text.find(content, search_from)
-                assert chunk_start >= 0
-                chunk_end = chunk_start + len(content)
-                # Overlap means adjacent chunks share text; map each chunk's
-                # actual span back to the messages it contains.
-                chunk_members = [
-                    message
-                    for message, message_start, message_end in message_spans
-                    if message_start < chunk_end and message_end > chunk_start
-                ]
-                search_from = chunk_start + 1
-
+            def append_child(current: list[tuple[ChatMessage, str]]) -> None:
                 chunk_metadata = {
                     **metadata,
-                    "seqs": [str(message.seq) for message in chunk_members],
                     "start_time": min(
-                        message.send_time for message in chunk_members
+                        message.send_time for message, _ in current
                     ),
-                    "end_time": max(message.send_time for message in chunk_members),
+                    "end_time": max(
+                        message.send_time for message, _ in current
+                    ),
                 }
+                content = "\n".join(
+                    _child_message_text(message, body_part)
+                    for message, body_part in current
+                )
                 children.append(
                     TextNode(
                         id_=_next_id(),
+                        # 每个 children 需要单独拼接上主题
                         text=f"{topic_prefix}{content}",
                         metadata=chunk_metadata,
                         excluded_embed_metadata_keys=list(chunk_metadata),
                         excluded_llm_metadata_keys=list(chunk_metadata),
                     )
                 )
+
+            current: list[tuple[ChatMessage, str]] = []
+            size = 0
+            for message in members:
+                body = message.content or ""
+                if not body:
+                    continue
+
+                for start in range(0, len(body), settings.rag_message_max_chars):
+                    body_part = body[start : start + settings.rag_message_max_chars]
+                    if (
+                        current
+                        and size + len(body_part) > settings.rag_chunk_max_chars
+                    ):
+                        # 装箱为 TextNode 放入到 children 中
+                        append_child(current)
+                        current = []
+                        size = 0
+
+                    current.append((message, body_part))
+                    size += len(body_part)
+
+            if current:
+                append_child(current)
     return parents, children
 
 
